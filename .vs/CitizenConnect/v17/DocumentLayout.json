@@ -1,0 +1,500 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\User\\source\\repos\\DeputyProject\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1E07B7EF-EEF0-4EB8-87EC-381DE36DFD5D}|Infrastructure\\Infrastructure.csproj|c:\\users\\user\\source\\repos\\deputyproject\\infrastructure\\implemenation\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E07B7EF-EEF0-4EB8-87EC-381DE36DFD5D}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\implemenation\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65156606-C33B-4F70-8D6E-CCD034B42FCB}|Application\\Application.csproj|c:\\users\\user\\source\\repos\\deputyproject\\application\\contracts\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65156606-C33B-4F70-8D6E-CCD034B42FCB}|Application\\Application.csproj|solutionrelative:application\\contracts\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E07B7EF-EEF0-4EB8-87EC-381DE36DFD5D}|Infrastructure\\Infrastructure.csproj|c:\\users\\user\\source\\repos\\deputyproject\\infrastructure\\implemenation\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E07B7EF-EEF0-4EB8-87EC-381DE36DFD5D}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\implemenation\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65156606-C33B-4F70-8D6E-CCD034B42FCB}|Application\\Application.csproj|c:\\users\\user\\source\\repos\\deputyproject\\application\\contracts\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65156606-C33B-4F70-8D6E-CCD034B42FCB}|Application\\Application.csproj|solutionrelative:application\\contracts\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E07B7EF-EEF0-4EB8-87EC-381DE36DFD5D}|Infrastructure\\Infrastructure.csproj|c:\\users\\user\\source\\repos\\deputyproject\\infrastructure\\dbcontext\\appcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E07B7EF-EEF0-4EB8-87EC-381DE36DFD5D}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\dbcontext\\appcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65156606-C33B-4F70-8D6E-CCD034B42FCB}|Application\\Application.csproj|c:\\users\\user\\source\\repos\\deputyproject\\application\\core\\commands\\createcompliant\\createcomplaintvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65156606-C33B-4F70-8D6E-CCD034B42FCB}|Application\\Application.csproj|solutionrelative:application\\core\\commands\\createcompliant\\createcomplaintvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65156606-C33B-4F70-8D6E-CCD034B42FCB}|Application\\Application.csproj|c:\\users\\user\\source\\repos\\deputyproject\\application\\core\\commands\\createcompliant\\createcompliantcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65156606-C33B-4F70-8D6E-CCD034B42FCB}|Application\\Application.csproj|solutionrelative:application\\core\\commands\\createcompliant\\createcompliantcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2C2D003-89F9-4739-9D70-A90A29382DF4}|Domain\\Domain.csproj|c:\\users\\user\\source\\repos\\deputyproject\\domain\\complaintpriority.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2C2D003-89F9-4739-9D70-A90A29382DF4}|Domain\\Domain.csproj|solutionrelative:domain\\complaintpriority.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2C2D003-89F9-4739-9D70-A90A29382DF4}|Domain\\Domain.csproj|c:\\users\\user\\source\\repos\\deputyproject\\domain\\complaintresolution.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2C2D003-89F9-4739-9D70-A90A29382DF4}|Domain\\Domain.csproj|solutionrelative:domain\\complaintresolution.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65156606-C33B-4F70-8D6E-CCD034B42FCB}|Application\\Application.csproj|c:\\users\\user\\source\\repos\\deputyproject\\application\\common\\result.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65156606-C33B-4F70-8D6E-CCD034B42FCB}|Application\\Application.csproj|solutionrelative:application\\common\\result.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65156606-C33B-4F70-8D6E-CCD034B42FCB}|Application\\Application.csproj|c:\\users\\user\\source\\repos\\deputyproject\\application\\common\\resultstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65156606-C33B-4F70-8D6E-CCD034B42FCB}|Application\\Application.csproj|solutionrelative:application\\common\\resultstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65156606-C33B-4F70-8D6E-CCD034B42FCB}|Application\\Application.csproj|c:\\users\\user\\source\\repos\\deputyproject\\application\\core\\commands\\createcompliant\\createcompliantcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65156606-C33B-4F70-8D6E-CCD034B42FCB}|Application\\Application.csproj|solutionrelative:application\\core\\commands\\createcompliant\\createcompliantcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65156606-C33B-4F70-8D6E-CCD034B42FCB}|Application\\Application.csproj|c:\\users\\user\\source\\repos\\deputyproject\\application\\application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{65156606-C33B-4F70-8D6E-CCD034B42FCB}|Application\\Application.csproj|solutionrelative:application\\application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E07B7EF-EEF0-4EB8-87EC-381DE36DFD5D}|Infrastructure\\Infrastructure.csproj|c:\\users\\user\\source\\repos\\deputyproject\\infrastructure\\migrations\\20260820041424_m2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E07B7EF-EEF0-4EB8-87EC-381DE36DFD5D}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\migrations\\20260820041424_m2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2C2D003-89F9-4739-9D70-A90A29382DF4}|Domain\\Domain.csproj|c:\\users\\user\\source\\repos\\deputyproject\\domain\\complaintassignment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2C2D003-89F9-4739-9D70-A90A29382DF4}|Domain\\Domain.csproj|solutionrelative:domain\\complaintassignment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2C2D003-89F9-4739-9D70-A90A29382DF4}|Domain\\Domain.csproj|c:\\users\\user\\source\\repos\\deputyproject\\domain\\complaintcomment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2C2D003-89F9-4739-9D70-A90A29382DF4}|Domain\\Domain.csproj|solutionrelative:domain\\complaintcomment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2C2D003-89F9-4739-9D70-A90A29382DF4}|Domain\\Domain.csproj|c:\\users\\user\\source\\repos\\deputyproject\\domain\\complaintstatushistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2C2D003-89F9-4739-9D70-A90A29382DF4}|Domain\\Domain.csproj|solutionrelative:domain\\complaintstatushistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2C2D003-89F9-4739-9D70-A90A29382DF4}|Domain\\Domain.csproj|c:\\users\\user\\source\\repos\\deputyproject\\domain\\complaint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2C2D003-89F9-4739-9D70-A90A29382DF4}|Domain\\Domain.csproj|solutionrelative:domain\\complaint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2C2D003-89F9-4739-9D70-A90A29382DF4}|Domain\\Domain.csproj|c:\\users\\user\\source\\repos\\deputyproject\\domain\\complaintcategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2C2D003-89F9-4739-9D70-A90A29382DF4}|Domain\\Domain.csproj|solutionrelative:domain\\complaintcategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2C2D003-89F9-4739-9D70-A90A29382DF4}|Domain\\Domain.csproj|c:\\users\\user\\source\\repos\\deputyproject\\domain\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2C2D003-89F9-4739-9D70-A90A29382DF4}|Domain\\Domain.csproj|solutionrelative:domain\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2C2D003-89F9-4739-9D70-A90A29382DF4}|Domain\\Domain.csproj|c:\\users\\user\\source\\repos\\deputyproject\\domain\\complaintstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2C2D003-89F9-4739-9D70-A90A29382DF4}|Domain\\Domain.csproj|solutionrelative:domain\\complaintstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2C2D003-89F9-4739-9D70-A90A29382DF4}|Domain\\Domain.csproj|c:\\users\\user\\source\\repos\\deputyproject\\domain\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2C2D003-89F9-4739-9D70-A90A29382DF4}|Domain\\Domain.csproj|solutionrelative:domain\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2C2D003-89F9-4739-9D70-A90A29382DF4}|Domain\\Domain.csproj|c:\\users\\user\\source\\repos\\deputyproject\\domain\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2C2D003-89F9-4739-9D70-A90A29382DF4}|Domain\\Domain.csproj|solutionrelative:domain\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A3C3609-2C43-4DD0-9152-C8F69A238590}|DeputyProject\\DeputyProject.csproj|c:\\users\\user\\source\\repos\\deputyproject\\deputyproject\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{7A3C3609-2C43-4DD0-9152-C8F69A238590}|DeputyProject\\DeputyProject.csproj|solutionrelative:deputyproject\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A3C3609-2C43-4DD0-9152-C8F69A238590}|DeputyProject\\DeputyProject.csproj|c:\\users\\user\\source\\repos\\deputyproject\\deputyproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A3C3609-2C43-4DD0-9152-C8F69A238590}|DeputyProject\\DeputyProject.csproj|solutionrelative:deputyproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E07B7EF-EEF0-4EB8-87EC-381DE36DFD5D}|Infrastructure\\Infrastructure.csproj|c:\\users\\user\\source\\repos\\deputyproject\\infrastructure\\di.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E07B7EF-EEF0-4EB8-87EC-381DE36DFD5D}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\di.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65156606-C33B-4F70-8D6E-CCD034B42FCB}|Application\\Application.csproj|c:\\users\\user\\source\\repos\\deputyproject\\application\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65156606-C33B-4F70-8D6E-CCD034B42FCB}|Application\\Application.csproj|solutionrelative:application\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E07B7EF-EEF0-4EB8-87EC-381DE36DFD5D}|Infrastructure\\Infrastructure.csproj|c:\\users\\user\\source\\repos\\deputyproject\\infrastructure\\migrations\\20260818044123_m1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E07B7EF-EEF0-4EB8-87EC-381DE36DFD5D}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\migrations\\20260818044123_m1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UnitOfWork.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Implemenation\\UnitOfWork.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Implemenation\\UnitOfWork.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Implemenation\\UnitOfWork.cs",
+              "RelativeToolTip": "Infrastructure\\Implemenation\\UnitOfWork.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-20T05:55:40.613Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IUnitOfWork.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Contracts\\IUnitOfWork.cs",
+              "RelativeDocumentMoniker": "Application\\Contracts\\IUnitOfWork.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Contracts\\IUnitOfWork.cs",
+              "RelativeToolTip": "Application\\Contracts\\IUnitOfWork.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-20T05:54:35.542Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GenericRepository.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Implemenation\\GenericRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Implemenation\\GenericRepository.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Implemenation\\GenericRepository.cs",
+              "RelativeToolTip": "Infrastructure\\Implemenation\\GenericRepository.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAUwAoAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-20T05:23:43.806Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IGenericRepository.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Contracts\\IGenericRepository.cs",
+              "RelativeDocumentMoniker": "Application\\Contracts\\IGenericRepository.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Contracts\\IGenericRepository.cs",
+              "RelativeToolTip": "Application\\Contracts\\IGenericRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-20T05:21:20.532Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ResultStatus.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Common\\ResultStatus.cs",
+              "RelativeDocumentMoniker": "Application\\Common\\ResultStatus.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Common\\ResultStatus.cs",
+              "RelativeToolTip": "Application\\Common\\ResultStatus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-20T05:13:05.985Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Result.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Common\\Result.cs",
+              "RelativeDocumentMoniker": "Application\\Common\\Result.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Common\\Result.cs",
+              "RelativeToolTip": "Application\\Common\\Result.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-20T05:13:05.764Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CreateComplaintValidator.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\CreateCompliant\\CreateComplaintValidator.cs",
+              "RelativeDocumentMoniker": "Application\\Core\\Commands\\CreateCompliant\\CreateComplaintValidator.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\CreateCompliant\\CreateComplaintValidator.cs",
+              "RelativeToolTip": "Application\\Core\\Commands\\CreateCompliant\\CreateComplaintValidator.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAA6wBIAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-20T05:11:41.858Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CreateCompliantCommandHandler.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\CreateCompliant\\CreateCompliantCommandHandler.cs",
+              "RelativeDocumentMoniker": "Application\\Core\\Commands\\CreateCompliant\\CreateCompliantCommandHandler.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\CreateCompliant\\CreateCompliantCommandHandler.cs",
+              "RelativeToolTip": "Application\\Core\\Commands\\CreateCompliant\\CreateCompliantCommandHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-20T05:11:41.653Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CreateCompliantCommand.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\CreateCompliant\\CreateCompliantCommand.cs",
+              "RelativeDocumentMoniker": "Application\\Core\\Commands\\CreateCompliant\\CreateCompliantCommand.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\CreateCompliant\\CreateCompliantCommand.cs",
+              "RelativeToolTip": "Application\\Core\\Commands\\CreateCompliant\\CreateCompliantCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-20T05:11:41.296Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Appcontext.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Dbcontext\\Appcontext.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Dbcontext\\Appcontext.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Dbcontext\\Appcontext.cs",
+              "RelativeToolTip": "Infrastructure\\Dbcontext\\Appcontext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-18T04:10:27.667Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ComplaintPriority.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Domain\\ComplaintPriority.cs",
+              "RelativeDocumentMoniker": "Domain\\ComplaintPriority.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\Domain\\ComplaintPriority.cs",
+              "RelativeToolTip": "Domain\\ComplaintPriority.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-18T04:57:20.12Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ComplaintResolution.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Domain\\ComplaintResolution.cs",
+              "RelativeDocumentMoniker": "Domain\\ComplaintResolution.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\Domain\\ComplaintResolution.cs",
+              "RelativeToolTip": "Domain\\ComplaintResolution.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-20T03:43:29.544Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Application",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Application.csproj",
+              "RelativeDocumentMoniker": "Application\\Application.csproj",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Application.csproj",
+              "RelativeToolTip": "Application\\Application.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-08-20T04:30:27.343Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "20260820041424_m2.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Migrations\\20260820041424_m2.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20260820041424_m2.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Migrations\\20260820041424_m2.cs",
+              "RelativeToolTip": "Infrastructure\\Migrations\\20260820041424_m2.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAUwE8AAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-20T04:14:24.485Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ComplaintComment.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Domain\\ComplaintComment.cs",
+              "RelativeDocumentMoniker": "Domain\\ComplaintComment.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\Domain\\ComplaintComment.cs",
+              "RelativeToolTip": "Domain\\ComplaintComment.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAIBJwBIAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-20T03:43:29.985Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ComplaintStatusHistory.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Domain\\ComplaintStatusHistory.cs",
+              "RelativeDocumentMoniker": "Domain\\ComplaintStatusHistory.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\Domain\\ComplaintStatusHistory.cs",
+              "RelativeToolTip": "Domain\\ComplaintStatusHistory.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAIBJwBcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-20T03:43:29.781Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ComplaintAssignment.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Domain\\ComplaintAssignment.cs",
+              "RelativeDocumentMoniker": "Domain\\ComplaintAssignment.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\Domain\\ComplaintAssignment.cs",
+              "RelativeToolTip": "Domain\\ComplaintAssignment.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAqwA8AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-18T15:31:47.54Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ComplaintStatus.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Domain\\ComplaintStatus.cs",
+              "RelativeDocumentMoniker": "Domain\\ComplaintStatus.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\Domain\\ComplaintStatus.cs",
+              "RelativeToolTip": "Domain\\ComplaintStatus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-18T04:56:46.284Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ComplaintCategory.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Domain\\ComplaintCategory.cs",
+              "RelativeDocumentMoniker": "Domain\\ComplaintCategory.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\Domain\\ComplaintCategory.cs",
+              "RelativeToolTip": "Domain\\ComplaintCategory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-18T04:56:46.049Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Department.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Domain\\Department.cs",
+              "RelativeDocumentMoniker": "Domain\\Department.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\Domain\\Department.cs",
+              "RelativeToolTip": "Domain\\Department.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-18T15:30:48.742Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Complaint.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Domain\\Complaint.cs",
+              "RelativeDocumentMoniker": "Domain\\Complaint.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\Domain\\Complaint.cs",
+              "RelativeToolTip": "Domain\\Complaint.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAIwCIAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-18T04:50:49.07Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Domain\\Employee.cs",
+              "RelativeDocumentMoniker": "Domain\\Employee.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\Domain\\Employee.cs",
+              "RelativeToolTip": "Domain\\Employee.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAIBJwBQAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-18T15:28:59Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "20260818044123_m1.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Migrations\\20260818044123_m1.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20260818044123_m1.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Migrations\\20260818044123_m1.cs",
+              "RelativeToolTip": "Infrastructure\\Migrations\\20260818044123_m1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAABiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-18T04:41:23.6Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\appsettings.json",
+              "RelativeDocumentMoniker": "DeputyProject\\appsettings.json",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\appsettings.json",
+              "RelativeToolTip": "DeputyProject\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-08-18T04:25:14.932Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Domain\\User.cs",
+              "RelativeDocumentMoniker": "Domain\\User.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\Domain\\User.cs",
+              "RelativeToolTip": "Domain\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-18T04:06:36.111Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\Program.cs",
+              "RelativeDocumentMoniker": "DeputyProject\\Program.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\Program.cs",
+              "RelativeToolTip": "DeputyProject\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-18T04:22:42.482Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Class1.cs",
+              "RelativeDocumentMoniker": "Application\\Class1.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Class1.cs",
+              "RelativeToolTip": "Application\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-18T04:07:12.197Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "DI.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\DI.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\DI.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\DI.cs",
+              "RelativeToolTip": "Infrastructure\\DI.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-18T04:06:58.851Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
