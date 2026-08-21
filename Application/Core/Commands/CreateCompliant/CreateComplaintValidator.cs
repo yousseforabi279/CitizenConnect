@@ -13,30 +13,42 @@ namespace Application.Core.Commands.CreateCompliant
         public CreateComplaintValidator()
         {
             RuleFor(x => x.CitizenName)
-                .NotEmpty()
-                .MaximumLength(100);
+               .NotEmpty()
+               .WithMessage("Citizen name is required.")
+               .MaximumLength(100)
+               .WithMessage("Citizen name cannot exceed 100 characters.");
 
             RuleFor(x => x.NationalId)
                 .NotEmpty()
-                .Length(14);
+                .WithMessage("National ID is required.")
+                .Length(14)
+                .WithMessage("National ID must be 14 characters.");
 
             RuleFor(x => x.PhoneNumber)
                 .NotEmpty()
-                .MaximumLength(20);
+                .WithMessage("Phone number is required.")
+                .MaximumLength(20)
+                .WithMessage("Phone number cannot exceed 20 characters.");
 
             RuleFor(x => x.Title)
                 .NotEmpty()
-                .MaximumLength(200);
+                .WithMessage("Complaint title is required.")
+                .MaximumLength(200)
+                .WithMessage("Complaint title cannot exceed 200 characters.");
 
             RuleFor(x => x.Description)
                 .NotEmpty()
-                .MaximumLength(2000);
+                .WithMessage("Complaint description is required.")
+                .MaximumLength(2000)
+                .WithMessage("Complaint description cannot exceed 2000 characters.");
 
             RuleFor(x => x.CategoryId)
-                .GreaterThan(0);
+               .GreaterThan(0)
+               .WithMessage("Category is required.");
 
             RuleFor(x => x.Priority)
-                .IsInEnum();
+                .IsInEnum()
+                .WithMessage("Invalid complaint priority.");
         }
     }
 }

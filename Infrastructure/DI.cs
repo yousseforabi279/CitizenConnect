@@ -1,5 +1,8 @@
-﻿using Domain;
+﻿using Application.Contracts;
+using Application.Contracts.Repos;
+using Domain;
 using Infrastructure.Dbcontext;
+using Infrastructure.Implemenation;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -42,6 +45,11 @@ namespace Infrastructure
                })
                .AddRoles<IdentityRole>()
                .AddEntityFrameworkStores<Appcontext>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddScoped<IComplaint, CompliantRepo>();
+            services.AddScoped<IComplaintCategory, ComplaintCategoryRepo>();
+
             return services;
         }
 

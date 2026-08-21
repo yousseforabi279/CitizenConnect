@@ -1,4 +1,5 @@
-﻿using Domain;
+﻿using Application.Contracts.Repos;
+using Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,9 @@ namespace Application.Contracts
 {
     public interface IUnitOfWork
     {
-        //IGenericRepository<ComplaintResolution> ComplaintResolutions { get; }
+        IComplaint Complaints { get; }
+        IComplaintCategory ComplaintCategory { get; }
+
 
         Task<int> SaveChangesAsync();
     }
