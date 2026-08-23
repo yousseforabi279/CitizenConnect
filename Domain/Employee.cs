@@ -18,7 +18,6 @@ namespace Domain
         public int DepartmentId { get; set; }
         public Department Department { get; set; } = null!;
         public bool IsActive { get; set; }
-        public ICollection<ComplaintAssignment> ComplaintAssignments { get; set; }
-            = new List<ComplaintAssignment>();
+        public ICollection<CitizinRequierment> Requests { get; set; } = new List<CitizinRequierment>();
     }
 }

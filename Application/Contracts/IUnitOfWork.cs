@@ -10,10 +10,8 @@ namespace Application.Contracts
 {
     public interface IUnitOfWork
     {
-        IComplaint Complaints { get; }
-        IComplaintCategory ComplaintCategory { get; }
-
-
+        ICitizinRequierment CitizinRequierment { get; }
+        IComplaintDepartment ComplaintDepartment { get; }
         Task<int> SaveChangesAsync();
     }
 }

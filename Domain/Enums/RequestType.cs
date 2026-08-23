@@ -4,13 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain
+namespace Domain.Enums
 {
-    public enum ComplaintPriority
+    public enum RequestType
     {
-        Low,
-        Medium,
-        High,
-        Critical
+        Complaint = 1,
+        Suggestion = 2
     }
 }

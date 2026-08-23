@@ -13,15 +13,15 @@ namespace Infrastructure.Implemenation
     {
         private readonly Appcontext _context;
 
-        public UnitOfWork(Appcontext context,IComplaint complaint, IComplaintCategory ComplaintCategory)
+        public UnitOfWork(Appcontext context, ICitizinRequierment CitizinRequierment, IComplaintDepartment ComplaintDepartment)
         {
             _context = context;
-            this.Complaints = complaint;
-            this.ComplaintCategory = ComplaintCategory;
+            this.CitizinRequierment = CitizinRequierment;
+            this.ComplaintDepartment = ComplaintDepartment;
         }
 
-        public IComplaint Complaints { get; }
-        public IComplaintCategory ComplaintCategory { get; }
+        public ICitizinRequierment CitizinRequierment { get; }
+        public IComplaintDepartment ComplaintDepartment { get; }
 
         public async Task<int> SaveChangesAsync()
         {

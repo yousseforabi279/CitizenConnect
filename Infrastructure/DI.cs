@@ -47,8 +47,8 @@ namespace Infrastructure
                .AddEntityFrameworkStores<Appcontext>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-            services.AddScoped<IComplaint, CompliantRepo>();
-            services.AddScoped<IComplaintCategory, ComplaintCategoryRepo>();
+            services.AddScoped<ICitizinRequierment, CompliantRepo>();
+            services.AddScoped<IComplaintDepartment, ComplaintCategoryRepo>();
 
             return services;
         }

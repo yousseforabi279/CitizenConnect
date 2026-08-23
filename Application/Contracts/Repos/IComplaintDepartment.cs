@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Application.Contracts.Repos
 {
-    public interface IComplaintCategory : IGenericRepository<ComplaintCategory>
+    public interface IComplaintDepartment : IGenericRepository<Department>
     { 
     }
 }

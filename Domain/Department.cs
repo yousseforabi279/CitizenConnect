@@ -12,10 +12,12 @@ namespace Domain
 
         public string Name { get; set; } = null!;
 
-        public ICollection<Employee> Employees { get; set; }
+        public ICollection<Employee> Employees {get;}
             = new List<Employee>();
+        public ICollection<CitizinRequierment> CitizinRequierments { get;}
+            = new List<CitizinRequierment>();
 
-        public ICollection<ComplaintAssignment> ComplaintAssignments { get; set; }
-            = new List<ComplaintAssignment>();
+
+
     }   
 }

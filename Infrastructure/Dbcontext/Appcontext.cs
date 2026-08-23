@@ -15,12 +15,9 @@ namespace Infrastructure.Dbcontext
         : base(options)
         {
         }   
-        public DbSet<Complaint> Complaintes { get; set; }
-        public DbSet<ComplaintAssignment> ComplaintAssignments { get; set; }
-        public DbSet<ComplaintCategory> complaintCategories { get; set; }
-        public DbSet<ComplaintComment> ComplaintComments { get; set; }
-        public DbSet<ComplaintResolution> complaintResolutions { get; set; }
-        public DbSet<ComplaintStatusHistory> ComplaintStatusHistories { get; set; }
+        public DbSet<Citizen> Complaintes { get; set; }
+        public DbSet<CitizinRequierment> ComplaintAssignments { get; set; }
+        public DbSet<CitizinRequiermentContent> complaintCategories { get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Department> Departments { get; set; }
 

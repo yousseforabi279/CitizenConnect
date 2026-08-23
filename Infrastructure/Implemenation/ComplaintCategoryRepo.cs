@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Implemenation
 {
-    internal class ComplaintCategoryRepo : GenericRepository<ComplaintCategory>, IComplaintCategory
+    internal class ComplaintCategoryRepo : GenericRepository<Department>, IComplaintDepartment
     {
         protected readonly Appcontext _context;
 
         public ComplaintCategoryRepo(Appcontext context) : base(context)
         {
-            _context= context;
+            _context = context;
         }
     }
 }

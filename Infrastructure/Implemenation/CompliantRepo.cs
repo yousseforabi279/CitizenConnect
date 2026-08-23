@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Implemenation
 {
-    public class CompliantRepo:GenericRepository<Complaint>,IComplaint
+    public class CompliantRepo : GenericRepository<CitizinRequierment>, ICitizinRequierment
     {
-        public CompliantRepo(Appcontext context):base(context)
+        public CompliantRepo(Appcontext context) : base(context)
         {
         }
     }
