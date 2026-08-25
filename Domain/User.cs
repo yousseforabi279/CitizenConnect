@@ -4,7 +4,8 @@ namespace Domain
 {
     public class User: IdentityUser
     {
-        public string NationalId { get; set; }
-        public DateOnly CreatedAt { get; set; }
+        public string? FullName { get; set; }
+        public ICollection<RefreshToken> RefreshTokens { get; set; }
+       = new List<RefreshToken>();
     }
 }

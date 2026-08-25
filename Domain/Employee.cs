@@ -11,13 +11,16 @@ namespace Domain
     {
         public int Id { get; set; }
 
-        [ForeignKey("User")]
-        public string UserId{ get; set; }
+        [ForeignKey(nameof(User))]
+        public string UserId { get; set; }
 
         public User User { get; set; }
         public int DepartmentId { get; set; }
         public Department Department { get; set; } = null!;
         public bool IsActive { get; set; }
-        public ICollection<CitizinRequierment> Requests { get; set; } = new List<CitizinRequierment>();
+        public ICollection<CitizinRequiermentEmployee> Requests { get; set; }
+              = new List<CitizinRequiermentEmployee>();
+        public ICollection<EmployeeOrganizations> EmployeeOrganizations { get; set; }
+    = new List<EmployeeOrganizations>();
     }
 }

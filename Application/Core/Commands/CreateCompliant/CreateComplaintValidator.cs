@@ -12,19 +12,25 @@ namespace Application.Core.Commands.CreateCompliant
     {
         public CreateComplaintValidator()
         {
-            RuleFor(x => x.CitizenName)
-               .NotEmpty()
-               .WithMessage("Citizen name is required.")
-               .MaximumLength(100)
-               .WithMessage("Citizen name cannot exceed 100 characters.");
+            RuleFor(x => x.FullName)
+             .NotEmpty()
+             .WithMessage("Citizen name is required.")
+             .MaximumLength(100)
+             .WithMessage("Citizen name cannot exceed 100 characters.");
 
             RuleFor(x => x.NationalId)
                 .NotEmpty()
-                .WithMessage("National ID is required.")
-                .Length(14)
-                .WithMessage("National ID must be 14 characters.");
+                .WithMessage("National ID is required.");
 
-            RuleFor(x => x.PhoneNumber)
+            RuleFor(x => x.NationalId)
+                .Length(14)
+                .WithMessage("National ID must be exactly 14 digits.");
+
+            RuleFor(x => x.NationalId)
+                .Must(x => x.All(char.IsDigit))
+                .WithMessage("National ID must contain digits only.");
+
+            RuleFor(x => x.Phone)
                 .NotEmpty()
                 .WithMessage("Phone number is required.")
                 .MaximumLength(20)
@@ -42,13 +48,18 @@ namespace Application.Core.Commands.CreateCompliant
                 .MaximumLength(2000)
                 .WithMessage("Complaint description cannot exceed 2000 characters.");
 
-            RuleFor(x => x.CategoryId)
-               .GreaterThan(0)
-               .WithMessage("Category is required.");
+            RuleFor(x => x.DepartmentId)
+                .GreaterThan(0)
+                .WithMessage("Department is required.");
 
-            RuleFor(x => x.Priority)
+            RuleFor(x => x.OrganizationId)
+                .GreaterThan(0)
+                .WithMessage("Organization is required.");
+
+            RuleFor(x => x.RequestType)
                 .IsInEnum()
-                .WithMessage("Invalid complaint priority.");
+                .WithMessage("Invalid request type.");
+
         }
     }
 }

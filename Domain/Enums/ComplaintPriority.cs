@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Domain.Enums
 {
     public enum ComplaintPriority {
-        Low,
+        Low=1,
         Medium,
         High,
         Critical

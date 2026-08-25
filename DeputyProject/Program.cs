@@ -1,4 +1,6 @@
 using Application;
+using Application.Contracts.Repos;
+using DeputyProject.Common;
 using Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +12,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddInfrastructure(builder.Configuration).AddApplication();
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddScoped<ICurrentUser, CurrentUser>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

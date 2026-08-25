@@ -14,7 +14,7 @@ namespace Infrastructure
     {
         public static IServiceCollection AddInfrastructure(
        this IServiceCollection services,
-       IConfiguration configuration)
+       IConfiguration configuration) 
         {
             // Register DbContext
             services.AddDbContext<Appcontext>(options =>
@@ -23,8 +23,6 @@ namespace Infrastructure
                 ));
 
             // Register ASP.NET Core Identity
-            services.AddIdentityCore<User>()
-                    .AddEntityFrameworkStores<Appcontext>();
             services
                .AddIdentityCore<Domain.User>(options =>
                {
@@ -45,10 +43,20 @@ namespace Infrastructure
                })
                .AddRoles<IdentityRole>()
                .AddEntityFrameworkStores<Appcontext>();
+
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddScoped<ICitizinRequierment, CompliantRepo>();
             services.AddScoped<IComplaintDepartment, ComplaintCategoryRepo>();
+            services.AddScoped<ICitizin, CitizinRepo>();
+            services.AddScoped<IEmployee, EmployeeRepo>();
+            services.AddScoped<IOrganization, OrganizationRepo>();
+            services.AddScoped<IIdentityService, IdentityService>();
+            services.AddScoped<IJwtTokenService, JwtTokenService>();
+            services.AddScoped<IRefreshToken, RefreshToekenRepo>();
+            services.AddScoped<IRoleService, RoleServiceRepo>();
+            services.AddScoped<ICitizinRequiermentEmployees, CitizinRequiermentEmployees>();
+            services.AddScoped<IEmployeeRequestRepository, EmployeeRequestRepository>();
 
             return services;
         }

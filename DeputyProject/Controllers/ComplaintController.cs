@@ -13,7 +13,7 @@ namespace DeputyProject.Controllers
     {
         public ComplaintController(IMediator _mediator) : base(_mediator) { }
         [HttpPost(ApiRoutes.Complaint.CreateComplaint)]
-        public async Task<IActionResult> Register(CreateCompliantCommand command)
+        public async Task<IActionResult> CreateComplaint(CreateCompliantCommand command)
         {
             var result = await _mediator.Send(command);
             return HandleResult(result);

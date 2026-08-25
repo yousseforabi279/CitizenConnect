@@ -11,7 +11,24 @@ namespace Application.Contracts
     public interface IUnitOfWork
     {
         ICitizinRequierment CitizinRequierment { get; }
-        IComplaintDepartment ComplaintDepartment { get; }
+        IComplaintDepartment Department { get; }
+        ICitizin Citizin { get; }
+        IEmployee Employee { get; }
+        IOrganization Organization { get; }
+        IJwtTokenService jwtTokenService { get; }
+        IIdentityService IdentityService { get; }
+        IRefreshToken RefreshToken { get; }
+        IRoleService RoleService { get; }
+        ICitizinRequiermentEmployees CitizinRequiermentEmployees { get; }
+        IEmployeeRequestRepository EmployeeRequestRepository { get; }
         Task<int> SaveChangesAsync();
+        Task BeginTransactionAsync(
+            CancellationToken cancellationToken = default);
+
+        Task CommitTransactionAsync(
+            CancellationToken cancellationToken = default);
+
+        Task RollbackTransactionAsync(
+            CancellationToken cancellationToken = default);
     }
 }

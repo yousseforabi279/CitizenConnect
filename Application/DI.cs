@@ -1,6 +1,8 @@
 ﻿using Application.Common.Behaviors;
+using Application.Contracts.Repos;
 using Application.Core.Commands.CreateComplaint;
 using Application.Core.Commands.CreateCompliant;
+using Application.Core.Commands.CreateCompliant.Validation;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.Configuration;
@@ -35,6 +37,8 @@ namespace Application
             {
                 cfg.AddMaps(typeof(CreateComplaintMappingProfile).Assembly);
             });
+            services.AddScoped<INationalIdValidator, EgyptianNationalIdValidator>();
+
             return services;
 
         }

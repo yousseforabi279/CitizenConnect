@@ -1,7 +1,39 @@
 [
   {
-    "ContainingType": "DeputyProject.Controllers.ComplaintController",
+    "ContainingType": "DeputyProject.Controllers.AuthenticationController",
+    "Method": "Login",
+    "RelativePath": "api/Authentication/api/auth/Login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "Application.Core.Commands.Login.LoginCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DeputyProject.Controllers.AuthenticationController",
     "Method": "Register",
+    "RelativePath": "api/Authentication/api/auth/Register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "Application.Core.Commands.AddEmployee.CreateEmployeeCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DeputyProject.Controllers.ComplaintController",
+    "Method": "CreateComplaint",
     "RelativePath": "api/Complaint/api/auth/Complaint",
     "HttpMethod": "POST",
     "IsController": true,
