@@ -24,6 +24,7 @@ namespace Application.Contracts
         IDeputy Deputy { get; }
         IAchievement Achievement { get; }
         IActitvitiesAndVisits ActitvitiesAndVisits { get; }
+        IAreasOfWorkandActivities AreasOfWorkandActivities { get; }
         Task<int> SaveChangesAsync();
         Task BeginTransactionAsync(
             CancellationToken cancellationToken = default);

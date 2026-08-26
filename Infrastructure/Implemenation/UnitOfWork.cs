@@ -26,7 +26,8 @@ namespace Infrastructure.Implemenation
             ICitizinRequiermentEmployees citizinRequiermentEmployees,
             IDeputy deputy,
             IAchievement achievement,
-            IActitvitiesAndVisits actitvitiesAndVisits
+            IActitvitiesAndVisits actitvitiesAndVisits,
+            IAreasOfWorkandActivities areasOfWorkandActivities
             )
         {
             _context = context;
@@ -44,6 +45,7 @@ namespace Infrastructure.Implemenation
             Deputy = deputy;
             Achievement=achievement;
             ActitvitiesAndVisits = actitvitiesAndVisits;
+            AreasOfWorkandActivities=areasOfWorkandActivities;
         }
 
         public ICitizinRequierment CitizinRequierment { get; }
@@ -72,6 +74,8 @@ namespace Infrastructure.Implemenation
         public IAchievement Achievement { get; }
 
         public IActitvitiesAndVisits ActitvitiesAndVisits { get; }
+
+        public IAreasOfWorkandActivities AreasOfWorkandActivities { get; }
 
         public async Task<int> SaveChangesAsync()
         {

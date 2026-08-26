@@ -39,7 +39,9 @@ namespace Application.Core.Commands.Deputy.EditDeputyInfo
             deputy.Address = request.Address;
             deputy.Title = request.Title;
             deputy.Bio = request.Bio;
-            deputy.About = request.About;
+            deputy.AboutPart1 = request.AboutPart1;
+            deputy.AboutPart2 = request.AboutPart2;
+            deputy.OfficeLocation = request.OfficeLocation;
             deputy.WhatsApp = request.WhatsApp;
             deputy.FacebookLing = request.FacebookLing;
             deputy.LocationURL = request.LocationURL;

@@ -24,7 +24,9 @@ namespace Application.Core.Queries.Deputy.GetDeputybyId
 
         public string? Bio { get; set; }
 
-        public string? About { get; set; }
+        public string? AboutPart1 { get; set; }
+        public string? AboutPart2 { get; set; }
+        public string? OfficeLocation { get; set; }
 
         public string? WhatsApp { get; set; }
 

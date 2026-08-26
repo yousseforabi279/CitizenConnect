@@ -23,12 +23,15 @@ namespace Domain.Deputy
         public string? Address { get; set; }
         public string? Title { get; set; }
         public string? Bio { get; set; }
-        public string? About { get; set; }
+        public string? AboutPart1 { get; set; }
+        public string? AboutPart2 { get; set; }
+        public string? OfficeLocation { get; set; }
         public string? WhatsApp { get; set; }
         public string? FacebookLing { get; set; }
         public string? LocationURL { get; set; }
         public string? Circle { get; set; }
         public string? Appointment { get; set; }
+        public string Image { get; set; }
         public ICollection<DeputyWords> Words { get; set; } // أحدث كلمات النائب عن مشاكل الدائرة
        = new List<DeputyWords>();
         public ICollection<Achievement> Achievement { get; set; } // ما تم انجازه

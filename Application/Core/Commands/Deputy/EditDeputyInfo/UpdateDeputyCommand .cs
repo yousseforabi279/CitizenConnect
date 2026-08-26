@@ -21,11 +21,14 @@ namespace Application.Core.Commands.Deputy.EditDeputyInfo
 
         public string? Address { get; set; }
 
+        public string OfficeLocation { get; set; }
         public string? Title { get; set; }
 
         public string? Bio { get; set; }
 
-        public string? About { get; set; }
+        public string? AboutPart1 { get; set; }
+        public string? AboutPart2 { get; set; }
+
 
         public string? WhatsApp { get; set; }
 

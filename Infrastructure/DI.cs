@@ -60,6 +60,7 @@ namespace Infrastructure
             services.AddScoped<IDeputy, DeputyRepo>();
             services.AddScoped<IAchievement, AchievementRepo>();
             services.AddScoped<IActitvitiesAndVisits, ActitvitiesAndVisitsRepo>();
+            services.AddScoped<IAreasOfWorkandActivities, AreasOfWorkandActivitiesRepo>();
 
             return services;
         }

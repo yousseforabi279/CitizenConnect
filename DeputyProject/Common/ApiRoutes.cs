@@ -34,5 +34,14 @@
             public const string PUT = "/api/deputies/{deputyId}/activities-visits/{id}";
             public const string DELETE = "/api/deputies/{deputyId}/activities-visits/{id}";
         }
+        public static class AreaOfWork
+        {
+            public const string POST = "/api/deputies/{deputyId:int}/areas-of-work";
+            public const string GETALL = "/api/deputies/{deputyId}/areas-of-work";
+            public const string GETBYID = "/api/deputies/{deputyId}/areas-of-work/{areaId}";
+            public const string PUT = "/api/deputies/{deputyId}/areas-of-work/{areaId}";
+            public const string DELETE = "/api/deputies/{deputyId}/areas-of-work/{areaId}";
+        }
+
     }
 }

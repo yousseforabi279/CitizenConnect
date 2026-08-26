@@ -260,7 +260,10 @@ namespace Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("About")
+                    b.Property<string>("AboutPart1")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AboutPart2")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Address")
@@ -285,7 +288,14 @@ namespace Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Image")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("LocationURL")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OfficeLocation")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PrimaryPhone")
