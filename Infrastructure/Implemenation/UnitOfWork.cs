@@ -23,7 +23,11 @@ namespace Infrastructure.Implemenation
             IRefreshToken refreshToken,
             IRoleService roleService,
             IEmployeeRequestRepository employeeRequestRepository,
-            ICitizinRequiermentEmployees citizinRequiermentEmployees )
+            ICitizinRequiermentEmployees citizinRequiermentEmployees,
+            IDeputy deputy,
+            IAchievement achievement,
+            IActitvitiesAndVisits actitvitiesAndVisits
+            )
         {
             _context = context;
             this.CitizinRequierment = CitizinRequierment;
@@ -37,7 +41,9 @@ namespace Infrastructure.Implemenation
             this.RoleService = roleService;
             this.EmployeeRequestRepository = employeeRequestRepository;
             this.CitizinRequiermentEmployees = citizinRequiermentEmployees;
-
+            Deputy = deputy;
+            Achievement=achievement;
+            ActitvitiesAndVisits = actitvitiesAndVisits;
         }
 
         public ICitizinRequierment CitizinRequierment { get; }
@@ -60,6 +66,12 @@ namespace Infrastructure.Implemenation
         public ICitizinRequiermentEmployees CitizinRequiermentEmployees { get; }
 
         public IEmployeeRequestRepository EmployeeRequestRepository { get; }
+
+        public IDeputy Deputy {  get; }
+
+        public IAchievement Achievement { get; }
+
+        public IActitvitiesAndVisits ActitvitiesAndVisits { get; }
 
         public async Task<int> SaveChangesAsync()
         {

@@ -15,6 +15,7 @@ builder.Services.AddInfrastructure(builder.Configuration).AddApplication();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped<ICurrentUser, CurrentUser>();
 var app = builder.Build();
+app.UseExceptionHandling();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

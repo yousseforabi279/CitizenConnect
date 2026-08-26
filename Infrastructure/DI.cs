@@ -57,6 +57,9 @@ namespace Infrastructure
             services.AddScoped<IRoleService, RoleServiceRepo>();
             services.AddScoped<ICitizinRequiermentEmployees, CitizinRequiermentEmployees>();
             services.AddScoped<IEmployeeRequestRepository, EmployeeRequestRepository>();
+            services.AddScoped<IDeputy, DeputyRepo>();
+            services.AddScoped<IAchievement, AchievementRepo>();
+            services.AddScoped<IActitvitiesAndVisits, ActitvitiesAndVisitsRepo>();
 
             return services;
         }

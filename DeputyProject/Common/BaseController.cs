@@ -1,4 +1,5 @@
 ﻿using Application.Common;
+using DeputyProject.Common;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,28 +17,65 @@ public abstract class BaseController : ControllerBase
 
     protected IActionResult HandleResult<T>(Result<T> result)
     {
+        var response = new ResultResponse<T>
+        {
+            IsSuccess = result.IsSuccess,
+
+            Status = result.Status switch
+            {
+                ResultStatus.Success => 200,
+                ResultStatus.ValidationError => 422,
+                ResultStatus.BadRequest => 400,
+                ResultStatus.NotFound => 404,
+                ResultStatus.Conflict => 409,
+                ResultStatus.Unauthorized => 401,
+                ResultStatus.Forbidden => 403,
+                ResultStatus.RequiresTwoFactor => 403,
+                ResultStatus.Failure => 500,
+                ResultStatus.InternalServerError => 500,
+
+                _ => 500
+            },
+
+            Error = result.Error,
+            Value = result.Value,
+            Message = result.Message
+        };
+
         return result.Status switch
         {
             ResultStatus.Success =>
-                Ok(result),
+                Ok(response),
+
+            ResultStatus.ValidationError =>
+                UnprocessableEntity(response),
 
             ResultStatus.BadRequest =>
-                BadRequest(result),
+                BadRequest(response),
 
             ResultStatus.NotFound =>
-                NotFound(result),
+                NotFound(response),
 
             ResultStatus.Conflict =>
-                Conflict(result),
+                Conflict(response),
 
             ResultStatus.Unauthorized =>
-                Unauthorized(result),
+                Unauthorized(response),
 
             ResultStatus.Forbidden =>
-                Forbid(),
+                StatusCode(403, response),
+
+            ResultStatus.RequiresTwoFactor =>
+                StatusCode(403, response),
+
+            ResultStatus.Failure =>
+                StatusCode(500, response),
+
+            ResultStatus.InternalServerError =>
+                StatusCode(500, response),
 
             _ =>
-                StatusCode(500, result)
+                StatusCode(500, response)
         };
     }
 }

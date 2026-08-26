@@ -1,5 +1,100 @@
 [
   {
+    "ContainingType": "DeputyProject.Controllers.AchievementController",
+    "Method": "AddAchievement",
+    "RelativePath": "api/Achievement/api/achievements",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "Application.Core.Commands.Deputy.achievements.CreateAchievement.CreateAchievementCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DeputyProject.Controllers.AchievementController",
+    "Method": "UpdateAchievement",
+    "RelativePath": "api/Achievement/api/achievements/{achievementId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "achievementId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "command",
+        "Type": "Application.Core.Commands.Deputy.achievements.EditAchievement.UpdateAchievementCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DeputyProject.Controllers.AchievementController",
+    "Method": "GetAchievement",
+    "RelativePath": "api/Achievement/api/achievements/{achievementId}/{deputyId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "deputyId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "achievementId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DeputyProject.Controllers.AchievementController",
+    "Method": "DeleteAchievement",
+    "RelativePath": "api/Achievement/api/achievements/{achievementId}/{deputyId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "deputyId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "achievementId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DeputyProject.Controllers.AchievementController",
+    "Method": "GetAllAchievements",
+    "RelativePath": "api/Achievement/api/achievements/deputy/{deputyId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "deputyId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "DeputyProject.Controllers.AuthenticationController",
     "Method": "Login",
     "RelativePath": "api/Authentication/api/auth/Login",
@@ -42,6 +137,38 @@
       {
         "Name": "command",
         "Type": "Application.Core.Commands.CreateCompliant.CreateCompliantCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DeputyProject.Controllers.DeputyController",
+    "Method": "UpdateDeputy",
+    "RelativePath": "api/Deputy/api/Deputy",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "Application.Core.Commands.Deputy.EditDeputyInfo.UpdateDeputyCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DeputyProject.Controllers.DeputyController",
+    "Method": "CreateComplaint",
+    "RelativePath": "api/Deputy/api/Deputy/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],

@@ -21,6 +21,9 @@ namespace Application.Contracts
         IRoleService RoleService { get; }
         ICitizinRequiermentEmployees CitizinRequiermentEmployees { get; }
         IEmployeeRequestRepository EmployeeRequestRepository { get; }
+        IDeputy Deputy { get; }
+        IAchievement Achievement { get; }
+        IActitvitiesAndVisits ActitvitiesAndVisits { get; }
         Task<int> SaveChangesAsync();
         Task BeginTransactionAsync(
             CancellationToken cancellationToken = default);

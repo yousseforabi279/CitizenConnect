@@ -158,6 +158,207 @@ namespace Infrastructure.Migrations
                     b.ToTable("Departments");
                 });
 
+            modelBuilder.Entity("Domain.Deputy.Achievement", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("DeputyId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DeputyId");
+
+                    b.ToTable("Achievements");
+                });
+
+            modelBuilder.Entity("Domain.Deputy.ActitvitiesAndVisits", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("DeputyId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image_Video")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Location")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DeputyId");
+
+                    b.ToTable("ActitvitiesAndVisits");
+                });
+
+            modelBuilder.Entity("Domain.Deputy.AreasOfWorkandActivities", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("DeputyId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DeputyId");
+
+                    b.ToTable("AreasOfWorkAndActivities");
+                });
+
+            modelBuilder.Entity("Domain.Deputy.Deputy", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("About")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Appointment")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Bio")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateOnly>("BirthOfdate")
+                        .HasColumnType("date");
+
+                    b.Property<string>("Circle")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FacebookLing")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FullName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LocationURL")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PrimaryPhone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SecondaryPhone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("WhatsApp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Deputies");
+                });
+
+            modelBuilder.Entity("Domain.Deputy.DeputyWords", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("DeputyId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Video_image")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DeputyId");
+
+                    b.ToTable("DeputyWords");
+                });
+
+            modelBuilder.Entity("Domain.Deputy.MotionsForInformation", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("DeputyId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image_Video")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DeputyId");
+
+                    b.ToTable("MotionsForInformation");
+                });
+
             modelBuilder.Entity("Domain.Employee", b =>
                 {
                     b.Property<int>("Id")
@@ -255,7 +456,7 @@ namespace Infrastructure.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("RefreshToken");
+                    b.ToTable("RefreshTokens");
                 });
 
             modelBuilder.Entity("Domain.User", b =>
@@ -512,6 +713,61 @@ namespace Infrastructure.Migrations
                     b.Navigation("Employee");
                 });
 
+            modelBuilder.Entity("Domain.Deputy.Achievement", b =>
+                {
+                    b.HasOne("Domain.Deputy.Deputy", "Deputy")
+                        .WithMany("Achievement")
+                        .HasForeignKey("DeputyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Deputy");
+                });
+
+            modelBuilder.Entity("Domain.Deputy.ActitvitiesAndVisits", b =>
+                {
+                    b.HasOne("Domain.Deputy.Deputy", "Deputy")
+                        .WithMany("ActitvitiesAndVisits")
+                        .HasForeignKey("DeputyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Deputy");
+                });
+
+            modelBuilder.Entity("Domain.Deputy.AreasOfWorkandActivities", b =>
+                {
+                    b.HasOne("Domain.Deputy.Deputy", "Deputy")
+                        .WithMany("AreasOfWorkandActivities")
+                        .HasForeignKey("DeputyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Deputy");
+                });
+
+            modelBuilder.Entity("Domain.Deputy.DeputyWords", b =>
+                {
+                    b.HasOne("Domain.Deputy.Deputy", "Deputy")
+                        .WithMany("Words")
+                        .HasForeignKey("DeputyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Deputy");
+                });
+
+            modelBuilder.Entity("Domain.Deputy.MotionsForInformation", b =>
+                {
+                    b.HasOne("Domain.Deputy.Deputy", "Deputy")
+                        .WithMany("MotionsForInformation")
+                        .HasForeignKey("DeputyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Deputy");
+                });
+
             modelBuilder.Entity("Domain.Employee", b =>
                 {
                     b.HasOne("Domain.Department", "Department")
@@ -629,6 +885,19 @@ namespace Infrastructure.Migrations
                     b.Navigation("CitizinRequierments");
 
                     b.Navigation("Employees");
+                });
+
+            modelBuilder.Entity("Domain.Deputy.Deputy", b =>
+                {
+                    b.Navigation("Achievement");
+
+                    b.Navigation("ActitvitiesAndVisits");
+
+                    b.Navigation("AreasOfWorkandActivities");
+
+                    b.Navigation("MotionsForInformation");
+
+                    b.Navigation("Words");
                 });
 
             modelBuilder.Entity("Domain.Employee", b =>

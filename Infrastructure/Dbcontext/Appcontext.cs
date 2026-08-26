@@ -1,4 +1,5 @@
 ﻿using Domain;
+using Domain.Deputy;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -23,6 +24,20 @@ namespace Infrastructure.Dbcontext
         public DbSet<Organization> Organizations { get; set; }
         public DbSet<CitizinRequiermentEmployee> CitizinRequiermentEmployees { get; set; }
 
+        public DbSet<Deputy> Deputies { get; set; }
+        public DbSet<RefreshToken> RefreshTokens { get; set; }
+
+
+        public DbSet<DeputyWords> DeputyWords { get; set; }
+
+        public DbSet<Achievement> Achievements { get; set; }
+
+        public DbSet<ActitvitiesAndVisits> ActitvitiesAndVisits { get; set; }
+
+        public DbSet<AreasOfWorkandActivities> AreasOfWorkAndActivities { get; set; }
+
+        public DbSet<MotionsForInformation> MotionsForInformation { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -33,6 +48,9 @@ namespace Infrastructure.Dbcontext
             modelBuilder.Entity<Employee>()
                 .HasIndex(e => e.UserId)
                 .IsUnique();
+            //modelBuilder.Entity<Deputy>()
+            //   .HasIndex(e => e.UserId)
+            //   .IsUnique();
             modelBuilder.Entity<RefreshToken>()
                 .HasOne(r => r.User)
                 .WithMany(u => u.RefreshTokens)
