@@ -10,5 +10,6 @@ namespace Application.Contracts.Repos
 {
     public interface IDeputy : IGenericRepository<Deputy>
     {
+        Task<Deputy?> GetDeputyInfo();
     }
 }

@@ -24,7 +24,7 @@ namespace Application.Core.Queries.Deputy.GetDeputybyId
             CancellationToken cancellationToken)
         {
             var deputy = await _unitOfWork.Deputy
-                .GetByIdAsync(request.Id);
+                .GetDeputyInfo();
 
             if (deputy is null)
             {
@@ -35,7 +35,6 @@ namespace Application.Core.Queries.Deputy.GetDeputybyId
 
             var response = new DeputyResponse
             {
-                Id = deputy.Id,
                 FullName = deputy.FullName,
                 BirthOfdate = deputy.BirthOfdate,
                 PrimaryPhone = deputy.PrimaryPhone,

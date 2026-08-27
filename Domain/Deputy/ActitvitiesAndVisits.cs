@@ -18,10 +18,5 @@ namespace Domain.Deputy
         public string Location { get; set; }
 
         public DateTime Date { get; set; }
-        // Foreign Key
-        public int DeputyId { get; set; }
-
-        // Navigation Property
-        public Deputy Deputy { get; set; } = null!;
     }
 }

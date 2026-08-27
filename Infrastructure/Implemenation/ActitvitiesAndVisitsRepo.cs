@@ -23,7 +23,7 @@ namespace Infrastructure.Implemenation
                     CancellationToken cancellationToken)
         {
             return await _context.ActitvitiesAndVisits
-                .Where(x => x.DeputyId == deputyId)
+                //.Where(x => x.DeputyId == deputyId)
                 .OrderByDescending(x => x.Date)
                 .ToListAsync(cancellationToken);
         }

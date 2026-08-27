@@ -2,6 +2,7 @@
 using Domain;
 using Domain.Deputy;
 using Infrastructure.Dbcontext;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,5 +20,9 @@ namespace Infrastructure.Implemenation
             _context = context;
         }
 
+        public async Task<Deputy?> GetDeputyInfo()
+        {
+            return await _context.Deputies.SingleOrDefaultAsync();
+        }
     }
 }

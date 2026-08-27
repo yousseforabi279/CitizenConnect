@@ -35,12 +35,12 @@ namespace Application.Core.Queries.Deputy.Achievement.GetAchievementById
                     "الإنجاز غير موجود.");
             }
 
-            if (achievement.DeputyId != request.DeputyId)
-            {
-                return Result<AchievementResponse>.Failure(
-                    ResultStatus.NotFound,
-                    "الإنجاز غير موجود لهذا النائب.");
-            }
+            //if (achievement.DeputyId != request.DeputyId)
+            //{
+            //    return Result<AchievementResponse>.Failure(
+            //        ResultStatus.NotFound,
+            //        "الإنجاز غير موجود لهذا النائب.");
+            //}
 
             var response = new AchievementResponse
             {

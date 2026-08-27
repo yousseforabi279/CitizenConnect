@@ -166,9 +166,6 @@ namespace Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("DeputyId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -183,8 +180,6 @@ namespace Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DeputyId");
-
                     b.ToTable("Achievements");
                 });
 
@@ -198,9 +193,6 @@ namespace Infrastructure.Migrations
 
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
-
-                    b.Property<int>("DeputyId")
-                        .HasColumnType("int");
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
@@ -217,8 +209,6 @@ namespace Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DeputyId");
-
                     b.ToTable("ActitvitiesAndVisits");
                 });
 
@@ -229,9 +219,6 @@ namespace Infrastructure.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("DeputyId")
-                        .HasColumnType("int");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -246,8 +233,6 @@ namespace Infrastructure.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("DeputyId");
 
                     b.ToTable("AreasOfWorkAndActivities");
                 });
@@ -325,9 +310,6 @@ namespace Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("DeputyId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
@@ -336,8 +318,6 @@ namespace Infrastructure.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("DeputyId");
 
                     b.ToTable("DeputyWords");
                 });
@@ -350,9 +330,6 @@ namespace Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("DeputyId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
@@ -363,8 +340,6 @@ namespace Infrastructure.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("DeputyId");
 
                     b.ToTable("MotionsForInformation");
                 });
@@ -723,61 +698,6 @@ namespace Infrastructure.Migrations
                     b.Navigation("Employee");
                 });
 
-            modelBuilder.Entity("Domain.Deputy.Achievement", b =>
-                {
-                    b.HasOne("Domain.Deputy.Deputy", "Deputy")
-                        .WithMany("Achievement")
-                        .HasForeignKey("DeputyId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Deputy");
-                });
-
-            modelBuilder.Entity("Domain.Deputy.ActitvitiesAndVisits", b =>
-                {
-                    b.HasOne("Domain.Deputy.Deputy", "Deputy")
-                        .WithMany("ActitvitiesAndVisits")
-                        .HasForeignKey("DeputyId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Deputy");
-                });
-
-            modelBuilder.Entity("Domain.Deputy.AreasOfWorkandActivities", b =>
-                {
-                    b.HasOne("Domain.Deputy.Deputy", "Deputy")
-                        .WithMany("AreasOfWorkandActivities")
-                        .HasForeignKey("DeputyId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Deputy");
-                });
-
-            modelBuilder.Entity("Domain.Deputy.DeputyWords", b =>
-                {
-                    b.HasOne("Domain.Deputy.Deputy", "Deputy")
-                        .WithMany("Words")
-                        .HasForeignKey("DeputyId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Deputy");
-                });
-
-            modelBuilder.Entity("Domain.Deputy.MotionsForInformation", b =>
-                {
-                    b.HasOne("Domain.Deputy.Deputy", "Deputy")
-                        .WithMany("MotionsForInformation")
-                        .HasForeignKey("DeputyId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Deputy");
-                });
-
             modelBuilder.Entity("Domain.Employee", b =>
                 {
                     b.HasOne("Domain.Department", "Department")
@@ -895,19 +815,6 @@ namespace Infrastructure.Migrations
                     b.Navigation("CitizinRequierments");
 
                     b.Navigation("Employees");
-                });
-
-            modelBuilder.Entity("Domain.Deputy.Deputy", b =>
-                {
-                    b.Navigation("Achievement");
-
-                    b.Navigation("ActitvitiesAndVisits");
-
-                    b.Navigation("AreasOfWorkandActivities");
-
-                    b.Navigation("MotionsForInformation");
-
-                    b.Navigation("Words");
                 });
 
             modelBuilder.Entity("Domain.Employee", b =>

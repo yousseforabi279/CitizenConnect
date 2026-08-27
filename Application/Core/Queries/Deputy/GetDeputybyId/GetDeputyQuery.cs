@@ -10,11 +10,5 @@ namespace Application.Core.Queries.Deputy.GetDeputybyId
 {
     public class GetDeputyQuery : IRequest<Result<DeputyResponse>>
     {
-        public int Id { get; set; }
-
-        public GetDeputyQuery(int id)
-        {
-            Id = id;
-        }
     }
 }

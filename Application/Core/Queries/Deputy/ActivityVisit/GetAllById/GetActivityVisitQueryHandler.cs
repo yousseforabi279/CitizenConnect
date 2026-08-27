@@ -36,12 +36,12 @@ namespace Application.Core.Queries.Deputy.ActivityVisit.GetAllById
             }
 
             // Make sure the activity belongs to this deputy
-            if (activity.DeputyId != request.DeputyId)
-            {
-                return Result<ActivityVisitResponse>.Failure(
-                    ResultStatus.NotFound,
-                    "النشاط أو الزيارة غير موجود لهذا النائب.");
-            }
+            //if (activity.DeputyId != request.DeputyId)
+            //{
+            //    return Result<ActivityVisitResponse>.Failure(
+            //        ResultStatus.NotFound,
+            //        "النشاط أو الزيارة غير موجود لهذا النائب.");
+            //}
 
             var response = new ActivityVisitResponse
             {

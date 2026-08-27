@@ -8,7 +8,6 @@ namespace Application.Core.Queries.Deputy.GetDeputybyId
 {
     public class DeputyResponse
     {
-        public int Id { get; set; }
 
         public string FullName { get; set; } = null!;
 

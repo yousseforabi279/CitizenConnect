@@ -14,8 +14,8 @@
         }
         public static class Deputy
         {
-            public const string Edit = "api/Deputy";
-            public const string GetDeputy = "api/Deputy/{id}";
+            public const string Edit = "api/HeroInfo";
+            public const string GetDeputy = "api/HeroInfo";
         
         }
         public static class Achievements

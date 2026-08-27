@@ -370,14 +370,14 @@
   {
     "ContainingType": "DeputyProject.Controllers.DeputyController",
     "Method": "UpdateDeputy",
-    "RelativePath": "api/Deputy/api/Deputy",
+    "RelativePath": "api/Deputy/api/HeroInfo",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "command",
-        "Type": "Application.Core.Commands.Deputy.EditDeputyInfo.UpdateDeputyCommand",
+        "Type": "Application.Core.Commands.LoadingPage.PersonalInfo.EditPersonalInfo.UpdateDeputyCommand",
         "IsRequired": true
       }
     ],
@@ -386,17 +386,11 @@
   {
     "ContainingType": "DeputyProject.Controllers.DeputyController",
     "Method": "CreateComplaint",
-    "RelativePath": "api/Deputy/api/Deputy/{id}",
+    "RelativePath": "api/Deputy/api/HeroInfo",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": []
   },
   {

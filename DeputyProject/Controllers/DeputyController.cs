@@ -1,6 +1,6 @@
 ﻿using Application.Core.Commands.CreateCompliant;
 using Application.Core.Commands.Deputy.achievements.CreateAchievement;
-using Application.Core.Commands.Deputy.EditDeputyInfo;
+using Application.Core.Commands.LoadingPage.PersonalInfo.EditPersonalInfo;
 using Application.Core.Queries.Deputy.GetDeputybyId;
 using Bank.Api.Controllers;
 using DeputyProject.Common;
@@ -23,9 +23,9 @@ namespace DeputyProject.Controllers
             return HandleResult(result);
         }
         [HttpGet(ApiRoutes.Deputy.GetDeputy)]
-        public async Task<IActionResult> CreateComplaint(int id)
+        public async Task<IActionResult> CreateComplaint()
         {
-            var result = await _mediator.Send(new GetDeputyQuery(id));
+            var result = await _mediator.Send(new GetDeputyQuery());
             return HandleResult(result);
         }
        
