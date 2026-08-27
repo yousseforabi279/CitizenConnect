@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\User\\source\\repos\\DeputyProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Migrations\\20260826130930_m12.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Infrastructure\\Migrations\\20260826130930_m12.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1E07B7EF-EEF0-4EB8-87EC-381DE36DFD5D}|Infrastructure\\Infrastructure.csproj|c:\\users\\user\\source\\repos\\deputyproject\\infrastructure\\migrations\\20260826130930_m12.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E07B7EF-EEF0-4EB8-87EC-381DE36DFD5D}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\migrations\\20260826130930_m12.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1E07B7EF-EEF0-4EB8-87EC-381DE36DFD5D}|Infrastructure\\Infrastructure.csproj|c:\\users\\user\\source\\repos\\deputyproject\\infrastructure\\implemenation\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -683,8 +683,7 @@
               "RelativeToolTip": "Application\\Core\\Commands\\Deputy\\EditDeputyInfo\\UpdateDeputyCommandHandler.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAAowCsAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T19:41:15.052Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-25T19:41:15.052Z"
             },
             {
               "$type": "Document",
@@ -696,8 +695,7 @@
               "RelativeToolTip": "Domain\\Deputy\\Deputy.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAAgwCEAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T19:15:51.562Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-25T19:15:51.562Z"
             },
             {
               "$type": "Document",
@@ -709,8 +707,7 @@
               "RelativeToolTip": "Application\\Core\\Queries\\Deputy\\AreaOfWork\\GetById\\GetAreaOfWorkQueryHandler.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAxwBsAAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T06:56:03.619Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-26T06:56:03.619Z"
             },
             {
               "$type": "Document",
@@ -722,8 +719,7 @@
               "RelativeToolTip": "Application\\Core\\Queries\\Deputy\\GetDeputybyId\\GetDeputyQueryHandler.cs",
               "ViewState": "AgIAABgAAAAAAAAAAAAowC8AAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T20:12:00.664Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-25T20:12:00.664Z"
             },
             {
               "$type": "Document",
@@ -735,8 +731,7 @@
               "RelativeToolTip": "Application\\Core\\Queries\\Deputy\\GetDeputybyId\\DeputyResponse.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAA5wB0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T20:12:00.109Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-25T20:12:00.109Z"
             },
             {
               "$type": "Document",
@@ -748,8 +743,7 @@
               "RelativeToolTip": "Application\\Core\\Queries\\Deputy\\GetDeputybyId\\GetDeputyQuery.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T20:12:00.363Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-25T20:12:00.363Z"
             },
             {
               "$type": "Document",
@@ -761,8 +755,7 @@
               "RelativeToolTip": "Infrastructure\\Implemenation\\AreasOfWorkandActivitiesRepo.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T06:35:09.232Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-26T06:35:09.232Z"
             },
             {
               "$type": "Document",
@@ -774,8 +767,7 @@
               "RelativeToolTip": "Infrastructure\\Implemenation\\UnitOfWork.cs",
               "ViewState": "AgIAAAQAAAAAAAAAAAAIwB0AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-20T05:55:40.613Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-20T05:55:40.613Z"
             },
             {
               "$type": "Document",
@@ -787,8 +779,7 @@
               "RelativeToolTip": "Application\\Core\\Commands\\Deputy\\EditDeputyInfo\\UpdateDeputyCommandValidator.cs",
               "ViewState": "AgIAADoAAAAAAAAAAAAgwCcAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T19:41:14.829Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-25T19:41:14.829Z"
             },
             {
               "$type": "Document",
@@ -800,8 +791,7 @@
               "RelativeToolTip": "Application\\Core\\Commands\\Deputy\\EditDeputyInfo\\UpdateDeputyCommand .cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAowCEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T19:41:14.569Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-25T19:41:14.569Z"
             },
             {
               "$type": "Document",
@@ -873,8 +863,7 @@
               "RelativeToolTip": "DeputyProject\\Common\\ApiRoutes.cs",
               "ViewState": "AgIAABEAAAAAAAAAAAAwwBYAAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-21T00:56:40.216Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-21T00:56:40.216Z"
             },
             {
               "$type": "Document",
@@ -2146,8 +2135,7 @@
               "RelativeToolTip": "Application\\Core\\Commands\\AddEmployee\\CreateEmployeeCommandHandler.cs",
               "ViewState": "AgIAADsAAAAAAAAAAAAiwE8AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-24T19:45:42.094Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-24T19:45:42.094Z"
             },
             {
               "$type": "Document",
