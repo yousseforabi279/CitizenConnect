@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\User\\source\\repos\\DeputyProject\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{7A3C3609-2C43-4DD0-9152-C8F69A238590}|DeputyProject\\DeputyProject.csproj|c:\\users\\user\\source\\repos\\deputyproject\\deputyproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A3C3609-2C43-4DD0-9152-C8F69A238590}|DeputyProject\\DeputyProject.csproj|solutionrelative:deputyproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A3C3609-2C43-4DD0-9152-C8F69A238590}|DeputyProject\\DeputyProject.csproj|c:\\users\\user\\source\\repos\\deputyproject\\deputyproject\\common\\apiroutes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A3C3609-2C43-4DD0-9152-C8F69A238590}|DeputyProject\\DeputyProject.csproj|solutionrelative:deputyproject\\common\\apiroutes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1E07B7EF-EEF0-4EB8-87EC-381DE36DFD5D}|Infrastructure\\Infrastructure.csproj|c:\\users\\user\\source\\repos\\deputyproject\\infrastructure\\migrations\\20260826130930_m12.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1E07B7EF-EEF0-4EB8-87EC-381DE36DFD5D}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\migrations\\20260826130930_m12.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -45,10 +53,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{65156606-C33B-4F70-8D6E-CCD034B42FCB}|Application\\Application.csproj|c:\\users\\user\\source\\repos\\deputyproject\\application\\core\\commands\\deputy\\editdeputyinfo\\updatedeputycommand .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{65156606-C33B-4F70-8D6E-CCD034B42FCB}|Application\\Application.csproj|solutionrelative:application\\core\\commands\\deputy\\editdeputyinfo\\updatedeputycommand .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7A3C3609-2C43-4DD0-9152-C8F69A238590}|DeputyProject\\DeputyProject.csproj|c:\\users\\user\\source\\repos\\deputyproject\\deputyproject\\common\\apiroutes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A3C3609-2C43-4DD0-9152-C8F69A238590}|DeputyProject\\DeputyProject.csproj|solutionrelative:deputyproject\\common\\apiroutes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7A3C3609-2C43-4DD0-9152-C8F69A238590}|DeputyProject\\DeputyProject.csproj|c:\\users\\user\\source\\repos\\deputyproject\\deputyproject\\controllers\\areasofworkandactivitiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -297,10 +301,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{65156606-C33B-4F70-8D6E-CCD034B42FCB}|Application\\Application.csproj|c:\\users\\user\\source\\repos\\deputyproject\\application\\core\\commands\\deputy\\achievements\\editachievement\\updateachievementcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{65156606-C33B-4F70-8D6E-CCD034B42FCB}|Application\\Application.csproj|solutionrelative:application\\core\\commands\\deputy\\achievements\\editachievement\\updateachievementcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7A3C3609-2C43-4DD0-9152-C8F69A238590}|DeputyProject\\DeputyProject.csproj|c:\\users\\user\\source\\repos\\deputyproject\\deputyproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A3C3609-2C43-4DD0-9152-C8F69A238590}|DeputyProject\\DeputyProject.csproj|solutionrelative:deputyproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7A3C3609-2C43-4DD0-9152-C8F69A238590}|DeputyProject\\DeputyProject.csproj|c:\\users\\user\\source\\repos\\deputyproject\\deputyproject\\common\\exceptionmiddlewareextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -654,7 +654,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -662,20 +662,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "20260826130930_m12.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Migrations\\20260826130930_m12.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20260826130930_m12.cs",
               "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Migrations\\20260826130930_m12.cs",
               "RelativeToolTip": "Infrastructure\\Migrations\\20260826130930_m12.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA0AAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-26T13:09:30.725Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "UpdateDeputyCommandHandler.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\Deputy\\EditDeputyInfo\\UpdateDeputyCommandHandler.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\Deputy\\EditDeputyInfo\\UpdateDeputyCommandHandler.cs",
@@ -687,7 +687,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "Deputy.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Domain\\Deputy\\Deputy.cs",
               "RelativeDocumentMoniker": "Domain\\Deputy\\Deputy.cs",
@@ -699,7 +699,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "GetAreaOfWorkQueryHandler.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\AreaOfWork\\GetById\\GetAreaOfWorkQueryHandler.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\AreaOfWork\\GetById\\GetAreaOfWorkQueryHandler.cs",
@@ -711,7 +711,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "GetDeputyQueryHandler.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\GetDeputybyId\\GetDeputyQueryHandler.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\GetDeputybyId\\GetDeputyQueryHandler.cs",
@@ -723,7 +723,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "DeputyResponse.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\GetDeputybyId\\DeputyResponse.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\GetDeputybyId\\DeputyResponse.cs",
@@ -735,7 +735,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
+              "Title": "ApiRoutes.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\Common\\ApiRoutes.cs",
+              "RelativeDocumentMoniker": "DeputyProject\\Common\\ApiRoutes.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\Common\\ApiRoutes.cs",
+              "RelativeToolTip": "DeputyProject\\Common\\ApiRoutes.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAgwBkAAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-21T00:56:40.216Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\Program.cs",
+              "RelativeDocumentMoniker": "DeputyProject\\Program.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\Program.cs",
+              "RelativeToolTip": "DeputyProject\\Program.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAiwBcAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-18T04:22:42.482Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "GetDeputyQuery.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\GetDeputybyId\\GetDeputyQuery.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\GetDeputybyId\\GetDeputyQuery.cs",
@@ -747,7 +773,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "AreasOfWorkandActivitiesRepo.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Implemenation\\AreasOfWorkandActivitiesRepo.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Implemenation\\AreasOfWorkandActivitiesRepo.cs",
@@ -759,7 +785,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "UnitOfWork.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Implemenation\\UnitOfWork.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Implemenation\\UnitOfWork.cs",
@@ -771,7 +797,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "UpdateDeputyCommandValidator.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\Deputy\\EditDeputyInfo\\UpdateDeputyCommandValidator.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\Deputy\\EditDeputyInfo\\UpdateDeputyCommandValidator.cs",
@@ -783,7 +809,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "UpdateDeputyCommand .cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\Deputy\\EditDeputyInfo\\UpdateDeputyCommand .cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\Deputy\\EditDeputyInfo\\UpdateDeputyCommand .cs",
@@ -795,7 +821,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "GetAllActivityVisitsQueryHandler.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\ActivityVisit\\GetAll\\GetAllActivityVisitsQueryHandler.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\ActivityVisit\\GetAll\\GetAllActivityVisitsQueryHandler.cs",
@@ -807,7 +833,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "GetAllAreasOfWorkQuery.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\AreaOfWork\\GetAll\\GetAllAreasOfWorkQuery.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\AreaOfWork\\GetAll\\GetAllAreasOfWorkQuery.cs",
@@ -819,7 +845,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "GetAllAreasOfWorkQueryValidator.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\AreaOfWork\\GetAll\\GetAllAreasOfWorkQueryValidator.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\AreaOfWork\\GetAll\\GetAllAreasOfWorkQueryValidator.cs",
@@ -831,7 +857,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "GetAllAreasOfWorkQueryHandler.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\AreaOfWork\\GetAll\\GetAllAreasOfWorkQueryHandler.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\AreaOfWork\\GetAll\\GetAllAreasOfWorkQueryHandler.cs",
@@ -843,7 +869,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "AreasOfWorkAndActivitiesController.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\Controllers\\AreasOfWorkAndActivitiesController.cs",
               "RelativeDocumentMoniker": "DeputyProject\\Controllers\\AreasOfWorkAndActivitiesController.cs",
@@ -855,19 +881,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ApiRoutes.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\Common\\ApiRoutes.cs",
-              "RelativeDocumentMoniker": "DeputyProject\\Common\\ApiRoutes.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\Common\\ApiRoutes.cs",
-              "RelativeToolTip": "DeputyProject\\Common\\ApiRoutes.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAwwBYAAABHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-21T00:56:40.216Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "IAreasOfWorkandActivities.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Contracts\\Repos\\IAreasOfWorkandActivities.cs",
               "RelativeDocumentMoniker": "Application\\Contracts\\Repos\\IAreasOfWorkandActivities.cs",
@@ -879,7 +893,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "GetAreaOfWorkQuery.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\AreaOfWork\\GetById\\GetAreaOfWorkQuery.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\AreaOfWork\\GetById\\GetAreaOfWorkQuery.cs",
@@ -891,7 +905,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "GetAreaOfWorkQueryValidator.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\AreaOfWork\\GetById\\GetAreaOfWorkQueryValidator.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\AreaOfWork\\GetById\\GetAreaOfWorkQueryValidator.cs",
@@ -903,7 +917,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "AreaOfWorkResponse.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\AreaOfWork\\GetById\\AreaOfWorkResponse.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\AreaOfWork\\GetById\\AreaOfWorkResponse.cs",
@@ -915,7 +929,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "DeleteAreaOfWorkCommandHandler.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\Deputy\\AreasOfWorkandActivities\\DeleteAreaOfWork\\DeleteAreaOfWorkCommandHandler.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\Deputy\\AreasOfWorkandActivities\\DeleteAreaOfWork\\DeleteAreaOfWorkCommandHandler.cs",
@@ -927,7 +941,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "DeleteAreaOfWorkCommandValidator.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\Deputy\\AreasOfWorkandActivities\\DeleteAreaOfWork\\DeleteAreaOfWorkCommandValidator.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\Deputy\\AreasOfWorkandActivities\\DeleteAreaOfWork\\DeleteAreaOfWorkCommandValidator.cs",
@@ -939,7 +953,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "DeleteAreaOfWorkCommand .cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\Deputy\\AreasOfWorkandActivities\\DeleteAreaOfWork\\DeleteAreaOfWorkCommand .cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\Deputy\\AreasOfWorkandActivities\\DeleteAreaOfWork\\DeleteAreaOfWorkCommand .cs",
@@ -951,7 +965,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "UpdateAreaOfWorkCommandHandler.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\Deputy\\AreasOfWorkandActivities\\EditAreaofWork\\UpdateAreaOfWorkCommandHandler.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\Deputy\\AreasOfWorkandActivities\\EditAreaofWork\\UpdateAreaOfWorkCommandHandler.cs",
@@ -963,7 +977,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "UpdateAreaOfWorkCommandValidator.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\Deputy\\AreasOfWorkandActivities\\EditAreaofWork\\UpdateAreaOfWorkCommandValidator.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\Deputy\\AreasOfWorkandActivities\\EditAreaofWork\\UpdateAreaOfWorkCommandValidator.cs",
@@ -975,7 +989,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "UpdateAreaOfWorkCommand .cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\Deputy\\AreasOfWorkandActivities\\EditAreaofWork\\UpdateAreaOfWorkCommand .cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\Deputy\\AreasOfWorkandActivities\\EditAreaofWork\\UpdateAreaOfWorkCommand .cs",
@@ -987,7 +1001,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "CreateAreaOfWorkCommandHandler.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\Deputy\\AreasOfWorkandActivities\\CreateAreaOfWork\\CreateAreaOfWorkCommandHandler.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\Deputy\\AreasOfWorkandActivities\\CreateAreaOfWork\\CreateAreaOfWorkCommandHandler.cs",
@@ -999,7 +1013,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 32,
               "Title": "ActitvitiesAndVisits.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Domain\\Deputy\\ActitvitiesAndVisits.cs",
               "RelativeDocumentMoniker": "Domain\\Deputy\\ActitvitiesAndVisits.cs",
@@ -1011,7 +1025,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "ActivityVisitController.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\Controllers\\ActivityVisitController.cs",
               "RelativeDocumentMoniker": "DeputyProject\\Controllers\\ActivityVisitController.cs",
@@ -1023,7 +1037,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "AuthenticationController.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\Controllers\\AuthenticationController.cs",
               "RelativeDocumentMoniker": "DeputyProject\\Controllers\\AuthenticationController.cs",
@@ -1035,7 +1049,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 33,
               "Title": "CreateAreaOfWorkCommandValidator.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\Deputy\\AreasOfWorkandActivities\\CreateAreaOfWork\\CreateAreaOfWorkCommandValidator.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\Deputy\\AreasOfWorkandActivities\\CreateAreaOfWork\\CreateAreaOfWorkCommandValidator.cs",
@@ -1047,7 +1061,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 34,
               "Title": "CreateAreaOfWorkCommand .cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\Deputy\\AreasOfWorkandActivities\\CreateAreaOfWork\\CreateAreaOfWorkCommand .cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\Deputy\\AreasOfWorkandActivities\\CreateAreaOfWork\\CreateAreaOfWorkCommand .cs",
@@ -1059,7 +1073,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 31,
               "Title": "AreasOfWorkandActivities.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Domain\\Deputy\\AreasOfWorkandActivities.cs",
               "RelativeDocumentMoniker": "Domain\\Deputy\\AreasOfWorkandActivities.cs",
@@ -1071,7 +1085,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 37,
               "Title": "ActitvitiesAndVisitsRepo.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Implemenation\\ActitvitiesAndVisitsRepo.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Implemenation\\ActitvitiesAndVisitsRepo.cs",
@@ -1083,7 +1097,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 35,
               "Title": "DI.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\DI.cs",
               "RelativeDocumentMoniker": "Infrastructure\\DI.cs",
@@ -1095,7 +1109,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 36,
               "Title": "AchievementRepo.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Implemenation\\AchievementRepo.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Implemenation\\AchievementRepo.cs",
@@ -1107,7 +1121,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 41,
               "Title": "GetAllActivityVisitsQuery.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\ActivityVisit\\GetAll\\GetAllActivityVisitsQuery.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\ActivityVisit\\GetAll\\GetAllActivityVisitsQuery.cs",
@@ -1119,7 +1133,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 39,
               "Title": "IActitvitiesAndVisits.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Contracts\\Repos\\IActitvitiesAndVisits.cs",
               "RelativeDocumentMoniker": "Application\\Contracts\\Repos\\IActitvitiesAndVisits.cs",
@@ -1131,7 +1145,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 38,
               "Title": "IUnitOfWork.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Contracts\\IUnitOfWork.cs",
               "RelativeDocumentMoniker": "Application\\Contracts\\IUnitOfWork.cs",
@@ -1143,7 +1157,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 40,
               "Title": "GetAllActivityVisitsQueryValidator.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\ActivityVisit\\GetAll\\GetAllActivityVisitsQueryValidator.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\ActivityVisit\\GetAll\\GetAllActivityVisitsQueryValidator.cs",
@@ -1155,7 +1169,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 42,
               "Title": "ActivityVisitResponse.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\ActivityVisit\\GetAll\\ActivityVisitResponse.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\ActivityVisit\\GetAll\\ActivityVisitResponse.cs",
@@ -1167,7 +1181,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 43,
               "Title": "GetActivityVisitQueryHandler.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\ActivityVisit\\GetAllById\\GetActivityVisitQueryHandler.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\ActivityVisit\\GetAllById\\GetActivityVisitQueryHandler.cs",
@@ -1179,7 +1193,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 44,
               "Title": "GetActivityVisitQueryValidator.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\ActivityVisit\\GetAllById\\GetActivityVisitQueryValidator.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\ActivityVisit\\GetAllById\\GetActivityVisitQueryValidator.cs",
@@ -1191,7 +1205,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 46,
               "Title": "GetActivityVisitQuery.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\ActivityVisit\\GetAllById\\GetActivityVisitQuery.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\ActivityVisit\\GetAllById\\GetActivityVisitQuery.cs",
@@ -1203,7 +1217,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 45,
               "Title": "ActivityVisitResponse.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\ActivityVisit\\GetAllById\\ActivityVisitResponse.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\ActivityVisit\\GetAllById\\ActivityVisitResponse.cs",
@@ -1215,7 +1229,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 47,
               "Title": "DeleteActivityVisitCommandHandler.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\Deputy\\ActivityVisit\\DeleteActivityVisit\\DeleteActivityVisitCommandHandler.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\Deputy\\ActivityVisit\\DeleteActivityVisit\\DeleteActivityVisitCommandHandler.cs",
@@ -1227,7 +1241,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 48,
               "Title": "DeleteActivityVisitCommandValidator.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\Deputy\\ActivityVisit\\DeleteActivityVisit\\DeleteActivityVisitCommandValidator.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\Deputy\\ActivityVisit\\DeleteActivityVisit\\DeleteActivityVisitCommandValidator.cs",
@@ -1239,7 +1253,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 49,
               "Title": "DeleteActivityVisitCommand.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\Deputy\\ActivityVisit\\DeleteActivityVisit\\DeleteActivityVisitCommand.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\Deputy\\ActivityVisit\\DeleteActivityVisit\\DeleteActivityVisitCommand.cs",
@@ -1251,7 +1265,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 52,
               "Title": "UpdateActivityVisitCommandHandler.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\Deputy\\ActivityVisit\\EditActivityVisit\\UpdateActivityVisitCommandHandler.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\Deputy\\ActivityVisit\\EditActivityVisit\\UpdateActivityVisitCommandHandler.cs",
@@ -1263,7 +1277,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 51,
               "Title": "UpdateActivityVisitCommand.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\Deputy\\ActivityVisit\\EditActivityVisit\\UpdateActivityVisitCommand.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\Deputy\\ActivityVisit\\EditActivityVisit\\UpdateActivityVisitCommand.cs",
@@ -1275,7 +1289,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 53,
               "Title": "UpdateActivityVisitCommandValidator.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\Deputy\\ActivityVisit\\EditActivityVisit\\UpdateActivityVisitCommandValidator.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\Deputy\\ActivityVisit\\EditActivityVisit\\UpdateActivityVisitCommandValidator.cs",
@@ -1287,7 +1301,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 54,
               "Title": "CreateActivityVisitCommand.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\Deputy\\ActivityVisit\\CreateActivityVisit\\CreateActivityVisitCommand.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\Deputy\\ActivityVisit\\CreateActivityVisit\\CreateActivityVisitCommand.cs",
@@ -1299,7 +1313,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 57,
               "Title": "CreateActivityVisitCommandValidator.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\Deputy\\ActivityVisit\\CreateActivityVisit\\CreateActivityVisitCommandValidator.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\Deputy\\ActivityVisit\\CreateActivityVisit\\CreateActivityVisitCommandValidator.cs",
@@ -1311,7 +1325,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 50,
               "Title": "CurrentUser.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\Common\\CurrentUser.cs",
               "RelativeDocumentMoniker": "DeputyProject\\Common\\CurrentUser.cs",
@@ -1323,7 +1337,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 56,
               "Title": "CreateActivityVisitCommandHandler.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\Deputy\\ActivityVisit\\CreateActivityVisit\\CreateActivityVisitCommandHandler.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\Deputy\\ActivityVisit\\CreateActivityVisit\\CreateActivityVisitCommandHandler.cs",
@@ -1335,7 +1349,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 55,
               "Title": "AchievementController.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\Controllers\\AchievementController.cs",
               "RelativeDocumentMoniker": "DeputyProject\\Controllers\\AchievementController.cs",
@@ -1347,7 +1361,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 61,
               "Title": "BaseController.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\Common\\BaseController.cs",
               "RelativeDocumentMoniker": "DeputyProject\\Common\\BaseController.cs",
@@ -1359,7 +1373,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 59,
               "Title": "Application.csproj",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Application.csproj",
               "RelativeDocumentMoniker": "Application\\Application.csproj",
@@ -1371,7 +1385,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 58,
               "Title": "DeputyController.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\Controllers\\DeputyController.cs",
               "RelativeDocumentMoniker": "DeputyProject\\Controllers\\DeputyController.cs",
@@ -1383,7 +1397,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 60,
               "Title": "DeleteAchievementCommandHandler.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\Deputy\\achievements\\DeleteAchievement\\DeleteAchievementCommandHandler.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\Deputy\\achievements\\DeleteAchievement\\DeleteAchievementCommandHandler.cs",
@@ -1395,7 +1409,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 62,
               "Title": "DeleteAchievementCommandValidator.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\Deputy\\achievements\\DeleteAchievement\\DeleteAchievementCommandValidator.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\Deputy\\achievements\\DeleteAchievement\\DeleteAchievementCommandValidator.cs",
@@ -1407,7 +1421,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 63,
               "Title": "DeleteAchievementCommand.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\Deputy\\achievements\\DeleteAchievement\\DeleteAchievementCommand.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\Deputy\\achievements\\DeleteAchievement\\DeleteAchievementCommand.cs",
@@ -1419,7 +1433,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 66,
+              "DocumentIndex": 67,
               "Title": "GetAllAchievementsQuery.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\Achievement\\GetAllAchievements\\GetAllAchievementsQuery.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\Achievement\\GetAllAchievements\\GetAllAchievementsQuery.cs",
@@ -1431,7 +1445,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 65,
+              "DocumentIndex": 66,
               "Title": "GetAllAchievementsQueryValidator.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\Achievement\\GetAllAchievements\\GetAllAchievementsQueryValidator.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\Achievement\\GetAllAchievements\\GetAllAchievementsQueryValidator.cs",
@@ -1443,7 +1457,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 64,
               "Title": "GetAllAchievementsQueryHandler.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\Achievement\\GetAllAchievements\\GetAllAchievementsQueryHandler.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\Achievement\\GetAllAchievements\\GetAllAchievementsQueryHandler.cs",
@@ -1455,7 +1469,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
+              "DocumentIndex": 65,
               "Title": "IAchievement.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Contracts\\Repos\\IAchievement.cs",
               "RelativeDocumentMoniker": "Application\\Contracts\\Repos\\IAchievement.cs",
@@ -1467,7 +1481,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
+              "DocumentIndex": 68,
               "Title": "GetAchievementQuery.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\Achievement\\GetAchievementById\\GetAchievementQuery.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\Achievement\\GetAchievementById\\GetAchievementQuery.cs",
@@ -1479,7 +1493,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 68,
+              "DocumentIndex": 69,
               "Title": "GetAchievementQueryHandler.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\Achievement\\GetAchievementById\\GetAchievementQueryHandler.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\Achievement\\GetAchievementById\\GetAchievementQueryHandler.cs",
@@ -1491,7 +1505,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 69,
+              "DocumentIndex": 70,
               "Title": "GetAchievementQueryValidator.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\Achievement\\GetAchievementById\\GetAchievementQueryValidator.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\Achievement\\GetAchievementById\\GetAchievementQueryValidator.cs",
@@ -1503,7 +1517,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 70,
+              "DocumentIndex": 71,
               "Title": "AchievementResponse.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\Achievement\\GetAchievementById\\AchievementResponse.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\Achievement\\GetAchievementById\\AchievementResponse.cs",
@@ -1515,7 +1529,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 72,
+              "DocumentIndex": 73,
               "Title": "UpdateAchievementCommandValidator.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\Deputy\\achievements\\EditAchievement\\UpdateAchievementCommandValidator.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\Deputy\\achievements\\EditAchievement\\UpdateAchievementCommandValidator.cs",
@@ -1527,7 +1541,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 73,
+              "DocumentIndex": 74,
               "Title": "UpdateAchievementCommandHandler.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\Deputy\\achievements\\EditAchievement\\UpdateAchievementCommandHandler.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\Deputy\\achievements\\EditAchievement\\UpdateAchievementCommandHandler.cs",
@@ -1539,7 +1553,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 71,
+              "DocumentIndex": 72,
               "Title": "UpdateAchievementCommand.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\Deputy\\achievements\\EditAchievement\\UpdateAchievementCommand.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\Deputy\\achievements\\EditAchievement\\UpdateAchievementCommand.cs",
@@ -1584,18 +1598,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-25T22:46:33.39Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 74,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\Program.cs",
-              "RelativeDocumentMoniker": "DeputyProject\\Program.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\Program.cs",
-              "RelativeToolTip": "DeputyProject\\Program.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAiwBIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-18T04:22:42.482Z"
             },
             {
               "$type": "Document",
@@ -2135,7 +2137,8 @@
               "RelativeToolTip": "Application\\Core\\Commands\\AddEmployee\\CreateEmployeeCommandHandler.cs",
               "ViewState": "AgIAADsAAAAAAAAAAAAiwE8AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-24T19:45:42.094Z"
+              "WhenOpened": "2026-08-24T19:45:42.094Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",

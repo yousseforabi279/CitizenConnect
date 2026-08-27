@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\User\\source\\repos\\DeputyProject\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{7A3C3609-2C43-4DD0-9152-C8F69A238590}|DeputyProject\\DeputyProject.csproj|c:\\users\\user\\source\\repos\\deputyproject\\deputyproject\\common\\apiroutes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A3C3609-2C43-4DD0-9152-C8F69A238590}|DeputyProject\\DeputyProject.csproj|solutionrelative:deputyproject\\common\\apiroutes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1E07B7EF-EEF0-4EB8-87EC-381DE36DFD5D}|Infrastructure\\Infrastructure.csproj|c:\\users\\user\\source\\repos\\deputyproject\\infrastructure\\migrations\\20260826130930_m12.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1E07B7EF-EEF0-4EB8-87EC-381DE36DFD5D}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\migrations\\20260826130930_m12.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -45,10 +49,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{65156606-C33B-4F70-8D6E-CCD034B42FCB}|Application\\Application.csproj|c:\\users\\user\\source\\repos\\deputyproject\\application\\core\\commands\\deputy\\editdeputyinfo\\updatedeputycommand .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{65156606-C33B-4F70-8D6E-CCD034B42FCB}|Application\\Application.csproj|solutionrelative:application\\core\\commands\\deputy\\editdeputyinfo\\updatedeputycommand .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7A3C3609-2C43-4DD0-9152-C8F69A238590}|DeputyProject\\DeputyProject.csproj|c:\\users\\user\\source\\repos\\deputyproject\\deputyproject\\common\\apiroutes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A3C3609-2C43-4DD0-9152-C8F69A238590}|DeputyProject\\DeputyProject.csproj|solutionrelative:deputyproject\\common\\apiroutes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7A3C3609-2C43-4DD0-9152-C8F69A238590}|DeputyProject\\DeputyProject.csproj|c:\\users\\user\\source\\repos\\deputyproject\\deputyproject\\controllers\\areasofworkandactivitiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -654,7 +654,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -662,20 +662,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "20260826130930_m12.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Migrations\\20260826130930_m12.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20260826130930_m12.cs",
               "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Migrations\\20260826130930_m12.cs",
               "RelativeToolTip": "Infrastructure\\Migrations\\20260826130930_m12.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA0AAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-26T13:09:30.725Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "UpdateDeputyCommandHandler.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\Deputy\\EditDeputyInfo\\UpdateDeputyCommandHandler.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\Deputy\\EditDeputyInfo\\UpdateDeputyCommandHandler.cs",
@@ -687,7 +687,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Deputy.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Domain\\Deputy\\Deputy.cs",
               "RelativeDocumentMoniker": "Domain\\Deputy\\Deputy.cs",
@@ -699,7 +699,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "GetAreaOfWorkQueryHandler.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\AreaOfWork\\GetById\\GetAreaOfWorkQueryHandler.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\AreaOfWork\\GetById\\GetAreaOfWorkQueryHandler.cs",
@@ -711,7 +711,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "GetDeputyQueryHandler.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\GetDeputybyId\\GetDeputyQueryHandler.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\GetDeputybyId\\GetDeputyQueryHandler.cs",
@@ -723,7 +723,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "DeputyResponse.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\GetDeputybyId\\DeputyResponse.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\GetDeputybyId\\DeputyResponse.cs",
@@ -735,7 +735,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
+              "Title": "ApiRoutes.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\Common\\ApiRoutes.cs",
+              "RelativeDocumentMoniker": "DeputyProject\\Common\\ApiRoutes.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\Common\\ApiRoutes.cs",
+              "RelativeToolTip": "DeputyProject\\Common\\ApiRoutes.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAgwBkAAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-21T00:56:40.216Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "GetDeputyQuery.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\GetDeputybyId\\GetDeputyQuery.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\GetDeputybyId\\GetDeputyQuery.cs",
@@ -747,7 +760,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "AreasOfWorkandActivitiesRepo.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Implemenation\\AreasOfWorkandActivitiesRepo.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Implemenation\\AreasOfWorkandActivitiesRepo.cs",
@@ -759,7 +772,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "UnitOfWork.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Implemenation\\UnitOfWork.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Implemenation\\UnitOfWork.cs",
@@ -771,7 +784,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "UpdateDeputyCommandValidator.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\Deputy\\EditDeputyInfo\\UpdateDeputyCommandValidator.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\Deputy\\EditDeputyInfo\\UpdateDeputyCommandValidator.cs",
@@ -783,7 +796,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "UpdateDeputyCommand .cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\Deputy\\EditDeputyInfo\\UpdateDeputyCommand .cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\Deputy\\EditDeputyInfo\\UpdateDeputyCommand .cs",
@@ -852,18 +865,6 @@
               "ViewState": "AgIAAC4AAAAAAAAAAAAkwEcAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-26T06:44:49.018Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ApiRoutes.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\Common\\ApiRoutes.cs",
-              "RelativeDocumentMoniker": "DeputyProject\\Common\\ApiRoutes.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\Common\\ApiRoutes.cs",
-              "RelativeToolTip": "DeputyProject\\Common\\ApiRoutes.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAwwBYAAABHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-21T00:56:40.216Z"
             },
             {
               "$type": "Document",
@@ -2135,7 +2136,8 @@
               "RelativeToolTip": "Application\\Core\\Commands\\AddEmployee\\CreateEmployeeCommandHandler.cs",
               "ViewState": "AgIAADsAAAAAAAAAAAAiwE8AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-24T19:45:42.094Z"
+              "WhenOpened": "2026-08-24T19:45:42.094Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
