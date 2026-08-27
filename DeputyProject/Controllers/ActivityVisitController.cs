@@ -17,64 +17,64 @@ namespace DeputyProject.Controllers
     public class ActivityVisitController : BaseController
     {
         public ActivityVisitController(IMediator _mediator) : base(_mediator) { }
-        [HttpPost(ApiRoutes.ActivitiesVisits.POST)]
-        public async Task<IActionResult> AddAchievement(CreateActivityVisitCommand command)
-        {
-            var result = await _mediator.Send(command);
-            return HandleResult(result);
-        }
-        [HttpPut(ApiRoutes.ActivitiesVisits.PUT)]
-        public async Task<IActionResult> UpdateActivityVisit(
-                                                    int deputyId,
-                                                    int activityId,
-                                                    UpdateActivityVisitCommand command)
-        {
-            command.DeputyId = deputyId;
-            command.ActivityVisitId = activityId;
+        //[HttpPost(ApiRoutes.ActivitiesVisits.POST)]
+        //public async Task<IActionResult> AddAchievement(CreateActivityVisitCommand command)
+        //{
+        //    var result = await _mediator.Send(command);
+        //    return HandleResult(result);
+        //}
+        //[HttpPut(ApiRoutes.ActivitiesVisits.PUT)]
+        //public async Task<IActionResult> UpdateActivityVisit(
+        //                                            int deputyId,
+        //                                            int activityId,
+        //                                            UpdateActivityVisitCommand command)
+        //{
+        //    command.DeputyId = deputyId;
+        //    command.ActivityVisitId = activityId;
 
-            var result = await _mediator.Send(command);
+        //    var result = await _mediator.Send(command);
 
-            return HandleResult(result);
-        }
+        //    return HandleResult(result);
+        //}
 
-        [HttpDelete(ApiRoutes.ActivitiesVisits.DELETE)]
-        public async Task<IActionResult> DeleteActivityVisit(
-                                                    int deputyId,
-                                                    int activityId)
-        {
-            var result = await _mediator.Send(
-                new DeleteActivityVisitCommand
-                {
-                    DeputyId = deputyId,
-                    ActivityVisitId = activityId
-                });
+        //[HttpDelete(ApiRoutes.ActivitiesVisits.DELETE)]
+        //public async Task<IActionResult> DeleteActivityVisit(
+        //                                            int deputyId,
+        //                                            int activityId)
+        //{
+        //    var result = await _mediator.Send(
+        //        new DeleteActivityVisitCommand
+        //        {
+        //            DeputyId = deputyId,
+        //            ActivityVisitId = activityId
+        //        });
 
-            return HandleResult(result);
-        }
-        [HttpGet(ApiRoutes.ActivitiesVisits.GETBYID)]
-        public async Task<IActionResult> GetActivityVisit(
-                            int deputyId,
-                            int activityId)
-        {
-            var result = await _mediator.Send(
-                new GetActivityVisitQuery
-                {
-                    DeputyId = deputyId,
-                    ActivityVisitId = activityId
-                });
+        //    return HandleResult(result);
+        //}
+        //[HttpGet(ApiRoutes.ActivitiesVisits.GETBYID)]
+        //public async Task<IActionResult> GetActivityVisit(
+        //                    int deputyId,
+        //                    int activityId)
+        //{
+        //    var result = await _mediator.Send(
+        //        new GetActivityVisitQuery
+        //        {
+        //            DeputyId = deputyId,
+        //            ActivityVisitId = activityId
+        //        });
 
-            return HandleResult(result);
-        }
-        [HttpGet(ApiRoutes.ActivitiesVisits.GETALL)]
-        public async Task<IActionResult> GetAllActivityVisits(int deputyId)
-        {
-            var result = await _mediator.Send(
-                new GetAllActivityVisitsQuery
-                {
-                    DeputyId = deputyId
-                });
+        //    return HandleResult(result);
+        //}
+        //[HttpGet(ApiRoutes.ActivitiesVisits.GETALL)]
+        //public async Task<IActionResult> GetAllActivityVisits(int deputyId)
+        //{
+        //    var result = await _mediator.Send(
+        //        new GetAllActivityVisitsQuery
+        //        {
+        //            DeputyId = deputyId
+        //        });
 
-            return HandleResult(result);
-        }
+        //    return HandleResult(result);
+        //}
     }
 }
