@@ -33,16 +33,7 @@ namespace Application.Core.Commands.Deputy.AreasOfWorkandActivities.DeleteAreaOf
                     "مجال العمل غير موجود.");
             }
 
-            // Make sure the area belongs to this Deputy
-            //if (area.DeputyId != request.DeputyId)
-            //{
-            //    return Result<int>.Failure(
-            //        ResultStatus.NotFound,
-            //        "مجال العمل غير موجود لهذا النائب.");
-            //}
-
             _unitOfWork.AreasOfWorkandActivities.Delete(area);
-
             await _unitOfWork.SaveChangesAsync();
 
             return Result<int>.Success(

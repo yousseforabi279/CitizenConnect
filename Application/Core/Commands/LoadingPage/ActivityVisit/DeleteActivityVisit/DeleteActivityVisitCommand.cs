@@ -10,8 +10,6 @@ namespace Application.Core.Commands.Deputy.ActivityVisit.DeleteActivityVisit
 {
     public class DeleteActivityVisitCommand : IRequest<Result<int>>
     {
-        public int DeputyId { get; set; }
-
         public int ActivityVisitId { get; set; }
     }
 }

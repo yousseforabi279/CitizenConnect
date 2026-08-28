@@ -25,21 +25,9 @@ namespace Application.Core.Queries.Deputy.ActivityVisit.GetAll
             GetAllActivityVisitsQuery request,
             CancellationToken cancellationToken)
         {
-            var deputy = await _unitOfWork.Deputy
-                .GetByIdAsync(request.DeputyId);
-
-            if (deputy is null)
-            {
-                return Result<List<ActivityVisitResponse>>.Failure(
-                    ResultStatus.NotFound,
-                    "النائب غير موجود.");
-            }
 
             var activities =
-                         await _unitOfWork.ActitvitiesAndVisits
-                             .GetByDeputyIdAsync(
-                                 request.DeputyId,
-                                 cancellationToken);
+                         await _unitOfWork.ActitvitiesAndVisits.GetAllAsync();
 
             var response = activities
                          .Select(x => new ActivityVisitResponse

@@ -10,8 +10,6 @@ namespace Application.Core.Commands.Deputy.achievements.EditAchievement
 {
     public class UpdateAchievementCommand : IRequest<Result<int>>
     {
-        public int DeputyId { get; set; }
-
         public int AchievementId { get; set; }
 
         public string Title { get; set; } = null!;

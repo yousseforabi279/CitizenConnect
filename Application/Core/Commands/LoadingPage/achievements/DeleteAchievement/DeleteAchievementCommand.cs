@@ -10,7 +10,6 @@ namespace Application.Core.Commands.Deputy.achievements.DeleteAchievement
 {
     public class DeleteAchievementCommand : IRequest<Result<int>>
     {
-        public int DeputyId { get; set; }
         public int AchievementId { get; set; }
     }
 }

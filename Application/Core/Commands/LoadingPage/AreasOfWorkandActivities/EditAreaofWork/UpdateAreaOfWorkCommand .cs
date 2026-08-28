@@ -10,8 +10,6 @@ namespace Application.Core.Commands.Deputy.AreasOfWorkandActivities.EditAreaofWo
 {
     public class UpdateAreaOfWorkCommand : IRequest<Result<int>>
     {
-        public int DeputyId { get; set; }
-
         public int AreaId { get; set; }
 
         public string Title { get; set; } = null!;

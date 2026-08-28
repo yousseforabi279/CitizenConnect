@@ -12,6 +12,5 @@ namespace Application.Core.Queries.Deputy.Achievement.GetAllAchievements
     public class GetAllAchievementsQuery
     : IRequest<Result<List<AchievementResponse>>>
     {
-        public int DeputyId { get; set; }
     }
 }

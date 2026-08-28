@@ -24,18 +24,8 @@ namespace Application.Core.Commands.Deputy.achievements.CreateAchievement
             CreateAchievementCommand request,
             CancellationToken cancellationToken)
         {
-            var deputy = await _unitOfWork.Deputy
-           .GetByIdAsync(request.DeputyId);
-
-            if (deputy is null)
-            {
-                return Result<int>.Failure(
-                    ResultStatus.NotFound,
-                    "النائب غير موجود.");
-            }
             var achievement = new Achievement
             {
-                //DeputyId = request.DeputyId,
                 Title = request.Title,
                 Description = request.Description,
                 Image = request.Image,

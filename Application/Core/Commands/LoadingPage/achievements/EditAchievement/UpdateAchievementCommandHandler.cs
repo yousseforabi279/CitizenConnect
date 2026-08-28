@@ -33,14 +33,6 @@ namespace Application.Core.Commands.Deputy.achievements.EditAchievement
                     "الإنجاز غير موجود.");
             }
 
-            // Make sure this achievement belongs to this deputy
-            //if (achievement.DeputyId != request.DeputyId)
-            //{
-            //    return Result<int>.Failure(
-            //        ResultStatus.NotFound,
-            //        "الإنجاز غير موجود لهذا النائب.");
-            //}
-
             achievement.Title = request.Title;
             achievement.Description = request.Description;
             achievement.Image = request.Image;

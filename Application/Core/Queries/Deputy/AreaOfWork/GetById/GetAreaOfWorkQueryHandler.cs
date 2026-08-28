@@ -35,14 +35,6 @@ namespace Application.Core.Queries.Deputy.AreaOfWork.GetById
                     "مجال العمل غير موجود.");
             }
 
-            // التأكد أن المجال تابع للنائب الموجود في الـ route
-            //if (area.DeputyId != request.DeputyId)
-            //{
-            //    return Result<AreaOfWorkResponse>.Failure(
-            //        ResultStatus.NotFound,
-            //        "مجال العمل غير موجود لهذا النائب.");
-            //}
-
             var response = new AreaOfWorkResponse
             {
                 Id = area.Id,

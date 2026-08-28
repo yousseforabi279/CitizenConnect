@@ -27,20 +27,9 @@ namespace Application.Core.Queries.Deputy.Achievement.GetAllAchievements
             GetAllAchievementsQuery request,
             CancellationToken cancellationToken)
         {
-            var deputy = await _unitOfWork.Deputy
-                .GetByIdAsync(request.DeputyId);
-
-            if (deputy is null)
-            {
-                return Result<List<AchievementResponse>>.Failure(
-                    ResultStatus.NotFound,
-                    "النائب غير موجود.");
-            }
 
             var achievements =
-                    await _unitOfWork.Achievement.GetByDeputyIdAsync(
-                        request.DeputyId,
-                        cancellationToken);
+                    await _unitOfWork.Achievement.GetAllAsync();
 
             var response = achievements
                     .Select(x => new AchievementResponse

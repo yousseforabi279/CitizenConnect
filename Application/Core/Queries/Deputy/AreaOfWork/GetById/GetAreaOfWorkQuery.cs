@@ -11,7 +11,6 @@ namespace Application.Core.Queries.Deputy.AreaOfWork.GetById
     public class GetAreaOfWorkQuery
      : IRequest<Result<AreaOfWorkResponse>>
     {
-        public int DeputyId { get; set; }
 
         public int AreaId { get; set; }
     }

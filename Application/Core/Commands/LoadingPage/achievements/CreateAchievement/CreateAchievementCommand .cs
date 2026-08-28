@@ -10,7 +10,6 @@ namespace Application.Core.Commands.Deputy.achievements.CreateAchievement
 {
     public class CreateAchievementCommand : IRequest<Result<int>>
     {
-        public int DeputyId { get; set; }
 
         public string Title { get; set; } = null!;
 

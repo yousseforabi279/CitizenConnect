@@ -11,9 +11,6 @@ namespace Application.Core.Commands.Deputy.achievements.EditAchievement
     {
         public UpdateAchievementCommandValidator()
         {
-            RuleFor(x => x.DeputyId)
-                .GreaterThan(0)
-                .WithMessage("النائب غير صحيح.");
 
             RuleFor(x => x.AchievementId)
                 .GreaterThan(0)

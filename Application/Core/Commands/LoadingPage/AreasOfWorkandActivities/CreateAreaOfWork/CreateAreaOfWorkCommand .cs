@@ -10,8 +10,6 @@ namespace Application.Core.Commands.Deputy.AreasOfWorkandActivities.CreateAreaOf
 {
     public class CreateAreaOfWorkCommand : IRequest<Result<int>>
     {
-        public int DeputyId { get; set; }
-
         public string Title { get; set; } = null!;
 
         public string Description { get; set; } = null!;

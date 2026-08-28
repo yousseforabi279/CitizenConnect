@@ -33,14 +33,6 @@ namespace Application.Core.Commands.Deputy.AreasOfWorkandActivities.EditAreaofWo
                     "مجال العمل غير موجود.");
             }
 
-            // Make sure this area belongs to this Deputy
-            //if (area.DeputyId != request.DeputyId)
-            //{
-            //    return Result<int>.Failure(
-            //        ResultStatus.NotFound,
-            //        "مجال العمل غير موجود لهذا النائب.");
-            //}
-
             area.Title = request.Title;
             area.Description = request.Description;
             area.Image = request.Image;

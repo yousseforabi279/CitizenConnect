@@ -11,6 +11,5 @@ namespace Application.Core.Queries.Deputy.ActivityVisit.GetAll
     public class GetAllActivityVisitsQuery
      : IRequest<Result<List<ActivityVisitResponse>>>
     {
-        public int DeputyId { get; set; }
     }
 }

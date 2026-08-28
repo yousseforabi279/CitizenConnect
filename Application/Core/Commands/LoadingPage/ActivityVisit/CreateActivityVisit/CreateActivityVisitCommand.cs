@@ -10,8 +10,6 @@ namespace Application.Core.Commands.Deputy.ActivityVisit.CreateActivityVisit
 {
     public class CreateActivityVisitCommand : IRequest<Result<int>>
     {
-        public int DeputyId { get; set; }
-
         public string? Title { get; set; }
 
         public string? Description { get; set; }

@@ -10,8 +10,6 @@ namespace Application.Core.Commands.Deputy.ActivityVisit.EditActivityVisit
 {
     public class UpdateActivityVisitCommand : IRequest<Result<int>>
     {
-        public int DeputyId { get; set; }
-
         public int ActivityVisitId { get; set; }
 
         public string? Title { get; set; }

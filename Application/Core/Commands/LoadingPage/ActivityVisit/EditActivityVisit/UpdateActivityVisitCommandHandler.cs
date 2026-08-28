@@ -33,14 +33,6 @@ namespace Application.Core.Commands.Deputy.ActivityVisit.EditActivityVisit
                     "النشاط أو الزيارة غير موجود.");
             }
 
-            // Make sure this activity belongs to this deputy
-            //if (activity.DeputyId != request.DeputyId)
-            //{
-            //    return Result<int>.Failure(
-            //        ResultStatus.NotFound,
-            //        "النشاط أو الزيارة غير موجود لهذا النائب.");
-            //}
-
             activity.Title = request.Title;
             activity.Description = request.Description;
             activity.Image_Video = request.Image_Video;

@@ -16,54 +16,51 @@ namespace DeputyProject.Controllers
     public class AchievementController : BaseController
     {
         public AchievementController(IMediator _mediator) : base(_mediator) { }
-        //[HttpPost(ApiRoutes.Achievements.CreateAchievement)]
-        //public async Task<IActionResult> AddAchievement(CreateAchievementCommand command)
-        //{
-        //    var result = await _mediator.Send(command);
-        //    return HandleResult(result);
-        //}
-        //[HttpPut(ApiRoutes.Achievements.EditAchivement)]
-        //public async Task<IActionResult> UpdateAchievement(int achievementId,
-        //                                                 UpdateAchievementCommand command)
-        //{
-        //    command.AchievementId = achievementId;
-        //    var result = await _mediator.Send(command);
-        //    return HandleResult(result);
-        //}
-        //[HttpGet(ApiRoutes.Achievements.GetAchievementById)]
-        //public async Task<IActionResult> GetAchievement(int deputyId,int achievementId)
-        //{
-        //    var result = await _mediator.Send(
-        //        new GetAchievementQuery
-        //        {
-        //            DeputyId = deputyId,
-        //            AchievementId = achievementId
-        //        });
-        //    return HandleResult(result);
-        //}
-        //[HttpGet(ApiRoutes.Achievements.GetAllAchievements)]
-        //public async Task<IActionResult> GetAllAchievements(int deputyId)
-        //{
-        //    var result = await _mediator.Send(
-        //        new GetAllAchievementsQuery
-        //        {
-        //            DeputyId = deputyId
-        //        });
+        [HttpGet(ApiRoutes.Achievements.GetAllAchievements)]
+        public async Task<IActionResult> GetAllAchievements()
+        {
+            var result = await _mediator.Send(
+                new GetAllAchievementsQuery());
 
-        //    return HandleResult(result);
-        //}
-        //[HttpDelete(ApiRoutes.Achievements.DeleteAchievements)]
-        //public async Task<IActionResult> DeleteAchievement(int deputyId,int achievementId)
-        //{
-        //    var result = await _mediator.Send(
-        //        new DeleteAchievementCommand
-        //        {
-        //            DeputyId = deputyId,
-        //            AchievementId = achievementId
-        //        });
+            return HandleResult(result);
+        }
 
-        //    return HandleResult(result);
-        //}
+        [HttpGet(ApiRoutes.Achievements.GetAchievementById)]
+        public async Task<IActionResult> GetAchievement(int achievementId)
+        {
+            var result = await _mediator.Send(
+                new GetAchievementQuery
+                {
+                    AchievementId = achievementId
+                });
+            return HandleResult(result);
+        }
+        [HttpPost(ApiRoutes.Achievements.CreateAchievement)]
+        public async Task<IActionResult> AddAchievement(CreateAchievementCommand command)
+        {
+            var result = await _mediator.Send(command);
+            return HandleResult(result);
+        }
+        [HttpPut(ApiRoutes.Achievements.EditAchivement)]
+        public async Task<IActionResult> UpdateAchievement(int AchievementId,
+                                                         UpdateAchievementCommand command)
+        {
+            command.AchievementId = AchievementId;
+            var result = await _mediator.Send(command);
+            return HandleResult(result);
+        }
+      
+        [HttpDelete(ApiRoutes.Achievements.DeleteAchievements)]
+        public async Task<IActionResult> DeleteAchievement(int AchievementId)
+        {
+            var result = await _mediator.Send(
+                new DeleteAchievementCommand
+                {
+                    AchievementId = AchievementId
+                });
+
+            return HandleResult(result);
+        }
 
     }
 }

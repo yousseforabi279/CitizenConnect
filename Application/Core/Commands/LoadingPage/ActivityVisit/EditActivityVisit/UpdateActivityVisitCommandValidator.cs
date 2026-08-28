@@ -12,9 +12,6 @@ namespace Application.Core.Commands.Deputy.ActivityVisit.EditActivityVisit
     {
         public UpdateActivityVisitCommandValidator()
         {
-            RuleFor(x => x.DeputyId)
-                .GreaterThan(0)
-                .WithMessage("النائب غير صحيح.");
 
             RuleFor(x => x.ActivityVisitId)
                 .GreaterThan(0)

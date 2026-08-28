@@ -10,8 +10,6 @@ namespace Application.Core.Commands.Deputy.AreasOfWorkandActivities.DeleteAreaOf
 {
     public class DeleteAreaOfWorkCommand : IRequest<Result<int>>
     {
-        public int DeputyId { get; set; }
-
         public int AreaId { get; set; }
     }
 }

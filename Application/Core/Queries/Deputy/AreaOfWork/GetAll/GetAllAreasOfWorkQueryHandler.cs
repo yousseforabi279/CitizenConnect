@@ -26,21 +26,8 @@ namespace Application.Core.Queries.Deputy.AreaOfWork.GetAll
             GetAllAreasOfWorkQuery request,
             CancellationToken cancellationToken)
         {
-            var deputy = await _unitOfWork.Deputy
-                .GetByIdAsync(request.DeputyId);
 
-            if (deputy is null)
-            {
-                return Result<List<AreaOfWorkResponse>>.Failure(
-                    ResultStatus.NotFound,
-                    "النائب غير موجود.");
-            }
-
-            var areas =
-                    await _unitOfWork.AreasOfWorkandActivities
-                        .GetByDeputyIdAsync(
-                            request.DeputyId,
-                            cancellationToken);
+            var areas = await _unitOfWork.AreasOfWorkandActivities.GetAllAsync();
 
             var response = areas
                 .Select(x => new AreaOfWorkResponse

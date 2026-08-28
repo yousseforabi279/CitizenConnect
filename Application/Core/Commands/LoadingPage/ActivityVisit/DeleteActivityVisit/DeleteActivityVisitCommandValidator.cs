@@ -12,10 +12,6 @@ namespace Application.Core.Commands.Deputy.ActivityVisit.DeleteActivityVisit
     {
         public DeleteActivityVisitCommandValidator()
         {
-            RuleFor(x => x.DeputyId)
-                .GreaterThan(0)
-                .WithMessage("النائب غير صحيح.");
-
             RuleFor(x => x.ActivityVisitId)
                 .GreaterThan(0)
                 .WithMessage("النشاط أو الزيارة غير صحيح.");

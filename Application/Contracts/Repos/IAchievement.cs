@@ -9,8 +9,5 @@ namespace Application.Contracts.Repos
 {
     public interface IAchievement :IGenericRepository<Achievement>
     {
-        Task<List<Achievement>> GetByDeputyIdAsync(
-        int deputyId,
-        CancellationToken cancellationToken);
     }
 }

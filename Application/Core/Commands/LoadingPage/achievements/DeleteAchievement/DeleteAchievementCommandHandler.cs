@@ -33,16 +33,7 @@ namespace Application.Core.Commands.Deputy.achievements.DeleteAchievement
                     "الإنجاز غير موجود.");
             }
 
-            // Make sure the achievement belongs to this deputy
-            //if (achievement.DeputyId != request.DeputyId)
-            //{
-            //    return Result<int>.Failure(
-            //        ResultStatus.NotFound,
-            //        "الإنجاز غير موجود لهذا النائب.");
-            //}
-
             _unitOfWork.Achievement.Delete(achievement);
-
             await _unitOfWork.SaveChangesAsync();
 
             return Result<int>.Success(

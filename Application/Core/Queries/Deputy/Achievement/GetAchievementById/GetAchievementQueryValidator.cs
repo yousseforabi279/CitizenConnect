@@ -12,9 +12,6 @@ namespace Application.Core.Queries.Deputy.Achievement.GetAchievementById
     {
         public GetAchievementQueryValidator()
         {
-            RuleFor(x => x.DeputyId)
-                .GreaterThan(0)
-                .WithMessage("النائب غير صحيح.");
 
             RuleFor(x => x.AchievementId)
                 .GreaterThan(0)

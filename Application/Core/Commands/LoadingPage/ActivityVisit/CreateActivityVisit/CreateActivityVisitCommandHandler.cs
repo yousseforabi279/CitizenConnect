@@ -24,25 +24,15 @@ namespace Application.Core.Commands.Deputy.ActivityVisit.CreateActivityVisit
             CreateActivityVisitCommand request,
             CancellationToken cancellationToken)
         {
-            var deputy = await _unitOfWork.Deputy
-                .GetByIdAsync(request.DeputyId);
-
-            if (deputy is null)
+           
+            var activity = new ActitvitiesAndVisits
             {
-                return Result<int>.Failure(
-                    ResultStatus.NotFound,
-                    "النائب غير موجود.");
-            }
-
-            //var activity = new ActitvitiesAndVisits
-            //{
-            //    DeputyId = request.DeputyId,
-            //    Title = request.Title,
-            //    Description = request.Description,
-            //    Image_Video = request.Image_Video,
-            //    Location = request.Location,
-            //    Date = request.Date
-            //};
+                Title = request.Title,
+                Description = request.Description,
+                Image_Video = request.Image_Video,
+                Location = request.Location,
+                Date = request.Date
+            };
 
             //await _unitOfWork.ActitvitiesAndVisits.AddAsync(activity);
 

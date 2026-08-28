@@ -18,13 +18,6 @@ namespace Infrastructure.Implemenation
         {
             _context = context;
         }
-        public async Task<List<Achievement>> GetByDeputyIdAsync(
-                int deputyId,
-                CancellationToken cancellationToken)
-        {
-            return await _context.Achievements
-                //.Where(x => x.DeputyId == deputyId)
-                .ToListAsync(cancellationToken);
-        }
+
     }
 }

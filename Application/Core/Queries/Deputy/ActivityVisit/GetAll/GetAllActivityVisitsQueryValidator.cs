@@ -12,9 +12,6 @@ namespace Application.Core.Queries.Deputy.ActivityVisit.GetAll
     {
         public GetAllActivityVisitsQueryValidator()
         {
-            RuleFor(x => x.DeputyId)
-                .GreaterThan(0)
-                .WithMessage("النائب غير صحيح.");
         }
     }
 }

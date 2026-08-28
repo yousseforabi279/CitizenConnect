@@ -12,9 +12,6 @@ namespace Application.Core.Commands.Deputy.achievements.CreateAchievement
     {
         public CreateAchievementCommandValidator()
         {
-            RuleFor(x => x.DeputyId)
-                .GreaterThan(0)
-                .WithMessage("النائب غير صحيح.");
 
             RuleFor(x => x.Title)
                 .NotEmpty()

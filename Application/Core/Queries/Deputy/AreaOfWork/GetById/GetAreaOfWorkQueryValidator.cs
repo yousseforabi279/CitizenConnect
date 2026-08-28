@@ -12,9 +12,6 @@ namespace Application.Core.Queries.Deputy.AreaOfWork.GetById
     {
         public GetAreaOfWorkQueryValidator()
         {
-            RuleFor(x => x.DeputyId)
-                .GreaterThan(0)
-                .WithMessage("النائب غير صحيح.");
 
             RuleFor(x => x.AreaId)
                 .GreaterThan(0)

@@ -12,10 +12,6 @@ namespace Application.Core.Commands.Deputy.ActivityVisit.CreateActivityVisit
     {
         public CreateActivityVisitCommandValidator()
         {
-            RuleFor(x => x.DeputyId)
-                .GreaterThan(0)
-                .WithMessage("النائب غير صحيح.");
-
             RuleFor(x => x.Title)
                 .MaximumLength(200)
                 .WithMessage("عنوان النشاط لا يمكن أن يتجاوز 200 حرف.")

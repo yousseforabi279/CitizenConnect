@@ -36,14 +36,6 @@ namespace Application.Core.Commands.Deputy.ActivityVisit.DeleteActivityVisit
                     "النشاط أو الزيارة غير موجود.");
             }
 
-            // Make sure it belongs to this deputy
-            //if (activity.DeputyId != request.DeputyId)
-            //{
-            //    return Result<int>.Failure(
-            //        ResultStatus.NotFound,
-            //        "النشاط أو الزيارة غير موجود لهذا النائب.");
-            //}
-
             _unitOfWork.ActitvitiesAndVisits.Delete(activity);
 
             await _unitOfWork.SaveChangesAsync();

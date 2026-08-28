@@ -24,19 +24,8 @@ namespace Application.Core.Commands.Deputy.AreasOfWorkandActivities.CreateAreaOf
             CreateAreaOfWorkCommand request,
             CancellationToken cancellationToken)
         {
-            var deputy = await _unitOfWork.Deputy
-                .GetByIdAsync(request.DeputyId);
-
-            if (deputy is null)
-            {
-                return Result<int>.Failure(
-                    ResultStatus.NotFound,
-                    "النائب غير موجود.");
-            }
-
             var area = new Domain.Deputy.AreasOfWorkandActivities
             {
-                //DeputyId = request.DeputyId,
                 Title = request.Title,
                 Description = request.Description,
                 Image = request.Image
