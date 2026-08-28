@@ -2,7 +2,7 @@
   {
     "ContainingType": "DeputyProject.Controllers.AchievementController",
     "Method": "GetAllAchievements",
-    "RelativePath": "api/Achievement/api/achievements",
+    "RelativePath": "api/achievements",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -73,6 +73,174 @@
       {
         "Name": "AchievementId",
         "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DeputyProject.Controllers.ActivityVisitController",
+    "Method": "GetAllActivityVisits",
+    "RelativePath": "api/activities-visits",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DeputyProject.Controllers.ActivityVisitController",
+    "Method": "AddAchievement",
+    "RelativePath": "api/activities-visits",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "Application.Core.Commands.Deputy.ActivityVisit.CreateActivityVisit.CreateActivityVisitCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DeputyProject.Controllers.ActivityVisitController",
+    "Method": "GetActivityVisit",
+    "RelativePath": "api/activities-visits/{ActivityVisitId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "activityId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "ActivityVisitId",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DeputyProject.Controllers.ActivityVisitController",
+    "Method": "UpdateActivityVisit",
+    "RelativePath": "api/activities-visits/{ActivityVisitId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ActivityVisitId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "command",
+        "Type": "Application.Core.Commands.Deputy.ActivityVisit.EditActivityVisit.UpdateActivityVisitCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DeputyProject.Controllers.ActivityVisitController",
+    "Method": "DeleteActivityVisit",
+    "RelativePath": "api/activities-visits/{ActivityVisitId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ActivityVisitId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DeputyProject.Controllers.AreasOfWorkAndActivitiesController",
+    "Method": "GetAllAreasOfWork",
+    "RelativePath": "api/areas-of-work",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DeputyProject.Controllers.AreasOfWorkAndActivitiesController",
+    "Method": "CreateAreaOfWork",
+    "RelativePath": "api/areas-of-work",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "Application.Core.Commands.Deputy.AreasOfWorkandActivities.CreateAreaOfWork.CreateAreaOfWorkCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DeputyProject.Controllers.AreasOfWorkAndActivitiesController",
+    "Method": "GetAreaOfWork",
+    "RelativePath": "api/areas-of-work/{areaId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "areaId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DeputyProject.Controllers.AreasOfWorkAndActivitiesController",
+    "Method": "UpdateAreaOfWork",
+    "RelativePath": "api/areas-of-work/{areaId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "areaId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "command",
+        "Type": "Application.Core.Commands.Deputy.AreasOfWorkandActivities.EditAreaofWork.UpdateAreaOfWorkCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DeputyProject.Controllers.AreasOfWorkAndActivitiesController",
+    "Method": "DeleteAreaOfWork",
+    "RelativePath": "api/areas-of-work/{reaId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "areaId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "reaId",
+        "Type": "",
         "IsRequired": true
       }
     ],

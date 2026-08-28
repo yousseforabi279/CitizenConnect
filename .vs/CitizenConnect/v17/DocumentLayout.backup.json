@@ -3,6 +3,34 @@
   "WorkspaceRootPath": "C:\\Users\\User\\source\\repos\\DeputyProject\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{7A3C3609-2C43-4DD0-9152-C8F69A238590}|DeputyProject\\DeputyProject.csproj|c:\\users\\user\\source\\repos\\deputyproject\\deputyproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A3C3609-2C43-4DD0-9152-C8F69A238590}|DeputyProject\\DeputyProject.csproj|solutionrelative:deputyproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E07B7EF-EEF0-4EB8-87EC-381DE36DFD5D}|Infrastructure\\Infrastructure.csproj|c:\\users\\user\\source\\repos\\deputyproject\\infrastructure\\dbcontext\\appcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E07B7EF-EEF0-4EB8-87EC-381DE36DFD5D}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\dbcontext\\appcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A3C3609-2C43-4DD0-9152-C8F69A238590}|DeputyProject\\DeputyProject.csproj|c:\\users\\user\\source\\repos\\deputyproject\\deputyproject\\appsettings.production.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{7A3C3609-2C43-4DD0-9152-C8F69A238590}|DeputyProject\\DeputyProject.csproj|solutionrelative:deputyproject\\appsettings.production.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A3C3609-2C43-4DD0-9152-C8F69A238590}|DeputyProject\\DeputyProject.csproj|c:\\users\\user\\source\\repos\\deputyproject\\deputyproject\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{7A3C3609-2C43-4DD0-9152-C8F69A238590}|DeputyProject\\DeputyProject.csproj|solutionrelative:deputyproject\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E07B7EF-EEF0-4EB8-87EC-381DE36DFD5D}|Infrastructure\\Infrastructure.csproj|c:\\users\\user\\source\\repos\\deputyproject\\infrastructure\\di.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E07B7EF-EEF0-4EB8-87EC-381DE36DFD5D}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\di.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A3C3609-2C43-4DD0-9152-C8F69A238590}|DeputyProject\\DeputyProject.csproj|c:\\users\\user\\source\\repos\\deputyproject\\deputyproject\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{7A3C3609-2C43-4DD0-9152-C8F69A238590}|DeputyProject\\DeputyProject.csproj|solutionrelative:deputyproject\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A3C3609-2C43-4DD0-9152-C8F69A238590}|DeputyProject\\DeputyProject.csproj|c:\\users\\user\\source\\repos\\deputyproject\\deputyproject\\deputyproject.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{7A3C3609-2C43-4DD0-9152-C8F69A238590}|DeputyProject\\DeputyProject.csproj|solutionrelative:deputyproject\\deputyproject.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E2C2D003-89F9-4739-9D70-A90A29382DF4}|Domain\\Domain.csproj|c:\\users\\user\\source\\repos\\deputyproject\\domain\\deputy\\actitvitiesandvisits.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E2C2D003-89F9-4739-9D70-A90A29382DF4}|Domain\\Domain.csproj|solutionrelative:domain\\deputy\\actitvitiesandvisits.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -163,10 +191,6 @@
       "RelativeMoniker": "D:0:0:{7A3C3609-2C43-4DD0-9152-C8F69A238590}|DeputyProject\\DeputyProject.csproj|solutionrelative:deputyproject\\controllers\\achievementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A3C3609-2C43-4DD0-9152-C8F69A238590}|DeputyProject\\DeputyProject.csproj|c:\\users\\user\\source\\repos\\deputyproject\\deputyproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A3C3609-2C43-4DD0-9152-C8F69A238590}|DeputyProject\\DeputyProject.csproj|solutionrelative:deputyproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{65156606-C33B-4F70-8D6E-CCD034B42FCB}|Application\\Application.csproj|c:\\users\\user\\source\\repos\\deputyproject\\application\\core\\queries\\deputy\\achievement\\getallachievements\\getallachievementsqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{65156606-C33B-4F70-8D6E-CCD034B42FCB}|Application\\Application.csproj|solutionrelative:application\\core\\queries\\deputy\\achievement\\getallachievements\\getallachievementsqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -323,10 +347,6 @@
       "RelativeMoniker": "D:0:0:{65156606-C33B-4F70-8D6E-CCD034B42FCB}|Application\\Application.csproj|solutionrelative:application\\contracts\\repos\\iareasofworkandactivities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E07B7EF-EEF0-4EB8-87EC-381DE36DFD5D}|Infrastructure\\Infrastructure.csproj|c:\\users\\user\\source\\repos\\deputyproject\\infrastructure\\di.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1E07B7EF-EEF0-4EB8-87EC-381DE36DFD5D}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\di.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{65156606-C33B-4F70-8D6E-CCD034B42FCB}|Application\\Application.csproj|c:\\users\\user\\source\\repos\\deputyproject\\application\\contracts\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{65156606-C33B-4F70-8D6E-CCD034B42FCB}|Application\\Application.csproj|solutionrelative:application\\contracts\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -365,10 +385,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{65156606-C33B-4F70-8D6E-CCD034B42FCB}|Application\\Application.csproj|c:\\users\\user\\source\\repos\\deputyproject\\application\\contracts\\repos\\icitizin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{65156606-C33B-4F70-8D6E-CCD034B42FCB}|Application\\Application.csproj|solutionrelative:application\\contracts\\repos\\icitizin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1E07B7EF-EEF0-4EB8-87EC-381DE36DFD5D}|Infrastructure\\Infrastructure.csproj|c:\\users\\user\\source\\repos\\deputyproject\\infrastructure\\dbcontext\\appcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1E07B7EF-EEF0-4EB8-87EC-381DE36DFD5D}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\dbcontext\\appcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7A3C3609-2C43-4DD0-9152-C8F69A238590}|DeputyProject\\DeputyProject.csproj|c:\\users\\user\\source\\repos\\deputyproject\\deputyproject\\common\\resultresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -473,10 +489,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{1E07B7EF-EEF0-4EB8-87EC-381DE36DFD5D}|Infrastructure\\Infrastructure.csproj|c:\\users\\user\\source\\repos\\deputyproject\\infrastructure\\implemenation\\jwttokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1E07B7EF-EEF0-4EB8-87EC-381DE36DFD5D}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\implemenation\\jwttokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7A3C3609-2C43-4DD0-9152-C8F69A238590}|DeputyProject\\DeputyProject.csproj|c:\\users\\user\\source\\repos\\deputyproject\\deputyproject\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{7A3C3609-2C43-4DD0-9152-C8F69A238590}|DeputyProject\\DeputyProject.csproj|solutionrelative:deputyproject\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{65156606-C33B-4F70-8D6E-CCD034B42FCB}|Application\\Application.csproj|c:\\users\\user\\source\\repos\\deputyproject\\application\\core\\commands\\addemployee\\createemployeecommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -666,59 +678,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "GetAllAreasOfWorkQueryHandler.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\AreaOfWork\\GetAll\\GetAllAreasOfWorkQueryHandler.cs",
-              "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\AreaOfWork\\GetAll\\GetAllAreasOfWorkQueryHandler.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\AreaOfWork\\GetAll\\GetAllAreasOfWorkQueryHandler.cs",
-              "RelativeToolTip": "Application\\Core\\Queries\\Deputy\\AreaOfWork\\GetAll\\GetAllAreasOfWorkQueryHandler.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAkwB0AAABRAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T06:58:05.761Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "GetAreaOfWorkQueryValidator.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\AreaOfWork\\GetById\\GetAreaOfWorkQueryValidator.cs",
-              "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\AreaOfWork\\GetById\\GetAreaOfWorkQueryValidator.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\AreaOfWork\\GetById\\GetAreaOfWorkQueryValidator.cs",
-              "RelativeToolTip": "Application\\Core\\Queries\\Deputy\\AreaOfWork\\GetById\\GetAreaOfWorkQueryValidator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T06:56:03.358Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "ActivityVisitController.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\Controllers\\ActivityVisitController.cs",
-              "RelativeDocumentMoniker": "DeputyProject\\Controllers\\ActivityVisitController.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\Controllers\\ActivityVisitController.cs",
-              "RelativeToolTip": "DeputyProject\\Controllers\\ActivityVisitController.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAiwEgAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T01:16:32.669Z",
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "DeputyProject\\appsettings.Development.json",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\appsettings.Development.json",
+              "RelativeToolTip": "DeputyProject\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-08-28T15:55:29.995Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ApiRoutes.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\Common\\ApiRoutes.cs",
-              "RelativeDocumentMoniker": "DeputyProject\\Common\\ApiRoutes.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\Common\\ApiRoutes.cs",
-              "RelativeToolTip": "DeputyProject\\Common\\ApiRoutes.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAnwC4AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-21T00:56:40.216Z",
+              "DocumentIndex": 2,
+              "Title": "appsettings.Production.json",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\appsettings.Production.json",
+              "RelativeDocumentMoniker": "DeputyProject\\appsettings.Production.json",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\appsettings.Production.json",
+              "RelativeToolTip": "DeputyProject\\appsettings.Production.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-08-28T15:55:25.114Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
+              "Title": "DeputyProject",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\DeputyProject.csproj",
+              "RelativeDocumentMoniker": "DeputyProject\\DeputyProject.csproj",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\DeputyProject.csproj",
+              "RelativeToolTip": "DeputyProject\\DeputyProject.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-08-28T15:54:50.714Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "AreasOfWorkAndActivitiesController.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\Controllers\\AreasOfWorkAndActivitiesController.cs",
               "RelativeDocumentMoniker": "DeputyProject\\Controllers\\AreasOfWorkAndActivitiesController.cs",
@@ -726,12 +725,11 @@
               "RelativeToolTip": "DeputyProject\\Controllers\\AreasOfWorkAndActivitiesController.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAAkwBsAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T06:44:49.018Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-26T06:44:49.018Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
               "Title": "Deputy.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Domain\\Deputy\\Deputy.cs",
               "RelativeDocumentMoniker": "Domain\\Deputy\\Deputy.cs",
@@ -739,12 +737,99 @@
               "RelativeToolTip": "Domain\\Deputy\\Deputy.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T19:15:51.562Z",
+              "WhenOpened": "2026-08-25T19:15:51.562Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\appsettings.json",
+              "RelativeDocumentMoniker": "DeputyProject\\appsettings.json",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\appsettings.json",
+              "RelativeToolTip": "DeputyProject\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-08-18T04:25:14.932Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DI.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\DI.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\DI.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\DI.cs",
+              "RelativeToolTip": "Infrastructure\\DI.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABUAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-18T04:06:58.851Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\Program.cs",
+              "RelativeDocumentMoniker": "DeputyProject\\Program.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\Program.cs*",
+              "RelativeToolTip": "DeputyProject\\Program.cs*",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAiwBYAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-18T04:22:42.482Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Appcontext.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Dbcontext\\Appcontext.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Dbcontext\\Appcontext.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Dbcontext\\Appcontext.cs",
+              "RelativeToolTip": "Infrastructure\\Dbcontext\\Appcontext.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAA9wCIAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-18T04:10:27.667Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ApiRoutes.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\Common\\ApiRoutes.cs",
+              "RelativeDocumentMoniker": "DeputyProject\\Common\\ApiRoutes.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\Common\\ApiRoutes.cs",
+              "RelativeToolTip": "DeputyProject\\Common\\ApiRoutes.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAnwC4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-21T00:56:40.216Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ActivityVisitController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\Controllers\\ActivityVisitController.cs",
+              "RelativeDocumentMoniker": "DeputyProject\\Controllers\\ActivityVisitController.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\Controllers\\ActivityVisitController.cs",
+              "RelativeToolTip": "DeputyProject\\Controllers\\ActivityVisitController.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAiwEgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-26T01:16:32.669Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "GetAreaOfWorkQueryValidator.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\AreaOfWork\\GetById\\GetAreaOfWorkQueryValidator.cs",
+              "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\AreaOfWork\\GetById\\GetAreaOfWorkQueryValidator.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\AreaOfWork\\GetById\\GetAreaOfWorkQueryValidator.cs",
+              "RelativeToolTip": "Application\\Core\\Queries\\Deputy\\AreaOfWork\\GetById\\GetAreaOfWorkQueryValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-26T06:56:03.358Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "DeputyWords.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Domain\\Deputy\\DeputyWords.cs",
               "RelativeDocumentMoniker": "Domain\\Deputy\\DeputyWords.cs",
@@ -752,12 +837,11 @@
               "RelativeToolTip": "Domain\\Deputy\\DeputyWords.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwA8AAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T20:18:31.654Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-25T20:18:31.654Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
               "Title": "ActitvitiesAndVisits.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Domain\\Deputy\\ActitvitiesAndVisits.cs",
               "RelativeDocumentMoniker": "Domain\\Deputy\\ActitvitiesAndVisits.cs",
@@ -770,7 +854,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 13,
+              "Title": "GetAllAreasOfWorkQueryHandler.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\AreaOfWork\\GetAll\\GetAllAreasOfWorkQueryHandler.cs",
+              "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\AreaOfWork\\GetAll\\GetAllAreasOfWorkQueryHandler.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\AreaOfWork\\GetAll\\GetAllAreasOfWorkQueryHandler.cs",
+              "RelativeToolTip": "Application\\Core\\Queries\\Deputy\\AreaOfWork\\GetAll\\GetAllAreasOfWorkQueryHandler.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAkwB0AAABRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-26T06:58:05.761Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "GetAreaOfWorkQueryHandler.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\AreaOfWork\\GetById\\GetAreaOfWorkQueryHandler.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\AreaOfWork\\GetById\\GetAreaOfWorkQueryHandler.cs",
@@ -778,12 +874,11 @@
               "RelativeToolTip": "Application\\Core\\Queries\\Deputy\\AreaOfWork\\GetById\\GetAreaOfWorkQueryHandler.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAAcwCQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T06:56:03.619Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-26T06:56:03.619Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 16,
               "Title": "AreaOfWorkResponse.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\AreaOfWork\\GetById\\AreaOfWorkResponse.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\AreaOfWork\\GetById\\AreaOfWorkResponse.cs",
@@ -791,12 +886,11 @@
               "RelativeToolTip": "Application\\Core\\Queries\\Deputy\\AreaOfWork\\GetById\\AreaOfWorkResponse.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T06:56:02.824Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-26T06:56:02.824Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 17,
               "Title": "GetAreaOfWorkQuery.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\AreaOfWork\\GetById\\GetAreaOfWorkQuery.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\AreaOfWork\\GetById\\GetAreaOfWorkQuery.cs",
@@ -804,12 +898,11 @@
               "RelativeToolTip": "Application\\Core\\Queries\\Deputy\\AreaOfWork\\GetById\\GetAreaOfWorkQuery.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T06:56:03.114Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-26T06:56:03.114Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 18,
               "Title": "GetAllAreasOfWorkQueryValidator.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\AreaOfWork\\GetAll\\GetAllAreasOfWorkQueryValidator.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\AreaOfWork\\GetAll\\GetAllAreasOfWorkQueryValidator.cs",
@@ -817,12 +910,11 @@
               "RelativeToolTip": "Application\\Core\\Queries\\Deputy\\AreaOfWork\\GetAll\\GetAllAreasOfWorkQueryValidator.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T06:58:05.419Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-26T06:58:05.419Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 19,
               "Title": "GetAllActivityVisitsQueryHandler.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\ActivityVisit\\GetAll\\GetAllActivityVisitsQueryHandler.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\ActivityVisit\\GetAll\\GetAllActivityVisitsQueryHandler.cs",
@@ -830,12 +922,11 @@
               "RelativeToolTip": "Application\\Core\\Queries\\Deputy\\ActivityVisit\\GetAll\\GetAllActivityVisitsQueryHandler.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAkwBoAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T01:48:16.927Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-26T01:48:16.927Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 20,
               "Title": "GetAllAreasOfWorkQuery.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\AreaOfWork\\GetAll\\GetAllAreasOfWorkQuery.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\AreaOfWork\\GetAll\\GetAllAreasOfWorkQuery.cs",
@@ -843,12 +934,11 @@
               "RelativeToolTip": "Application\\Core\\Queries\\Deputy\\AreaOfWork\\GetAll\\GetAllAreasOfWorkQuery.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T06:58:05.15Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-26T06:58:05.15Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 21,
               "Title": "ActivityVisitResponse.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\ActivityVisit\\GetAll\\ActivityVisitResponse.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\ActivityVisit\\GetAll\\ActivityVisitResponse.cs",
@@ -856,12 +946,11 @@
               "RelativeToolTip": "Application\\Core\\Queries\\Deputy\\ActivityVisit\\GetAll\\ActivityVisitResponse.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T01:48:16.139Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-26T01:48:16.139Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 22,
               "Title": "GetAllActivityVisitsQuery.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\ActivityVisit\\GetAll\\GetAllActivityVisitsQuery.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\ActivityVisit\\GetAll\\GetAllActivityVisitsQuery.cs",
@@ -869,12 +958,11 @@
               "RelativeToolTip": "Application\\Core\\Queries\\Deputy\\ActivityVisit\\GetAll\\GetAllActivityVisitsQuery.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T01:48:16.423Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-26T01:48:16.423Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 23,
               "Title": "GetAllActivityVisitsQueryValidator.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\ActivityVisit\\GetAll\\GetAllActivityVisitsQueryValidator.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\ActivityVisit\\GetAll\\GetAllActivityVisitsQueryValidator.cs",
@@ -882,12 +970,11 @@
               "RelativeToolTip": "Application\\Core\\Queries\\Deputy\\ActivityVisit\\GetAll\\GetAllActivityVisitsQueryValidator.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T01:48:16.675Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-26T01:48:16.675Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 24,
               "Title": "ActivityVisitResponse.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\ActivityVisit\\GetAllById\\ActivityVisitResponse.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\ActivityVisit\\GetAllById\\ActivityVisitResponse.cs",
@@ -895,12 +982,11 @@
               "RelativeToolTip": "Application\\Core\\Queries\\Deputy\\ActivityVisit\\GetAllById\\ActivityVisitResponse.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T01:45:49.833Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-26T01:45:49.833Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 25,
               "Title": "GetActivityVisitQuery.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\ActivityVisit\\GetAllById\\GetActivityVisitQuery.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\ActivityVisit\\GetAllById\\GetActivityVisitQuery.cs",
@@ -908,12 +994,11 @@
               "RelativeToolTip": "Application\\Core\\Queries\\Deputy\\ActivityVisit\\GetAllById\\GetActivityVisitQuery.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T01:45:50.11Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-26T01:45:50.11Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 26,
               "Title": "GetActivityVisitQueryHandler.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\ActivityVisit\\GetAllById\\GetActivityVisitQueryHandler.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\ActivityVisit\\GetAllById\\GetActivityVisitQueryHandler.cs",
@@ -921,12 +1006,11 @@
               "RelativeToolTip": "Application\\Core\\Queries\\Deputy\\ActivityVisit\\GetAllById\\GetActivityVisitQueryHandler.cs",
               "ViewState": "AgIAABIAAAAAAAAAAAA0wB0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T01:45:50.673Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-26T01:45:50.673Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 27,
               "Title": "GetActivityVisitQueryValidator.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\ActivityVisit\\GetAllById\\GetActivityVisitQueryValidator.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\ActivityVisit\\GetAllById\\GetActivityVisitQueryValidator.cs",
@@ -934,12 +1018,11 @@
               "RelativeToolTip": "Application\\Core\\Queries\\Deputy\\ActivityVisit\\GetAllById\\GetActivityVisitQueryValidator.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T01:45:50.36Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-26T01:45:50.36Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 28,
               "Title": "UpdateAreaOfWorkCommandHandler.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\LoadingPage\\AreasOfWorkandActivities\\EditAreaofWork\\UpdateAreaOfWorkCommandHandler.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\LoadingPage\\AreasOfWorkandActivities\\EditAreaofWork\\UpdateAreaOfWorkCommandHandler.cs",
@@ -947,12 +1030,11 @@
               "RelativeToolTip": "Application\\Core\\Commands\\LoadingPage\\AreasOfWorkandActivities\\EditAreaofWork\\UpdateAreaOfWorkCommandHandler.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAA0wCAAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T06:50:16.461Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-26T06:50:16.461Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 29,
               "Title": "UpdateAreaOfWorkCommandValidator.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\LoadingPage\\AreasOfWorkandActivities\\EditAreaofWork\\UpdateAreaOfWorkCommandValidator.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\LoadingPage\\AreasOfWorkandActivities\\EditAreaofWork\\UpdateAreaOfWorkCommandValidator.cs",
@@ -960,12 +1042,11 @@
               "RelativeToolTip": "Application\\Core\\Commands\\LoadingPage\\AreasOfWorkandActivities\\EditAreaofWork\\UpdateAreaOfWorkCommandValidator.cs",
               "ViewState": "AgIAAAQAAAAAAAAAAAAkwA0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T06:50:16.117Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-26T06:50:16.117Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 30,
               "Title": "UpdateAreaOfWorkCommand .cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\LoadingPage\\AreasOfWorkandActivities\\EditAreaofWork\\UpdateAreaOfWorkCommand .cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\LoadingPage\\AreasOfWorkandActivities\\EditAreaofWork\\UpdateAreaOfWorkCommand .cs",
@@ -973,12 +1054,11 @@
               "RelativeToolTip": "Application\\Core\\Commands\\LoadingPage\\AreasOfWorkandActivities\\EditAreaofWork\\UpdateAreaOfWorkCommand .cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T06:50:15.845Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-26T06:50:15.845Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 31,
               "Title": "DeleteAreaOfWorkCommandValidator.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\LoadingPage\\AreasOfWorkandActivities\\DeleteAreaOfWork\\DeleteAreaOfWorkCommandValidator.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\LoadingPage\\AreasOfWorkandActivities\\DeleteAreaOfWork\\DeleteAreaOfWorkCommandValidator.cs",
@@ -986,12 +1066,11 @@
               "RelativeToolTip": "Application\\Core\\Commands\\LoadingPage\\AreasOfWorkandActivities\\DeleteAreaOfWork\\DeleteAreaOfWorkCommandValidator.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T06:52:45.649Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-26T06:52:45.649Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 32,
               "Title": "DeleteAreaOfWorkCommandHandler.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\LoadingPage\\AreasOfWorkandActivities\\DeleteAreaOfWork\\DeleteAreaOfWorkCommandHandler.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\LoadingPage\\AreasOfWorkandActivities\\DeleteAreaOfWork\\DeleteAreaOfWorkCommandHandler.cs",
@@ -999,12 +1078,11 @@
               "RelativeToolTip": "Application\\Core\\Commands\\LoadingPage\\AreasOfWorkandActivities\\DeleteAreaOfWork\\DeleteAreaOfWorkCommandHandler.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAwwCUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T06:52:45.979Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-26T06:52:45.979Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 33,
               "Title": "DeleteAreaOfWorkCommand .cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\LoadingPage\\AreasOfWorkandActivities\\DeleteAreaOfWork\\DeleteAreaOfWorkCommand .cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\LoadingPage\\AreasOfWorkandActivities\\DeleteAreaOfWork\\DeleteAreaOfWorkCommand .cs",
@@ -1012,12 +1090,11 @@
               "RelativeToolTip": "Application\\Core\\Commands\\LoadingPage\\AreasOfWorkandActivities\\DeleteAreaOfWork\\DeleteAreaOfWorkCommand .cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T06:52:27.434Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-26T06:52:27.434Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 34,
               "Title": "CreateAreaOfWorkCommandValidator.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\LoadingPage\\AreasOfWorkandActivities\\CreateAreaOfWork\\CreateAreaOfWorkCommandValidator.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\LoadingPage\\AreasOfWorkandActivities\\CreateAreaOfWork\\CreateAreaOfWorkCommandValidator.cs",
@@ -1025,12 +1102,11 @@
               "RelativeToolTip": "Application\\Core\\Commands\\LoadingPage\\AreasOfWorkandActivities\\CreateAreaOfWork\\CreateAreaOfWorkCommandValidator.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T06:40:32.256Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-26T06:40:32.256Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 35,
               "Title": "CreateAreaOfWorkCommand .cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\LoadingPage\\AreasOfWorkandActivities\\CreateAreaOfWork\\CreateAreaOfWorkCommand .cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\LoadingPage\\AreasOfWorkandActivities\\CreateAreaOfWork\\CreateAreaOfWorkCommand .cs",
@@ -1038,12 +1114,11 @@
               "RelativeToolTip": "Application\\Core\\Commands\\LoadingPage\\AreasOfWorkandActivities\\CreateAreaOfWork\\CreateAreaOfWorkCommand .cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T06:40:31.987Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-26T06:40:31.987Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 36,
               "Title": "CreateAreaOfWorkCommandHandler.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\LoadingPage\\AreasOfWorkandActivities\\CreateAreaOfWork\\CreateAreaOfWorkCommandHandler.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\LoadingPage\\AreasOfWorkandActivities\\CreateAreaOfWork\\CreateAreaOfWorkCommandHandler.cs",
@@ -1051,12 +1126,11 @@
               "RelativeToolTip": "Application\\Core\\Commands\\LoadingPage\\AreasOfWorkandActivities\\CreateAreaOfWork\\CreateAreaOfWorkCommandHandler.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAqwBwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T06:40:32.493Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-26T06:40:32.493Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 37,
               "Title": "UpdateActivityVisitCommand.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\LoadingPage\\ActivityVisit\\EditActivityVisit\\UpdateActivityVisitCommand.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\LoadingPage\\ActivityVisit\\EditActivityVisit\\UpdateActivityVisitCommand.cs",
@@ -1064,12 +1138,11 @@
               "RelativeToolTip": "Application\\Core\\Commands\\LoadingPage\\ActivityVisit\\EditActivityVisit\\UpdateActivityVisitCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T01:24:40.55Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-26T01:24:40.55Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 38,
               "Title": "UpdateActivityVisitCommandHandler.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\LoadingPage\\ActivityVisit\\EditActivityVisit\\UpdateActivityVisitCommandHandler.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\LoadingPage\\ActivityVisit\\EditActivityVisit\\UpdateActivityVisitCommandHandler.cs",
@@ -1077,12 +1150,11 @@
               "RelativeToolTip": "Application\\Core\\Commands\\LoadingPage\\ActivityVisit\\EditActivityVisit\\UpdateActivityVisitCommandHandler.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAIwCIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T01:25:08.579Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-26T01:25:08.579Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 39,
               "Title": "UpdateActivityVisitCommandValidator.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\LoadingPage\\ActivityVisit\\EditActivityVisit\\UpdateActivityVisitCommandValidator.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\LoadingPage\\ActivityVisit\\EditActivityVisit\\UpdateActivityVisitCommandValidator.cs",
@@ -1090,12 +1162,11 @@
               "RelativeToolTip": "Application\\Core\\Commands\\LoadingPage\\ActivityVisit\\EditActivityVisit\\UpdateActivityVisitCommandValidator.cs",
               "ViewState": "AgIAAAEAAAAAAAAAAAAYwA0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T01:25:08.27Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-26T01:25:08.27Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 40,
               "Title": "DeleteActivityVisitCommandValidator.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\LoadingPage\\ActivityVisit\\DeleteActivityVisit\\DeleteActivityVisitCommandValidator.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\LoadingPage\\ActivityVisit\\DeleteActivityVisit\\DeleteActivityVisitCommandValidator.cs",
@@ -1103,12 +1174,11 @@
               "RelativeToolTip": "Application\\Core\\Commands\\LoadingPage\\ActivityVisit\\DeleteActivityVisit\\DeleteActivityVisitCommandValidator.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T01:27:49.729Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-26T01:27:49.729Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 41,
               "Title": "DeleteActivityVisitCommandHandler.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\LoadingPage\\ActivityVisit\\DeleteActivityVisit\\DeleteActivityVisitCommandHandler.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\LoadingPage\\ActivityVisit\\DeleteActivityVisit\\DeleteActivityVisitCommandHandler.cs",
@@ -1116,12 +1186,11 @@
               "RelativeToolTip": "Application\\Core\\Commands\\LoadingPage\\ActivityVisit\\DeleteActivityVisit\\DeleteActivityVisitCommandHandler.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAcwCQAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T01:27:49.963Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-26T01:27:49.963Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 42,
               "Title": "DeleteActivityVisitCommand.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\LoadingPage\\ActivityVisit\\DeleteActivityVisit\\DeleteActivityVisitCommand.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\LoadingPage\\ActivityVisit\\DeleteActivityVisit\\DeleteActivityVisitCommand.cs",
@@ -1129,12 +1198,11 @@
               "RelativeToolTip": "Application\\Core\\Commands\\LoadingPage\\ActivityVisit\\DeleteActivityVisit\\DeleteActivityVisitCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T01:27:49.469Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-26T01:27:49.469Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 43,
               "Title": "CreateActivityVisitCommand.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\LoadingPage\\ActivityVisit\\CreateActivityVisit\\CreateActivityVisitCommand.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\LoadingPage\\ActivityVisit\\CreateActivityVisit\\CreateActivityVisitCommand.cs",
@@ -1142,12 +1210,11 @@
               "RelativeToolTip": "Application\\Core\\Commands\\LoadingPage\\ActivityVisit\\CreateActivityVisit\\CreateActivityVisitCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T01:19:01.024Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-26T01:19:01.024Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 44,
               "Title": "CreateActivityVisitCommandHandler.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\LoadingPage\\ActivityVisit\\CreateActivityVisit\\CreateActivityVisitCommandHandler.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\LoadingPage\\ActivityVisit\\CreateActivityVisit\\CreateActivityVisitCommandHandler.cs",
@@ -1155,12 +1222,11 @@
               "RelativeToolTip": "Application\\Core\\Commands\\LoadingPage\\ActivityVisit\\CreateActivityVisit\\CreateActivityVisitCommandHandler.cs",
               "ViewState": "AgIAABcAAAAAAAAAAAAmwBoAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T01:19:01.575Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-26T01:19:01.575Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 45,
               "Title": "CreateActivityVisitCommandValidator.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\LoadingPage\\ActivityVisit\\CreateActivityVisit\\CreateActivityVisitCommandValidator.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\LoadingPage\\ActivityVisit\\CreateActivityVisit\\CreateActivityVisitCommandValidator.cs",
@@ -1168,12 +1234,11 @@
               "RelativeToolTip": "Application\\Core\\Commands\\LoadingPage\\ActivityVisit\\CreateActivityVisit\\CreateActivityVisitCommandValidator.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAQwA0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T01:19:01.335Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-26T01:19:01.335Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 46,
               "Title": "AchievementController.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\Controllers\\AchievementController.cs",
               "RelativeDocumentMoniker": "DeputyProject\\Controllers\\AchievementController.cs",
@@ -1181,25 +1246,11 @@
               "RelativeToolTip": "DeputyProject\\Controllers\\AchievementController.cs",
               "ViewState": "AgIAACgAAAAAAAAAAAAnwEIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T22:39:17.995Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-25T22:39:17.995Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\Program.cs",
-              "RelativeDocumentMoniker": "DeputyProject\\Program.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\Program.cs",
-              "RelativeToolTip": "DeputyProject\\Program.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAiwB0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-18T04:22:42.482Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 52,
               "Title": "GetAchievementQueryValidator.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\Achievement\\GetAchievementById\\GetAchievementQueryValidator.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\Achievement\\GetAchievementById\\GetAchievementQueryValidator.cs",
@@ -1207,12 +1258,11 @@
               "RelativeToolTip": "Application\\Core\\Queries\\Deputy\\Achievement\\GetAchievementById\\GetAchievementQueryValidator.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T23:07:46.301Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-25T23:07:46.301Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 51,
               "Title": "GenericRepository.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Implemenation\\GenericRepository.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Implemenation\\GenericRepository.cs",
@@ -1220,12 +1270,11 @@
               "RelativeToolTip": "Infrastructure\\Implemenation\\GenericRepository.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAAB4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-20T05:23:43.806Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-20T05:23:43.806Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 50,
               "Title": "AchievementRepo.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Implemenation\\AchievementRepo.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Implemenation\\AchievementRepo.cs",
@@ -1233,12 +1282,11 @@
               "RelativeToolTip": "Infrastructure\\Implemenation\\AchievementRepo.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAAA0AAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T22:33:35.11Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-25T22:33:35.11Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 49,
               "Title": "IAchievement.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Contracts\\Repos\\IAchievement.cs",
               "RelativeDocumentMoniker": "Application\\Contracts\\Repos\\IAchievement.cs",
@@ -1246,12 +1294,11 @@
               "RelativeToolTip": "Application\\Contracts\\Repos\\IAchievement.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T22:32:51.493Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-25T22:32:51.493Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 47,
               "Title": "GetAllAchievementsQueryHandler.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\Achievement\\GetAllAchievements\\GetAllAchievementsQueryHandler.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\Achievement\\GetAllAchievements\\GetAllAchievementsQueryHandler.cs",
@@ -1259,12 +1306,11 @@
               "RelativeToolTip": "Application\\Core\\Queries\\Deputy\\Achievement\\GetAllAchievements\\GetAllAchievementsQueryHandler.cs",
               "ViewState": "AgIAABQAAAAAAAAAAAAkwCcAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T23:13:12.623Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-25T23:13:12.623Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 48,
               "Title": "GetAllAchievementsQuery.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\Achievement\\GetAllAchievements\\GetAllAchievementsQuery.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\Achievement\\GetAllAchievements\\GetAllAchievementsQuery.cs",
@@ -1272,12 +1318,11 @@
               "RelativeToolTip": "Application\\Core\\Queries\\Deputy\\Achievement\\GetAllAchievements\\GetAllAchievementsQuery.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T23:13:12.092Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-25T23:13:12.092Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 53,
               "Title": "GetAchievementQueryHandler.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\Achievement\\GetAchievementById\\GetAchievementQueryHandler.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\Achievement\\GetAchievementById\\GetAchievementQueryHandler.cs",
@@ -1285,12 +1330,11 @@
               "RelativeToolTip": "Application\\Core\\Queries\\Deputy\\Achievement\\GetAchievementById\\GetAchievementQueryHandler.cs",
               "ViewState": "AgIAABcAAAAAAAAAAAAcwCMAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T23:07:46.546Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-25T23:07:46.546Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 54,
               "Title": "GetAchievementQuery.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\Achievement\\GetAchievementById\\GetAchievementQuery.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\Achievement\\GetAchievementById\\GetAchievementQuery.cs",
@@ -1298,12 +1342,11 @@
               "RelativeToolTip": "Application\\Core\\Queries\\Deputy\\Achievement\\GetAchievementById\\GetAchievementQuery.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T23:07:46.056Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-25T23:07:46.056Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 55,
               "Title": "AchievementResponse.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\Achievement\\GetAchievementById\\AchievementResponse.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\Achievement\\GetAchievementById\\AchievementResponse.cs",
@@ -1311,12 +1354,11 @@
               "RelativeToolTip": "Application\\Core\\Queries\\Deputy\\Achievement\\GetAchievementById\\AchievementResponse.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T23:07:45.724Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-25T23:07:45.724Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 56,
               "Title": "DeleteAchievementCommand.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\LoadingPage\\achievements\\DeleteAchievement\\DeleteAchievementCommand.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\LoadingPage\\achievements\\DeleteAchievement\\DeleteAchievementCommand.cs",
@@ -1324,12 +1366,11 @@
               "RelativeToolTip": "Application\\Core\\Commands\\LoadingPage\\achievements\\DeleteAchievement\\DeleteAchievementCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T01:06:32.636Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-26T01:06:32.636Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 57,
               "Title": "DeleteAchievementCommandHandler.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\LoadingPage\\achievements\\DeleteAchievement\\DeleteAchievementCommandHandler.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\LoadingPage\\achievements\\DeleteAchievement\\DeleteAchievementCommandHandler.cs",
@@ -1337,12 +1378,11 @@
               "RelativeToolTip": "Application\\Core\\Commands\\LoadingPage\\achievements\\DeleteAchievement\\DeleteAchievementCommandHandler.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAIwCMAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T01:06:33.228Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-26T01:06:33.228Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 58,
               "Title": "DeleteAchievementCommandValidator.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\LoadingPage\\achievements\\DeleteAchievement\\DeleteAchievementCommandValidator.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\LoadingPage\\achievements\\DeleteAchievement\\DeleteAchievementCommandValidator.cs",
@@ -1350,12 +1390,11 @@
               "RelativeToolTip": "Application\\Core\\Commands\\LoadingPage\\achievements\\DeleteAchievement\\DeleteAchievementCommandValidator.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T01:06:32.923Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-26T01:06:32.923Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 59,
               "Title": "UpdateAchievementCommandValidator.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\LoadingPage\\achievements\\EditAchievement\\UpdateAchievementCommandValidator.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\LoadingPage\\achievements\\EditAchievement\\UpdateAchievementCommandValidator.cs",
@@ -1363,12 +1402,11 @@
               "RelativeToolTip": "Application\\Core\\Commands\\LoadingPage\\achievements\\EditAchievement\\UpdateAchievementCommandValidator.cs",
               "ViewState": "AgIAAAQAAAAAAAAAAAAswAwAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T22:59:09.859Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-25T22:59:09.859Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 60,
               "Title": "UpdateAchievementCommandHandler.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\LoadingPage\\achievements\\EditAchievement\\UpdateAchievementCommandHandler.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\LoadingPage\\achievements\\EditAchievement\\UpdateAchievementCommandHandler.cs",
@@ -1376,12 +1414,11 @@
               "RelativeToolTip": "Application\\Core\\Commands\\LoadingPage\\achievements\\EditAchievement\\UpdateAchievementCommandHandler.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAA1wCgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T22:59:10.183Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-25T22:59:10.183Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 61,
               "Title": "UpdateAchievementCommand.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\LoadingPage\\achievements\\EditAchievement\\UpdateAchievementCommand.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\LoadingPage\\achievements\\EditAchievement\\UpdateAchievementCommand.cs",
@@ -1389,12 +1426,11 @@
               "RelativeToolTip": "Application\\Core\\Commands\\LoadingPage\\achievements\\EditAchievement\\UpdateAchievementCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T22:59:09.595Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-25T22:59:09.595Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 62,
               "Title": "CreateAchievementCommandValidator.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\LoadingPage\\achievements\\CreateAchievement\\CreateAchievementCommandValidator.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\LoadingPage\\achievements\\CreateAchievement\\CreateAchievementCommandValidator.cs",
@@ -1402,12 +1438,11 @@
               "RelativeToolTip": "Application\\Core\\Commands\\LoadingPage\\achievements\\CreateAchievement\\CreateAchievementCommandValidator.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAAkwA0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T22:30:51.113Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-25T22:30:51.113Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 63,
               "Title": "CreateAchievementCommandHandler.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\LoadingPage\\achievements\\CreateAchievement\\CreateAchievementCommandHandler.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\LoadingPage\\achievements\\CreateAchievement\\CreateAchievementCommandHandler.cs",
@@ -1415,12 +1450,11 @@
               "RelativeToolTip": "Application\\Core\\Commands\\LoadingPage\\achievements\\CreateAchievement\\CreateAchievementCommandHandler.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAwwBkAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T22:30:51.355Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-25T22:30:51.355Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 64,
               "Title": "CreateAchievementCommand .cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\LoadingPage\\achievements\\CreateAchievement\\CreateAchievementCommand .cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\LoadingPage\\achievements\\CreateAchievement\\CreateAchievementCommand .cs",
@@ -1428,12 +1462,11 @@
               "RelativeToolTip": "Application\\Core\\Commands\\LoadingPage\\achievements\\CreateAchievement\\CreateAchievementCommand .cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T22:30:50.854Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-25T22:30:50.854Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 65,
               "Title": "AuthenticationController.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\Controllers\\AuthenticationController.cs",
               "RelativeDocumentMoniker": "DeputyProject\\Controllers\\AuthenticationController.cs",
@@ -1445,7 +1478,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
+              "DocumentIndex": 70,
               "Title": "GetDeputyQuery.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\GetDeputybyId\\GetDeputyQuery.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\GetDeputybyId\\GetDeputyQuery.cs",
@@ -1457,7 +1490,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 69,
               "Title": "GetDeputyQueryHandler.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\GetDeputybyId\\GetDeputyQueryHandler.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\GetDeputybyId\\GetDeputyQueryHandler.cs",
@@ -1469,7 +1502,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 66,
               "Title": "20260827152116_m13.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Migrations\\20260827152116_m13.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20260827152116_m13.cs",
@@ -1481,7 +1514,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 65,
+              "DocumentIndex": 71,
               "Title": "DeputyResponse.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\Deputy\\GetDeputybyId\\DeputyResponse.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\Deputy\\GetDeputybyId\\DeputyResponse.cs",
@@ -1493,7 +1526,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 67,
               "Title": "DeputyController.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\Controllers\\DeputyController.cs",
               "RelativeDocumentMoniker": "DeputyProject\\Controllers\\DeputyController.cs",
@@ -1505,7 +1538,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 69,
+              "DocumentIndex": 75,
               "Title": "ActitvitiesAndVisitsRepo.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Implemenation\\ActitvitiesAndVisitsRepo.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Implemenation\\ActitvitiesAndVisitsRepo.cs",
@@ -1517,7 +1550,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 66,
+              "DocumentIndex": 72,
               "Title": "WeatherForecastController.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\Controllers\\WeatherForecastController.cs",
               "RelativeDocumentMoniker": "DeputyProject\\Controllers\\WeatherForecastController.cs",
@@ -1529,7 +1562,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 68,
               "Title": "Achievement.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Domain\\Deputy\\Achievement.cs",
               "RelativeDocumentMoniker": "Domain\\Deputy\\Achievement.cs",
@@ -1541,7 +1574,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 68,
+              "DocumentIndex": 74,
               "Title": "AreasOfWorkandActivitiesRepo.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Implemenation\\AreasOfWorkandActivitiesRepo.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Implemenation\\AreasOfWorkandActivitiesRepo.cs",
@@ -1553,7 +1586,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
+              "DocumentIndex": 73,
               "Title": "ComplaintController.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\Controllers\\ComplaintController.cs",
               "RelativeDocumentMoniker": "DeputyProject\\Controllers\\ComplaintController.cs",
@@ -1565,7 +1598,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 70,
+              "DocumentIndex": 76,
               "Title": "UpdateDeputyCommandValidator.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\LoadingPage\\PersonalInfo\\EditPersonalInfo\\UpdateDeputyCommandValidator.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\LoadingPage\\PersonalInfo\\EditPersonalInfo\\UpdateDeputyCommandValidator.cs",
@@ -1577,7 +1610,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 71,
+              "DocumentIndex": 77,
               "Title": "UpdateDeputyCommandHandler.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\LoadingPage\\PersonalInfo\\EditPersonalInfo\\UpdateDeputyCommandHandler.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\LoadingPage\\PersonalInfo\\EditPersonalInfo\\UpdateDeputyCommandHandler.cs",
@@ -1589,7 +1622,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 72,
+              "DocumentIndex": 78,
               "Title": "UpdateDeputyCommand .cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\LoadingPage\\PersonalInfo\\EditPersonalInfo\\UpdateDeputyCommand .cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\LoadingPage\\PersonalInfo\\EditPersonalInfo\\UpdateDeputyCommand .cs",
@@ -1601,7 +1634,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 73,
+              "DocumentIndex": 79,
               "Title": "IDeputy.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Contracts\\Repos\\IDeputy.cs",
               "RelativeDocumentMoniker": "Application\\Contracts\\Repos\\IDeputy.cs",
@@ -1613,7 +1646,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 74,
+              "DocumentIndex": 80,
               "Title": "DeputyRepo.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Implemenation\\DeputyRepo.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Implemenation\\DeputyRepo.cs",
@@ -1625,7 +1658,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 75,
+              "DocumentIndex": 81,
               "Title": "MotionsForInformation.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Domain\\Deputy\\MotionsForInformation.cs",
               "RelativeDocumentMoniker": "Domain\\Deputy\\MotionsForInformation.cs",
@@ -1637,7 +1670,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 76,
+              "DocumentIndex": 82,
               "Title": "AreasOfWorkandActivities.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Domain\\Deputy\\AreasOfWorkandActivities.cs",
               "RelativeDocumentMoniker": "Domain\\Deputy\\AreasOfWorkandActivities.cs",
@@ -1649,7 +1682,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 77,
+              "DocumentIndex": 83,
               "Title": "20260826130930_m12.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Migrations\\20260826130930_m12.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20260826130930_m12.cs",
@@ -1661,7 +1694,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 78,
+              "DocumentIndex": 84,
               "Title": "UnitOfWork.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Implemenation\\UnitOfWork.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Implemenation\\UnitOfWork.cs",
@@ -1673,7 +1706,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 79,
+              "DocumentIndex": 85,
               "Title": "IAreasOfWorkandActivities.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Contracts\\Repos\\IAreasOfWorkandActivities.cs",
               "RelativeDocumentMoniker": "Application\\Contracts\\Repos\\IAreasOfWorkandActivities.cs",
@@ -1685,19 +1718,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 80,
-              "Title": "DI.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\DI.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\DI.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\DI.cs",
-              "RelativeToolTip": "Infrastructure\\DI.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAgwD4AAABWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-18T04:06:58.851Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 82,
+              "DocumentIndex": 87,
               "Title": "IActitvitiesAndVisits.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Contracts\\Repos\\IActitvitiesAndVisits.cs",
               "RelativeDocumentMoniker": "Application\\Contracts\\Repos\\IActitvitiesAndVisits.cs",
@@ -1709,7 +1730,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 81,
+              "DocumentIndex": 86,
               "Title": "IUnitOfWork.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Contracts\\IUnitOfWork.cs",
               "RelativeDocumentMoniker": "Application\\Contracts\\IUnitOfWork.cs",
@@ -1721,7 +1742,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 83,
+              "DocumentIndex": 88,
               "Title": "CurrentUser.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\Common\\CurrentUser.cs",
               "RelativeDocumentMoniker": "DeputyProject\\Common\\CurrentUser.cs",
@@ -1733,7 +1754,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 85,
+              "DocumentIndex": 90,
               "Title": "BaseController.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\Common\\BaseController.cs",
               "RelativeDocumentMoniker": "DeputyProject\\Common\\BaseController.cs",
@@ -1745,7 +1766,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 84,
+              "DocumentIndex": 89,
               "Title": "Application.csproj",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Application.csproj",
               "RelativeDocumentMoniker": "Application\\Application.csproj",
@@ -1757,7 +1778,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 86,
+              "DocumentIndex": 91,
               "Title": "ExceptionMiddlewareExtensions.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\Common\\ExceptionMiddlewareExtensions.cs",
               "RelativeDocumentMoniker": "DeputyProject\\Common\\ExceptionMiddlewareExtensions.cs",
@@ -1769,7 +1790,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 87,
+              "DocumentIndex": 92,
               "Title": "ExceptionHandlingMiddleware.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\Common\\ExceptionHandlingMiddleware.cs",
               "RelativeDocumentMoniker": "DeputyProject\\Common\\ExceptionHandlingMiddleware.cs",
@@ -1781,7 +1802,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 160,
+              "DocumentIndex": 163,
               "Title": "20260825224633_m11.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Migrations\\20260825224633_m11.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20260825224633_m11.cs",
@@ -1793,7 +1814,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 88,
+              "DocumentIndex": 93,
               "Title": "CitizinRepo.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Implemenation\\CitizinRepo.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Implemenation\\CitizinRepo.cs",
@@ -1805,7 +1826,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 89,
+              "DocumentIndex": 94,
               "Title": "CitizinRequiermentEmployees.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Implemenation\\CitizinRequiermentEmployees.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Implemenation\\CitizinRequiermentEmployees.cs",
@@ -1817,7 +1838,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 90,
+              "DocumentIndex": 95,
               "Title": "ICitizin.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Contracts\\Repos\\ICitizin.cs",
               "RelativeDocumentMoniker": "Application\\Contracts\\Repos\\ICitizin.cs",
@@ -1829,19 +1850,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 91,
-              "Title": "Appcontext.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Dbcontext\\Appcontext.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Dbcontext\\Appcontext.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Dbcontext\\Appcontext.cs",
-              "RelativeToolTip": "Infrastructure\\Dbcontext\\Appcontext.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAwwCIAAABNAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-18T04:10:27.667Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 93,
+              "DocumentIndex": 97,
               "Title": "ResultStatus.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Common\\ResultStatus.cs",
               "RelativeDocumentMoniker": "Application\\Common\\ResultStatus.cs",
@@ -1853,7 +1862,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 94,
+              "DocumentIndex": 98,
               "Title": "Result.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Common\\Result.cs",
               "RelativeDocumentMoniker": "Application\\Common\\Result.cs",
@@ -1865,7 +1874,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 161,
+              "DocumentIndex": 164,
               "Title": "20260825203750_m10.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Migrations\\20260825203750_m10.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20260825203750_m10.cs",
@@ -1877,7 +1886,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 92,
+              "DocumentIndex": 96,
               "Title": "ResultResponse.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\Common\\ResultResponse.cs",
               "RelativeDocumentMoniker": "DeputyProject\\Common\\ResultResponse.cs",
@@ -1889,7 +1898,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 95,
+              "DocumentIndex": 99,
               "Title": "CitizinRequiermentContent.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Domain\\CitizinRequiermentContent.cs",
               "RelativeDocumentMoniker": "Domain\\CitizinRequiermentContent.cs",
@@ -1901,7 +1910,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 96,
+              "DocumentIndex": 100,
               "Title": "OrganizationRepo.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Implemenation\\OrganizationRepo.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Implemenation\\OrganizationRepo.cs",
@@ -1913,7 +1922,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 97,
+              "DocumentIndex": 101,
               "Title": "CompliantRepo.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Implemenation\\CompliantRepo.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Implemenation\\CompliantRepo.cs",
@@ -1925,7 +1934,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 98,
+              "DocumentIndex": 102,
               "Title": "ComplaintCategoryRepo.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Implemenation\\ComplaintCategoryRepo.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Implemenation\\ComplaintCategoryRepo.cs",
@@ -1937,7 +1946,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 99,
+              "DocumentIndex": 103,
               "Title": "20260825082043_m9.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Migrations\\20260825082043_m9.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20260825082043_m9.cs",
@@ -1949,7 +1958,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 100,
+              "DocumentIndex": 104,
               "Title": "GetEmployeeComplaintsQueryHandler.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\GetRequestsForEmplyees\\GetEmployeeComplaintsQueryHandler.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\GetRequestsForEmplyees\\GetEmployeeComplaintsQueryHandler.cs",
@@ -1961,7 +1970,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 105,
+              "DocumentIndex": 109,
               "Title": "PaginatedResult.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Common\\PaginatedResult.cs",
               "RelativeDocumentMoniker": "Application\\Common\\PaginatedResult.cs",
@@ -1973,7 +1982,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 106,
+              "DocumentIndex": 110,
               "Title": "GetEmployeeRequestsQuery.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\GetRequestsForEmplyees\\GetEmployeeRequestsQuery.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\GetRequestsForEmplyees\\GetEmployeeRequestsQuery.cs",
@@ -1985,7 +1994,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 104,
+              "DocumentIndex": 108,
               "Title": "IEmployee.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Contracts\\Repos\\IEmployee.cs",
               "RelativeDocumentMoniker": "Application\\Contracts\\Repos\\IEmployee.cs",
@@ -1997,7 +2006,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 103,
+              "DocumentIndex": 107,
               "Title": "EmployeeRepo.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Implemenation\\EmployeeRepo.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Implemenation\\EmployeeRepo.cs",
@@ -2009,7 +2018,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 101,
+              "DocumentIndex": 105,
               "Title": "ICitizinRequiermentEmployees.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Contracts\\Repos\\ICitizinRequiermentEmployees.cs",
               "RelativeDocumentMoniker": "Application\\Contracts\\Repos\\ICitizinRequiermentEmployees.cs",
@@ -2021,7 +2030,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 102,
+              "DocumentIndex": 106,
               "Title": "IEmployeeRequestRepository.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Contracts\\Repos\\IEmployeeRequestRepository.cs",
               "RelativeDocumentMoniker": "Application\\Contracts\\Repos\\IEmployeeRequestRepository.cs",
@@ -2033,7 +2042,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 107,
+              "DocumentIndex": 111,
               "Title": "EmployeeRequestRepository.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Implemenation\\EmployeeRequestRepository.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Implemenation\\EmployeeRequestRepository.cs",
@@ -2045,7 +2054,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 108,
+              "DocumentIndex": 112,
               "Title": "CitizinRequierment.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Domain\\CitizinRequierment.cs",
               "RelativeDocumentMoniker": "Domain\\CitizinRequierment.cs",
@@ -2057,7 +2066,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 109,
+              "DocumentIndex": 113,
               "Title": "IComplaintDepartment.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Contracts\\Repos\\IComplaintDepartment.cs",
               "RelativeDocumentMoniker": "Application\\Contracts\\Repos\\IComplaintDepartment.cs",
@@ -2069,7 +2078,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 110,
+              "DocumentIndex": 114,
               "Title": "IdentityService.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Implemenation\\IdentityService.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Implemenation\\IdentityService.cs",
@@ -2081,7 +2090,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 111,
+              "DocumentIndex": 115,
               "Title": "ICitizinRequierment.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Contracts\\Repos\\ICitizinRequierment.cs",
               "RelativeDocumentMoniker": "Application\\Contracts\\Repos\\ICitizinRequierment.cs",
@@ -2093,7 +2102,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 112,
+              "DocumentIndex": 116,
               "Title": "CitizinRequiermentEmployee.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Domain\\CitizinRequiermentEmployee.cs",
               "RelativeDocumentMoniker": "Domain\\CitizinRequiermentEmployee.cs",
@@ -2105,7 +2114,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 113,
+              "DocumentIndex": 117,
               "Title": "Citizin.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Domain\\Citizin.cs",
               "RelativeDocumentMoniker": "Domain\\Citizin.cs",
@@ -2117,7 +2126,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 114,
+              "DocumentIndex": 118,
               "Title": "EmployeeRequestFilter.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\GetRequestsForEmplyees\\EmployeeRequestFilter.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\GetRequestsForEmplyees\\EmployeeRequestFilter.cs",
@@ -2129,7 +2138,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 115,
+              "DocumentIndex": 119,
               "Title": "EmployeeRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Queries\\GetRequestsForEmplyees\\EmployeeRequestDto.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Queries\\GetRequestsForEmplyees\\EmployeeRequestDto.cs",
@@ -2141,7 +2150,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 116,
+              "DocumentIndex": 120,
               "Title": "ICurrentUser.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Contracts\\Repos\\ICurrentUser.cs",
               "RelativeDocumentMoniker": "Application\\Contracts\\Repos\\ICurrentUser.cs",
@@ -2153,7 +2162,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 117,
+              "DocumentIndex": 121,
               "Title": "JwtTokenService.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Implemenation\\JwtTokenService.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Implemenation\\JwtTokenService.cs",
@@ -2165,19 +2174,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 118,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\appsettings.json",
-              "RelativeDocumentMoniker": "DeputyProject\\appsettings.json",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\appsettings.json",
-              "RelativeToolTip": "DeputyProject\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-08-18T04:25:14.932Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 120,
+              "DocumentIndex": 123,
               "Title": "CreateEmployeeCommandValidator.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\AddEmployee\\CreateEmployeeCommandValidator.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\AddEmployee\\CreateEmployeeCommandValidator.cs",
@@ -2189,7 +2186,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 121,
+              "DocumentIndex": 124,
               "Title": "CreateEmployeeCommand.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\AddEmployee\\CreateEmployeeCommand.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\AddEmployee\\CreateEmployeeCommand.cs",
@@ -2201,7 +2198,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 119,
+              "DocumentIndex": 122,
               "Title": "CreateEmployeeCommandHandler.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\AddEmployee\\CreateEmployeeCommandHandler.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\AddEmployee\\CreateEmployeeCommandHandler.cs",
@@ -2214,7 +2211,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 125,
+              "DocumentIndex": 128,
               "Title": "IIdentityService.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Contracts\\Repos\\IIdentityService.cs",
               "RelativeDocumentMoniker": "Application\\Contracts\\Repos\\IIdentityService.cs",
@@ -2226,7 +2223,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 123,
+              "DocumentIndex": 126,
               "Title": "IRoleService.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Contracts\\Repos\\IRoleService.cs",
               "RelativeDocumentMoniker": "Application\\Contracts\\Repos\\IRoleService.cs",
@@ -2238,7 +2235,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 122,
+              "DocumentIndex": 125,
               "Title": "RoleServiceRepo.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Implemenation\\RoleServiceRepo.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Implemenation\\RoleServiceRepo.cs",
@@ -2250,7 +2247,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 124,
+              "DocumentIndex": 127,
               "Title": "IJwtTokenService.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Contracts\\Repos\\IJwtTokenService.cs",
               "RelativeDocumentMoniker": "Application\\Contracts\\Repos\\IJwtTokenService.cs",
@@ -2262,7 +2259,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 159,
+              "DocumentIndex": 162,
               "Title": "20260824200012_m8.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Migrations\\20260824200012_m8.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20260824200012_m8.cs",
@@ -2274,7 +2271,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 126,
+              "DocumentIndex": 129,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Domain\\User.cs",
               "RelativeDocumentMoniker": "Domain\\User.cs",
@@ -2286,7 +2283,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 127,
+              "DocumentIndex": 130,
               "Title": "Employee.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Domain\\Employee.cs",
               "RelativeDocumentMoniker": "Domain\\Employee.cs",
@@ -2298,7 +2295,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 129,
+              "DocumentIndex": 132,
               "Title": "LoginCommandHandler.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\Login\\LoginCommandHandler.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\Login\\LoginCommandHandler.cs",
@@ -2310,7 +2307,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 131,
+              "DocumentIndex": 134,
               "Title": "LoginCommandValidator .cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\Login\\LoginCommandValidator .cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\Login\\LoginCommandValidator .cs",
@@ -2322,7 +2319,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 130,
+              "DocumentIndex": 133,
               "Title": "LoginResponse.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\Login\\LoginResponse.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\Login\\LoginResponse.cs",
@@ -2334,7 +2331,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 128,
+              "DocumentIndex": 131,
               "Title": "LoginCommand.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\Login\\LoginCommand.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\Login\\LoginCommand.cs",
@@ -2346,7 +2343,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 132,
+              "DocumentIndex": 135,
               "Title": "RefreshToekenRepo.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Implemenation\\RefreshToekenRepo.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Implemenation\\RefreshToekenRepo.cs",
@@ -2358,7 +2355,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 133,
+              "DocumentIndex": 136,
               "Title": "IRefreshToken.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Contracts\\Repos\\IRefreshToken.cs",
               "RelativeDocumentMoniker": "Application\\Contracts\\Repos\\IRefreshToken.cs",
@@ -2370,7 +2367,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 134,
+              "DocumentIndex": 137,
               "Title": "CreateCompliantCommandHandler.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\CreateCompliant\\CreateCompliantCommandHandler.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\CreateCompliant\\CreateCompliantCommandHandler.cs",
@@ -2382,7 +2379,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 135,
+              "DocumentIndex": 138,
               "Title": "RefreshToken.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Domain\\RefreshToken.cs",
               "RelativeDocumentMoniker": "Domain\\RefreshToken.cs",
@@ -2394,7 +2391,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 136,
+              "DocumentIndex": 139,
               "Title": "IGenericRepository.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Contracts\\IGenericRepository.cs",
               "RelativeDocumentMoniker": "Application\\Contracts\\IGenericRepository.cs",
@@ -2406,7 +2403,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 155,
+              "DocumentIndex": 158,
               "Title": "20260824054329_m7.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Migrations\\20260824054329_m7.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20260824054329_m7.cs",
@@ -2418,7 +2415,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 142,
+              "DocumentIndex": 145,
               "Title": "INationalIdValidator.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\CreateCompliant\\Validation\\INationalIdValidator.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\CreateCompliant\\Validation\\INationalIdValidator.cs",
@@ -2430,7 +2427,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 138,
+              "DocumentIndex": 141,
               "Title": "CreateComplaintValidator.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\CreateCompliant\\CreateComplaintValidator.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\CreateCompliant\\CreateComplaintValidator.cs",
@@ -2442,7 +2439,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 140,
+              "DocumentIndex": 143,
               "Title": "DI.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\DI.cs",
               "RelativeDocumentMoniker": "Application\\DI.cs",
@@ -2454,7 +2451,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 137,
+              "DocumentIndex": 140,
               "Title": "RequestStatus.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Domain\\Enums\\RequestStatus.cs",
               "RelativeDocumentMoniker": "Domain\\Enums\\RequestStatus.cs",
@@ -2466,7 +2463,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 141,
+              "DocumentIndex": 144,
               "Title": "EgyptianNationalIdValidator .cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\CreateCompliant\\Validation\\EgyptianNationalIdValidator .cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\CreateCompliant\\Validation\\EgyptianNationalIdValidator .cs",
@@ -2478,7 +2475,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 139,
+              "DocumentIndex": 142,
               "Title": "CreateComplaintMappingProfile.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\CreateCompliant\\CreateComplaintMappingProfile.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\CreateCompliant\\CreateComplaintMappingProfile.cs",
@@ -2490,7 +2487,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 144,
+              "DocumentIndex": 147,
               "Title": "CreateCompliantCommand.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Core\\Commands\\CreateCompliant\\CreateCompliantCommand.cs",
               "RelativeDocumentMoniker": "Application\\Core\\Commands\\CreateCompliant\\CreateCompliantCommand.cs",
@@ -2502,7 +2499,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 143,
+              "DocumentIndex": 146,
               "Title": "ValidationBehavior.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Common\\ValidationBehavior.cs",
               "RelativeDocumentMoniker": "Application\\Common\\ValidationBehavior.cs",
@@ -2514,7 +2511,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 145,
+              "DocumentIndex": 148,
               "Title": "Organization.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Domain\\Organization.cs",
               "RelativeDocumentMoniker": "Domain\\Organization.cs",
@@ -2526,7 +2523,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 146,
+              "DocumentIndex": 149,
               "Title": "EmployeeOrganizations.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Domain\\EmployeeOrganizations.cs",
               "RelativeDocumentMoniker": "Domain\\EmployeeOrganizations.cs",
@@ -2538,7 +2535,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 156,
+              "DocumentIndex": 159,
               "Title": "20260824053818_m6.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Migrations\\20260824053818_m6.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20260824053818_m6.cs",
@@ -2550,7 +2547,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 157,
+              "DocumentIndex": 160,
               "Title": "20260824053325_m5.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Migrations\\20260824053325_m5.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20260824053325_m5.cs",
@@ -2562,7 +2559,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 147,
+              "DocumentIndex": 150,
               "Title": "IOrganization.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Application\\Contracts\\Repos\\IOrganization.cs",
               "RelativeDocumentMoniker": "Application\\Contracts\\Repos\\IOrganization.cs",
@@ -2574,7 +2571,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 158,
+              "DocumentIndex": 161,
               "Title": "20260824051733_m4.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Migrations\\20260824051733_m4.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20260824051733_m4.cs",
@@ -2586,7 +2583,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 148,
+              "DocumentIndex": 151,
               "Title": "ComplaintPriority.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Domain\\Enums\\ComplaintPriority.cs",
               "RelativeDocumentMoniker": "Domain\\Enums\\ComplaintPriority.cs",
@@ -2598,7 +2595,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 149,
+              "DocumentIndex": 152,
               "Title": "RequestType.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Domain\\Enums\\RequestType.cs",
               "RelativeDocumentMoniker": "Domain\\Enums\\RequestType.cs",
@@ -2610,7 +2607,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 150,
+              "DocumentIndex": 153,
               "Title": "Department.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Domain\\Department.cs",
               "RelativeDocumentMoniker": "Domain\\Department.cs",
@@ -2622,7 +2619,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 151,
+              "DocumentIndex": 154,
               "Title": "Domain.csproj",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Domain\\Domain.csproj",
               "RelativeDocumentMoniker": "Domain\\Domain.csproj",
@@ -2634,7 +2631,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 154,
+              "DocumentIndex": 157,
               "Title": "20260823204431_m3.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Migrations\\20260823204431_m3.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20260823204431_m3.cs",
@@ -2646,7 +2643,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 152,
+              "DocumentIndex": 155,
               "Title": "20260818044123_m1.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Migrations\\20260818044123_m1.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20260818044123_m1.cs",
@@ -2658,7 +2655,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 153,
+              "DocumentIndex": 156,
               "Title": "20260820041424_m2.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Migrations\\20260820041424_m2.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20260820041424_m2.cs",

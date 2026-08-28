@@ -164,3 +164,4 @@ C:\Users\User\source\repos\DeputyProject\DeputyProject\obj\Debug\net8.0\refint\D
 C:\Users\User\source\repos\DeputyProject\DeputyProject\obj\Debug\net8.0\DeputyProject.pdb
 C:\Users\User\source\repos\DeputyProject\DeputyProject\obj\Debug\net8.0\DeputyProject.genruntimeconfig.cache
 C:\Users\User\source\repos\DeputyProject\DeputyProject\obj\Debug\net8.0\ref\DeputyProject.dll
+C:\Users\User\source\repos\DeputyProject\DeputyProject\bin\Debug\net8.0\appsettings.Production.json
