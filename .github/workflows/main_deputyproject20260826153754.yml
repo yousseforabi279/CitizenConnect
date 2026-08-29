@@ -34,33 +34,33 @@ jobs:
         with:
           name: .net-app
           path: ${{env.DOTNET_ROOT}}/myapp
-  migrate:
-    runs-on: windows-latest
-    needs: build
+  # migrate:
+  #   runs-on: windows-latest
+  #   needs: build
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v4
 
-      - name: Set up .NET
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: '8.x'
+  #     - name: Set up .NET
+  #       uses: actions/setup-dotnet@v4
+  #       with:
+  #         dotnet-version: '8.x'
 
-      - name: Install EF Core
-        run: dotnet tool install --global dotnet-ef
+  #     - name: Install EF Core
+  #       run: dotnet tool install --global dotnet-ef
 
-      - name: Restore
-        run: dotnet restore
+  #     - name: Restore
+  #       run: dotnet restore
 
-      - name: Apply Database Migration
-        run: dotnet ef database update
-        env:
-          ConnectionStrings__Connection: ${{ secrets.AZURE_DB_CONNECTION }}
+  #     - name: Apply Database Migration
+  #       run: dotnet ef database update
+  #       env:
+  #         ConnectionStrings__Connection: ${{ secrets.AZURE_DB_CONNECTION }}
 
   deploy:
     runs-on: windows-latest
-    needs: migrate
+    needs: build
     permissions:
       id-token: write #This is required for requesting the JWT
       contents: read #This is required for actions/checkout
