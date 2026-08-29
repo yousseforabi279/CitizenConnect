@@ -7,16 +7,16 @@
       "RelativeMoniker": "D:0:0:{7A3C3609-2C43-4DD0-9152-C8F69A238590}|DeputyProject\\DeputyProject.csproj|solutionrelative:deputyproject\\appsettings.production.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{7A3C3609-2C43-4DD0-9152-C8F69A238590}|DeputyProject\\DeputyProject.csproj|c:\\users\\user\\source\\repos\\deputyproject\\deputyproject\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{7A3C3609-2C43-4DD0-9152-C8F69A238590}|DeputyProject\\DeputyProject.csproj|solutionrelative:deputyproject\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7A3C3609-2C43-4DD0-9152-C8F69A238590}|DeputyProject\\DeputyProject.csproj|c:\\users\\user\\source\\repos\\deputyproject\\deputyproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7A3C3609-2C43-4DD0-9152-C8F69A238590}|DeputyProject\\DeputyProject.csproj|solutionrelative:deputyproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1E07B7EF-EEF0-4EB8-87EC-381DE36DFD5D}|Infrastructure\\Infrastructure.csproj|c:\\users\\user\\source\\repos\\deputyproject\\infrastructure\\dbcontext\\appcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1E07B7EF-EEF0-4EB8-87EC-381DE36DFD5D}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\dbcontext\\appcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7A3C3609-2C43-4DD0-9152-C8F69A238590}|DeputyProject\\DeputyProject.csproj|c:\\users\\user\\source\\repos\\deputyproject\\deputyproject\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{7A3C3609-2C43-4DD0-9152-C8F69A238590}|DeputyProject\\DeputyProject.csproj|solutionrelative:deputyproject\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1E07B7EF-EEF0-4EB8-87EC-381DE36DFD5D}|Infrastructure\\Infrastructure.csproj|c:\\users\\user\\source\\repos\\deputyproject\\infrastructure\\di.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -686,8 +686,7 @@
               "RelativeToolTip": "DeputyProject\\appsettings.Development.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-08-28T15:55:29.995Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-28T15:55:29.995Z"
             },
             {
               "$type": "Document",
@@ -697,7 +696,7 @@
               "RelativeDocumentMoniker": "DeputyProject\\appsettings.Production.json",
               "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\appsettings.Production.json",
               "RelativeToolTip": "DeputyProject\\appsettings.Production.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2026-08-28T15:55:25.114Z",
               "EditorCaption": ""
@@ -705,15 +704,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "DeputyProject",
+              "Title": "DeputyProject.csproj",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\DeputyProject.csproj",
               "RelativeDocumentMoniker": "DeputyProject\\DeputyProject.csproj",
               "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\DeputyProject.csproj",
               "RelativeToolTip": "DeputyProject\\DeputyProject.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-08-28T15:54:50.714Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-28T15:54:50.714Z"
             },
             {
               "$type": "Document",
@@ -741,7 +739,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\appsettings.json",
               "RelativeDocumentMoniker": "DeputyProject\\appsettings.json",
@@ -749,8 +747,7 @@
               "RelativeToolTip": "DeputyProject\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-08-18T04:25:14.932Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-18T04:25:14.932Z"
             },
             {
               "$type": "Document",
@@ -762,25 +759,23 @@
               "RelativeToolTip": "Infrastructure\\DI.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAABUAAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-18T04:06:58.851Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-18T04:06:58.851Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\Program.cs",
               "RelativeDocumentMoniker": "DeputyProject\\Program.cs",
               "ToolTip": "C:\\Users\\User\\source\\repos\\DeputyProject\\DeputyProject\\Program.cs",
               "RelativeToolTip": "DeputyProject\\Program.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAiwBYAAAA/AAAAAAAAAA==",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAiwBMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-18T04:22:42.482Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-18T04:22:42.482Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Appcontext.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\DeputyProject\\Infrastructure\\Dbcontext\\Appcontext.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Dbcontext\\Appcontext.cs",
@@ -788,8 +783,7 @@
               "RelativeToolTip": "Infrastructure\\Dbcontext\\Appcontext.cs",
               "ViewState": "AgIAABQAAAAAAAAAAAA9wCIAAABNAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-18T04:10:27.667Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-18T04:10:27.667Z"
             },
             {
               "$type": "Document",
@@ -849,8 +843,7 @@
               "RelativeToolTip": "Domain\\Deputy\\ActitvitiesAndVisits.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAqwBMAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T20:22:15.175Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-25T20:22:15.175Z"
             },
             {
               "$type": "Document",
@@ -2206,8 +2199,7 @@
               "RelativeToolTip": "Application\\Core\\Commands\\AddEmployee\\CreateEmployeeCommandHandler.cs",
               "ViewState": "AgIAADsAAAAAAAAAAAAiwE8AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-24T19:45:42.094Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-24T19:45:42.094Z"
             },
             {
               "$type": "Document",

@@ -157,7 +157,6 @@ C:\Users\User\source\repos\DeputyProject\DeputyProject\obj\Debug\net8.0\staticwe
 C:\Users\User\source\repos\DeputyProject\DeputyProject\obj\Debug\net8.0\staticwebassets.build.json.cache
 C:\Users\User\source\repos\DeputyProject\DeputyProject\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\User\source\repos\DeputyProject\DeputyProject\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\Users\User\source\repos\DeputyProject\DeputyProject\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\User\source\repos\DeputyProject\DeputyProject\obj\Debug\net8.0\DeputyPr.233DCD66.Up2Date
 C:\Users\User\source\repos\DeputyProject\DeputyProject\obj\Debug\net8.0\DeputyProject.dll
 C:\Users\User\source\repos\DeputyProject\DeputyProject\obj\Debug\net8.0\refint\DeputyProject.dll
