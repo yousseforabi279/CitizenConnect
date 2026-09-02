@@ -65,10 +65,11 @@ namespace Application.Core.Commands.AddEmployee
                 {
                     UserId = user.Id,
                     DepartmentId = request.DepartmentId,
-                    IsActive = true
+                    IsActive = true,
+                    
                 };
-
                 await _unitOfWork.Employee.AddAsync(employee);
+                employee.EmployeeOrganizations.Add(new EmployeeOrganizations { EmployeeId = employee.Id, OrganizationId = request.organiztionId });
                 await _unitOfWork.SaveChangesAsync();
                 await _unitOfWork.CommitTransactionAsync(cancellationToken);
 

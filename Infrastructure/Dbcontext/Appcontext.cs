@@ -37,6 +37,7 @@ namespace Infrastructure.Dbcontext
         public DbSet<AreasOfWorkandActivities> AreasOfWorkAndActivities { get; set; }
 
         public DbSet<MotionsForInformation> MotionsForInformation { get; set; }
+        public DbSet<PasswordResetCode> passwordResetCodes { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

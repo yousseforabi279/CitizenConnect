@@ -35,8 +35,8 @@ namespace Application.Core.Commands.Deputy.achievements.CreateAchievement
             await _unitOfWork.SaveChangesAsync();
 
             return Result<int>.Success(
-                achievement.Id,
-                "تم إضافة الإنجاز بنجاح.");
+            achievement.Id,
+            "تم إضافة الإنجاز بنجاح.");
         }
     }
 

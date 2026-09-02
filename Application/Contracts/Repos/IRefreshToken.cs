@@ -9,5 +9,6 @@ namespace Application.Contracts.Repos
 {
     public interface IRefreshToken : IGenericRepository<RefreshToken>
     {
+        Task RevokeAllForUserAsync(string userId);
     }
 }

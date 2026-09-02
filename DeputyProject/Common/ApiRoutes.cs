@@ -4,13 +4,18 @@
     {
         public static class Complaint
         {
-            public const string CreateComplaint = "api/auth/Complaint";
+            public const string CreateComplaint = "/    Complaint";
         }
 
         public static class Authentication
         {
-            public const string Login = "api/auth/Login";
-            public const string Register = "api/auth/Register";
+            public const string Login = "/Login";
+            public const string Register = "/Register";
+            public const string ChangePassword = "/ChangePassword";
+            public const string forgotpassword = "/forgot-password";
+            public const string verifyresetcode = "/verify-reset-code";
+            public const string resetpassword = "/reset-password";
+
         }
         public static class Deputy
         {
@@ -41,6 +46,29 @@
             public const string GETBYID = "/api/areas-of-work/{areaId}";
             public const string PUT = "/api/areas-of-work/{areaId}";
             public const string DELETE = "/api/areas-of-work/{reaId}";
+        }
+        public static class DeputyWord
+        {
+            public const string POST = "";
+            public const string GETALL = "";
+            public const string GETBYID = "{DeputyWordId:int}";
+            public const string PUT = "{DeputyWordId:int}";
+            public const string DELETE = "{DeputyWordId:int}";
+        }
+        public static class Motions
+        {
+            public const string POST = "";
+            public const string GETALL = "";
+            public const string GETBYID = "{MotionId:int}";
+            public const string PUT = "{MotionId:int}";
+            public const string DELETE = "{MotionId:int}";
+        }
+        public static class Employee
+        {
+            public const string GetEmplyee = "employee-info";
+            public const string GetRequestsForEmployees = "employee-requests";
+            public const string statistics = "employee-requests/statistics";
+
         }
 
     }

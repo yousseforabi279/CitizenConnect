@@ -3,10 +3,15 @@ using Application.Contracts.Repos;
 using Domain;
 using Infrastructure.Dbcontext;
 using Infrastructure.Implemenation;
+using Infrastructure.Services;
+using Infrastructure.Settings;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
+using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Identity;
 
 namespace Infrastructure
 {
@@ -23,26 +28,27 @@ namespace Infrastructure
                 ));
 
             // Register ASP.NET Core Identity
-            services
-               .AddIdentityCore<Domain.User>(options =>
-               {
-                   // Password settings
-                   options.Password.RequiredLength = 8;
-                   options.Password.RequireDigit = true;
-                   options.Password.RequireUppercase = true;
-                   options.Password.RequireLowercase = true;
-                   options.Password.RequireNonAlphanumeric = false;
+            //services
+            //   .AddIdentityCore<Domain.User>(options =>
+            //   {
+            //       // Password settings
+            //       options.Password.RequiredLength = 8;
+            //       options.Password.RequireDigit = true;
+            //       options.Password.RequireUppercase = true;
+            //       options.Password.RequireLowercase = true;
+            //       options.Password.RequireNonAlphanumeric = false;
 
-                   // User settings
-                   options.User.RequireUniqueEmail = true;
+            //       // User settings
+            //       options.User.RequireUniqueEmail = true;
 
-                   // Lockout settings
-                   options.Lockout.MaxFailedAccessAttempts = 5;
-                   options.Lockout.DefaultLockoutTimeSpan =
-                       TimeSpan.FromMinutes(5);
-               })
-               .AddRoles<IdentityRole>()
-               .AddEntityFrameworkStores<Appcontext>();
+            //       // Lockout settings
+            //       options.Lockout.MaxFailedAccessAttempts = 5;
+            //       options.Lockout.DefaultLockoutTimeSpan =
+            //           TimeSpan.FromMinutes(5);
+            //   })
+            //   .AddRoles<IdentityRole>()
+            //   .AddEntityFrameworkStores<Appcontext>()
+            //   .AddDefaultTokenProviders();
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
@@ -61,6 +67,11 @@ namespace Infrastructure
             services.AddScoped<IAchievement, AchievementRepo>();
             services.AddScoped<IActitvitiesAndVisits, ActitvitiesAndVisitsRepo>();
             services.AddScoped<IAreasOfWorkandActivities, AreasOfWorkandActivitiesRepo>();
+            services.AddScoped<IDeputyword, DeputywordRepo>();
+            services.AddScoped<IMotionsForInformation, MotionsForInformationRepo>();
+            services.AddScoped<IPasswordResetCode, PasswordResetCodeRepo>();
+            services.Configure<EmailSettings>(configuration.GetSection("EmailSettings"));
+            services.AddScoped<IEmailService, EmailService>();
 
             return services;
         }

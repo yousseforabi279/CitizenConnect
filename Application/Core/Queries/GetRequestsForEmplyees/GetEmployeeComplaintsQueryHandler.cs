@@ -1,6 +1,7 @@
 ﻿using Application.Common;
 using Application.Contracts;
 using Application.Contracts.Repos;
+using Domain.Enums;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -49,6 +50,8 @@ namespace Application.Core.Queries.GetRequestsForEmplyees
                         ResultStatus.NotFound,
                         "Employee not found.");
             }
+            var requestType = request.Type ?? RequestType.Complaint;
+
             var filter = new EmployeeRequestFilter
             {
                 Type = request.Type,

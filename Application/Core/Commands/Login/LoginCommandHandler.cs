@@ -25,8 +25,7 @@ namespace Application.Core.Commands.Login
         }
         public async Task<Result<LoginResponse>> Handle(LoginCommand request, CancellationToken cancellationToken)
         {
-            var user = await _unitOfWork.IdentityService
-                       .FindByEmailAsync(request.Email);
+            var user = await _unitOfWork.IdentityService.FindByEmailAsync(request.Email);
             if (user is null)
             {
                 return Result<LoginResponse>.Failure(

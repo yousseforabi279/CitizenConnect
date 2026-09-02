@@ -1,4 +1,6 @@
-﻿using Domain;
+﻿using Application.Core.Queries.Employee.GetEmployeeInfo;
+using Application.Core.Queries.Employee.GetEmployeeRequestStatistics;
+using Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +13,7 @@ namespace Application.Contracts.Repos
     {
         public Task<List<Employee>> GetAvailableEmployeesAsync(int departmentId, int organizationId);
         public Task<Employee?> GetByUserIdAsync(string userId);
+        public Task<EmplyeeInfo?> GetEmplyeeInfo(string userId);
+        Task<EmployeeRequestStatisticsDto> GetStatisticsAsync(int employeeId, CancellationToken cancellationToken);
     }
 }

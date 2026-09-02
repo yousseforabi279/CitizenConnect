@@ -1,4 +1,5 @@
-﻿using Domain;
+﻿using Application.Common;
+using Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,5 +26,11 @@ namespace Application.Contracts.Repos
         Task<bool> AddToRoleAsync(
             User user,
             string role);
+
+        Task<User?> FindByIdAsync(string userId);
+        Task<IdentityOperationResult> ChangePasswordAsync(User user, string currentPassword, string newPassword);
+        Task<IdentityOperationResult> ResetPasswordDirectAsync(User user, string newPassword);
+
+
     }
 }

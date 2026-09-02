@@ -13,6 +13,7 @@ namespace Application.Core.Commands.AddEmployee
      string Email,
      string Password,
      string Role,
-     int DepartmentId
+     int DepartmentId,
+     int organiztionId
  ) : IRequest<Result<int>>;
 }

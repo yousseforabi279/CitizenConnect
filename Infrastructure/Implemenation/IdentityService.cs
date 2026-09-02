@@ -1,4 +1,5 @@
-﻿using Application.Contracts.Repos;
+﻿using Application.Common;
+using Application.Contracts.Repos;
 using Domain;
 using Microsoft.AspNetCore.Identity;
 using System;
@@ -76,6 +77,26 @@ namespace Infrastructure.Implemenation
             var result = await _userManager
                        .AddToRoleAsync(user, role);
             return result.Succeeded;
+        }
+        public async Task<User?> FindByIdAsync(string userId)
+        {
+            return await _userManager.FindByIdAsync(userId);
+        }
+        public async Task<IdentityOperationResult> ChangePasswordAsync(User user, string currentPassword, string newPassword)
+        {
+            var result = await _userManager.ChangePasswordAsync(user, currentPassword, newPassword);
+
+            return new IdentityOperationResult
+            {
+                Succeeded = result.Succeeded,
+                Errors = result.Errors.Select(e => e.Description).ToList()
+            };
+        }
+        public async Task<IdentityOperationResult> ResetPasswordDirectAsync(User user, string newPassword)
+        {
+            var token = await _userManager.GeneratePasswordResetTokenAsync(user); // Identity's internal token, generated+used behind the scenes
+            var result = await _userManager.ResetPasswordAsync(user, token, newPassword);
+            return new IdentityOperationResult { Succeeded = result.Succeeded, Errors = result.Errors.Select(e => e.Description).ToList() };
         }
     }
 }

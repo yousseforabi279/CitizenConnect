@@ -25,6 +25,10 @@ namespace Application.Contracts
         IAchievement Achievement { get; }
         IActitvitiesAndVisits ActitvitiesAndVisits { get; }
         IAreasOfWorkandActivities AreasOfWorkandActivities { get; }
+        IMotionsForInformation MotionsForInformation { get; }
+        IDeputyword Deputyword { get; }
+        IPasswordResetCode PasswordResetCode { get; }
+        IEmailService EmailService { get; }
         Task<int> SaveChangesAsync();
         Task BeginTransactionAsync(
             CancellationToken cancellationToken = default);

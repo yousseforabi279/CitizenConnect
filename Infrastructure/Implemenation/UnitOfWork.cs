@@ -27,7 +27,11 @@ namespace Infrastructure.Implemenation
             IDeputy deputy,
             IAchievement achievement,
             IActitvitiesAndVisits actitvitiesAndVisits,
-            IAreasOfWorkandActivities areasOfWorkandActivities
+            IAreasOfWorkandActivities areasOfWorkandActivities,
+            IDeputyword deputyword,
+            IMotionsForInformation motionsForInformation,
+            IPasswordResetCode passwordResetCode,
+            IEmailService emailService
             )
         {
             _context = context;
@@ -46,6 +50,10 @@ namespace Infrastructure.Implemenation
             Achievement=achievement;
             ActitvitiesAndVisits = actitvitiesAndVisits;
             AreasOfWorkandActivities=areasOfWorkandActivities;
+            this.Deputyword = deputyword;
+            this.MotionsForInformation = motionsForInformation;
+            this.PasswordResetCode = passwordResetCode;
+            EmailService = emailService;
         }
 
         public ICitizinRequierment CitizinRequierment { get; }
@@ -76,6 +84,14 @@ namespace Infrastructure.Implemenation
         public IActitvitiesAndVisits ActitvitiesAndVisits { get; }
 
         public IAreasOfWorkandActivities AreasOfWorkandActivities { get; }
+
+        public IDeputyword Deputyword {  get; }
+
+        public IMotionsForInformation MotionsForInformation {get; }
+
+        public IPasswordResetCode PasswordResetCode { get; }
+
+        public IEmailService EmailService { get; }
 
         public async Task<int> SaveChangesAsync()
         {

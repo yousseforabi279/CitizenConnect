@@ -1,6 +1,7 @@
 ﻿using Application.Contracts.Repos;
 using Domain;
 using Infrastructure.Dbcontext;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,16 @@ namespace Infrastructure.Implemenation
         {
             _context = context;
         }
+        public async Task RevokeAllForUserAsync(string userId)
+        {
+            var tokens = await _context.RefreshTokens
+                .Where(rt => rt.UserId == userId && !rt.IsRevoked)
+                .ToListAsync();
 
+            foreach (var token in tokens)
+            {
+                token.IsRevoked = true;
+            }
+        }
     }
 }
