@@ -125,10 +125,9 @@ app.UseExceptionHandling();
 
     app.UseSwagger();
     app.UseSwaggerUI();
-app.UseHttpsRedirection();
 app.UseCors("AllowFrontend");
 app.UseHttpsRedirection();
-
+app.    UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
