@@ -70,6 +70,17 @@ Console.WriteLine($"[DEBUG] Jwt:Key = '{builder.Configuration["Jwt:Key"]}'");
 builder.Services.AddInfrastructure(builder.Configuration).AddApplication();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped<ICurrentUser, CurrentUser>();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend", policy =>
+    {
+        policy.WithOrigins("https://your-frontend-domain.com")
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+        // NOTE: no .AllowCredentials() needed if you're just sending
+        // the JWT in a header (not using cookies)
+    });
+});
 
 builder.Services
               .AddIdentityCore<Domain.User>(options =>
@@ -114,7 +125,8 @@ app.UseExceptionHandling();
 
     app.UseSwagger();
     app.UseSwaggerUI();
-
+app.UseHttpsRedirection();
+app.UseCors("AllowFrontend");
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
