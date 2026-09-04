@@ -5,6 +5,8 @@ using Application.Core.Queries.Deputy.AreaOfWork.GetAll;
 using Application.Core.Queries.Deputy.AreaOfWork.GetById;
 using Bank.Api.Controllers;
 using DeputyProject.Common;
+using DeputyProject.Mappers;
+using DeputyProject.Requests.AreaOfWork;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -38,8 +40,15 @@ namespace DeputyProject.Controllers
         }
         [HttpPost(ApiRoutes.AreaOfWork.POST)]
         public async Task<IActionResult> CreateAreaOfWork(
-                CreateAreaOfWorkCommand command)
+                [FromForm] CreateAreaOfWorkRequest request)
         {
+            var command = new CreateAreaOfWorkCommand
+            {
+                Title = request.Title,
+                Description = request.Description,
+                Image = request.Image.MapToFileUploadRequest()
+            };
+
 
             var result = await _mediator.Send(command);
             return HandleResult(result);
@@ -47,9 +56,15 @@ namespace DeputyProject.Controllers
         [HttpPut(ApiRoutes.AreaOfWork.PUT)]
         public async Task<IActionResult> UpdateAreaOfWork(
                             int areaId,
-                            UpdateAreaOfWorkCommand command)
+                           [FromForm] UpdateAreaOfWorkRequest request)
         {
-            command.AreaId = areaId;
+            var command = new UpdateAreaOfWorkCommand
+            {
+                AreaId = areaId,
+                Title = request.Title,
+                Description = request.Description,
+                Image = request.Image.MapToFileUploadRequest()
+            };
             var result = await _mediator.Send(command);
             return HandleResult(result);
         }

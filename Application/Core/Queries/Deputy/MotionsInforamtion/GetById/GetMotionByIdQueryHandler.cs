@@ -1,45 +1,48 @@
 ﻿using Application.Common;
 using Application.Contracts;
+using Application.Core.Commands.LoadingPage.MotionsForInformation;
 using Application.Core.Queries.Deputy.MotionsInforamtion.GetAll;
+using Application.storage;
 using MediatR;
 
 namespace Application.Core.Queries.Deputy.MotionsForInformation.GetById
 {
-    public class GetMotionByIdQueryHandler
-        : IRequestHandler<GetMotionByIdQuery, Result<MotionDto>>
+    internal class GetMotionsForInformationByIdQueryHandler
+    : IRequestHandler<GetMotionByIdQuery, Result<MotionsForInformationDTO>>
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IBlobStorageService _blobStorageService;
+        private const string ContainerName = "motions-for-information-files";
 
-        public GetMotionByIdQueryHandler(IUnitOfWork unitOfWork)
+        public GetMotionsForInformationByIdQueryHandler(IUnitOfWork unitOfWork, IBlobStorageService blobStorageService)
         {
             _unitOfWork = unitOfWork;
+            _blobStorageService = blobStorageService;
         }
 
-        public async Task<Result<MotionDto>> Handle(
+        public async Task<Result<MotionsForInformationDTO>> Handle(
             GetMotionByIdQuery request,
             CancellationToken cancellationToken)
         {
-            var result = await _unitOfWork.MotionsForInformation
-                .GetByIdAsync(request.MotionId);
-
-            if (result == null)
+            var motion = await _unitOfWork.MotionsForInformation.GetByIdAsync(request.MotionId);
+            if (motion is null)
             {
-                return Result<MotionDto>.Failure(
-                    ResultStatus.Failure,
-                    "الحركة غير موجودة.");
+                return Result<MotionsForInformationDTO>.Failure(ResultStatus.NotFound, "الطلب الاستعلامي غير موجود.");
             }
 
-            var response = new MotionDto
+            var dto = new MotionsForInformationDTO
             {
-                Id = result.Id,
-                Title = result.Title,
-                Description = result.Description,
-                Image_Video = result.Image_Video
+                Id = motion.Id,
+                Title = motion.Title,
+                Description = motion.Description,
+                MediaUrl = motion.BlobName != null
+                    ? _blobStorageService.GetReadSasUrl(motion.BlobName, ContainerName)
+                    : null,
+                ContentType = motion.ContentType,
+                MediaType = motion.MediaType
             };
 
-            return Result<MotionDto>.Success(
-                response,
-                "تم جلب الحركة بنجاح.");
+            return Result<MotionsForInformationDTO>.Success(dto);
         }
     }
 }

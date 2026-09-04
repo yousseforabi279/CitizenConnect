@@ -1,5 +1,7 @@
 ﻿using Application.Common;
 using Application.Contracts;
+using Application.Core.Commands.LoadingPage.ActivityVisit;
+using Application.storage;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -12,16 +14,20 @@ namespace Application.Core.Queries.Deputy.ActivityVisit.GetAll
     internal class GetAllActivityVisitsQueryHandler
     : IRequestHandler<
         GetAllActivityVisitsQuery,
-        Result<List<ActivityVisitResponse>>>
+        Result<List<ActivityVisitDTO>>>
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IBlobStorageService _blobStorageService;
+        private const string ContainerName = "activity-visit-files";
 
-        public GetAllActivityVisitsQueryHandler(IUnitOfWork unitOfWork)
+        public GetAllActivityVisitsQueryHandler(IUnitOfWork unitOfWork, IBlobStorageService blobStorageService)
         {
             _unitOfWork = unitOfWork;
+            _blobStorageService = blobStorageService;
+
         }
 
-        public async Task<Result<List<ActivityVisitResponse>>> Handle(
+        public async Task<Result<List<ActivityVisitDTO>>> Handle(
             GetAllActivityVisitsQuery request,
             CancellationToken cancellationToken)
         {
@@ -30,18 +36,21 @@ namespace Application.Core.Queries.Deputy.ActivityVisit.GetAll
                          await _unitOfWork.ActitvitiesAndVisits.GetAllAsync();
 
             var response = activities
-                         .Select(x => new ActivityVisitResponse
+                         .Select(a => new ActivityVisitDTO
                          {
-                             Id = x.Id,
-                             Title = x.Title,
-                             Description = x.Description,
-                             Image_Video = x.Image_Video,
-                             Location = x.Location,
-                             Date = x.Date
-                         })
-                         .ToList();
+                             Id = a.Id,
+                             Title = a.Title,
+                             Description = a.Description,
+                             Location = a.Location,
+                             Date = a.Date,
+                             MediaUrl = a.BlobName != null
+                                ? _blobStorageService.GetReadSasUrl(a.BlobName, ContainerName)
+                                : null,
+                             ContentType = a.ContentType,
+                             MediaType = a.MediaType
+                         }).ToList();
 
-            return Result<List<ActivityVisitResponse>>.Success(
+            return Result<List<ActivityVisitDTO>>.Success(
                 response,
                 "تم جلب الأنشطة والزيارات بنجاح.");
         }

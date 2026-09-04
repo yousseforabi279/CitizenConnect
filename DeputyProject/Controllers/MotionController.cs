@@ -4,6 +4,8 @@ using Application.Core.Queries.Deputy.MotionsForInformation.GetById;
 using Application.Core.Queries.Deputy.MotionsInforamtion.GetAll.Application.Core.Queries.Deputy.MotionsForInformation.GetAll;
 using Bank.Api.Controllers;
 using DeputyProject.Common;
+using DeputyProject.Mappers;
+using DeputyProject.Requests.MotionsForInformation;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -35,8 +37,14 @@ namespace DeputyProject.Controllers
 
         [HttpPost(ApiRoutes.Motions.POST)]
         public async Task<IActionResult> AddMotion(
-                CreateMotionCommand command)
+                [FromForm] CreateMotionsForInformationRequest request)
         {
+            var command = new CreateMotionCommand
+            {
+                Title = request.Title,
+                Description = request.Description,
+                Media = request.Media.MapToFileUploadRequest()
+            };
             var result = await _mediator.Send(command);
 
             return HandleResult(result);
@@ -46,10 +54,15 @@ namespace DeputyProject.Controllers
         [HttpPut(ApiRoutes.Motions.PUT)]
         public async Task<IActionResult> UpdateMotion(
                             int MotionId,
-                            EditMotionCommand command)
+                            [FromForm] UpdateMotionsForInformationRequest request)
         {
-            command.MotionId = MotionId;
-
+            var command = new EditMotionCommand
+            {
+                Id = MotionId,
+                Title = request.Title,
+                Description = request.Description,
+                Media = request.Media.MapToFileUploadRequest()
+            };
             var result = await _mediator.Send(command);
 
             return HandleResult(result);

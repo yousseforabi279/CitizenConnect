@@ -1,4 +1,6 @@
 ﻿using Application.Common;
+using Application.Core.Commands.LoadingPage.AreasOfWorkandActivities;
+using Application.storage;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -8,12 +10,10 @@ using System.Threading.Tasks;
 
 namespace Application.Core.Commands.Deputy.AreasOfWorkandActivities.CreateAreaOfWork
 {
-    public class CreateAreaOfWorkCommand : IRequest<Result<int>>
+    public class CreateAreaOfWorkCommand : IRequest<Result<AreaOfWorkDTO>>
     {
-        public string Title { get; set; } = null!;
-
-        public string Description { get; set; } = null!;
-
-        public string Image { get; set; } = null!;
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public FileUploadRequest Image { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Application.Common;
+using Application.storage;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -8,11 +9,10 @@ using System.Threading.Tasks;
 
 namespace Application.Core.Commands.LoadingPage.DeputyWords.EditDeputyWords
 {
-    public class EditDeputyWordCommend : IRequest<Result<int>>
+    public class UpdateDeputyWordsCommand : IRequest<Result<DeputyWordsDTO>>
     {
-        public int DeputyWordId { get; set; }
-        public string Title { get; set; } = null!;
-        public string Image { get; set; } = null!;
-
+        public int Id { get; set; }
+        public string? Title { get; set; }
+        public FileUploadRequest? Media { get; set; } // null = keep existing media
     }
 }

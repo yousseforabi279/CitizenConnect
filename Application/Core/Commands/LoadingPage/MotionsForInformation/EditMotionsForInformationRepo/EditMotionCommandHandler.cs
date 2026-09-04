@@ -1,44 +1,68 @@
 ﻿using Application.Common;
 using Application.Contracts;
+using Application.storage;
+using Domain.Deputy;
 using MediatR;
 
 namespace Application.Core.Commands.LoadingPage.MotionsForInformation.EditMotionsForInformation
 {
-    public class EditMotionCommandHandler
-        : IRequestHandler<EditMotionCommand, Result<int>>
+    internal class UpdateMotionsForInformationCommandHandler
+        : IRequestHandler<EditMotionCommand, Result<MotionsForInformationDTO>>
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IBlobStorageService _blobStorageService;
+        private const string ContainerName = "motions-for-information-files";
 
-        public EditMotionCommandHandler(IUnitOfWork unitOfWork)
+        public UpdateMotionsForInformationCommandHandler(IUnitOfWork unitOfWork, IBlobStorageService blobStorageService)
         {
             _unitOfWork = unitOfWork;
+            _blobStorageService = blobStorageService;
         }
 
-        public async Task<Result<int>> Handle(
+        public async Task<Result<MotionsForInformationDTO>> Handle(
             EditMotionCommand request,
             CancellationToken cancellationToken)
         {
-            var motion = await _unitOfWork.MotionsForInformation
-                .GetByIdAsync(request.MotionId);
-
-            if (motion == null)
+            var motion = await _unitOfWork.MotionsForInformation.GetByIdAsync(request.Id);
+            if (motion is null)
             {
-                return Result<int>.Failure(
-                    ResultStatus.NotFound,
-                    "الطلب غير موجود.");
+                return Result<MotionsForInformationDTO>.Failure(ResultStatus.NotFound, "الطلب الاستعلامي غير موجود.");
+            }
+
+            if (request.Media != null)
+            {
+                if (!string.IsNullOrEmpty(motion.BlobName))
+                    await _blobStorageService.DeleteFileAsync(motion.BlobName, ContainerName);
+
+                var upload = await _blobStorageService.UploadFileAsync(request.Media, ContainerName);
+
+                motion.BlobName = upload.BlobName;
+                motion.MediaFileName = request.Media.FileName;
+                motion.ContentType = upload.ContentType;
+                motion.FileSizeBytes = upload.SizeBytes;
+                motion.MediaType = request.Media.ContentType.StartsWith("video") ? MediaType.Video : MediaType.Image;
+                motion.UploadedAt = DateTime.UtcNow;
             }
 
             motion.Title = request.Title;
             motion.Description = request.Description;
-            motion.Image_Video = request.Image_Video;
 
             _unitOfWork.MotionsForInformation.Update(motion);
-
             await _unitOfWork.SaveChangesAsync();
 
-            return Result<int>.Success(
-                motion.Id,
-                "تم تعديل البيانات بنجاح.");
+            var dto = new MotionsForInformationDTO
+            {
+                Id = motion.Id,
+                Title = motion.Title,
+                Description = motion.Description,
+                MediaUrl = motion.BlobName != null
+                    ? _blobStorageService.GetReadSasUrl(motion.BlobName, ContainerName)
+                    : null,
+                ContentType = motion.ContentType,
+                MediaType = motion.MediaType
+            };
+
+            return Result<MotionsForInformationDTO>.Success(dto, "تم التعديل بنجاح.");
         }
     }
 }

@@ -1,6 +1,9 @@
 ﻿using Application.Common;
 using Application.Contracts;
+using Application.Core.Commands.LoadingPage.achievements;
 using Application.Core.Queries.Deputy.Achievement.GetAchievementById;
+using Application.storage;
+using Domain.Deputy;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -13,17 +16,22 @@ namespace Application.Core.Queries.Deputy.Achievement.GetAllAchievements
     internal class GetAllAchievementsQueryHandler
       : IRequestHandler<
           GetAllAchievementsQuery,
-          Result<List<AchievementResponse>>>
+          Result<List<AchievementDto>>>
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IBlobStorageService _blobStorageService;
+        private const string ContainerName = "achievement-files";
+
 
         public GetAllAchievementsQueryHandler(
-            IUnitOfWork unitOfWork)
+            IUnitOfWork unitOfWork, IBlobStorageService blobStorageService)
         {
             _unitOfWork = unitOfWork;
+            _blobStorageService = blobStorageService;
+
         }
 
-        public async Task<Result<List<AchievementResponse>>> Handle(
+        public async Task<Result<List<AchievementDto>>> Handle(
             GetAllAchievementsQuery request,
             CancellationToken cancellationToken)
         {
@@ -32,15 +40,19 @@ namespace Application.Core.Queries.Deputy.Achievement.GetAllAchievements
                     await _unitOfWork.Achievement.GetAllAsync();
 
             var response = achievements
-                    .Select(x => new AchievementResponse
-                    {
-                        Id = x.Id,
-                        Title = x.Title,
-                        Description = x.Description,
-                        Image = x.Image,
-                    })
-                    .ToList();
-            return Result<List<AchievementResponse>>.Success(
+                .Select(achievement => new AchievementDto
+                {
+                    Id = achievement.Id,
+                    Title = achievement.Title,
+                    Description = achievement.Description,
+                    MediaUrl = string.IsNullOrWhiteSpace(achievement.BlobName)
+                        ? null
+                        : _blobStorageService.GetReadSasUrl(achievement.BlobName,ContainerName),
+                    ContentType = achievement.ContentType,
+                    MediaType = achievement.MediaType
+                })
+                .ToList();
+            return Result<List<AchievementDto>>.Success(
                 response,
                 "تم جلب الإنجازات بنجاح.");
         }

@@ -14,15 +14,11 @@ namespace Application.Core.Commands.LoadingPage.DeputyWords.CreateDeputyWords
         {
 
             RuleFor(x => x.Title)
-                .NotEmpty()
-                .WithMessage("عنوان الإنجاز مطلوب.")
-                .MaximumLength(200)
-                .WithMessage("عنوان الإنجاز لا يمكن أن يتجاوز 200 حرف.");
+             .MaximumLength(200).WithMessage("العنوان لا يمكن أن يتجاوز 200 حرف.");
 
-            
-            RuleFor(x => x.Image)
-                .NotEmpty()
-                .WithMessage("صورة الإنجاز مطلوبة.");
+            RuleFor(x => x.Media)
+                .NotNull().WithMessage("الفيديو أو الصورة مطلوبة.")
+                .Must(f => f == null || f.Length > 0).WithMessage("الملف المرفوع غير صالح.");
         }
     }
 }

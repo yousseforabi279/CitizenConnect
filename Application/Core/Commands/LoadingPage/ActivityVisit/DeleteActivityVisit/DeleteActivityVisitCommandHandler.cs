@@ -1,5 +1,7 @@
 ﻿using Application.Common;
 using Application.Contracts;
+using Application.storage;
+using Domain.Deputy;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -15,11 +17,15 @@ namespace Application.Core.Commands.Deputy.ActivityVisit.DeleteActivityVisit
             Result<int>>
     {
         private readonly IUnitOfWork _unitOfWork;
+        private const string ContainerName = "activity-visit-files";
+        private readonly IBlobStorageService _blobStorageService;
 
         public DeleteActivityVisitCommandHandler(
-            IUnitOfWork unitOfWork)
+            IUnitOfWork unitOfWork, IBlobStorageService blobStorageService)
         {
             _unitOfWork = unitOfWork;
+            _blobStorageService = blobStorageService;
+
         }
 
         public async Task<Result<int>> Handle(
@@ -35,6 +41,8 @@ namespace Application.Core.Commands.Deputy.ActivityVisit.DeleteActivityVisit
                     ResultStatus.NotFound,
                     "النشاط أو الزيارة غير موجود.");
             }
+            if (!string.IsNullOrEmpty(activity.BlobName))
+                await _blobStorageService.DeleteFileAsync(activity.BlobName, ContainerName);
 
             _unitOfWork.ActitvitiesAndVisits.Delete(activity);
 

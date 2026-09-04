@@ -42,6 +42,12 @@ builder.Services.AddSwaggerGen(options =>
             Array.Empty<string>()
         }
     });
+    options.MapType<IFormFile>(() =>
+       new Microsoft.OpenApi.Models.OpenApiSchema
+       {
+           Type = "string",
+           Format = "binary"
+       });
 });
 builder.Services.AddAuthentication(options =>
 {

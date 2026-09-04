@@ -1,4 +1,5 @@
 ﻿using Application.Common;
+using Application.Core.Commands.LoadingPage.AreasOfWorkandActivities;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 namespace Application.Core.Queries.Deputy.AreaOfWork.GetById
 {
     public class GetAreaOfWorkQuery
-     : IRequest<Result<AreaOfWorkResponse>>
+     : IRequest<Result<AreaOfWorkDTO>>
     {
 
         public int AreaId { get; set; }

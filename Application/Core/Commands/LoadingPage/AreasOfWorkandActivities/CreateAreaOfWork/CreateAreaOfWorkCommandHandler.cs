@@ -1,5 +1,7 @@
 ﻿using Application.Common;
 using Application.Contracts;
+using Application.Core.Commands.LoadingPage.AreasOfWorkandActivities;
+using Application.storage;
 using Domain.Deputy;
 using MediatR;
 using System;
@@ -10,35 +12,52 @@ using System.Threading.Tasks;
 
 namespace Application.Core.Commands.Deputy.AreasOfWorkandActivities.CreateAreaOfWork
 {
-    internal class CreateAreaOfWorkCommandHandler
-      : IRequestHandler<CreateAreaOfWorkCommand, Result<int>>
-    {
-        private readonly IUnitOfWork _unitOfWork;
-
-        public CreateAreaOfWorkCommandHandler(IUnitOfWork unitOfWork)
+        internal class CreateAreaOfWorkCommandHandler
+            : IRequestHandler<CreateAreaOfWorkCommand, Result<AreaOfWorkDTO>>
         {
-            _unitOfWork = unitOfWork;
-        }
+            private readonly IUnitOfWork _unitOfWork;
+            private readonly IBlobStorageService _blobStorageService;
+            private const string ContainerName = "areas-of-work-files";
 
-        public async Task<Result<int>> Handle(
-            CreateAreaOfWorkCommand request,
-            CancellationToken cancellationToken)
-        {
-            var area = new Domain.Deputy.AreasOfWorkandActivities
+            public CreateAreaOfWorkCommandHandler(IUnitOfWork unitOfWork, IBlobStorageService blobStorageService)
             {
-                Title = request.Title,
-                Description = request.Description,
-                Image = request.Image
-            };
+                _unitOfWork = unitOfWork;
+                _blobStorageService = blobStorageService;
+            }
 
-            await _unitOfWork.AreasOfWorkandActivities
-                .AddAsync(area);
+            public async Task<Result<AreaOfWorkDTO>> Handle(
+                CreateAreaOfWorkCommand request,
+                CancellationToken cancellationToken)
+            {
+                var area = new Domain.Deputy.AreasOfWorkandActivities
+                {
+                    Title = request.Title,
+                    Description = request.Description
+                };
 
-            await _unitOfWork.SaveChangesAsync();
+                var upload = await _blobStorageService.UploadFileAsync(request.Image, ContainerName);
 
-            return Result<int>.Success(
-                area.Id,
-                "تم إضافة مجال العمل بنجاح.");
+                area.BlobName = upload.BlobName;
+                area.MediaFileName = request.Image.FileName;
+                area.ContentType = upload.ContentType;
+                area.FileSizeBytes = upload.SizeBytes;
+                area.MediaType = request.Image.ContentType.StartsWith("video") ? MediaType.Video : MediaType.Image;
+                area.UploadedAt = DateTime.UtcNow;
+
+                await _unitOfWork.AreasOfWorkandActivities.AddAsync(area);
+                await _unitOfWork.SaveChangesAsync();
+
+                var dto = new AreaOfWorkDTO
+                {
+                    Id = area.Id,
+                    Title = area.Title,
+                    Description = area.Description,
+                    MediaUrl = _blobStorageService.GetReadSasUrl(area.BlobName, ContainerName),
+                    ContentType = area.ContentType,
+                    MediaType = area.MediaType
+                };
+
+                return Result<AreaOfWorkDTO>.Success(dto, "تم إضافة مجال العمل بنجاح.");
+            }
         }
     }
-}

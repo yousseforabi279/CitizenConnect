@@ -24,8 +24,8 @@ namespace Application.Core.Commands.Deputy.AreasOfWorkandActivities.CreateAreaOf
                 .WithMessage("وصف مجال العمل مطلوب.");
 
             RuleFor(x => x.Image)
-                .NotEmpty()
-                .WithMessage("صورة مجال العمل مطلوبة.");
+                .NotNull().WithMessage("صورة مجال العمل مطلوبة.")
+                .Must(f => f.Length > 0).WithMessage("الملف المرفوع غير صالح.");
         }
     }
 }

@@ -9,6 +9,8 @@ using Application.Core.Queries.Deputy.DeputyWord.GetAll;
 using Application.Core.Queries.Deputy.DeputyWord.GetById;
 using Bank.Api.Controllers;
 using DeputyProject.Common;
+using DeputyProject.Mappers;
+using DeputyProject.Requests.Deputyword;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -38,16 +40,26 @@ namespace DeputyProject.Controllers
             return HandleResult(result);
         }
         [HttpPost(ApiRoutes.DeputyWord.POST)]
-        public async Task<IActionResult> AddDeputyWord(CreateDeputyWordsCommand command)
+        public async Task<IActionResult> AddDeputyWord([FromForm] CreateDeputyWordsRequest request)
         {
+            var command = new CreateDeputyWordsCommand
+            {
+                Title = request.Title,
+                Media = request.Media.MapToFileUploadRequest()
+            };
             var result = await _mediator.Send(command);
             return HandleResult(result);
         }
         [HttpPut(ApiRoutes.DeputyWord.PUT)]
         public async Task<IActionResult> UpdateDeputyWord(int DeputyWordId,
-                                                        EditDeputyWordCommend command)
+                                                        [FromForm] UpdateDeputyWordsRequest request)
         {
-            command.DeputyWordId = DeputyWordId;
+            var command = new UpdateDeputyWordsCommand
+            {
+                Id = DeputyWordId,
+                Title = request.Title,
+                Media = request.Media.MapToFileUploadRequest()
+            };
             var result = await _mediator.Send(command);
             return HandleResult(result);
         }

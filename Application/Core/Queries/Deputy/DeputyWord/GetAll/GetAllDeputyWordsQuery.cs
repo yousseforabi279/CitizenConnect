@@ -1,4 +1,5 @@
 ﻿using Application.Common;
+using Application.Core.Commands.LoadingPage.DeputyWords;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -8,5 +9,5 @@ using System.Threading.Tasks;
 
 namespace Application.Core.Queries.Deputy.DeputyWord.GetAll
 {
-    public record GetAllDeputyWordsQuery : IRequest<Result<List<DeputyWordsDto>>>;
+    public record GetAllDeputyWordsQuery : IRequest<Result<List<DeputyWordsDTO>>>;
 }

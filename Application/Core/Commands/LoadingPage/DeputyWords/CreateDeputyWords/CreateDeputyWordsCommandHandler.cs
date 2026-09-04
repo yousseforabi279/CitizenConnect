@@ -1,6 +1,7 @@
 ﻿using Application.Common;
 using Application.Contracts;
 using Application.Core.Commands.Deputy.achievements.CreateAchievement;
+using Application.storage;
 using Domain.Deputy;
 using MediatR;
 using System;
@@ -11,33 +12,49 @@ using System.Threading.Tasks;
 
 namespace Application.Core.Commands.LoadingPage.DeputyWords.CreateDeputyWords
 {
-    internal class CreateDeputyWordsCommandHandler : IRequestHandler<CreateDeputyWordsCommand, Result<int>>
+    internal class CreateDeputyWordsCommandHandler
+        : IRequestHandler<CreateDeputyWordsCommand, Result<DeputyWordsDTO>>
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IBlobStorageService _blobStorageService;
+        private const string ContainerName = "deputy-words-files";
 
-        public CreateDeputyWordsCommandHandler(IUnitOfWork unitOfWork)
+        public CreateDeputyWordsCommandHandler(IUnitOfWork unitOfWork, IBlobStorageService blobStorageService)
         {
             _unitOfWork = unitOfWork;
+            _blobStorageService = blobStorageService;
         }
 
-        public async Task<Result<int>> Handle(
+        public async Task<Result<DeputyWordsDTO>> Handle(
             CreateDeputyWordsCommand request,
             CancellationToken cancellationToken)
         {
-            var deputyWords = new Domain.Deputy.DeputyWords
+            var upload = await _blobStorageService.UploadFileAsync(request.Media, ContainerName);
+
+            var word = new Domain.Deputy.DeputyWords
             {
                 Title = request.Title,
-                Video_image = request.Image,
+                BlobName = upload.BlobName,
+                MediaFileName = request.Media.FileName,
+                ContentType = upload.ContentType,
+                FileSizeBytes = upload.SizeBytes,
+                MediaType = request.Media.ContentType.StartsWith("video") ? MediaType.Video : MediaType.Image,
+                UploadedAt = DateTime.UtcNow
             };
-            await _unitOfWork.Deputyword.AddAsync(deputyWords);
 
+            await _unitOfWork.Deputyword.AddAsync(word);
             await _unitOfWork.SaveChangesAsync();
 
-            return Result<int>.Success(
-                deputyWords.Id,
-                "تم إضافة الإنجاز بنجاح.");
+            var dto = new DeputyWordsDTO
+            {
+                Id = word.Id,
+                Title = word.Title,
+                MediaUrl = _blobStorageService.GetReadSasUrl(word.BlobName, ContainerName),
+                ContentType = word.ContentType,
+                MediaType = word.MediaType
+            };
 
-
+            return Result<DeputyWordsDTO>.Success(dto, "تمت إضافة كلمة النائب بنجاح.");
         }
     }
 }

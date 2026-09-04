@@ -11,8 +11,13 @@ namespace Domain.Deputy
     {
         public int Id { get; set; }
         public string? Title { get; set; }
-        [Required]
-        public string Video_image { get; set; }
-      
+
+        // Media metadata (replaces raw Video_image string)
+        public string BlobName { get; set; }
+        public string MediaFileName { get; set; }
+        public string ContentType { get; set; }
+        public long FileSizeBytes { get; set; }
+        public MediaType MediaType { get; set; }
+        public DateTime UploadedAt { get; set; }
     }
 }

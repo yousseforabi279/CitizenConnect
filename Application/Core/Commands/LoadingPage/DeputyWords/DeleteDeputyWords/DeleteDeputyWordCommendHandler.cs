@@ -1,6 +1,7 @@
 ﻿using Application.Common;
 using Application.Contracts;
 using Application.Core.Commands.Deputy.achievements.DeleteAchievement;
+using Application.storage;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -10,36 +11,36 @@ using System.Threading.Tasks;
 
 namespace Application.Core.Commands.LoadingPage.DeputyWords.DeleteDeputyWords
 {
-    internal class DeleteDeputyWordCommendHandler
-      : IRequestHandler<DeleteDeputyWordCommend, Result<int>>
+    internal class DeleteDeputyWordsCommandHandler
+    : IRequestHandler<DeleteDeputyWordCommend, Result<int>>
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IBlobStorageService _blobStorageService;
+        private const string ContainerName = "deputy-words-files";
 
-        public DeleteDeputyWordCommendHandler(IUnitOfWork unitOfWork)
+        public DeleteDeputyWordsCommandHandler(IUnitOfWork unitOfWork, IBlobStorageService blobStorageService)
         {
             _unitOfWork = unitOfWork;
+            _blobStorageService = blobStorageService;
         }
 
         public async Task<Result<int>> Handle(
             DeleteDeputyWordCommend request,
             CancellationToken cancellationToken)
         {
-            var DeputyWord = await _unitOfWork.Achievement
-                .GetByIdAsync(request.DeputyWordId);
-
-            if (DeputyWord is null)
+            var word = await _unitOfWork.Deputyword.GetByIdAsync(request.DeputyWordId);
+            if (word is null)
             {
-                return Result<int>.Failure(
-                    ResultStatus.NotFound,
-                    "الإنجاز غير موجود.");
+                return Result<int>.Failure(ResultStatus.NotFound, "كلمة النائب غير موجودة.");
             }
 
-            _unitOfWork.Achievement.Delete(DeputyWord);
+            if (!string.IsNullOrEmpty(word.BlobName))
+                await _blobStorageService.DeleteFileAsync(word.BlobName, ContainerName);
+
+            _unitOfWork.Deputyword.Delete(word);
             await _unitOfWork.SaveChangesAsync();
 
-            return Result<int>.Success(
-                DeputyWord.Id,
-                "تم حذف الإنجاز بنجاح.");
+            return Result<int>.Success(word.Id, "تم الحذف بنجاح.");
         }
     }
 }

@@ -17,18 +17,12 @@ namespace Application.Core.Commands.Deputy.achievements.EditAchievement
                 .WithMessage("الإنجاز غير صحيح.");
 
             RuleFor(x => x.Title)
-                .NotEmpty()
-                .WithMessage("عنوان الإنجاز مطلوب.")
                 .MaximumLength(200)
                 .WithMessage("عنوان الإنجاز لا يمكن أن يتجاوز 200 حرف.");
 
-            RuleFor(x => x.Description)
-                .NotEmpty()
-                .WithMessage("وصف الإنجاز مطلوب.");
-
-            RuleFor(x => x.Image)
-                .NotEmpty()
-                .WithMessage("صورة الإنجاز مطلوبة.");
+            RuleFor(x => x.Media)
+                 .Must(m => m == null || m.Length <= 50_000_000) // 50MB cap example
+                 .WithMessage("File must be under 50MB");
         }
     }
 }

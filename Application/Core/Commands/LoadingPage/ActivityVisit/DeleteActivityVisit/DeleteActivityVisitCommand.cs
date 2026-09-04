@@ -1,4 +1,5 @@
 ﻿using Application.Common;
+using Application.Core.Commands.LoadingPage.ActivityVisit;
 using MediatR;
 using System;
 using System.Collections.Generic;

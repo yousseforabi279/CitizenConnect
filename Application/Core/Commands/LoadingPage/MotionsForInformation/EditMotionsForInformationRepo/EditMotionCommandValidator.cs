@@ -7,25 +7,21 @@ namespace Application.Core.Commands.LoadingPage.MotionsForInformation.EditMotion
     {
         public EditMotionCommandValidator()
         {
-            RuleFor(x => x.MotionId)
-                .GreaterThan(0)
-                .WithMessage("رقم الطلب غير صحيح.");
+            RuleFor(x => x.Id)
+             .GreaterThan(0).WithMessage("الطلب الاستعلامي غير صحيح.");
 
             RuleFor(x => x.Title)
-                .NotEmpty()
-                .WithMessage("العنوان مطلوب.")
-                .MaximumLength(200)
-                .WithMessage("العنوان لا يمكن أن يتجاوز 200 حرف.");
+                .NotEmpty().WithMessage("العنوان مطلوب.")
+                .MaximumLength(200).WithMessage("العنوان لا يمكن أن يتجاوز 200 حرف.");
 
             RuleFor(x => x.Description)
-                .NotEmpty()
-                .WithMessage("الوصف مطلوب.")
-                .MaximumLength(1000)
-                .WithMessage("الوصف لا يمكن أن يتجاوز 1000 حرف.");
+                .NotEmpty().WithMessage("الوصف مطلوب.");
 
-            RuleFor(x => x.Image_Video)
-                .NotEmpty()
-                .WithMessage("الصورة أو الفيديو مطلوب.");
+            When(x => x.Media != null, () =>
+            {
+                RuleFor(x => x.Media!.Length)
+                    .GreaterThan(0).WithMessage("الملف المرفوع غير صالح.");
+            });
         }
     }
 }

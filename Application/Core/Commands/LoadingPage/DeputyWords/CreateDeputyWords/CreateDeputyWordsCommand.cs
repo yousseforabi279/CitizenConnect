@@ -1,4 +1,5 @@
 ﻿using Application.Common;
+using Application.storage;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -7,12 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Application.Core.Commands.LoadingPage.DeputyWords.CreateDeputyWords
-{   
-    public class CreateDeputyWordsCommand : IRequest<Result<int>>
+{
+    public class CreateDeputyWordsCommand : IRequest<Result<DeputyWordsDTO>>
     {
-
-        public string Title { get; set; } = null!;
-        public string Image { get; set; } = null!;
-
+        public string? Title { get; set; }
+        public FileUploadRequest Media { get; set; }
     }
 }

@@ -45,7 +45,7 @@
             public const string GETALL = "/api/areas-of-work";
             public const string GETBYID = "/api/areas-of-work/{areaId}";
             public const string PUT = "/api/areas-of-work/{areaId}";
-            public const string DELETE = "/api/areas-of-work/{reaId}";
+            public const string DELETE = "/api/areas-of-work/{areaId}";
         }
         public static class DeputyWord
         {

@@ -8,20 +8,17 @@ namespace Application.Core.Commands.LoadingPage.MotionsForInformation.CreateMoti
         public CreateMotionCommandValidator()
         {
             RuleFor(x => x.Title)
-                .NotEmpty()
-                .WithMessage("عنوان الحركة مطلوب.")
-                .MaximumLength(200)
-                .WithMessage("عنوان الحركة لا يمكن أن يتجاوز 200 حرف.");
+             .NotEmpty().WithMessage("العنوان مطلوب.")
+             .MaximumLength(200).WithMessage("العنوان لا يمكن أن يتجاوز 200 حرف.");
 
             RuleFor(x => x.Description)
-                .NotEmpty()
-                .WithMessage("وصف الحركة مطلوب.")
-                .MaximumLength(1000)
-                .WithMessage("وصف الحركة لا يمكن أن يتجاوز 1000 حرف.");
+                .NotEmpty().WithMessage("الوصف مطلوب.");
 
-            RuleFor(x => x.Image_Video)
-                .NotEmpty()
-                .WithMessage("صورة أو فيديو الحركة مطلوب.");
+            When(x => x.Media != null, () =>
+            {
+                RuleFor(x => x.Media!.Length)
+                    .GreaterThan(0).WithMessage("الملف المرفوع غير صالح.");
+            });
         }
     }
 }

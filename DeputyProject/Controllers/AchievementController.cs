@@ -1,10 +1,13 @@
-﻿using Application.Core.Commands.Deputy.achievements.CreateAchievement;
+﻿using Application.Common;
+using Application.Core.Commands.Deputy.achievements.CreateAchievement;
 using Application.Core.Commands.Deputy.achievements.DeleteAchievement;
 using Application.Core.Commands.Deputy.achievements.EditAchievement;
 using Application.Core.Queries.Deputy.Achievement.GetAchievementById;
 using Application.Core.Queries.Deputy.Achievement.GetAllAchievements;
 using Bank.Api.Controllers;
 using DeputyProject.Common;
+using DeputyProject.Mappers;
+using DeputyProject.Requests.Achievement;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -36,16 +39,27 @@ namespace DeputyProject.Controllers
             return HandleResult(result);
         }
         [HttpPost(ApiRoutes.Achievements.CreateAchievement)]
-        public async Task<IActionResult> AddAchievement(CreateAchievementCommand command)
+        public async Task<IActionResult> AddAchievement([FromForm]CreateAchievementRequest request)
         {
+            var command = new CreateAchievementCommand
+            {
+                Title = request.Title,
+                Description = request.Description,
+                Media = request.Media.MapToFileUploadRequest()
+            };
             var result = await _mediator.Send(command);
             return HandleResult(result);
         }
         [HttpPut(ApiRoutes.Achievements.EditAchivement)]
-        public async Task<IActionResult> UpdateAchievement(int AchievementId,
-                                                         UpdateAchievementCommand command)
+        public async Task<IActionResult> UpdateAchievement(int AchievementId, [FromForm] UpdateAchievementRequest request)
         {
-            command.AchievementId = AchievementId;
+            var command = new UpdateAchievementCommand
+            {
+                AchievementId = AchievementId,
+                Title = request.Title,
+                Description = request.Description,
+                Media = request.Media.MapToFileUploadRequest()
+            };
             var result = await _mediator.Send(command);
             return HandleResult(result);
         }

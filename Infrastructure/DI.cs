@@ -12,6 +12,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Identity;
+using Application.storage;
+using Infrastructure.Storage;
 
 namespace Infrastructure
 {
@@ -72,6 +74,8 @@ namespace Infrastructure
             services.AddScoped<IPasswordResetCode, PasswordResetCodeRepo>();
             services.Configure<EmailSettings>(configuration.GetSection("EmailSettings"));
             services.AddScoped<IEmailService, EmailService>();
+            services.AddScoped<IBlobStorageService, BlobStorageService>();
+
 
             return services;
         }

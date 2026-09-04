@@ -6,6 +6,8 @@ using Application.Core.Queries.Deputy.ActivityVisit.GetAll;
 using Application.Core.Queries.Deputy.ActivityVisit.GetAllById;
 using Bank.Api.Controllers;
 using DeputyProject.Common;
+using DeputyProject.Mappers;
+using DeputyProject.Requests.Activitesvisit;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -28,30 +30,44 @@ namespace DeputyProject.Controllers
 
         [HttpGet(ApiRoutes.ActivitiesVisits.GETBYID)]
         public async Task<IActionResult> GetActivityVisit(
-                         int activityId)
+                         int ActivityVisitId)
         {
             var result = await _mediator.Send(
                 new GetActivityVisitQuery
                 {
-                    ActivityVisitId = activityId
+                    ActivityVisitId = ActivityVisitId
                 });
 
             return HandleResult(result);
         }
     
         [HttpPost(ApiRoutes.ActivitiesVisits.POST)]
-        public async Task<IActionResult> AddAchievement(CreateActivityVisitCommand command)
+        public async Task<IActionResult> AddAchievement([FromForm] CreateActivitiesVisiteRequest request)
         {
+            var command = new CreateActivityVisitCommand
+            {
+                Title = request.Title,
+                Description = request.Description,
+                Location = request.Location,
+                Date = request.Date,
+                Media = request.Media.MapToFileUploadRequest()
+            };
             var result = await _mediator.Send(command);
             return HandleResult(result);
         }
         [HttpPut(ApiRoutes.ActivitiesVisits.PUT)]
         public async Task<IActionResult> UpdateActivityVisit(
-                                                    int ActivityVisitId,
-                                                    UpdateActivityVisitCommand command)
+                                                    int ActivityVisitId, [FromForm] UpdateActivitiesVisiteRequest request)
         {
-            command.ActivityVisitId = ActivityVisitId;
-
+            var command = new UpdateActivityVisitCommand
+            {
+                Id = ActivityVisitId,
+                Title = request.Title,
+                Description = request.Description,
+                Location = request.Location,
+                Date = request.Date,
+                Media = request.Media.MapToFileUploadRequest()
+            };
             var result = await _mediator.Send(command);
 
             return HandleResult(result);

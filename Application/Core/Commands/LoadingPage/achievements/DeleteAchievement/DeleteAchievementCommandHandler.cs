@@ -1,5 +1,6 @@
 ﻿using Application.Common;
 using Application.Contracts;
+using Application.storage;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -13,10 +14,14 @@ namespace Application.Core.Commands.Deputy.achievements.DeleteAchievement
       : IRequestHandler<DeleteAchievementCommand, Result<int>>
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IBlobStorageService _blobStorageService;
+        private const string ContainerName = "achievement-files";
 
-        public DeleteAchievementCommandHandler(IUnitOfWork unitOfWork)
+        public DeleteAchievementCommandHandler(IUnitOfWork unitOfWork, IBlobStorageService blobStorageService)
         {
             _unitOfWork = unitOfWork;
+            _blobStorageService = blobStorageService;
+
         }
 
         public async Task<Result<int>> Handle(
@@ -32,6 +37,8 @@ namespace Application.Core.Commands.Deputy.achievements.DeleteAchievement
                     ResultStatus.NotFound,
                     "الإنجاز غير موجود.");
             }
+            if (!string.IsNullOrEmpty(achievement.BlobName))
+                await _blobStorageService.DeleteFileAsync(achievement.BlobName, ContainerName);
 
             _unitOfWork.Achievement.Delete(achievement);
             await _unitOfWork.SaveChangesAsync();

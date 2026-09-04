@@ -1,4 +1,5 @@
 ﻿using Application.Common;
+using Application.Core.Commands.LoadingPage.MotionsForInformation;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,6 @@ namespace Application.Core.Queries.Deputy.MotionsInforamtion.GetAll
     namespace Application.Core.Queries.Deputy.MotionsForInformation.GetAll
     {
         public record GetAllMotionsQuery
-            : IRequest<Result<List<MotionDto>>>;
+            : IRequest<Result<List<MotionsForInformationDTO>>>;
     }
 }

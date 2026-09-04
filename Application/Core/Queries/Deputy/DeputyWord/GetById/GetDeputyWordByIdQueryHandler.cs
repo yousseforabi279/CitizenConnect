@@ -1,44 +1,45 @@
 ﻿
 using Application.Common;
 using Application.Contracts;
+using Application.Core.Commands.LoadingPage.DeputyWords;
 using Application.Core.Queries.Deputy.DeputyWord.GetAll;
 using Application.Core.Queries.Deputy.DeputyWord.GetById;
+using Application.storage;
 using Domain.Deputy;
 using MediatR;
 
 public class GetDeputyWordByIdQueryHandler
-    : IRequestHandler<GetDeputyWordByIdQuery, Result<DeputyWordsDto>>
+    : IRequestHandler<GetDeputyWordByIdQuery, Result<DeputyWordsDTO>>
 {
     private readonly IUnitOfWork _unitOfWork;
+    private readonly IBlobStorageService _blobStorageService;
+    private const string ContainerName = "deputy-words-files";
 
-    public GetDeputyWordByIdQueryHandler(IUnitOfWork unitOfWork)
+    public GetDeputyWordByIdQueryHandler(IUnitOfWork unitOfWork, IBlobStorageService blobStorageService)
     {
         _unitOfWork = unitOfWork;
+        _blobStorageService = blobStorageService;
     }
 
-    public async Task<Result<DeputyWordsDto>> Handle(
+    public async Task<Result<DeputyWordsDTO>> Handle(
         GetDeputyWordByIdQuery request,
         CancellationToken cancellationToken)
     {
-        var result = await _unitOfWork.Deputyword
-            .GetByIdAsync(request.Id);
-
-        if (result == null)
+        var word = await _unitOfWork.Deputyword.GetByIdAsync(request.Id);
+        if (word is null)
         {
-            return Result<DeputyWordsDto>.Failure(
-                ResultStatus.NotFound,
-                "كلمة النائب غير موجودة.");
+            return Result<DeputyWordsDTO>.Failure(ResultStatus.NotFound, "كلمة النائب غير موجودة.");
         }
 
-        var response = new DeputyWordsDto
+        var dto = new DeputyWordsDTO
         {
-            Id = result.Id,
-            Title = result.Title,
-            Video_image = result.Video_image
+            Id = word.Id,
+            Title = word.Title,
+            MediaUrl = _blobStorageService.GetReadSasUrl(word.BlobName, ContainerName),
+            ContentType = word.ContentType,
+            MediaType = word.MediaType
         };
 
-        return Result<DeputyWordsDto>.Success(
-            response,
-            "تم جلب كلمة النائب بنجاح.");
+        return Result<DeputyWordsDTO>.Success(dto);
     }
 }

@@ -27,7 +27,6 @@ namespace Domain.Deputy
         public string? LocationURL { get; set; }
         public string? Circle { get; set; }
         public string? Appointment { get; set; }
-        public string Image { get; set; }
 
     }
 }

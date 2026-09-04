@@ -22,11 +22,6 @@ namespace Application.Core.Commands.Deputy.ActivityVisit.CreateActivityVisit
                 .WithMessage("الوصف لا يمكن أن يتجاوز 2000 حرف.")
                 .When(x => !string.IsNullOrWhiteSpace(x.Description));
 
-            RuleFor(x => x.Image_Video)
-                .MaximumLength(500)
-                .WithMessage("رابط الصورة أو الفيديو غير صحيح.")
-                .When(x => !string.IsNullOrWhiteSpace(x.Image_Video));
-
             RuleFor(x => x.Location)
                 .NotEmpty()
                 .WithMessage("الموقع مطلوب.")

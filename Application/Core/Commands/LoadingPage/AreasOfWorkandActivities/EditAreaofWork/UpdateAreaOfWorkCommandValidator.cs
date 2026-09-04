@@ -14,22 +14,22 @@ namespace Application.Core.Commands.Deputy.AreasOfWorkandActivities.EditAreaofWo
         {
 
             RuleFor(x => x.AreaId)
-                .GreaterThan(0)
-                .WithMessage("مجال العمل غير صحيح.");
+            .GreaterThan(0).WithMessage("مجال العمل غير صحيح.");
 
             RuleFor(x => x.Title)
-                .NotEmpty()
-                .WithMessage("عنوان مجال العمل مطلوب.")
-                .MaximumLength(200)
-                .WithMessage("العنوان لا يمكن أن يتجاوز 200 حرف.");
+                .NotEmpty().WithMessage("عنوان مجال العمل مطلوب.")
+                .MaximumLength(200).WithMessage("العنوان لا يمكن أن يتجاوز 200 حرف.");
 
             RuleFor(x => x.Description)
-                .NotEmpty()
-                .WithMessage("وصف مجال العمل مطلوب.");
+                .NotEmpty().WithMessage("وصف مجال العمل مطلوب.");
 
-            RuleFor(x => x.Image)
-                .NotEmpty()
-                .WithMessage("الصورة مطلوبة.");
+            // Image is optional on update (null = keep existing) — no NotNull rule here.
+            // If a file IS provided, validate it's non-empty:
+            When(x => x.Image != null, () =>
+            {
+                RuleFor(x => x.Image!.Length)
+                    .GreaterThan(0).WithMessage("الملف المرفوع غير صالح.");
+            });
         }
     }
 }

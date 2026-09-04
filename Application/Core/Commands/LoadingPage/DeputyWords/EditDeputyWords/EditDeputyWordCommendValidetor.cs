@@ -10,21 +10,22 @@ using System.Threading.Tasks;
 
 namespace Application.Core.Commands.LoadingPage.DeputyWords.EditDeputyWords
 {
-    public class EditDeputyWordCommendValidetor : AbstractValidator<EditDeputyWordCommend>
+    public class EditDeputyWordCommendValidetor : AbstractValidator<UpdateDeputyWordsCommand>
     {
         public EditDeputyWordCommendValidetor()
         {
 
+            RuleFor(x => x.Id)
+              .GreaterThan(0).WithMessage("كلمة النائب غير صحيحة.");
+
             RuleFor(x => x.Title)
-                .NotEmpty()
-                .WithMessage("عنوان الإنجاز مطلوب.")
-                .MaximumLength(200)
-                .WithMessage("عنوان الإنجاز لا يمكن أن يتجاوز 200 حرف.");
+                .MaximumLength(200).WithMessage("العنوان لا يمكن أن يتجاوز 200 حرف.");
 
-
-            RuleFor(x => x.Image)
-                .NotEmpty()
-                .WithMessage("صورة الإنجاز مطلوبة.");
+            When(x => x.Media != null, () =>
+            {
+                RuleFor(x => x.Media!.Length)
+                    .GreaterThan(0).WithMessage("الملف المرفوع غير صالح.");
+            });
         }
     }
 }

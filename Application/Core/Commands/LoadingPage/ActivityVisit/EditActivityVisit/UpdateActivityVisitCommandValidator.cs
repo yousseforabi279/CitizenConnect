@@ -13,9 +13,6 @@ namespace Application.Core.Commands.Deputy.ActivityVisit.EditActivityVisit
         public UpdateActivityVisitCommandValidator()
         {
 
-            RuleFor(x => x.ActivityVisitId)
-                .GreaterThan(0)
-                .WithMessage("النشاط أو الزيارة غير صحيح.");
 
             RuleFor(x => x.Title)
                 .MaximumLength(200)
@@ -27,10 +24,6 @@ namespace Application.Core.Commands.Deputy.ActivityVisit.EditActivityVisit
                 .WithMessage("الوصف لا يمكن أن يتجاوز 2000 حرف.")
                 .When(x => !string.IsNullOrWhiteSpace(x.Description));
 
-            RuleFor(x => x.Image_Video)
-                .MaximumLength(500)
-                .WithMessage("رابط الصورة أو الفيديو غير صحيح.")
-                .When(x => !string.IsNullOrWhiteSpace(x.Image_Video));
 
             RuleFor(x => x.Location)
                 .NotEmpty()
@@ -41,6 +34,10 @@ namespace Application.Core.Commands.Deputy.ActivityVisit.EditActivityVisit
             RuleFor(x => x.Date)
                 .NotEmpty()
                 .WithMessage("التاريخ مطلوب.");
+
+            RuleFor(x => x.Media)
+            .Must(m => m == null || m.Length <= 50_000_000) // 50MB cap example
+            .WithMessage("File must be under 50MB");
         }
     }
 }

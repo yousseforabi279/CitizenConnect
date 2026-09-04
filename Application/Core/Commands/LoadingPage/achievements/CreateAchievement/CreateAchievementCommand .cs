@@ -1,4 +1,6 @@
 ﻿using Application.Common;
+using Application.Core.Commands.LoadingPage.achievements;
+using Application.storage;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -8,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Application.Core.Commands.Deputy.achievements.CreateAchievement
 {
-    public class CreateAchievementCommand : IRequest<Result<int>>
+    public class CreateAchievementCommand : IRequest<Result<AchievementDto>>
     {
 
         public string Title { get; set; } = null!;
@@ -16,6 +18,8 @@ namespace Application.Core.Commands.Deputy.achievements.CreateAchievement
         public string Description { get; set; } = null!;
 
         public string Image { get; set; } = null!;
+        public FileUploadRequest Media { get; set; }
+
 
     }
 }

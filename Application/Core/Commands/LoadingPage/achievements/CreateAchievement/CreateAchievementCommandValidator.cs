@@ -22,10 +22,9 @@ namespace Application.Core.Commands.Deputy.achievements.CreateAchievement
             RuleFor(x => x.Description)
                 .NotEmpty()
                 .WithMessage("وصف الإنجاز مطلوب.");
-
-            RuleFor(x => x.Image)
-                .NotEmpty()
-                .WithMessage("صورة الإنجاز مطلوبة.");
+            RuleFor(x => x.Media)
+            .Must(m => m == null || m.Length <= 50_000_000) // 50MB cap example
+            .WithMessage("File must be under 50MB");
         }
     }
 }
