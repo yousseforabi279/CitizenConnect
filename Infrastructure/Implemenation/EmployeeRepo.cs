@@ -23,6 +23,13 @@ namespace Infrastructure.Implemenation
             _context = context;
         }
 
+        public async Task<IEnumerable<Employee>> GetAllwithUserAsync()
+        {
+            return await _context.Employees
+                .Include(x => x.User)
+                .ToListAsync();
+        }
+
         public async Task<List<Employee>> GetAvailableEmployeesAsync(int departmentId, int organizationId)
         {
             return await _context.Employees.Include(e => e.EmployeeOrganizations)
@@ -37,8 +44,11 @@ namespace Infrastructure.Implemenation
         public async Task<Employee?> GetByUserIdAsync(string userId)
         {
             return await _context.Employees
-                   .FirstOrDefaultAsync(
-                       e => e.UserId == userId);
+                   .Include(x => x.User)
+                    .Include(x => x.Department)
+                    .Include(x => x.EmployeeOrganizations)
+                        .ThenInclude(x => x.Organization)
+                    .FirstOrDefaultAsync(x => x.UserId == userId);
         }
 
         public async Task<EmplyeeInfo?> GetEmplyeeInfo(string userId)

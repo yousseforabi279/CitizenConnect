@@ -9,6 +9,6 @@ namespace Application.Contracts.Repos
 {
     public interface ICitizinRequierment : IGenericRepository <CitizinRequierment>
     {
-
+        Task<CitizinRequierment?> GetByIdWithDetailsAsync(int id);
     }
 }

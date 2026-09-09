@@ -1,5 +1,7 @@
 ﻿using Application.Common;
 using Application.Contracts;
+using Application.storage;
+using Domain.Deputy;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -13,10 +15,13 @@ namespace Application.Core.Commands.LoadingPage.PersonalInfo.EditPersonalInfo
        : IRequestHandler<UpdateDeputyCommand, Result<int>>
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IBlobStorageService _BlobStorageService;
+        private const string ContainerName = "PersoalDeputy-files";
 
-        public UpdateDeputyCommandHandler(IUnitOfWork unitOfWork)
+        public UpdateDeputyCommandHandler(IUnitOfWork unitOfWork,IBlobStorageService blobStorageService)
         {
             _unitOfWork = unitOfWork;
+            _BlobStorageService = blobStorageService;
         }
         public async Task<Result<int>> Handle(
                UpdateDeputyCommand request,
@@ -30,6 +35,22 @@ namespace Application.Core.Commands.LoadingPage.PersonalInfo.EditPersonalInfo
                 return Result<int>.Failure(
                     ResultStatus.NotFound,
                     "النائب غير موجود.");
+            }
+            if (request.Media != null)
+            {
+                if (!string.IsNullOrEmpty(deputy.BlobName))
+                    await _BlobStorageService.DeleteFileAsync(deputy.BlobName, ContainerName);
+
+                var upload = await _BlobStorageService.UploadFileAsync(request.Media, ContainerName);
+
+                deputy.BlobName = upload.BlobName;
+                deputy.MediaFileName = request.Media.FileName;
+                deputy.ContentType = upload.ContentType;
+                deputy.FileSizeBytes = upload.SizeBytes;
+                deputy.MediaType = request.Media.ContentType.StartsWith("video") ? MediaType.Video : MediaType.Image;
+                deputy.UploadedAt = DateTime.UtcNow;
+                deputy.MediaUrl = deputy.BlobName != null ? _BlobStorageService.GetReadSasUrl(deputy.BlobName, ContainerName) : null;
+
             }
 
             deputy.FullName = request.FullName;

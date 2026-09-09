@@ -1,11 +1,12 @@
 ﻿using Application.Common;
+using Application.storage;
+using Domain.Enums;
 using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Domain.Enums;
 
 namespace Application.Core.Commands.CreateCompliant
 {
@@ -28,5 +29,7 @@ namespace Application.Core.Commands.CreateCompliant
 
 
         // images and videos 
+        public FileUploadRequest Media { get; set; }
+
     }
 }

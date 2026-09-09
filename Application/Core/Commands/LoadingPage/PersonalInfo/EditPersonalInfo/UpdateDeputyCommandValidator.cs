@@ -68,6 +68,10 @@ namespace Application.Core.Commands.LoadingPage.PersonalInfo.EditPersonalInfo
                 .MaximumLength(200)
                 .WithMessage("مواعيد التواصل طويلة جدًا.")
                 .When(x => !string.IsNullOrWhiteSpace(x.Appointment));
+
+            RuleFor(x => x.Media)
+                 .Must(m => m == null || m.Length <= 50_000_000) // 50MB cap example
+                 .WithMessage("File must be under 50MB");
         }
 
         private bool BeValidUrl(string url)

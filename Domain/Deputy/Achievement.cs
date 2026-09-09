@@ -21,6 +21,7 @@ namespace Domain.Deputy
         public long FileSizeBytes { get; set; }
         public MediaType MediaType { get; set; }      // enum: Image or Video
         public DateTime UploadedAt { get; set; }
+
     }
     public enum MediaType
     {

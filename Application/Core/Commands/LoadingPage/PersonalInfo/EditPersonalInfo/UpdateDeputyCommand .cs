@@ -1,4 +1,5 @@
 ﻿using Application.Common;
+using Application.storage;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -38,5 +39,7 @@ namespace Application.Core.Commands.LoadingPage.PersonalInfo.EditPersonalInfo
         public string? Circle { get; set; }
 
         public string? Appointment { get; set; }
+        public FileUploadRequest Media { get; set; } // null = keep existing media
+
     }
 }

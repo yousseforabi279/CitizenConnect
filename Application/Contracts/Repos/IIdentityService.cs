@@ -16,7 +16,7 @@ namespace Application.Contracts.Repos
             User user,
             string password);
 
-        Task<IList<string>> GetRolesAsync(
+        Task<List<string>> GetRolesAsync(
             User user);
 
         Task<(bool Success, User? User, string? Error)>CreateUserAsync(

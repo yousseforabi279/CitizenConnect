@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domain.Deputy;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -36,5 +37,9 @@ namespace Application.Core.Queries.Deputy.GetDeputybyId
         public string? Circle { get; set; }
 
         public string? Appointment { get; set; }
+
+        public string MediaUrl { get; set; }
+        public string ContentType { get; set; }
+        public MediaType? MediaType { get; set; }
     }
 }

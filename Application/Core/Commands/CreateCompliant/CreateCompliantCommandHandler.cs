@@ -2,8 +2,10 @@
 using Application.Contracts;
 using Application.Contracts.Repos;
 using Application.Core.Commands.CreateCompliant.Validation;
+using Application.storage;
 using AutoMapper;
 using Domain;
+using Domain.Deputy;
 using Domain.Enums;
 using MediatR;
 using System;
@@ -19,13 +21,15 @@ namespace Application.Core.Commands.CreateCompliant
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
         private readonly INationalIdValidator _nationalId;
+        private readonly IBlobStorageService _blobStorageService;
+        private const string ContainerName = "Request-files";
 
-
-        public CreateCompliantCommandHandler(IUnitOfWork unitOfWork, IMapper mapper, INationalIdValidator nationalId)
+        public CreateCompliantCommandHandler(IUnitOfWork unitOfWork, IMapper mapper, INationalIdValidator nationalId,IBlobStorageService blobStorageService)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
             _nationalId = nationalId;
+            _blobStorageService = blobStorageService;
         }
 
         public async Task<Result<string>> Handle(CreateCompliantCommand request, CancellationToken cancellationToken)
@@ -89,6 +93,19 @@ namespace Application.Core.Commands.CreateCompliant
                         Employee = employee,
                         CitizinRequierment = requirement
                     });
+            }
+
+            if (request.Media != null)
+            {
+                var upload = await _blobStorageService.UploadFileAsync(request.Media, ContainerName);
+
+                requirement.BlobName = upload.BlobName;
+                requirement.MediaFileName = request.Media.FileName;
+                requirement.ContentType = upload.ContentType;
+                requirement.FileSizeBytes = upload.SizeBytes;
+                requirement.MediaType = request.Media.ContentType.StartsWith("video") ? MediaType.Video : MediaType.Image;
+                requirement.UploadedAt = DateTime.UtcNow;
+                requirement.MediaUrl = requirement.BlobName != null ? _blobStorageService.GetReadSasUrl(requirement.BlobName, ContainerName) : null;
             }
 
 

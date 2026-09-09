@@ -31,7 +31,8 @@ namespace Infrastructure.Implemenation
             IDeputyword deputyword,
             IMotionsForInformation motionsForInformation,
             IPasswordResetCode passwordResetCode,
-            IEmailService emailService
+            IEmailService emailService,
+            ICitizinRequiermentContent citizinRequiermentContent
             )
         {
             _context = context;
@@ -54,6 +55,7 @@ namespace Infrastructure.Implemenation
             this.MotionsForInformation = motionsForInformation;
             this.PasswordResetCode = passwordResetCode;
             EmailService = emailService;
+            this.CitizinRequiermentContent=citizinRequiermentContent;
         }
 
         public ICitizinRequierment CitizinRequierment { get; }
@@ -92,6 +94,8 @@ namespace Infrastructure.Implemenation
         public IPasswordResetCode PasswordResetCode { get; }
 
         public IEmailService EmailService { get; }
+
+        public ICitizinRequiermentContent CitizinRequiermentContent {  get; }
 
         public async Task<int> SaveChangesAsync()
         {

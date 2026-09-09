@@ -1,5 +1,6 @@
 ﻿using Application.Common;
 using Application.Contracts;
+using Application.storage;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -13,10 +14,14 @@ namespace Application.Core.Queries.Deputy.GetDeputybyId
         : IRequestHandler<GetDeputyQuery, Result<DeputyResponse>>
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IBlobStorageService _blobStorageService;
+        private const string ContainerName = "PersoalDeputy-files";
 
-        public GetDeputyQueryHandler(IUnitOfWork unitOfWork)
+        public GetDeputyQueryHandler(IUnitOfWork unitOfWork, IBlobStorageService blobStorageService)
         {
             _unitOfWork = unitOfWork;
+            _blobStorageService = blobStorageService;
+
         }
 
         public async Task<Result<DeputyResponse>> Handle(
@@ -49,7 +54,10 @@ namespace Application.Core.Queries.Deputy.GetDeputybyId
                 FacebookLing = deputy.FacebookLing,
                 LocationURL = deputy.LocationURL,
                 Circle = deputy.Circle,
-                Appointment = deputy.Appointment
+                Appointment = deputy.Appointment,
+                MediaUrl = _blobStorageService.GetReadSasUrl(deputy.BlobName, ContainerName),
+                ContentType = deputy.ContentType,
+                MediaType = deputy.MediaType
             };
 
             return Result<DeputyResponse>.Success(

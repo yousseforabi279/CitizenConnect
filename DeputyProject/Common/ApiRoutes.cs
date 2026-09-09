@@ -4,7 +4,12 @@
     {
         public static class Complaint
         {
-            public const string CreateComplaint = "/    Complaint";
+            public const string CreateComplaint = "";
+            public const string GetComplaintById = "/{id:int}";
+            public const string DeleteComplaintById = "/{id:int}";
+            public const string Addcomment = "/{requestId:int}/comments";
+            public const string changestatus = "/{id}/status";
+
         }
 
         public static class Authentication

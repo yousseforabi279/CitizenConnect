@@ -28,6 +28,7 @@ namespace Application.Contracts
         IMotionsForInformation MotionsForInformation { get; }
         IDeputyword Deputyword { get; }
         IPasswordResetCode PasswordResetCode { get; }
+        ICitizinRequiermentContent CitizinRequiermentContent { get; }
         IEmailService EmailService { get; }
         Task<int> SaveChangesAsync();
         Task BeginTransactionAsync(

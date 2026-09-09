@@ -22,5 +22,6 @@ namespace Domain
               = new List<CitizinRequiermentEmployee>();
         public ICollection<EmployeeOrganizations> EmployeeOrganizations { get; set; }
     = new List<EmployeeOrganizations>();
+        public string? about { get; set; }
     }
 }

@@ -75,6 +75,8 @@ namespace Infrastructure
             services.Configure<EmailSettings>(configuration.GetSection("EmailSettings"));
             services.AddScoped<IEmailService, EmailService>();
             services.AddScoped<IBlobStorageService, BlobStorageService>();
+            services.AddScoped<ICitizinRequiermentContent, CitizinRequiermentContentRepo>();
+
 
 
             return services;

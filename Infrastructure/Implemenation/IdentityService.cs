@@ -34,11 +34,10 @@ namespace Infrastructure.Implemenation
                 .CheckPasswordAsync(user, password);
         }
 
-        public async Task<IList<string>> GetRolesAsync(
+        public async Task<List<string>> GetRolesAsync(
             User user)
         {
-            return await _userManager
-                .GetRolesAsync(user);
+            return (await _userManager.GetRolesAsync(user)).ToList();
         }
 
         public async Task<(bool Success, User? User, string? Error)> CreateUserAsync(string email, string password,string Fullname)

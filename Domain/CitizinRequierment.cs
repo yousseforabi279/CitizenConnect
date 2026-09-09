@@ -1,4 +1,5 @@
-﻿using Domain.Enums;
+﻿using Domain.Deputy;
+using Domain.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -27,6 +28,17 @@ namespace Domain
              = new List<CitizinRequiermentContent>();
         public ICollection<CitizinRequiermentEmployee> Employees { get; set; }
         = new List<CitizinRequiermentEmployee>();
+
+
+
+        // Media metadata (replaces raw Video_image string)
+        public string BlobName { get; set; }
+        public string MediaFileName { get; set; }
+        public string ContentType { get; set; }
+        public long FileSizeBytes { get; set; }
+        public MediaType MediaType { get; set; }
+        public DateTime UploadedAt { get; set; }
+        public string MediaUrl { get; set; }        // full blob URL
 
     }
 }
