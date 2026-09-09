@@ -43,6 +43,7 @@ namespace DeputyProject.Controllers
     
         [HttpPost(ApiRoutes.ActivitiesVisits.POST)]
         public async Task<IActionResult> AddAchievement([FromForm] CreateActivitiesVisiteRequest request)
+        
         {
             var command = new CreateActivityVisitCommand
             {

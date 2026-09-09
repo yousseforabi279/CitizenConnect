@@ -1,8 +1,7 @@
 ﻿using Application.Common;
-using Application.Core.Commands.AddcommentToRequest;
 using Application.Core.Commands.CreateCompliant;
 using Application.Core.Commands.DeleteCitizenRequest;
-using Application.Core.Commands.NewFolder;
+using Application.Core.Commands.UpdateRequestStatus;
 using Application.Core.Queries.CitizenRequests.GetRequestById;
 using Azure.Core;
 using Bank.Api.Controllers;
@@ -59,33 +58,11 @@ namespace DeputyProject.Controllers
             return HandleResult(result);
         }
         [Authorize]
-        [HttpPost(ApiRoutes.Complaint.Addcomment)]
-        public async Task<IActionResult> AddComment(
-                        int requestId,
-                        [FromBody] AddCommentRequest request)
+        [HttpPut(ApiRoutes.Complaint.UpdateRequest)]
+        public async Task<IActionResult> UpdateRequest([FromBody] UpdateRequestCommand command)
         {
-                var command = new AddCommentCommand
-                {
-                    CitizinRequiermentId = requestId,
-                    Comment = request.Comment
-                };
-
-            var result = await _mediator.Send(command);
-
-            return HandleResult(result);
-
-        }
-        [Authorize]
-
-        [HttpPatch(ApiRoutes.Complaint.changestatus)]
-        public async Task<IActionResult> ChangeStatus(
-                    int id,
-                    ChangeRequestStatusCommand command)
-        {
-            command.CitizinRequiermentId = id;
             var result = await _mediator.Send(command);
             return HandleResult(result);
-
         }
 
     }

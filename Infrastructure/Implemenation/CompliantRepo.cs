@@ -20,7 +20,10 @@ namespace Infrastructure.Implemenation
                 .Include(x => x.Citizen)
                 .Include(x => x.Employees)
                     .ThenInclude(x => x.Employee)
+                    .ThenInclude(ww=>ww.User)
                 .Include(x => x.Comments)
+                     .ThenInclude(x => x.Employee)
+                    .ThenInclude(x => x.User)
                 .FirstOrDefaultAsync(x => x.Id == id);
         }
     }

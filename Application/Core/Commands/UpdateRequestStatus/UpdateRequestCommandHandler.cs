@@ -1,19 +1,19 @@
 ﻿using Application.Common;
 using Application.Contracts;
 using Application.Contracts.Repos;
-using Application.Core.Commands.NewFolder;
+using Application.Core.Commands.UpdateRequestStatus;
 using Domain;
 using MediatR;
 
-namespace Application.Core.Commands.ChangeRequestStatus
+namespace Application.Core.Commands.UpdateRequest
 {
-    public class ChangeRequestStatusCommandHandler
-        : IRequestHandler<ChangeRequestStatusCommand, Result<string>>
+    public class UpdateRequestCommandHandler
+        : IRequestHandler<UpdateRequestCommand, Result<string>>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly ICurrentUser _currentUser;
 
-        public ChangeRequestStatusCommandHandler(
+        public UpdateRequestCommandHandler(
             IUnitOfWork unitOfWork,
             ICurrentUser currentUser)
         {
@@ -22,10 +22,9 @@ namespace Application.Core.Commands.ChangeRequestStatus
         }
 
         public async Task<Result<string>> Handle(
-            ChangeRequestStatusCommand request,
+            UpdateRequestCommand request,
             CancellationToken cancellationToken)
         {
-            // 1. Get the request
             var citizenRequest =
                 await _unitOfWork.CitizinRequierment
                     .GetByIdAsync(request.CitizinRequiermentId);
@@ -37,7 +36,6 @@ namespace Application.Core.Commands.ChangeRequestStatus
                     "Citizen request not found.");
             }
 
-            // 2. Get employee from current logged-in user
             var employee =
                 await _unitOfWork.Employee
                     .GetByUserIdAsync(_currentUser.UserId);
@@ -49,7 +47,6 @@ namespace Application.Core.Commands.ChangeRequestStatus
                     "Employee not found.");
             }
 
-            // 3. Check that this employee is assigned to the request
             var assignment =
                 citizenRequest.Employees
                     .FirstOrDefault(x => x.EmployeeId == employee.Id);
@@ -61,17 +58,38 @@ namespace Application.Core.Commands.ChangeRequestStatus
                     "You are not assigned to this request.");
             }
 
-            // 4. Change status
-            if (request.Status!=null)
+            if (request.Status.HasValue)
+            {
                 citizenRequest.Status = request.Status.Value;
-            if (request.Priority != null)
-                citizenRequest.Priority = request.Priority.Value;
+            }
 
-            // 5. Save
+            if (request.Priority.HasValue)
+            {
+                citizenRequest.Priority = request.Priority.Value;
+            }
+
+            if (!string.IsNullOrWhiteSpace(request.Comment))
+            {
+                var comment = new CitizinRequiermentContent
+                {
+                    CitizinRequiermentId =
+                        request.CitizinRequiermentId,
+
+                    EmployeeId = employee.Id,
+
+                    Comment = request.Comment,
+
+                    CreatedAt = DateTime.UtcNow
+                };
+
+                await _unitOfWork.CitizinRequiermentContent
+                    .AddAsync(comment);
+            }
+
             await _unitOfWork.SaveChangesAsync();
 
             return Result<string>.Success(
-                "Request status updated successfully.");
+                "Request updated successfully.");
         }
     }
 }

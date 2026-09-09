@@ -1,5 +1,6 @@
 ﻿using Application.Common;
 using Application.Contracts;
+using Application.Contracts.Repos;
 using Application.Core.Commands.LoadingPage.ActivityVisit;
 using Application.storage;
 using Domain.Deputy;
@@ -52,8 +53,12 @@ namespace Application.Core.Commands.Deputy.ActivityVisit.CreateActivityVisit
                         : MediaType.Image;
 
                 activity.UploadedAt = DateTime.UtcNow;
+                activity.MediaUrl =
+                   _fileStorageService.GetFileUrl(
+                       activity.BlobName,
+                       FolderName);
 
-     
+
             }
 
             await _unitOfWork.ActitvitiesAndVisits.AddAsync(activity);

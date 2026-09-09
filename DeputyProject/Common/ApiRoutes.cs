@@ -7,8 +7,7 @@
             public const string CreateComplaint = "";
             public const string GetComplaintById = "/{id:int}";
             public const string DeleteComplaintById = "/{id:int}";
-            public const string Addcomment = "/{requestId:int}/comments";
-            public const string changestatus = "/{id}/status";
+            public const string UpdateRequest = "/UpdateRequest";
 
         }
 

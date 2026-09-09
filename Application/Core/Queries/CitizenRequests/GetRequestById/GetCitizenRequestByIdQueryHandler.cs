@@ -40,32 +40,51 @@ namespace Application.Core.Queries.CitizenRequests.GetRequestById
             {
                 Id = citizenRequest.Id,
 
-                // Citizen
-                CitizenNationalId = citizenRequest.CitizenNationalId,
-                CitizenFullName = citizenRequest.Citizen.FullName,
-                BirthDate = citizenRequest.Citizen.BirthDate,
-                Phone = citizenRequest.Citizen.Phone,
+                Citizen = new CitizenInfoDto
+                {
+                    NationalId = citizenRequest.Citizen.NationalId,
+                    FullName = citizenRequest.Citizen.FullName,
+                    BirthDate = citizenRequest.Citizen.BirthDate,
+                    Phone = citizenRequest.Citizen.Phone
+                },
 
-                // Request
-                Type = citizenRequest.Type,
-                Title = citizenRequest.Title,
-                Description = citizenRequest.Description,
-                Status = citizenRequest.Status,
-                Priority = citizenRequest.Priority,
-                CreatedAt = citizenRequest.CreatedAt,
+                Request = new RequestInfoDto
+                {
+                    Type = citizenRequest.Type,
+                    Title = citizenRequest.Title,
+                    Description = citizenRequest.Description,
+                    Status = citizenRequest.Status,
+                    Priority = citizenRequest.Priority,
+                    CreatedAt = citizenRequest.CreatedAt
+                },
 
-                // Media
-                MediaFileName = citizenRequest.MediaFileName,
-                ContentType = citizenRequest.ContentType,
-                FileSizeBytes = citizenRequest.FileSizeBytes,
-                MediaType = citizenRequest.MediaType,
-                UploadedAt = citizenRequest.UploadedAt
+                Media = new MediaInfoDto
+                {
+                    BlobName = citizenRequest.BlobName,
+                    FileName = citizenRequest.MediaFileName,
+                    ContentType = citizenRequest.ContentType,
+                    FileSizeBytes = citizenRequest.FileSizeBytes,
+                    MediaType = citizenRequest.MediaType,
+                    UploadedAt = citizenRequest.UploadedAt,
+                    MediaUrl = citizenRequest.MediaUrl
+                },
+                CommentDto = citizenRequest.Comments
+                    .OrderByDescending(x => x.CreatedAt)
+                    .Select(x => new CommentDto
+                    {
+                        Id = x.Id,
+                        Comment = x.Comment,
+                        CreatedAt = x.CreatedAt,
+                        EmployeeId = x.EmployeeId,
+                        EmployeeName = x.Employee.User.FullName ?? ""
+                    })
+                    .ToList()
             };
 
             // Generate Cloudinary URL
             if (!string.IsNullOrEmpty(citizenRequest.BlobName))
             {
-                result.MediaUrl =
+                result.Media.MediaUrl =
                     _fileStorageService.GetFileUrl(
                         citizenRequest.BlobName,
                         FolderName);
