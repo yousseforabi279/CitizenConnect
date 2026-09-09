@@ -1,1 +1,1 @@
-web: cd /workspace/DeputyProject/bin/Release/net8.0/linux-amd64/publish; ./DeputyProject --urls http://0.0.0.0:$PORT
+web: cd DeputyProject/bin/publish/; ./DeputyProject --urls http://0.0.0.0:$PORT
