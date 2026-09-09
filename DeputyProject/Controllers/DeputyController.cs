@@ -7,9 +7,12 @@ using Bank.Api.Controllers;
 using DeputyProject.Common;
 using DeputyProject.Mappers;
 using DeputyProject.Requests.DeputyInfo;
+using DeputyProject.SeedDataDto;
+using Infrastructure.Dbcontext;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace DeputyProject.Controllers
 {
@@ -17,7 +20,9 @@ namespace DeputyProject.Controllers
     [ApiController]
     public class DeputyController : BaseController
     {
-        public DeputyController(IMediator _mediator) : base(_mediator) { }
+        protected readonly Appcontext _context;
+        public DeputyController(IMediator _mediator, Appcontext context) : base(_mediator) { _context = context; }
+ 
 
         [HttpPut(ApiRoutes.Deputy.Edit)]
         public async Task<IActionResult> UpdateDeputy([FromForm] UpdatePersonalInfo updatePersonalInfo)
@@ -51,6 +56,8 @@ namespace DeputyProject.Controllers
             var result = await _mediator.Send(new GetDeputyQuery());
             return HandleResult(result);
         }
-       
+      
     }
 }
+       
+   
