@@ -24,5 +24,7 @@ namespace Domain.Deputy
         [Required]
         public string Location { get; set; }
         public DateTime Date { get; set; }
+        public string MediaUrl { get; set; }
+
     }
 }

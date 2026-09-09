@@ -3,35 +3,34 @@ using Application.Contracts;
 using Application.Core.Commands.LoadingPage.ActivityVisit;
 using Application.storage;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.Core.Queries.Deputy.ActivityVisit.GetAllById
 {
     internal class GetActivityVisitQueryHandler
-      : IRequestHandler<
-          GetActivityVisitQuery,
-          Result<ActivityVisitDTO>>
+        : IRequestHandler<
+            GetActivityVisitQuery,
+            Result<ActivityVisitDTO>>
     {
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IBlobStorageService _blobStorageService;
-        private const string ContainerName = "activity-visit-files";
+        private readonly IFileStorageService _fileStorageService;
 
-        public GetActivityVisitQueryHandler(IUnitOfWork unitOfWork, IBlobStorageService blobStorageService)
+        private const string FolderName = "activity-visit-files";
+
+        public GetActivityVisitQueryHandler(
+            IUnitOfWork unitOfWork,
+            IFileStorageService fileStorageService)
         {
             _unitOfWork = unitOfWork;
-            _blobStorageService = blobStorageService;
+            _fileStorageService = fileStorageService;
         }
 
         public async Task<Result<ActivityVisitDTO>> Handle(
             GetActivityVisitQuery request,
             CancellationToken cancellationToken)
         {
-            var activity = await _unitOfWork.ActitvitiesAndVisits
-                .GetByIdAsync(request.ActivityVisitId);
+            var activity =
+                await _unitOfWork.ActitvitiesAndVisits
+                    .GetByIdAsync(request.ActivityVisitId);
 
             if (activity is null)
             {
@@ -40,7 +39,6 @@ namespace Application.Core.Queries.Deputy.ActivityVisit.GetAllById
                     "النشاط أو الزيارة غير موجود.");
             }
 
-
             var response = new ActivityVisitDTO
             {
                 Id = activity.Id,
@@ -48,9 +46,13 @@ namespace Application.Core.Queries.Deputy.ActivityVisit.GetAllById
                 Description = activity.Description,
                 Location = activity.Location,
                 Date = activity.Date,
-                MediaUrl = activity.BlobName != null
-                    ? _blobStorageService.GetReadSasUrl(activity.BlobName, ContainerName)
-                    : null,
+
+                MediaUrl = string.IsNullOrWhiteSpace(activity.BlobName)
+                    ? null
+                    : _fileStorageService.GetFileUrl(
+                        activity.BlobName,
+                        FolderName),
+
                 ContentType = activity.ContentType,
                 MediaType = activity.MediaType
             };

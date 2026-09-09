@@ -2,11 +2,6 @@
 using Application.Contracts;
 using Application.storage;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.Core.Commands.DeleteCitizenRequest
 {
@@ -14,16 +9,16 @@ namespace Application.Core.Commands.DeleteCitizenRequest
         : IRequestHandler<DeleteCitizenRequestCommand, Result<string>>
     {
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IBlobStorageService _blobStorageService;
+        private readonly IFileStorageService _fileStorageService;
 
-        private const string ContainerName = "Request-files";
+        private const string FolderName = "request-files";
 
         public DeleteCitizenRequestCommandHandler(
             IUnitOfWork unitOfWork,
-            IBlobStorageService blobStorageService)
+            IFileStorageService fileStorageService)
         {
             _unitOfWork = unitOfWork;
-            _blobStorageService = blobStorageService;
+            _fileStorageService = fileStorageService;
         }
 
         public async Task<Result<string>> Handle(
@@ -41,27 +36,31 @@ namespace Application.Core.Commands.DeleteCitizenRequest
                     "Citizen request not found.");
             }
 
-            // Delete media from Blob Storage
-            if (!string.IsNullOrEmpty(citizenRequest.BlobName))
+            // Delete media from Cloudinary
+            if (!string.IsNullOrWhiteSpace(citizenRequest.BlobName))
             {
-                await _blobStorageService.DeleteFileAsync(
+                await _fileStorageService.DeleteFileAsync(
                     citizenRequest.BlobName,
-                    ContainerName);
+                    FolderName);
+            }
+
+            // Delete employees relations
+            foreach (var employee in citizenRequest.Employees)
+            {
+                _unitOfWork.CitizinRequiermentEmployees
+                    .Delete(employee);
+            }
+
+            // Delete comments
+            foreach (var comment in citizenRequest.Comments)
+            {
+                _unitOfWork.CitizinRequiermentContent
+                    .Delete(comment);
             }
 
             // Delete request
-            _unitOfWork.CitizinRequierment.Delete(citizenRequest);
-            foreach (var employee in citizenRequest.Employees)
-            {
-                _unitOfWork.CitizinRequiermentEmployees.Delete(employee);
-            }
-
-            foreach (var comment in citizenRequest.Comments)
-            {
-                _unitOfWork.CitizinRequiermentContent.Delete(comment);
-            }
-
-            _unitOfWork.CitizinRequierment.Delete(citizenRequest);
+            _unitOfWork.CitizinRequierment
+                .Delete(citizenRequest);
 
             await _unitOfWork.SaveChangesAsync();
 

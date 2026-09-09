@@ -5,56 +5,77 @@ using Application.storage;
 using Domain.Deputy;
 using MediatR;
 
-internal class CreateMotionsForInformationCommandHandler
-        : IRequestHandler<CreateMotionCommand, Result<MotionsForInformationDTO>>
+namespace Application.Core.Commands.LoadingPage.MotionsForInformation.CreateMotionsForInformation
 {
-    private readonly IUnitOfWork _unitOfWork;
-    private readonly IBlobStorageService _blobStorageService;
-    private const string ContainerName = "motions-for-information-files";
-
-    public CreateMotionsForInformationCommandHandler(IUnitOfWork unitOfWork, IBlobStorageService blobStorageService)
+    internal class CreateMotionsForInformationCommandHandler
+        : IRequestHandler<CreateMotionCommand, Result<MotionsForInformationDTO>>
     {
-        _unitOfWork = unitOfWork;
-        _blobStorageService = blobStorageService;
-    }
+        private readonly IUnitOfWork _unitOfWork;
+        private readonly IFileStorageService _fileStorageService;
 
-    public async Task<Result<MotionsForInformationDTO>> Handle(
-        CreateMotionCommand request,
-        CancellationToken cancellationToken)
-    {
-        var motion = new Domain.Deputy.MotionsForInformation
+        private const string FolderName = "motions-for-information-files";
+
+        public CreateMotionsForInformationCommandHandler(
+            IUnitOfWork unitOfWork,
+            IFileStorageService fileStorageService)
         {
-            Title = request.Title,
-            Description = request.Description
-        };
-
-        if (request.Media != null)
-        {
-            var upload = await _blobStorageService.UploadFileAsync(request.Media, ContainerName);
-
-            motion.BlobName = upload.BlobName;
-            motion.MediaFileName = request.Media.FileName;
-            motion.ContentType = upload.ContentType;
-            motion.FileSizeBytes = upload.SizeBytes;
-            motion.MediaType = request.Media.ContentType.StartsWith("video") ? MediaType.Video : MediaType.Image;
-            motion.UploadedAt = DateTime.UtcNow;
+            _unitOfWork = unitOfWork;
+            _fileStorageService = fileStorageService;
         }
 
-        await _unitOfWork.MotionsForInformation.AddAsync(motion);
-        await _unitOfWork.SaveChangesAsync();
-
-        var dto = new MotionsForInformationDTO
+        public async Task<Result<MotionsForInformationDTO>> Handle(
+            CreateMotionCommand request,
+            CancellationToken cancellationToken)
         {
-            Id = motion.Id,
-            Title = motion.Title,
-            Description = motion.Description,
-            MediaUrl = motion.BlobName != null
-                ? _blobStorageService.GetReadSasUrl(motion.BlobName, ContainerName)
-                : null,
-            ContentType = motion.ContentType,
-            MediaType = motion.MediaType
-        };
+            var motion = new Domain.Deputy.MotionsForInformation
+            {
+                Title = request.Title,
+                Description = request.Description
+            };
 
-        return Result<MotionsForInformationDTO>.Success(dto, "تمت إضافة الطلب الاستعلامي بنجاح.");
+            if (request.Media != null)
+            {
+                var upload = await _fileStorageService.UploadFileAsync(
+                    request.Media,
+                    FolderName);
+
+                motion.BlobName = upload.BlobName;
+                motion.MediaFileName = request.Media.FileName;
+                motion.ContentType = upload.ContentType;
+                motion.FileSizeBytes = upload.SizeBytes;
+
+                motion.MediaType =
+                    request.Media.ContentType.StartsWith("video/")
+                        ? MediaType.Video
+                        : MediaType.Image;
+
+                motion.UploadedAt = DateTime.UtcNow;
+
+            }
+
+            await _unitOfWork.MotionsForInformation.AddAsync(motion);
+
+            await _unitOfWork.SaveChangesAsync();
+
+            var dto = new MotionsForInformationDTO
+            {
+                Id = motion.Id,
+                Title = motion.Title,
+                Description = motion.Description,
+
+                MediaUrl = !string.IsNullOrEmpty(motion.BlobName)
+                    ? _fileStorageService.GetFileUrl(
+                        motion.BlobName,
+                        FolderName)
+                    : null,
+
+                ContentType = motion.ContentType,
+                MediaType = motion.MediaType
+            };
+
+            return Result<MotionsForInformationDTO>.Success(
+                dto,
+                "تمت إضافة الطلب الاستعلامي بنجاح.");
+        }
     }
 }

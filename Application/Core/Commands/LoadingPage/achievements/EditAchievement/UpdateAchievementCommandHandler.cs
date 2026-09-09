@@ -4,26 +4,23 @@ using Application.Core.Commands.LoadingPage.achievements;
 using Application.storage;
 using Domain.Deputy;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.Core.Commands.Deputy.achievements.EditAchievement
 {
     internal class UpdateAchievementCommandHandler
-     : IRequestHandler<UpdateAchievementCommand, Result<AchievementDto>>
+        : IRequestHandler<UpdateAchievementCommand, Result<AchievementDto>>
     {
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IBlobStorageService _blobStorageService;
-        private const string ContainerName = "achievement-files";
+        private readonly IFileStorageService _fileStorageService;
 
-        public UpdateAchievementCommandHandler(IUnitOfWork unitOfWork, IBlobStorageService blobStorageService)
+        private const string FolderName = "achievement-files";
+
+        public UpdateAchievementCommandHandler(
+            IUnitOfWork unitOfWork,
+            IFileStorageService fileStorageService)
         {
             _unitOfWork = unitOfWork;
-            _blobStorageService = blobStorageService;
-
+            _fileStorageService = fileStorageService;
         }
 
         public async Task<Result<AchievementDto>> Handle(
@@ -31,7 +28,7 @@ namespace Application.Core.Commands.Deputy.achievements.EditAchievement
             CancellationToken cancellationToken)
         {
             var achievement = await _unitOfWork.Achievement
-                 .GetByIdAsync(request.AchievementId);
+                .GetByIdAsync(request.AchievementId);
 
             if (achievement is null)
             {
@@ -39,37 +36,65 @@ namespace Application.Core.Commands.Deputy.achievements.EditAchievement
                     ResultStatus.NotFound,
                     "الإنجاز غير موجود.");
             }
+
+            // If a new media file was uploaded
             if (request.Media != null)
             {
+                // Delete old file from Cloudinary
                 if (!string.IsNullOrEmpty(achievement.BlobName))
-                    await _blobStorageService.DeleteFileAsync(achievement.BlobName, ContainerName);
+                {
+                    await _fileStorageService.DeleteFileAsync(
+                        achievement.BlobName,
+                        FolderName);
+                }
 
-                var upload = await _blobStorageService.UploadFileAsync(request.Media, ContainerName);
+                // Upload new file
+                var upload = await _fileStorageService.UploadFileAsync(
+                    request.Media,
+                    FolderName);
 
                 achievement.BlobName = upload.BlobName;
                 achievement.MediaFileName = request.Media.FileName;
                 achievement.ContentType = upload.ContentType;
                 achievement.FileSizeBytes = upload.SizeBytes;
-                achievement.MediaType = request.Media.ContentType.StartsWith("video") ? MediaType.Video : MediaType.Image;
-                achievement.UploadedAt = DateTime.UtcNow;
-                achievement.MediaUrl = achievement.BlobName != null ? _blobStorageService.GetReadSasUrl(achievement.BlobName,ContainerName) : null;
 
+                achievement.MediaType =
+                    request.Media.ContentType.StartsWith("video/")
+                        ? MediaType.Video
+                        : MediaType.Image;
+
+                achievement.UploadedAt = DateTime.UtcNow;
+
+                // Generate Cloudinary URL
+                achievement.MediaUrl =
+                    _fileStorageService.GetFileUrl(
+                        achievement.BlobName,
+                        FolderName);
             }
+
             achievement.Title = request.Title;
             achievement.Description = request.Description;
 
             await _unitOfWork.SaveChangesAsync();
 
+            var response = new AchievementDto
+            {
+                Id = achievement.Id,
+                Title = achievement.Title,
+                Description = achievement.Description,
+
+                MediaUrl = !string.IsNullOrEmpty(achievement.BlobName)
+                    ? _fileStorageService.GetFileUrl(
+                        achievement.BlobName,
+                        FolderName)
+                    : null,
+
+                ContentType = achievement.ContentType,
+                MediaType = achievement.MediaType
+            };
+
             return Result<AchievementDto>.Success(
-                new AchievementDto
-                {
-                    Id = achievement.Id,
-                    Title = achievement.Title,
-                    Description = achievement.Description,
-                    MediaUrl = achievement.BlobName != null ? _blobStorageService.GetReadSasUrl(achievement.BlobName,ContainerName) : null,
-                    ContentType = achievement.ContentType,
-                    MediaType = achievement.MediaType
-                },
+                response,
                 "تم تعديل الإنجاز بنجاح.");
         }
     }

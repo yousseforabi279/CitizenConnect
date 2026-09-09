@@ -10,44 +10,68 @@ namespace Application.Core.Commands.LoadingPage.MotionsForInformation.EditMotion
         : IRequestHandler<EditMotionCommand, Result<MotionsForInformationDTO>>
     {
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IBlobStorageService _blobStorageService;
-        private const string ContainerName = "motions-for-information-files";
+        private readonly IFileStorageService _fileStorageService;
 
-        public UpdateMotionsForInformationCommandHandler(IUnitOfWork unitOfWork, IBlobStorageService blobStorageService)
+        private const string FolderName = "motions-for-information-files";
+
+        public UpdateMotionsForInformationCommandHandler(
+            IUnitOfWork unitOfWork,
+            IFileStorageService fileStorageService)
         {
             _unitOfWork = unitOfWork;
-            _blobStorageService = blobStorageService;
+            _fileStorageService = fileStorageService;
         }
 
         public async Task<Result<MotionsForInformationDTO>> Handle(
             EditMotionCommand request,
             CancellationToken cancellationToken)
         {
-            var motion = await _unitOfWork.MotionsForInformation.GetByIdAsync(request.Id);
+            var motion =
+                await _unitOfWork.MotionsForInformation
+                    .GetByIdAsync(request.Id);
+
             if (motion is null)
             {
-                return Result<MotionsForInformationDTO>.Failure(ResultStatus.NotFound, "الطلب الاستعلامي غير موجود.");
+                return Result<MotionsForInformationDTO>.Failure(
+                    ResultStatus.NotFound,
+                    "الطلب الاستعلامي غير موجود.");
             }
 
             if (request.Media != null)
             {
+                // Delete old file from Cloudinary
                 if (!string.IsNullOrEmpty(motion.BlobName))
-                    await _blobStorageService.DeleteFileAsync(motion.BlobName, ContainerName);
+                {
+                    await _fileStorageService.DeleteFileAsync(
+                        motion.BlobName,
+                        FolderName);
+                }
 
-                var upload = await _blobStorageService.UploadFileAsync(request.Media, ContainerName);
+                // Upload new file
+                var upload =
+                    await _fileStorageService.UploadFileAsync(
+                        request.Media,
+                        FolderName);
 
                 motion.BlobName = upload.BlobName;
                 motion.MediaFileName = request.Media.FileName;
                 motion.ContentType = upload.ContentType;
                 motion.FileSizeBytes = upload.SizeBytes;
-                motion.MediaType = request.Media.ContentType.StartsWith("video") ? MediaType.Video : MediaType.Image;
+
+                motion.MediaType =
+                    request.Media.ContentType.StartsWith("video/")
+                        ? MediaType.Video
+                        : MediaType.Image;
+
                 motion.UploadedAt = DateTime.UtcNow;
+
             }
 
             motion.Title = request.Title;
             motion.Description = request.Description;
 
             _unitOfWork.MotionsForInformation.Update(motion);
+
             await _unitOfWork.SaveChangesAsync();
 
             var dto = new MotionsForInformationDTO
@@ -55,14 +79,20 @@ namespace Application.Core.Commands.LoadingPage.MotionsForInformation.EditMotion
                 Id = motion.Id,
                 Title = motion.Title,
                 Description = motion.Description,
-                MediaUrl = motion.BlobName != null
-                    ? _blobStorageService.GetReadSasUrl(motion.BlobName, ContainerName)
+
+                MediaUrl = !string.IsNullOrEmpty(motion.BlobName)
+                    ? _fileStorageService.GetFileUrl(
+                        motion.BlobName,
+                        FolderName)
                     : null,
+
                 ContentType = motion.ContentType,
                 MediaType = motion.MediaType
             };
 
-            return Result<MotionsForInformationDTO>.Success(dto, "تم التعديل بنجاح.");
+            return Result<MotionsForInformationDTO>.Success(
+                dto,
+                "تم التعديل بنجاح.");
         }
     }
 }

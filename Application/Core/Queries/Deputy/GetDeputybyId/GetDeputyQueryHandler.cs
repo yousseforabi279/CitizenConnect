@@ -2,11 +2,6 @@
 using Application.Contracts;
 using Application.storage;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.Core.Queries.Deputy.GetDeputybyId
 {
@@ -14,22 +9,25 @@ namespace Application.Core.Queries.Deputy.GetDeputybyId
         : IRequestHandler<GetDeputyQuery, Result<DeputyResponse>>
     {
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IBlobStorageService _blobStorageService;
-        private const string ContainerName = "PersoalDeputy-files";
+        private readonly IFileStorageService _fileStorageService;
 
-        public GetDeputyQueryHandler(IUnitOfWork unitOfWork, IBlobStorageService blobStorageService)
+        private const string FolderName = "personal-deputy-files";
+
+        public GetDeputyQueryHandler(
+            IUnitOfWork unitOfWork,
+            IFileStorageService fileStorageService)
         {
             _unitOfWork = unitOfWork;
-            _blobStorageService = blobStorageService;
-
+            _fileStorageService = fileStorageService;
         }
 
         public async Task<Result<DeputyResponse>> Handle(
             GetDeputyQuery request,
             CancellationToken cancellationToken)
         {
-            var deputy = await _unitOfWork.Deputy
-                .GetDeputyInfo();
+            var deputy =
+                await _unitOfWork.Deputy
+                    .GetDeputyInfo();
 
             if (deputy is null)
             {
@@ -55,7 +53,13 @@ namespace Application.Core.Queries.Deputy.GetDeputybyId
                 LocationURL = deputy.LocationURL,
                 Circle = deputy.Circle,
                 Appointment = deputy.Appointment,
-                MediaUrl = _blobStorageService.GetReadSasUrl(deputy.BlobName, ContainerName),
+
+                MediaUrl = string.IsNullOrWhiteSpace(deputy.BlobName)
+                    ? null
+                    : _fileStorageService.GetFileUrl(
+                        deputy.BlobName,
+                        FolderName),
+
                 ContentType = deputy.ContentType,
                 MediaType = deputy.MediaType
             };

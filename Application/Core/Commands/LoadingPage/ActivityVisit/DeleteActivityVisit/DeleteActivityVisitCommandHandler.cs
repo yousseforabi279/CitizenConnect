@@ -1,13 +1,7 @@
 ﻿using Application.Common;
 using Application.Contracts;
 using Application.storage;
-using Domain.Deputy;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.Core.Commands.Deputy.ActivityVisit.DeleteActivityVisit
 {
@@ -17,15 +11,16 @@ namespace Application.Core.Commands.Deputy.ActivityVisit.DeleteActivityVisit
             Result<int>>
     {
         private readonly IUnitOfWork _unitOfWork;
-        private const string ContainerName = "activity-visit-files";
-        private readonly IBlobStorageService _blobStorageService;
+        private readonly IFileStorageService _fileStorageService;
+
+        private const string FolderName = "activity-visit-files";
 
         public DeleteActivityVisitCommandHandler(
-            IUnitOfWork unitOfWork, IBlobStorageService blobStorageService)
+            IUnitOfWork unitOfWork,
+            IFileStorageService fileStorageService)
         {
             _unitOfWork = unitOfWork;
-            _blobStorageService = blobStorageService;
-
+            _fileStorageService = fileStorageService;
         }
 
         public async Task<Result<int>> Handle(
@@ -41,9 +36,16 @@ namespace Application.Core.Commands.Deputy.ActivityVisit.DeleteActivityVisit
                     ResultStatus.NotFound,
                     "النشاط أو الزيارة غير موجود.");
             }
-            if (!string.IsNullOrEmpty(activity.BlobName))
-                await _blobStorageService.DeleteFileAsync(activity.BlobName, ContainerName);
 
+            // Delete media from Cloudinary
+            if (!string.IsNullOrEmpty(activity.BlobName))
+            {
+                await _fileStorageService.DeleteFileAsync(
+                    activity.BlobName,
+                    FolderName);
+            }
+
+            // Delete from database
             _unitOfWork.ActitvitiesAndVisits.Delete(activity);
 
             await _unitOfWork.SaveChangesAsync();

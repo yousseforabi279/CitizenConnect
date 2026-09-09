@@ -3,34 +3,34 @@ using Application.Contracts;
 using Application.Core.Commands.LoadingPage.AreasOfWorkandActivities;
 using Application.storage;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.Core.Queries.Deputy.AreaOfWork.GetById
 {
     internal class GetAreaOfWorkQueryHandler
-       : IRequestHandler<
-           GetAreaOfWorkQuery,
-           Result<AreaOfWorkDTO>>
+        : IRequestHandler<
+            GetAreaOfWorkQuery,
+            Result<AreaOfWorkDTO>>
     {
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IBlobStorageService _blobStorageService;
-        private const string ContainerName = "areas-of-work-files";
+        private readonly IFileStorageService _fileStorageService;
 
-        public GetAreaOfWorkQueryHandler(IUnitOfWork unitOfWork, IBlobStorageService blobStorageService)
+        private const string FolderName = "areas-of-work-files";
+
+        public GetAreaOfWorkQueryHandler(
+            IUnitOfWork unitOfWork,
+            IFileStorageService fileStorageService)
         {
             _unitOfWork = unitOfWork;
-            _blobStorageService = blobStorageService;
+            _fileStorageService = fileStorageService;
         }
+
         public async Task<Result<AreaOfWorkDTO>> Handle(
             GetAreaOfWorkQuery request,
             CancellationToken cancellationToken)
         {
-            var area = await _unitOfWork.AreasOfWorkandActivities
-                .GetByIdAsync(request.AreaId);
+            var area =
+                await _unitOfWork.AreasOfWorkandActivities
+                    .GetByIdAsync(request.AreaId);
 
             if (area is null)
             {
@@ -44,9 +44,13 @@ namespace Application.Core.Queries.Deputy.AreaOfWork.GetById
                 Id = area.Id,
                 Title = area.Title,
                 Description = area.Description,
-                MediaUrl = area.BlobName != null
-                   ? _blobStorageService.GetReadSasUrl(area.BlobName, ContainerName)
-                   : null,
+
+                MediaUrl = string.IsNullOrWhiteSpace(area.BlobName)
+                    ? null
+                    : _fileStorageService.GetFileUrl(
+                        area.BlobName,
+                        FolderName),
+
                 ContentType = area.ContentType,
                 MediaType = area.MediaType
             };

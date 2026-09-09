@@ -3,29 +3,28 @@ using Application.Contracts;
 using Application.storage;
 using Domain.Deputy;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.Core.Commands.LoadingPage.PersonalInfo.EditPersonalInfo
 {
     internal class UpdateDeputyCommandHandler
-       : IRequestHandler<UpdateDeputyCommand, Result<int>>
+        : IRequestHandler<UpdateDeputyCommand, Result<int>>
     {
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IBlobStorageService _BlobStorageService;
-        private const string ContainerName = "PersoalDeputy-files";
+        private readonly IFileStorageService _fileStorageService;
 
-        public UpdateDeputyCommandHandler(IUnitOfWork unitOfWork,IBlobStorageService blobStorageService)
+        private const string FolderName = "personal-deputy-files";
+
+        public UpdateDeputyCommandHandler(
+            IUnitOfWork unitOfWork,
+            IFileStorageService fileStorageService)
         {
             _unitOfWork = unitOfWork;
-            _BlobStorageService = blobStorageService;
+            _fileStorageService = fileStorageService;
         }
+
         public async Task<Result<int>> Handle(
-               UpdateDeputyCommand request,
-               CancellationToken cancellationToken)
+            UpdateDeputyCommand request,
+            CancellationToken cancellationToken)
         {
             var deputy = await _unitOfWork.Deputy
                 .GetDeputyInfo();
@@ -36,23 +35,43 @@ namespace Application.Core.Commands.LoadingPage.PersonalInfo.EditPersonalInfo
                     ResultStatus.NotFound,
                     "النائب غير موجود.");
             }
+
+            // Upload new media if provided
             if (request.Media != null)
             {
+                // Delete old media from Cloudinary
                 if (!string.IsNullOrEmpty(deputy.BlobName))
-                    await _BlobStorageService.DeleteFileAsync(deputy.BlobName, ContainerName);
+                {
+                    await _fileStorageService.DeleteFileAsync(
+                        deputy.BlobName,
+                        FolderName);
+                }
 
-                var upload = await _BlobStorageService.UploadFileAsync(request.Media, ContainerName);
+                // Upload new media
+                var upload =
+                    await _fileStorageService.UploadFileAsync(
+                        request.Media,
+                        FolderName);
 
                 deputy.BlobName = upload.BlobName;
                 deputy.MediaFileName = request.Media.FileName;
                 deputy.ContentType = upload.ContentType;
                 deputy.FileSizeBytes = upload.SizeBytes;
-                deputy.MediaType = request.Media.ContentType.StartsWith("video") ? MediaType.Video : MediaType.Image;
-                deputy.UploadedAt = DateTime.UtcNow;
-                deputy.MediaUrl = deputy.BlobName != null ? _BlobStorageService.GetReadSasUrl(deputy.BlobName, ContainerName) : null;
 
+                deputy.MediaType =
+                    request.Media.ContentType.StartsWith("video/")
+                        ? MediaType.Video
+                        : MediaType.Image;
+
+                deputy.UploadedAt = DateTime.UtcNow;
+
+                deputy.MediaUrl =
+                    _fileStorageService.GetFileUrl(
+                        deputy.BlobName,
+                        FolderName);
             }
 
+            // Update deputy information
             deputy.FullName = request.FullName;
             deputy.BirthOfdate = request.BirthOfdate;
             deputy.PrimaryPhone = request.PrimaryPhone;

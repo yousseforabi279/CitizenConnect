@@ -14,10 +14,10 @@ namespace Application.Core.Commands.Deputy.achievements.DeleteAchievement
       : IRequestHandler<DeleteAchievementCommand, Result<int>>
     {
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IBlobStorageService _blobStorageService;
-        private const string ContainerName = "achievement-files";
+        private readonly IFileStorageService _blobStorageService;
+        private const string FileName = "achievement-files";
 
-        public DeleteAchievementCommandHandler(IUnitOfWork unitOfWork, IBlobStorageService blobStorageService)
+        public DeleteAchievementCommandHandler(IUnitOfWork unitOfWork, IFileStorageService blobStorageService)
         {
             _unitOfWork = unitOfWork;
             _blobStorageService = blobStorageService;
@@ -38,7 +38,7 @@ namespace Application.Core.Commands.Deputy.achievements.DeleteAchievement
                     "الإنجاز غير موجود.");
             }
             if (!string.IsNullOrEmpty(achievement.BlobName))
-                await _blobStorageService.DeleteFileAsync(achievement.BlobName, ContainerName);
+                await _blobStorageService.DeleteFileAsync(achievement.BlobName,FileName);
 
             _unitOfWork.Achievement.Delete(achievement);
             await _unitOfWork.SaveChangesAsync();

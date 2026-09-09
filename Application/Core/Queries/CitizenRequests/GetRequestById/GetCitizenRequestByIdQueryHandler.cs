@@ -1,32 +1,29 @@
 ﻿using Application.Common;
 using Application.Contracts;
 using Application.storage;
-using AutoMapper;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.Core.Queries.CitizenRequests.GetRequestById
 {
     public class GetCitizenRequestByIdQueryHandler
-         : IRequestHandler<GetCitizenRequestByIdQuery, Result<CitizenRequestDto>>
+        : IRequestHandler<GetCitizenRequestByIdQuery, Result<CitizenRequestDto>>
     {
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IBlobStorageService _blobStorageService;
-        private const string ContainerName = "Request-files";
+        private readonly IFileStorageService _fileStorageService;
+
+        private const string FolderName = "request-files";
 
         public GetCitizenRequestByIdQueryHandler(
             IUnitOfWork unitOfWork,
-            IBlobStorageService blobStorageService)
+            IFileStorageService fileStorageService)
         {
             _unitOfWork = unitOfWork;
-            this._blobStorageService = blobStorageService;
+            _fileStorageService = fileStorageService;
         }
 
-        public async Task<Result<CitizenRequestDto>> Handle(GetCitizenRequestByIdQuery request, CancellationToken cancellationToken)
+        public async Task<Result<CitizenRequestDto>> Handle(
+            GetCitizenRequestByIdQuery request,
+            CancellationToken cancellationToken)
         {
             var citizenRequest =
                 await _unitOfWork.CitizinRequierment
@@ -38,6 +35,7 @@ namespace Application.Core.Queries.CitizenRequests.GetRequestById
                     ResultStatus.NotFound,
                     "Citizen request not found.");
             }
+
             var result = new CitizenRequestDto
             {
                 Id = citizenRequest.Id,
@@ -63,12 +61,14 @@ namespace Application.Core.Queries.CitizenRequests.GetRequestById
                 MediaType = citizenRequest.MediaType,
                 UploadedAt = citizenRequest.UploadedAt
             };
+
+            // Generate Cloudinary URL
             if (!string.IsNullOrEmpty(citizenRequest.BlobName))
             {
                 result.MediaUrl =
-                    _blobStorageService.GetReadSasUrl(
+                    _fileStorageService.GetFileUrl(
                         citizenRequest.BlobName,
-                        ContainerName);
+                        FolderName);
             }
 
             return Result<CitizenRequestDto>.Success(result);

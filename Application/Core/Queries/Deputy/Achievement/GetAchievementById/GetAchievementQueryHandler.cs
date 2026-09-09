@@ -1,38 +1,37 @@
 ﻿using Application.Common;
 using Application.Contracts;
 using Application.Core.Commands.LoadingPage.achievements;
+using Application.Core.Queries.Deputy.Achievement.GetAchievementById;
 using Application.storage;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.Core.Queries.Deputy.Achievement.GetAchievementById
 {
     internal class GetAchievementQueryHandler
-     : IRequestHandler<
-         GetAchievementQuery,
-         Result<AchievementDto>>
+        : IRequestHandler<
+            GetAchievementQuery,
+            Result<AchievementDto>>
     {
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IBlobStorageService _blobStorageService;
-        private const string ContainerName = "achievement-files";
+        private readonly IFileStorageService _fileStorageService;
 
-        public GetAchievementQueryHandler(IUnitOfWork unitOfWork, IBlobStorageService blobStorageService)
+        private const string FolderName = "achievement-files";
+
+        public GetAchievementQueryHandler(
+            IUnitOfWork unitOfWork,
+            IFileStorageService fileStorageService)
         {
             _unitOfWork = unitOfWork;
-            _blobStorageService = blobStorageService;
-
+            _fileStorageService = fileStorageService;
         }
 
         public async Task<Result<AchievementDto>> Handle(
             GetAchievementQuery request,
             CancellationToken cancellationToken)
         {
-            var achievement = await _unitOfWork.Achievement
-                .GetByIdAsync(request.AchievementId);
+            var achievement =
+                await _unitOfWork.Achievement
+                    .GetByIdAsync(request.AchievementId);
 
             if (achievement is null)
             {
@@ -46,7 +45,13 @@ namespace Application.Core.Queries.Deputy.Achievement.GetAchievementById
                 Id = achievement.Id,
                 Title = achievement.Title,
                 Description = achievement.Description,
-                MediaUrl = achievement.BlobName != null ? _blobStorageService.GetReadSasUrl(achievement.BlobName, ContainerName) : null,
+
+                MediaUrl = string.IsNullOrWhiteSpace(achievement.BlobName)
+                    ? null
+                    : _fileStorageService.GetFileUrl(
+                        achievement.BlobName,
+                        FolderName),
+
                 ContentType = achievement.ContentType,
                 MediaType = achievement.MediaType
             };

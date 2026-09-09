@@ -1,19 +1,20 @@
 ﻿using Application.Contracts;
 using Application.Contracts.Repos;
+using Application.storage;
 using Domain;
 using Infrastructure.Dbcontext;
 using Infrastructure.Implemenation;
 using Infrastructure.Services;
 using Infrastructure.Settings;
+using Infrastructure.Storage;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
-using Microsoft.Extensions.Configuration;
-using Microsoft.AspNetCore.Identity;
-using Application.storage;
-using Infrastructure.Storage;
+using System;
 
 namespace Infrastructure
 {
@@ -24,10 +25,15 @@ namespace Infrastructure
        IConfiguration configuration) 
         {
             // Register DbContext
-            services.AddDbContext<Appcontext>(options =>
-                options.UseSqlServer(
-                    configuration.GetConnectionString("Connection")
-                ));
+            var connectionString =
+                   Environment.GetEnvironmentVariable("MSSQL_TCP_URL")
+                   ?? configuration.GetConnectionString("DefaultConnection");
+            Console.WriteLine($"Connection String Exists: {!string.IsNullOrEmpty(connectionString)}");
+
+            services.AddDbContext<Infrastructure.Dbcontext.Appcontext>(options =>
+            {
+                options.UseSqlServer(connectionString);
+            });
 
             // Register ASP.NET Core Identity
             //services
@@ -74,7 +80,7 @@ namespace Infrastructure
             services.AddScoped<IPasswordResetCode, PasswordResetCodeRepo>();
             services.Configure<EmailSettings>(configuration.GetSection("EmailSettings"));
             services.AddScoped<IEmailService, EmailService>();
-            services.AddScoped<IBlobStorageService, BlobStorageService>();
+            services.AddScoped<IFileStorageService, CloudinaryStorageServicee>();
             services.AddScoped<ICitizinRequiermentContent, CitizinRequiermentContentRepo>();
 
 

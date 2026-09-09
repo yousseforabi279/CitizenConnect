@@ -1,42 +1,58 @@
 ﻿using Application.Common;
 using Application.Contracts;
 using Application.Core.Commands.LoadingPage.MotionsForInformation;
-using Application.Core.Queries.Deputy.MotionsInforamtion.GetAll;
 using Application.Core.Queries.Deputy.MotionsInforamtion.GetAll.Application.Core.Queries.Deputy.MotionsForInformation.GetAll;
 using Application.storage;
 using MediatR;
 
-internal class GetAllMotionsForInformationQueryHandler
-    : IRequestHandler<GetAllMotionsQuery, Result<List<MotionsForInformationDTO>>>
+namespace Application.Core.Queries.Deputy.MotionsForInformation.GetAll
 {
-    private readonly IUnitOfWork _unitOfWork;
-    private readonly IBlobStorageService _blobStorageService;
-    private const string ContainerName = "motions-for-information-files";
-
-    public GetAllMotionsForInformationQueryHandler(IUnitOfWork unitOfWork, IBlobStorageService blobStorageService)
+    internal class GetAllMotionsForInformationQueryHandler
+        : IRequestHandler<
+            GetAllMotionsQuery,
+            Result<List<MotionsForInformationDTO>>>
     {
-        _unitOfWork = unitOfWork;
-        _blobStorageService = blobStorageService;
-    }
+        private readonly IUnitOfWork _unitOfWork;
+        private readonly IFileStorageService _fileStorageService;
 
-    public async Task<Result<List<MotionsForInformationDTO>>> Handle(
-        GetAllMotionsQuery request,
-        CancellationToken cancellationToken)
-    {
-        var motions = await _unitOfWork.MotionsForInformation.GetAllAsync();
+        private const string FolderName = "motions-for-information-files";
 
-        var dtos = motions.Select(m => new MotionsForInformationDTO
+        public GetAllMotionsForInformationQueryHandler(
+            IUnitOfWork unitOfWork,
+            IFileStorageService fileStorageService)
         {
-            Id = m.Id,
-            Title = m.Title,
-            Description = m.Description,
-            MediaUrl = m.BlobName != null
-                ? _blobStorageService.GetReadSasUrl(m.BlobName, ContainerName)
-                : null,
-            ContentType = m.ContentType,
-            MediaType = m.MediaType
-        }).ToList();
+            _unitOfWork = unitOfWork;
+            _fileStorageService = fileStorageService;
+        }
 
-        return Result<List<MotionsForInformationDTO>>.Success(dtos);
+        public async Task<Result<List<MotionsForInformationDTO>>> Handle(
+            GetAllMotionsQuery request,
+            CancellationToken cancellationToken)
+        {
+            var motions =
+                await _unitOfWork.MotionsForInformation
+                    .GetAllAsync();
+
+            var dtos = motions
+                .Select(m => new MotionsForInformationDTO
+                {
+                    Id = m.Id,
+                    Title = m.Title,
+                    Description = m.Description,
+
+                    MediaUrl = string.IsNullOrWhiteSpace(m.BlobName)
+                        ? null
+                        : _fileStorageService.GetFileUrl(
+                            m.BlobName,
+                            FolderName),
+
+                    ContentType = m.ContentType,
+                    MediaType = m.MediaType
+                })
+                .ToList();
+
+            return Result<List<MotionsForInformationDTO>>.Success(
+                dtos);
+        }
     }
 }

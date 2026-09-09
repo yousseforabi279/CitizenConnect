@@ -17,10 +17,10 @@ namespace Application.Core.Commands.Deputy.achievements.CreateAchievement
     : IRequestHandler<CreateAchievementCommand, Result<AchievementDto>>
     {
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IBlobStorageService _blobStorageService;
-        private const string ContainerName = "achievement-files";
+        private readonly IFileStorageService _blobStorageService;
+        private const string FolderName = "achievement-files";
 
-        public CreateAchievementCommandHandler(IUnitOfWork unitOfWork, IBlobStorageService blobStorageService)
+        public CreateAchievementCommandHandler(IUnitOfWork unitOfWork, IFileStorageService blobStorageService)
         {
             _unitOfWork = unitOfWork;
             _blobStorageService = blobStorageService;
@@ -37,16 +37,29 @@ namespace Application.Core.Commands.Deputy.achievements.CreateAchievement
             };
             if (request.Media != null)
             {
-                var upload = await _blobStorageService.UploadFileAsync(request.Media,ContainerName);
+                var upload = await _blobStorageService.UploadFileAsync(
+                    request.Media,
+                    FolderName);
 
                 achievement.BlobName = upload.BlobName;
                 achievement.MediaFileName = request.Media.FileName;
                 achievement.ContentType = upload.ContentType;
                 achievement.FileSizeBytes = upload.SizeBytes;
-                achievement.MediaType = request.Media.ContentType.StartsWith("video") ? MediaType.Video : MediaType.Image;
+
+                achievement.MediaType =
+                    request.Media.ContentType.StartsWith("video/")
+                        ? MediaType.Video
+                        : MediaType.Image;
+
                 achievement.UploadedAt = DateTime.UtcNow;
-                achievement.MediaUrl = achievement.BlobName != null ? _blobStorageService.GetReadSasUrl(achievement.BlobName,ContainerName) : null;
+
+                // Cloudinary URL
+                achievement.MediaUrl =
+                    _blobStorageService.GetFileUrl(
+                        achievement.BlobName,
+                        FolderName);
             }
+
             await _unitOfWork.Achievement.AddAsync(achievement);
 
             await _unitOfWork.SaveChangesAsync();
@@ -54,12 +67,19 @@ namespace Application.Core.Commands.Deputy.achievements.CreateAchievement
             return Result<AchievementDto>.Success(
             new AchievementDto
             {
-            Id = achievement.Id,
-            Title = achievement.Title,
-            Description = achievement.Description,
-            MediaUrl = achievement.BlobName != null ? _blobStorageService.GetReadSasUrl(achievement.BlobName,ContainerName) : null,
-            ContentType = achievement.ContentType,
-            MediaType = achievement.MediaType
+                Id = achievement.Id,
+                Title = achievement.Title,
+                Description = achievement.Description,
+
+                MediaUrl = achievement.BlobName != null
+                    ? _blobStorageService.GetFileUrl(
+                        achievement.BlobName,
+                        FolderName)
+                    : null,
+
+                ContentType = achievement.ContentType,
+                MediaType = achievement.MediaType
+          
             },
             "تم إضافة الإنجاز بنجاح.");
         }

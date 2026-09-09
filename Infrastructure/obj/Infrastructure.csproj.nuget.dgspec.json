@@ -227,6 +227,10 @@
               "target": "Package",
               "version": "[12.29.2, )"
             },
+            "CloudinaryDotNet": {
+              "target": "Package",
+              "version": "[1.29.3, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.30, )"

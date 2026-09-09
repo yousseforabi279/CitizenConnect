@@ -11,16 +11,16 @@ namespace Application.Core.Commands.Deputy.ActivityVisit.CreateActivityVisit
         : IRequestHandler<CreateActivityVisitCommand, Result<ActivityVisitDTO>>
     {
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IBlobStorageService _blobStorageService;
+        private readonly IFileStorageService _fileStorageService;
 
-        private const string ContainerName = "activity-visit-files";
+        private const string FolderName = "activity-visit-files";
 
         public CreateActivityVisitCommandHandler(
             IUnitOfWork unitOfWork,
-            IBlobStorageService blobStorageService)
+            IFileStorageService fileStorageService)
         {
             _unitOfWork = unitOfWork;
-            _blobStorageService = blobStorageService;
+            _fileStorageService = fileStorageService;
         }
 
         public async Task<Result<ActivityVisitDTO>> Handle(
@@ -37,19 +37,27 @@ namespace Application.Core.Commands.Deputy.ActivityVisit.CreateActivityVisit
 
             if (request.Media != null)
             {
-                var upload = await _blobStorageService.UploadFileAsync(request.Media, ContainerName);
+                var upload = await _fileStorageService.UploadFileAsync(
+                    request.Media,
+                    FolderName);
 
                 activity.BlobName = upload.BlobName;
                 activity.MediaFileName = request.Media.FileName;
                 activity.ContentType = upload.ContentType;
                 activity.FileSizeBytes = upload.SizeBytes;
-                activity.MediaType = request.Media.ContentType.StartsWith("video")
-                    ? MediaType.Video
-                    : MediaType.Image;
+
+                activity.MediaType =
+                    request.Media.ContentType.StartsWith("video/")
+                        ? MediaType.Video
+                        : MediaType.Image;
+
                 activity.UploadedAt = DateTime.UtcNow;
+
+     
             }
 
             await _unitOfWork.ActitvitiesAndVisits.AddAsync(activity);
+
             await _unitOfWork.SaveChangesAsync();
 
             var dto = MapToDto(activity);
@@ -59,18 +67,26 @@ namespace Application.Core.Commands.Deputy.ActivityVisit.CreateActivityVisit
                 "تمت إضافة النشاط أو الزيارة بنجاح.");
         }
 
-        private ActivityVisitDTO MapToDto(ActitvitiesAndVisits activity) => new()
+        private ActivityVisitDTO MapToDto(
+            ActitvitiesAndVisits activity)
         {
-            Id = activity.Id,
-            Title = activity.Title,
-            Description = activity.Description,
-            Location = activity.Location,
-            Date = activity.Date,
-            MediaUrl = activity.BlobName != null
-                ? _blobStorageService.GetReadSasUrl(activity.BlobName, ContainerName)
-                : null,
-            ContentType = activity.ContentType,
-            MediaType = activity.MediaType
-        };
+            return new ActivityVisitDTO
+            {
+                Id = activity.Id,
+                Title = activity.Title,
+                Description = activity.Description,
+                Location = activity.Location,
+                Date = activity.Date,
+
+                MediaUrl = !string.IsNullOrEmpty(activity.BlobName)
+                    ? _fileStorageService.GetFileUrl(
+                        activity.BlobName,
+                        FolderName)
+                    : null,
+
+                ContentType = activity.ContentType,
+                MediaType = activity.MediaType
+            };
+        }
     }
 }

@@ -1,33 +1,42 @@
 ﻿using Application.Common;
 using Application.Contracts;
 using Application.Core.Commands.LoadingPage.MotionsForInformation;
-using Application.Core.Queries.Deputy.MotionsInforamtion.GetAll;
 using Application.storage;
 using MediatR;
 
 namespace Application.Core.Queries.Deputy.MotionsForInformation.GetById
 {
     internal class GetMotionsForInformationByIdQueryHandler
-    : IRequestHandler<GetMotionByIdQuery, Result<MotionsForInformationDTO>>
+        : IRequestHandler<
+            GetMotionByIdQuery,
+            Result<MotionsForInformationDTO>>
     {
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IBlobStorageService _blobStorageService;
-        private const string ContainerName = "motions-for-information-files";
+        private readonly IFileStorageService _fileStorageService;
 
-        public GetMotionsForInformationByIdQueryHandler(IUnitOfWork unitOfWork, IBlobStorageService blobStorageService)
+        private const string FolderName = "motions-for-information-files";
+
+        public GetMotionsForInformationByIdQueryHandler(
+            IUnitOfWork unitOfWork,
+            IFileStorageService fileStorageService)
         {
             _unitOfWork = unitOfWork;
-            _blobStorageService = blobStorageService;
+            _fileStorageService = fileStorageService;
         }
 
         public async Task<Result<MotionsForInformationDTO>> Handle(
             GetMotionByIdQuery request,
             CancellationToken cancellationToken)
         {
-            var motion = await _unitOfWork.MotionsForInformation.GetByIdAsync(request.MotionId);
+            var motion =
+                await _unitOfWork.MotionsForInformation
+                    .GetByIdAsync(request.MotionId);
+
             if (motion is null)
             {
-                return Result<MotionsForInformationDTO>.Failure(ResultStatus.NotFound, "الطلب الاستعلامي غير موجود.");
+                return Result<MotionsForInformationDTO>.Failure(
+                    ResultStatus.NotFound,
+                    "الطلب الاستعلامي غير موجود.");
             }
 
             var dto = new MotionsForInformationDTO
@@ -35,9 +44,13 @@ namespace Application.Core.Queries.Deputy.MotionsForInformation.GetById
                 Id = motion.Id,
                 Title = motion.Title,
                 Description = motion.Description,
-                MediaUrl = motion.BlobName != null
-                    ? _blobStorageService.GetReadSasUrl(motion.BlobName, ContainerName)
-                    : null,
+
+                MediaUrl = string.IsNullOrWhiteSpace(motion.BlobName)
+                    ? null
+                    : _fileStorageService.GetFileUrl(
+                        motion.BlobName,
+                        FolderName),
+
                 ContentType = motion.ContentType,
                 MediaType = motion.MediaType
             };
