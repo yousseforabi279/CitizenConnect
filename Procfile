@@ -1,1 +1,1 @@
-web: dotnet DeputyProject.dll --urls http://0.0.0.0:$PORT
+web: cd DeputyProject && dotnet DeputyProject.dll --urls http://0.0.0.0:$PORT
