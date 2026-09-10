@@ -5,27 +5,27 @@ namespace DeputyProject.Common
         public static class Complaint
         {
             public const string CreateComplaint = "";
-            public const string GetComplaintById = "/{id:int}";
-            public const string DeleteComplaintById = "/{id:int}";
-            public const string UpdateRequest = "/UpdateRequest";
+            public const string GetComplaintById = "{id:int}";
+            public const string DeleteComplaintById = "{id:int}";
+            public const string UpdateRequest = "UpdateRequest";
 
         }
 
         public static class Authentication
         {
-            public const string Login = "/Login";
-            public const string Register = "/Register";
-            public const string ChangePassword = "/ChangePassword";
-            public const string forgotpassword = "/forgot-password";
-            public const string verifyresetcode = "/verify-reset-code";
-            public const string resetpassword = "/reset-password";
-            public const string refreshtoken = "/refresh-token";
+            public const string Login = "Login";
+            public const string Register = "Register";
+            public const string ChangePassword = "ChangePassword";
+            public const string forgotpassword = "forgot-password";
+            public const string verifyresetcode = "verify-reset-code";
+            public const string resetpassword = "reset-password";
+            public const string refreshtoken = "refresh-token";
 
         }
         public static class Deputy
         {
-            public const string Edit = "api/deputy/personal-info";
-            public const string GetDeputy = "api/deputy/personal-info";
+            public const string Edit = "/api/deputy/personal-info";
+            public const string GetDeputy = "/api/deputy/personal-info";
         }
         public static class Achievements
         {

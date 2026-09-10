@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "deputyproject-api",
+      "runtimeExecutable": "dotnet",
+      "runtimeArgs": ["run", "--project", "DeputyProject/DeputyProject.csproj", "--launch-profile", "http"],
+      "port": 5249
+    }
+  ]
+}

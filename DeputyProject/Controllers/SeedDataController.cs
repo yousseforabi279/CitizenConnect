@@ -34,6 +34,7 @@ namespace DeputyProject.Controllers
             _environment = environment;
         }
 
+        [NonAction]
         public void OnActionExecuting(ActionExecutingContext context)
         {
             if (!_environment.IsDevelopment())
@@ -42,6 +43,7 @@ namespace DeputyProject.Controllers
             }
         }
 
+        [NonAction]
         public void OnActionExecuted(ActionExecutedContext context) { }
 
         [HttpPost]
