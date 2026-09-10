@@ -1,6 +1,7 @@
 using Domain.Enums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ namespace Domain
         public int EmployeeId { get; set; }
         public int CitizenRequirementId { get; set; }
 
+        [MaxLength(2000)]
         public string Comment { get; set; } = null!;
         public DateTime CreatedAt { get; set; }
         public CitizenRequirement CitizenRequirement { get; set; } = null!;

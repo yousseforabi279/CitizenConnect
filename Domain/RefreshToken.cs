@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,8 +11,10 @@ namespace Domain
     {
         public int Id { get; set; }
 
-        public string Token { get; set; } = null!;
+        [MaxLength(100)]
+        public string TokenHash { get; set; } = null!;
 
+        [MaxLength(450)]
         public string UserId { get; set; } = null!;
 
         public DateTime ExpiresAt { get; set; }

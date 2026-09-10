@@ -49,10 +49,10 @@ namespace Application.Core.Commands.Login
 
             var refreshToken = new RefreshToken
             {
-                Token = refreshTokenValue,
+                TokenHash = _unitOfWork.jwtTokenService.HashToken(refreshTokenValue),
                 UserId = user.Id,
                 CreatedAt = DateTime.UtcNow,
-                ExpiresAt = DateTime.UtcNow.AddDays(7)
+                ExpiresAt = DateTime.UtcNow.Add(_unitOfWork.jwtTokenService.RefreshTokenLifetime)
             };
             await _unitOfWork.RefreshToken.AddAsync(refreshToken);
             await _unitOfWork.SaveChangesAsync();   

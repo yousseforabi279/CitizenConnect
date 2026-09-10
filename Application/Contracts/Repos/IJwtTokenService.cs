@@ -12,5 +12,9 @@ namespace Application.Contracts.Repos
         string GenerateAccessToken(User user, IList<string> roles);
 
         string GenerateRefreshToken();
+
+        string HashToken(string rawToken);
+
+        TimeSpan RefreshTokenLifetime { get; }
     }
 }

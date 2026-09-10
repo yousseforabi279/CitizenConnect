@@ -10,20 +10,32 @@ namespace Domain.Deputy
     public class ActivitiesAndVisits
     {
         public int Id { get; set; }
+
+        [MaxLength(200)]
         public string? Title { get; set; }
+
+        [MaxLength(4000)]
         public string? Description { get; set; }
 
         // Media metadata (like Achievement)
+        [MaxLength(300)]
         public string? BlobName { get; set; }
+
+        [MaxLength(300)]
         public string? MediaFileName { get; set; }
+
+        [MaxLength(100)]
         public string? ContentType { get; set; }
         public long? FileSizeBytes { get; set; }
         public MediaType? MediaType { get; set; }
         public DateTime? UploadedAt { get; set; }
 
         [Required]
+        [MaxLength(300)]
         public string Location { get; set; }
         public DateTime Date { get; set; }
+
+        [MaxLength(500)]
         public string MediaUrl { get; set; }
 
     }

@@ -20,14 +20,18 @@ namespace Infrastructure.Implemenation
         }
         public async Task RevokeAllForUserAsync(string userId)
         {
-            var tokens = await _context.RefreshTokens
+            await _context.RefreshTokens
                 .Where(rt => rt.UserId == userId && !rt.IsRevoked)
-                .ToListAsync();
+                .ExecuteUpdateAsync(setters => setters
+                    .SetProperty(rt => rt.IsRevoked, true)
+                    .SetProperty(rt => rt.RevokedAt, DateTime.UtcNow));
+        }
 
-            foreach (var token in tokens)
-            {
-                token.IsRevoked = true;
-            }
+        public async Task<RefreshToken?> GetByHashAsync(string tokenHash)
+        {
+            return await _context.RefreshTokens
+                .Include(rt => rt.User)
+                .FirstOrDefaultAsync(rt => rt.TokenHash == tokenHash);
         }
     }
 }

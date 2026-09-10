@@ -40,9 +40,15 @@ namespace Application.Core.Commands.AddEmployee
                 }
                 var user = result.User!;
 
-                if (!await _unitOfWork.RoleService.RoleExistsAsync(request.Role))
+                // Every account created through this endpoint is staff (self-service
+                // registration is not exposed to citizens). The role is fixed here
+                // rather than taken from the request to prevent a caller from
+                // requesting an arbitrary, auto-created privileged role.
+                const string EmployeeRole = "Employee";
+
+                if (!await _unitOfWork.RoleService.RoleExistsAsync(EmployeeRole))
                 {
-                    var res = await _unitOfWork.RoleService.CreateRoleAsync(request.Role);
+                    var res = await _unitOfWork.RoleService.CreateRoleAsync(EmployeeRole);
                     if (!res.Item1)
                     {
                         await _unitOfWork.RollbackTransactionAsync(cancellationToken);
@@ -52,7 +58,7 @@ namespace Application.Core.Commands.AddEmployee
                     }
                 }
 
-                var roleAdded = await _unitOfWork.IdentityService.AddToRoleAsync(user, request.Role);
+                var roleAdded = await _unitOfWork.IdentityService.AddToRoleAsync(user, EmployeeRole);
                 if (!roleAdded)
                 {
                     await _unitOfWork.RollbackTransactionAsync(cancellationToken);

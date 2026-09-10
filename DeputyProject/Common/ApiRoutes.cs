@@ -19,6 +19,7 @@ namespace DeputyProject.Common
             public const string forgotpassword = "/forgot-password";
             public const string verifyresetcode = "/verify-reset-code";
             public const string resetpassword = "/reset-password";
+            public const string refreshtoken = "/refresh-token";
 
         }
         public static class Deputy

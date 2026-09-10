@@ -1,21 +1,49 @@
+using Application.Core.Commands.AddEmployee;
 using DeputyProject.Controllers;
 using DeputyProject.SeedDataDto;
 using Domain;
 using Infrastructure.Data;
 using MediatR;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.EntityFrameworkCore;
 using System;
 
 namespace DeputyProject.Controllers
 {
+    // Seeds initial reference data (deputy profile, organizations, departments,
+    // the first employee account) directly against the DbContext, bypassing the
+    // normal Application/MediatR pipeline. This is a bootstrap tool only — it is
+    // disabled outside the Development environment so it can never be reached
+    // in production.
     [Route("api/[controller]")]
     [ApiController]
-    public class SeedDataController : BaseController
+    public class SeedDataController : BaseController, IActionFilter
     {
         protected readonly ApplicationDbContext _context;
-        public SeedDataController(IMediator _mediator, ApplicationDbContext context) : base(_mediator) { _context = context; }
+        private readonly IWebHostEnvironment _environment;
+
+        public SeedDataController(
+            IMediator _mediator,
+            ApplicationDbContext context,
+            IWebHostEnvironment environment) : base(_mediator)
+        {
+            _context = context;
+            _environment = environment;
+        }
+
+        public void OnActionExecuting(ActionExecutingContext context)
+        {
+            if (!_environment.IsDevelopment())
+            {
+                context.Result = NotFound();
+            }
+        }
+
+        public void OnActionExecuted(ActionExecutedContext context) { }
+
         [HttpPost]
         public async Task<IActionResult> AddDeputy([FromBody] CreateDeputyDto dto)
         {
@@ -53,8 +81,9 @@ namespace DeputyProject.Controllers
             _context.Deputies.Add(deputy);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(AddDeputy), new { id = deputy.Id }, deputy);
+            return Ok(deputy);
         }
+
         [HttpPost("AddOrganization")]
         public async Task<IActionResult> AddOrganization([FromBody] CreateOrganizationDto dto)
         {
@@ -66,8 +95,9 @@ namespace DeputyProject.Controllers
             _context.Organizations.Add(org);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(AddOrganization), new { id = org.Id }, org);
+            return Ok(org);
         }
+
         [HttpPost("AddDepartment")]
         public async Task<IActionResult> AddDepartment([FromBody] CreateDepartmentDto dto)
         {
@@ -79,8 +109,20 @@ namespace DeputyProject.Controllers
             _context.Departments.Add(dept);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(AddDepartment), new { id = dept.Id }, dept);
+            return Ok(dept);
         }
+
+        // Bootstraps the very first employee account. Registration
+        // (AuthenticationController.Register) requires an authenticated
+        // employee, so this dev-only endpoint exists to break that chicken-
+        // and-egg problem on a fresh database.
+        [HttpPost("AddEmployee")]
+        public async Task<IActionResult> AddEmployee([FromBody] CreateEmployeeCommand command)
+        {
+            var result = await _mediator.Send(command);
+            return HandleResult(result);
+        }
+
         [HttpGet("GetOrganizations")]
         public async Task<IActionResult> GetOrganizations()
         {

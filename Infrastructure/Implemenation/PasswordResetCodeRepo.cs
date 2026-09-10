@@ -20,7 +20,8 @@ namespace Infrastructure.Implemenation
         }
         public async Task<PasswordResetCode?> GetLatestValidAsync(string userId)
         {
-            return await _context.passwordResetCodes
+            return await _context.PasswordResetCodes
+                .AsNoTracking()
                 .Where(c => c.UserId == userId
                          && !c.IsUsed
                          && c.ExpiresAt > DateTime.UtcNow)
@@ -29,11 +30,10 @@ namespace Infrastructure.Implemenation
         }
         public async Task InvalidateAllForUserAsync(string userId)
         {
-            var codes = await _context.passwordResetCodes
+            await _context.PasswordResetCodes
                 .Where(c => c.UserId == userId && !c.IsUsed)
-                .ToListAsync();
-
-            foreach (var c in codes) c.IsUsed = true;
+                .ExecuteUpdateAsync(setters => setters
+                    .SetProperty(c => c.IsUsed, true));
         }
     }
 }

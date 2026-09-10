@@ -15,7 +15,7 @@ namespace Infrastructure.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
         : base(options)
         {
-        }   
+        }
         public DbSet<Citizen> Citizens { get; set; }
         public DbSet<CitizenRequirement> CitizenRequirements { get; set; }
         public DbSet<CitizenRequirementContent> CitizenRequirementContents { get; set; }
@@ -37,26 +37,94 @@ namespace Infrastructure.Data
         public DbSet<AreasOfWorkAndActivities> AreasOfWorkAndActivities { get; set; }
 
         public DbSet<MotionsForInformation> MotionsForInformation { get; set; }
-        public DbSet<PasswordResetCode> passwordResetCodes { get; set; }
+        public DbSet<PasswordResetCode> PasswordResetCodes { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<CitizenRequirement>()
-                .Property(x => x.Type)
-                .HasConversion<string>();
-            modelBuilder.Entity<Employee>()
-                .HasIndex(e => e.UserId)
-                .IsUnique();
-            //modelBuilder.Entity<Deputy>()
-            //   .HasIndex(e => e.UserId)
-            //   .IsUnique();
-            modelBuilder.Entity<RefreshToken>()
-                .HasOne(r => r.User)
-                .WithMany(u => u.RefreshTokens)
-                .HasForeignKey(r => r.UserId)
-                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<CitizenRequirement>(entity =>
+            {
+                entity.Property(x => x.Type)
+                    .HasConversion<string>()
+                    .HasMaxLength(20);
+
+                entity.HasIndex(x => x.Status);
+                entity.HasIndex(x => x.CreatedAt);
+
+                // A department can be deleted without losing the citizen
+                // requirements that were assigned to it — they just become
+                // unassigned rather than being deleted or blocking the delete.
+                entity.HasOne(x => x.Department)
+                    .WithMany(d => d.CitizenRequirements)
+                    .HasForeignKey(x => x.DepartmentId)
+                    .OnDelete(DeleteBehavior.SetNull);
+            });
+
+            modelBuilder.Entity<Employee>(entity =>
+            {
+                entity.HasIndex(e => e.UserId)
+                    .IsUnique();
+
+                // Employees carry an IsActive flag for soft-deletion; a
+                // department with employees still assigned should not be
+                // deletable (and must never silently cascade-delete staff).
+                entity.HasOne(e => e.Department)
+                    .WithMany(d => d.Employees)
+                    .HasForeignKey(e => e.DepartmentId)
+                    .OnDelete(DeleteBehavior.Restrict);
+            });
+
+            modelBuilder.Entity<CitizenRequirementEmployee>(entity =>
+            {
+                entity.HasIndex(x => new { x.CitizenRequirementId, x.EmployeeId })
+                    .IsUnique();
+
+                // Protects the citizen-facing assignment history: removing an
+                // employee must not silently delete which requests they were
+                // assigned to.
+                entity.HasOne(x => x.Employee)
+                    .WithMany(e => e.Requests)
+                    .HasForeignKey(x => x.EmployeeId)
+                    .OnDelete(DeleteBehavior.Restrict);
+            });
+
+            modelBuilder.Entity<CitizenRequirementContent>(entity =>
+            {
+                // Protects the citizen-facing comment history the same way.
+                entity.HasOne(x => x.Employee)
+                    .WithMany()
+                    .HasForeignKey(x => x.EmployeeId)
+                    .OnDelete(DeleteBehavior.Restrict);
+            });
+
+            modelBuilder.Entity<EmployeeOrganizations>(entity =>
+            {
+                entity.HasIndex(x => new { x.EmployeeId, x.OrganizationId })
+                    .IsUnique();
+            });
+
+            modelBuilder.Entity<RefreshToken>(entity =>
+            {
+                entity.HasOne(r => r.User)
+                    .WithMany(u => u.RefreshTokens)
+                    .HasForeignKey(r => r.UserId)
+                    .OnDelete(DeleteBehavior.Cascade);
+
+                entity.HasIndex(r => r.TokenHash)
+                    .IsUnique();
+            });
+
+            modelBuilder.Entity<PasswordResetCode>(entity =>
+            {
+                entity.HasOne(p => p.User)
+                    .WithMany()
+                    .HasForeignKey(p => p.UserId)
+                    .OnDelete(DeleteBehavior.Cascade);
+
+                entity.HasIndex(p => new { p.UserId, p.IsUsed });
+            });
         }
 
     }

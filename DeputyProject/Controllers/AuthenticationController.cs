@@ -5,6 +5,7 @@ using Application.Core.Commands.ForgetPassword.ForgetPass;
 using Application.Core.Commands.ForgetPassword.VerifyResetCode;
 using Application.Core.Commands.ForgetPassword.ResetPassword;
 using Application.Core.Commands.Login;
+using Application.Core.Commands.RefreshAccessToken;
 using DeputyProject.Controllers;
 using DeputyProject.Common;
 using MediatR;
@@ -20,6 +21,7 @@ namespace DeputyProject.Controllers
     {
         public AuthenticationController(IMediator _mediator) : base(_mediator) { }
 
+        [AllowAnonymous]
         [HttpPost(ApiRoutes.Authentication.Login)]
         public async Task<IActionResult> Login(LoginCommand command)
         {
@@ -27,8 +29,20 @@ namespace DeputyProject.Controllers
             return HandleResult(result);
         }
 
+        // Only an existing employee can onboard another one — self-registration
+        // as staff is not exposed. The very first employee account must be
+        // provisioned out-of-band (e.g. seeded directly).
+        [Authorize(Roles = "Employee")]
         [HttpPost(ApiRoutes.Authentication.Register)]
         public async Task<IActionResult> Register(CreateEmployeeCommand command)
+        {
+            var result = await _mediator.Send(command);
+            return HandleResult(result);
+        }
+
+        [AllowAnonymous]
+        [HttpPost(ApiRoutes.Authentication.refreshtoken)]
+        public async Task<IActionResult> RefreshToken(RefreshAccessTokenCommand command)
         {
             var result = await _mediator.Send(command);
             return HandleResult(result);
