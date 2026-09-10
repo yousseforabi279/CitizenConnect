@@ -9,8 +9,5 @@ namespace Application.Contracts.Repos
 {
     public interface IActivitiesAndVisits:IGenericRepository<ActivitiesAndVisits>
     {
-        Task<List<ActivitiesAndVisits>> GetByDeputyIdAsync(
-        int deputyId,
-        CancellationToken cancellationToken);
     }
 }

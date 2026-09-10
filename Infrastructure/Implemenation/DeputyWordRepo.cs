@@ -11,11 +11,8 @@ namespace Infrastructure.Implemenation
 {
     internal class DeputyWordRepo:GenericRepository<DeputyWords>,IDeputyWord
     {
-        protected readonly ApplicationDbContext _context;
-
         public DeputyWordRepo(ApplicationDbContext context) : base(context)
         {
-            _context = context;
         }
     }
 }

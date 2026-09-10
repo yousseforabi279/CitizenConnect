@@ -12,18 +12,8 @@ namespace Infrastructure.Implemenation
 {
     internal class AreasOfWorkAndActivitiesRepo:GenericRepository<AreasOfWorkAndActivities>, IAreasOfWorkAndActivities
     {
-        protected readonly ApplicationDbContext _context;
         public AreasOfWorkAndActivitiesRepo(ApplicationDbContext context) : base(context)
         {
-            _context = context;
-        }
-        public async Task<List<AreasOfWorkAndActivities>> GetByDeputyIdAsync(
-    int deputyId,
-    CancellationToken cancellationToken)
-        {
-            return await _context.AreasOfWorkAndActivities
-                //.Where(x => x.DeputyId == deputyId)
-                .ToListAsync(cancellationToken);
         }
     }
 }

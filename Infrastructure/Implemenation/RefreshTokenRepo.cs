@@ -12,12 +12,10 @@ namespace Infrastructure.Implemenation
 {
     internal class RefreshTokenRepo : GenericRepository<RefreshToken>, IRefreshToken
     {
-        protected readonly ApplicationDbContext _context;
-
         public RefreshTokenRepo(ApplicationDbContext context) : base(context)
         {
-            _context = context;
         }
+
         public async Task RevokeAllForUserAsync(string userId)
         {
             await _context.RefreshTokens
@@ -30,6 +28,7 @@ namespace Infrastructure.Implemenation
         public async Task<RefreshToken?> GetByHashAsync(string tokenHash)
         {
             return await _context.RefreshTokens
+                .AsNoTracking()
                 .Include(rt => rt.User)
                 .FirstOrDefaultAsync(rt => rt.TokenHash == tokenHash);
         }

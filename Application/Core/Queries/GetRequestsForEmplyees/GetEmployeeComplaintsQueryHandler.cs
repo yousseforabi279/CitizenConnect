@@ -52,13 +52,17 @@ namespace Application.Core.Queries.GetRequestsForEmplyees
             }
             var requestType = request.Type ?? RequestType.Complaint;
 
+            const int MaxPageSize = 100;
+
             var filter = new EmployeeRequestFilter
             {
                 Type = request.Type,
                 Status = request.Status,
                 Priority = request.Priority,
-                PageNumber = request.PageNumber,
-                PageSize = request.PageSize
+                PageNumber = request.PageNumber < 1 ? 1 : request.PageNumber,
+                PageSize = request.PageSize < 1
+                    ? 10
+                    : Math.Min(request.PageSize, MaxPageSize)
             };
             var result =
                 await _unitOfWork.EmployeeRequestRepository

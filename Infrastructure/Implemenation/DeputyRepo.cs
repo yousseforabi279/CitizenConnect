@@ -13,17 +13,16 @@ namespace Infrastructure.Implemenation
 {
     internal class DeputyRepo : GenericRepository<Deputy>, IDeputy
     {
-        protected readonly ApplicationDbContext _context;
-
         public DeputyRepo(ApplicationDbContext context) : base(context)
         {
-            _context = context;
         }
 
         public async Task<Deputy?> GetDeputyInfo()
         {
-            return await _context.Deputies .OrderByDescending(d => d.Id) // or whatever makes sense
-        .FirstOrDefaultAsync();
+            return await _context.Deputies
+                .AsNoTracking()
+                .OrderByDescending(d => d.Id)
+                .FirstOrDefaultAsync();
         }
     }
 }

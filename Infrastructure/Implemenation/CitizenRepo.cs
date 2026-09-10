@@ -12,16 +12,19 @@ namespace Infrastructure.Implemenation
 {
     internal class CitizenRepo : GenericRepository<Citizen>, ICitizen
     {
-        protected readonly ApplicationDbContext _context;
-
         public CitizenRepo(ApplicationDbContext context) : base(context)
         {
-            _context = context;
         }
 
         public async Task<Citizen?> GetByNationalidAsync(string id)
         {
-            return await _context.Citizens.SingleOrDefaultAsync(ww=>ww.NationalId == id);
+            // Deliberately tracked (not AsNoTracking): CreateComplaintCommandHandler
+            // wires an existing Citizen straight into a new CitizenRequirement's
+            // navigation without an explicit Attach/Update, relying on it staying
+            // tracked from this query within the same DbContext — detaching it
+            // would make EF try to re-insert the citizen and hit a PK conflict.
+            return await _context.Citizens
+                .SingleOrDefaultAsync(ww=>ww.NationalId == id);
         }
     }
 }

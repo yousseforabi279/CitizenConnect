@@ -13,11 +13,8 @@ namespace Infrastructure.Implemenation
 {
     public class AchievementRepo : GenericRepository<Achievement>, IAchievement
     {
-        protected readonly ApplicationDbContext _context;
         public AchievementRepo(ApplicationDbContext context) : base(context)
         {
-            _context = context;
         }
-
     }
 }

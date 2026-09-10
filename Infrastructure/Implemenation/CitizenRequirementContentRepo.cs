@@ -11,10 +11,8 @@ namespace Infrastructure.Implemenation
 {
     public class CitizenRequirementContentRepo:GenericRepository<CitizenRequirementContent>, ICitizenRequirementContent
     {
-        protected readonly ApplicationDbContext _context;
         public CitizenRequirementContentRepo(ApplicationDbContext context) : base(context)
         {
-            _context = context;
         }
     }
 }

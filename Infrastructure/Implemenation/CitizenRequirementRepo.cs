@@ -16,7 +16,11 @@ namespace Infrastructure.Implemenation
      
             public async Task<CitizenRequirement?> GetByIdWithDetailsAsync(int id)
         {
+            // AsNoTracking is safe here even for the delete caller: DbSet.Remove()
+            // auto-attaches an untracked entity (with its key already populated)
+            // in the Deleted state.
             return await _context.CitizenRequirements
+                .AsNoTracking()
                 .Include(x => x.Citizen)
                 .Include(x => x.Employees)
                     .ThenInclude(x => x.Employee)

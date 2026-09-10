@@ -11,11 +11,8 @@ namespace Infrastructure.Implemenation
 {
     internal class DepartmentRepo : GenericRepository<Department>, IDepartment
     {
-        protected readonly ApplicationDbContext _context;
-
         public DepartmentRepo(ApplicationDbContext context) : base(context)
         {
-            _context = context;
         }
     }
 }

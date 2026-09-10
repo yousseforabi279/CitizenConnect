@@ -16,23 +16,31 @@ namespace Infrastructure.Implemenation
 {
     internal class EmployeeRepo : GenericRepository<Employee>, IEmployee
     {
-        protected readonly ApplicationDbContext _context;
-
         public EmployeeRepo(ApplicationDbContext context) : base(context)
         {
-            _context = context;
         }
 
         public async Task<IEnumerable<Employee>> GetAllwithUserAsync()
         {
             return await _context.Employees
+                .AsNoTracking()
                 .Include(x => x.User)
                 .ToListAsync();
         }
 
         public async Task<List<Employee>> GetAvailableEmployeesAsync(int departmentId, int organizationId)
         {
-            return await _context.Employees.Include(e => e.EmployeeOrganizations)
+            // Deliberately tracked (not AsNoTracking): CreateComplaintCommandHandler
+            // wires each returned Employee straight into new
+            // CitizenRequirementEmployee join-entity navigations without an
+            // explicit Attach/Update, relying on them staying tracked from this
+            // query — detaching them would make EF try to re-insert the
+            // employees and hit a PK conflict.
+            //
+            // Filtering with .Any() on the navigation translates to an EXISTS
+            // subquery — no need to eagerly load every employee's full
+            // EmployeeOrganizations collection just to check membership.
+            return await _context.Employees
                 .Where(e =>
                         e.IsActive &&
                         e.DepartmentId == departmentId &&
@@ -44,6 +52,7 @@ namespace Infrastructure.Implemenation
         public async Task<Employee?> GetByUserIdAsync(string userId)
         {
             return await _context.Employees
+                   .AsNoTracking()
                    .Include(x => x.User)
                     .Include(x => x.Department)
                     .Include(x => x.EmployeeOrganizations)

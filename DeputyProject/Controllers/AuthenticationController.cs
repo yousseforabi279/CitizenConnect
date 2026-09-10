@@ -1,6 +1,5 @@
 using Application.Core.Commands.AddEmployee;
 using Application.Core.Commands.ChangePassword;
-using Application.Core.Commands.CreateComplaint;
 using Application.Core.Commands.ForgetPassword.ForgetPass;
 using Application.Core.Commands.ForgetPassword.VerifyResetCode;
 using Application.Core.Commands.ForgetPassword.ResetPassword;
@@ -47,7 +46,7 @@ namespace DeputyProject.Controllers
             var result = await _mediator.Send(command);
             return HandleResult(result);
         }
-        [Authorize]
+        [Authorize(Roles = "Employee")]
         [HttpPost(ApiRoutes.Authentication.ChangePassword)]
         public async Task<IActionResult> ChangePassword(ChangePasswordCommand command)
         {

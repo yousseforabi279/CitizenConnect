@@ -12,12 +12,10 @@ namespace Infrastructure.Implemenation
 {
     internal class PasswordResetCodeRepo:GenericRepository<PasswordResetCode>,IPasswordResetCode
     {
-        protected readonly ApplicationDbContext _context;
-
         public PasswordResetCodeRepo(ApplicationDbContext context) : base(context)
         {
-            _context = context;
         }
+
         public async Task<PasswordResetCode?> GetLatestValidAsync(string userId)
         {
             return await _context.PasswordResetCodes

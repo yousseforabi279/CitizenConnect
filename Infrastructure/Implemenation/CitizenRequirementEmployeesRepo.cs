@@ -12,16 +12,16 @@ namespace Infrastructure.Implemenation
 {
     internal class CitizenRequirementEmployees: GenericRepository<CitizenRequirementEmployee>, ICitizenRequirementEmployees
     {
-        protected readonly ApplicationDbContext _context;
         public CitizenRequirementEmployees(ApplicationDbContext context) : base(context)
         {
-            _context = context;
         }
+
         public async Task<CitizenRequirementEmployee?> GetAssignmentAsync(
-    int requirementId,
-    int employeeId)
+            int requirementId,
+            int employeeId)
         {
             return await _context.CitizenRequirementEmployees
+                .AsNoTracking()
                 .FirstOrDefaultAsync(x =>
                     x.CitizenRequirementId == requirementId &&
                     x.EmployeeId == employeeId);

@@ -11,12 +11,8 @@ namespace Infrastructure.Implemenation
 {
     internal class OrganizationRepo : GenericRepository<Organization>, IOrganization
     {
-        protected readonly ApplicationDbContext _context;
-
         public OrganizationRepo(ApplicationDbContext context) : base(context)
         {
-            _context = context;
         }
-
     }
 }

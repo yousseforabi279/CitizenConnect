@@ -11,11 +11,8 @@ namespace Infrastructure.Implemenation
 {
     public class MotionsForInformationRepo:GenericRepository<MotionsForInformation>, IMotionsForInformation
     {
-        protected readonly ApplicationDbContext _context;
-
         public MotionsForInformationRepo(ApplicationDbContext context) : base(context)
         {
-            _context = context;
         }
     }
 }
