@@ -7,6 +7,7 @@ using DeputyProject.Common;
 using DeputyProject.Mappers;
 using DeputyProject.Requests.MotionsForInformation;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -35,6 +36,7 @@ namespace DeputyProject.Controllers
             return HandleResult(result);
         }
 
+        [Authorize(Roles = "Employee")]
         [HttpPost(ApiRoutes.Motions.POST)]
         public async Task<IActionResult> AddMotion(
                 [FromForm] CreateMotionsForInformationRequest request)
@@ -51,6 +53,7 @@ namespace DeputyProject.Controllers
         }
 
 
+        [Authorize(Roles = "Employee")]
         [HttpPut(ApiRoutes.Motions.PUT)]
         public async Task<IActionResult> UpdateMotion(
                             int MotionId,
@@ -68,6 +71,7 @@ namespace DeputyProject.Controllers
             return HandleResult(result);
         }
 
+        [Authorize(Roles = "Employee")]
         [HttpDelete(ApiRoutes.Motions.DELETE)]
         public async Task<IActionResult> DeleteMotion(int MotionId)
         {

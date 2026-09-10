@@ -1,5 +1,6 @@
 using Application.Common;
 using Application.Contracts;
+using Application.Contracts.Repos;
 using Application.storage;
 using MediatR;
 
@@ -10,15 +11,18 @@ namespace Application.Core.Queries.CitizenRequests.GetRequestById
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IFileStorageService _fileStorageService;
+        private readonly ICurrentUser _currentUser;
 
         private const string FolderName = "request-files";
 
         public GetCitizenRequestByIdQueryHandler(
             IUnitOfWork unitOfWork,
-            IFileStorageService fileStorageService)
+            IFileStorageService fileStorageService,
+            ICurrentUser currentUser)
         {
             _unitOfWork = unitOfWork;
             _fileStorageService = fileStorageService;
+            _currentUser = currentUser;
         }
 
         public async Task<Result<CitizenRequestDto>> Handle(
@@ -34,6 +38,28 @@ namespace Application.Core.Queries.CitizenRequests.GetRequestById
                 return Result<CitizenRequestDto>.Failure(
                     ResultStatus.NotFound,
                     "Citizen request not found.");
+            }
+
+            var employee =
+                await _unitOfWork.Employee
+                    .GetByUserIdAsync(_currentUser.UserId);
+
+            if (employee is null)
+            {
+                return Result<CitizenRequestDto>.Failure(
+                    ResultStatus.NotFound,
+                    "Employee not found.");
+            }
+
+            var assignment =
+                await _unitOfWork.CitizenRequirementEmployees
+                    .GetAssignmentAsync(citizenRequest.Id, employee.Id);
+
+            if (assignment is null)
+            {
+                return Result<CitizenRequestDto>.Failure(
+                    ResultStatus.Unauthorized,
+                    "You are not assigned to this request.");
             }
 
             var result = new CitizenRequestDto

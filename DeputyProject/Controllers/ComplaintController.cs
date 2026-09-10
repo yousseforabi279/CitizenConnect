@@ -3,7 +3,6 @@ using Application.Core.Commands.CreateComplaint;
 using Application.Core.Commands.DeleteCitizenRequest;
 using Application.Core.Commands.UpdateRequestStatus;
 using Application.Core.Queries.CitizenRequests.GetRequestById;
-using Azure.Core;
 using DeputyProject.Controllers;
 using DeputyProject.Common;
 using DeputyProject.Mappers;
@@ -20,6 +19,9 @@ namespace DeputyProject.Controllers
     public class ComplaintController : BaseController
     {
         public ComplaintController(IMediator _mediator) : base(_mediator) { }
+
+        // Citizens file complaints without an account.
+        [AllowAnonymous]
         [HttpPost(ApiRoutes.Complaint.CreateComplaint)]
         public async Task<IActionResult> CreateComplaint([FromForm] CreateCitizenRequest Request)
         {
@@ -39,8 +41,7 @@ namespace DeputyProject.Controllers
             var result = await _mediator.Send(command);
             return HandleResult(result);
         }
-        [Authorize]
-
+        [Authorize(Roles = "Employee")]
         [HttpGet(ApiRoutes.Complaint.GetComplaintById)]
         public async Task<IActionResult> GetById(int id)
         {
@@ -49,7 +50,7 @@ namespace DeputyProject.Controllers
             return HandleResult(result);
 
         }
-        [Authorize]
+        [Authorize(Roles = "Employee")]
         [HttpDelete(ApiRoutes.Complaint.DeleteComplaintById)]
         public async Task<IActionResult> Delete(int id)
         {
@@ -57,7 +58,7 @@ namespace DeputyProject.Controllers
                 new DeleteCitizenRequestCommand(id));
             return HandleResult(result);
         }
-        [Authorize]
+        [Authorize(Roles = "Employee")]
         [HttpPut(ApiRoutes.Complaint.UpdateRequest)]
         public async Task<IActionResult> UpdateRequest([FromBody] UpdateRequestCommand command)
         {

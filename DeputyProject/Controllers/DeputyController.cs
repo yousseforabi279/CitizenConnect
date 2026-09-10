@@ -1,18 +1,13 @@
-using Application.Core.Commands.CreateComplaint;
-using Application.Core.Commands.Deputy.achievements.CreateAchievement;
 using Application.Core.Commands.LoadingPage.PersonalInfo.EditPersonalInfo;
 using Application.Core.Queries.Deputy.GetDeputybyId;
-using Azure.Core;
 using DeputyProject.Controllers;
 using DeputyProject.Common;
 using DeputyProject.Mappers;
 using DeputyProject.Requests.DeputyInfo;
-using DeputyProject.SeedDataDto;
-using Infrastructure.Data;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace DeputyProject.Controllers
 {
@@ -20,10 +15,9 @@ namespace DeputyProject.Controllers
     [ApiController]
     public class DeputyController : BaseController
     {
-        protected readonly ApplicationDbContext _context;
-        public DeputyController(IMediator _mediator, ApplicationDbContext context) : base(_mediator) { _context = context; }
- 
+        public DeputyController(IMediator _mediator) : base(_mediator) { }
 
+        [Authorize(Roles = "Employee")]
         [HttpPut(ApiRoutes.Deputy.Edit)]
         public async Task<IActionResult> UpdateDeputy([FromForm] UpdatePersonalInfo updatePersonalInfo)
         {
@@ -50,8 +44,10 @@ namespace DeputyProject.Controllers
             var result = await _mediator.Send(command);
             return HandleResult(result);
         }
+        // Public-facing "about the deputy" page — no auth required to read.
+        [AllowAnonymous]
         [HttpGet(ApiRoutes.Deputy.GetDeputy)]
-        public async Task<IActionResult> CreateComplaint()
+        public async Task<IActionResult> GetDeputy()
         {
             var result = await _mediator.Send(new GetDeputyQuery());
             return HandleResult(result);

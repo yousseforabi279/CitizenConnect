@@ -8,6 +8,7 @@ using DeputyProject.Common;
 using DeputyProject.Mappers;
 using DeputyProject.Requests.AreaOfWork;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -38,6 +39,7 @@ namespace DeputyProject.Controllers
 
             return HandleResult(result);
         }
+        [Authorize(Roles = "Employee")]
         [HttpPost(ApiRoutes.AreaOfWork.POST)]
         public async Task<IActionResult> CreateAreaOfWork(
                 [FromForm] CreateAreaOfWorkRequest request)
@@ -53,6 +55,7 @@ namespace DeputyProject.Controllers
             var result = await _mediator.Send(command);
             return HandleResult(result);
         }
+        [Authorize(Roles = "Employee")]
         [HttpPut(ApiRoutes.AreaOfWork.PUT)]
         public async Task<IActionResult> UpdateAreaOfWork(
                             int areaId,
@@ -68,6 +71,7 @@ namespace DeputyProject.Controllers
             var result = await _mediator.Send(command);
             return HandleResult(result);
         }
+        [Authorize(Roles = "Employee")]
         [HttpDelete(ApiRoutes.AreaOfWork.DELETE)]
         public async Task<IActionResult> DeleteAreaOfWork(
                                 int areaId)

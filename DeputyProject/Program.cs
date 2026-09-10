@@ -13,6 +13,19 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+// Reject oversized request bodies before they're buffered into memory
+// (60MB = the 50MB max upload size validated in FileStorageService, plus
+// headroom for multipart/form-data overhead).
+const long MaxRequestBodySizeBytes = 60 * 1024 * 1024;
+builder.WebHost.ConfigureKestrel(options =>
+{
+    options.Limits.MaxRequestBodySize = MaxRequestBodySizeBytes;
+});
+builder.Services.Configure<Microsoft.AspNetCore.Http.Features.FormOptions>(options =>
+{
+    options.MultipartBodyLengthLimit = MaxRequestBodySizeBytes;
+});
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -49,6 +62,13 @@ builder.Services.AddSwaggerGen(options =>
            Format = "binary"
        });
 });
+var jwtKey = builder.Configuration["Jwt:Key"];
+if (string.IsNullOrEmpty(jwtKey))
+{
+    throw new InvalidOperationException(
+        "Jwt:Key is not configured. Set it via user-secrets or an environment variable — do not put it in appsettings.json.");
+}
+
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -65,26 +85,40 @@ builder.Services.AddAuthentication(options =>
         ValidIssuer = builder.Configuration["Jwt:Issuer"],
         ValidAudience = builder.Configuration["Jwt:Audience"],
         IssuerSigningKey = new SymmetricSecurityKey(
-            Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]!))
+            Encoding.UTF8.GetBytes(jwtKey))
     };
 });
 
 builder.Services.AddAuthorization();
 
-Console.WriteLine($"[DEBUG] Jwt:Key = '{builder.Configuration["Jwt:Key"]}'");
-
 builder.Services.AddInfrastructure(builder.Configuration).AddApplication();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped<ICurrentUser, CurrentUser>();
+
+var allowedOrigins = builder.Configuration
+    .GetSection("Cors:AllowedOrigins")
+    .Get<string[]>() ?? Array.Empty<string>();
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policy =>
     {
-        policy.AllowAnyOrigin()
-              .AllowAnyHeader()
-              .AllowAnyMethod();
-        // NOTE: no .AllowCredentials() needed if you're just sending
-        // the JWT in a header (not using cookies)
+        if (allowedOrigins.Length > 0)
+        {
+            // NOTE: no .AllowCredentials() needed if you're just sending
+            // the JWT in a header (not using cookies)
+            policy.WithOrigins(allowedOrigins)
+                  .AllowAnyHeader()
+                  .AllowAnyMethod();
+        }
+        else if (builder.Environment.IsDevelopment())
+        {
+            policy.WithOrigins("http://localhost:3000", "http://localhost:5173")
+                  .AllowAnyHeader()
+                  .AllowAnyMethod();
+        }
+        // In any other environment with no configured origins, no origin
+        // is allowed — fail closed rather than falling back to "*".
     });
 });
 
@@ -127,13 +161,16 @@ using (var scope = app.Services.CreateScope())
 app.UseExceptionHandling();
 
 // Configure the HTTP request pipeline.
+app.UseHttpsRedirection();
 
-
+if (app.Environment.IsDevelopment())
+{
     app.UseSwagger();
     app.UseSwaggerUI();
+}
+
 app.UseCors("AllowFrontend");
-app.UseHttpsRedirection();
-app.    UseAuthentication();
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

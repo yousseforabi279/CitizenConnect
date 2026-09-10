@@ -1,10 +1,6 @@
-using Application.Core.Commands.Deputy.achievements.CreateAchievement;
-using Application.Core.Commands.Deputy.achievements.EditAchievement;
 using Application.Core.Commands.LoadingPage.DeputyWords.CreateDeputyWords;
 using Application.Core.Commands.LoadingPage.DeputyWords.DeleteDeputyWords;
 using Application.Core.Commands.LoadingPage.DeputyWords.EditDeputyWords;
-using Application.Core.Queries.Deputy.Achievement.GetAchievementById;
-using Application.Core.Queries.Deputy.Achievement.GetAllAchievements;
 using Application.Core.Queries.Deputy.DeputyWord.GetAll;
 using Application.Core.Queries.Deputy.DeputyWord.GetById;
 using DeputyProject.Controllers;
@@ -12,6 +8,7 @@ using DeputyProject.Common;
 using DeputyProject.Mappers;
 using DeputyProject.Requests.DeputyWord;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -39,6 +36,7 @@ namespace DeputyProject.Controllers
                 new GetDeputyWordByIdQuery(DeputyWordId));
             return HandleResult(result);
         }
+        [Authorize(Roles = "Employee")]
         [HttpPost(ApiRoutes.DeputyWord.POST)]
         public async Task<IActionResult> AddDeputyWord([FromForm] CreateDeputyWordsRequest request)
         {
@@ -50,6 +48,7 @@ namespace DeputyProject.Controllers
             var result = await _mediator.Send(command);
             return HandleResult(result);
         }
+        [Authorize(Roles = "Employee")]
         [HttpPut(ApiRoutes.DeputyWord.PUT)]
         public async Task<IActionResult> UpdateDeputyWord(int DeputyWordId,
                                                         [FromForm] UpdateDeputyWordsRequest request)
@@ -63,6 +62,7 @@ namespace DeputyProject.Controllers
             var result = await _mediator.Send(command);
             return HandleResult(result);
         }
+        [Authorize(Roles = "Employee")]
         [HttpDelete(ApiRoutes.DeputyWord.DELETE)]
         public async Task<IActionResult> DeleteDeputyWord(int DeputyWordId)
         {

@@ -1,4 +1,3 @@
-using Application.Core.Commands.Deputy.achievements.CreateAchievement;
 using Application.Core.Commands.Deputy.ActivityVisit.CreateActivityVisit;
 using Application.Core.Commands.Deputy.ActivityVisit.DeleteActivityVisit;
 using Application.Core.Commands.Deputy.ActivityVisit.EditActivityVisit;
@@ -9,6 +8,7 @@ using DeputyProject.Common;
 using DeputyProject.Mappers;
 using DeputyProject.Requests.ActivityVisit;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -41,9 +41,9 @@ namespace DeputyProject.Controllers
             return HandleResult(result);
         }
     
+        [Authorize(Roles = "Employee")]
         [HttpPost(ApiRoutes.ActivitiesVisits.POST)]
-        public async Task<IActionResult> AddAchievement([FromForm] CreateActivitiesVisiteRequest request)
-        
+        public async Task<IActionResult> AddActivityVisit([FromForm] CreateActivitiesVisiteRequest request)
         {
             var command = new CreateActivityVisitCommand
             {
@@ -56,6 +56,7 @@ namespace DeputyProject.Controllers
             var result = await _mediator.Send(command);
             return HandleResult(result);
         }
+        [Authorize(Roles = "Employee")]
         [HttpPut(ApiRoutes.ActivitiesVisits.PUT)]
         public async Task<IActionResult> UpdateActivityVisit(
                                                     int ActivityVisitId, [FromForm] UpdateActivitiesVisiteRequest request)
@@ -76,6 +77,7 @@ namespace DeputyProject.Controllers
 
 
      
+        [Authorize(Roles = "Employee")]
         [HttpDelete(ApiRoutes.ActivitiesVisits.DELETE)]
         public async Task<IActionResult> DeleteActivityVisit(int ActivityVisitId)
         {

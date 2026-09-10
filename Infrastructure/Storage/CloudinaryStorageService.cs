@@ -9,6 +9,18 @@ public class CloudinaryStorageService : IFileStorageService
 {
     private readonly Cloudinary _cloudinary;
 
+    // The domain model only ever tags media as Image or Video (see
+    // Domain.Deputy.MediaType) — there is no "document" feature — so
+    // anything outside these content types is rejected outright rather
+    // than silently accepted as a raw/arbitrary upload.
+    private static readonly HashSet<string> AllowedContentTypes = new(StringComparer.OrdinalIgnoreCase)
+    {
+        "image/jpeg", "image/png", "image/gif", "image/webp",
+        "video/mp4", "video/webm", "video/quicktime", "video/mpeg"
+    };
+
+    private const long MaxUploadSizeBytes = 50 * 1024 * 1024; // 50MB
+
     public CloudinaryStorageService(IConfiguration config)
     {
         var cloudName = config["Cloudinary:CloudName"];
@@ -56,6 +68,20 @@ public class CloudinaryStorageService : IFileStorageService
             throw new ArgumentException(
                 "Content type is required.",
                 nameof(file.ContentType));
+        }
+
+        if (!AllowedContentTypes.Contains(file.ContentType))
+        {
+            throw new ArgumentException(
+                $"File type '{file.ContentType}' is not allowed. Only image and video uploads are supported.",
+                nameof(file.ContentType));
+        }
+
+        if (file.Length > MaxUploadSizeBytes)
+        {
+            throw new ArgumentException(
+                $"File exceeds the maximum allowed size of {MaxUploadSizeBytes / (1024 * 1024)}MB.",
+                nameof(file.Length));
         }
 
         var publicId =

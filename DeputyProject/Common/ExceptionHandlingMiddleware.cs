@@ -38,15 +38,26 @@ namespace DeputyProject.Common
         {
             context.Response.ContentType = "application/json";
 
-            context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+            // Bad input (e.g. a rejected file type/size) is a client error,
+            // not a server fault — everything else stays a generic 500 so we
+            // never leak internal exception details to the client.
+            var isClientError = exception is ArgumentException;
+
+            context.Response.StatusCode = isClientError
+                ? (int)HttpStatusCode.BadRequest
+                : (int)HttpStatusCode.InternalServerError;
 
             var response = new
             {
                 isSuccess = false,
-                status = 500,
-                error = "An unexpected error occurred.",
+                status = context.Response.StatusCode,
+                error = isClientError
+                    ? exception.Message
+                    : "An unexpected error occurred.",
                 value = (object?)null,
-                message = "حدث خطأ غير متوقع."
+                message = isClientError
+                    ? exception.Message
+                    : "حدث خطأ غير متوقع."
             };
 
             await context.Response.WriteAsync(

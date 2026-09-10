@@ -32,7 +32,7 @@ namespace DeputyProject.Controllers
             var result = await _mediator.Send(query);
             return HandleResult(result);
         }
-        [Authorize]
+        [Authorize(Roles = "Employee")]
         [HttpGet(ApiRoutes.Employee.statistics)]
         public async Task<IActionResult> GetEmployeeRequestStatistics()
         {
@@ -41,13 +41,14 @@ namespace DeputyProject.Controllers
         }
 
         [HttpGet("GeneralInfo")]
-        [Authorize]
+        [Authorize(Roles = "Employee")]
         public async Task<IActionResult> GetCurrentUser()
         {
             var result = await _mediator.Send(new GetCurrentUserQuery());
             return HandleResult(result);
 
         }
+        [Authorize(Roles = "Employee")]
         [HttpGet("AllEmployee")]
         public async Task<IActionResult> GetAllEmployees()
         {

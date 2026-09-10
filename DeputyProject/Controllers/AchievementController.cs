@@ -9,6 +9,7 @@ using DeputyProject.Common;
 using DeputyProject.Mappers;
 using DeputyProject.Requests.Achievement;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -38,6 +39,7 @@ namespace DeputyProject.Controllers
                 });
             return HandleResult(result);
         }
+        [Authorize(Roles = "Employee")]
         [HttpPost(ApiRoutes.Achievements.CreateAchievement)]
         public async Task<IActionResult> AddAchievement([FromForm]CreateAchievementRequest request)
         {
@@ -50,6 +52,7 @@ namespace DeputyProject.Controllers
             var result = await _mediator.Send(command);
             return HandleResult(result);
         }
+        [Authorize(Roles = "Employee")]
         [HttpPut(ApiRoutes.Achievements.EditAchievement)]
         public async Task<IActionResult> UpdateAchievement(int AchievementId, [FromForm] UpdateAchievementRequest request)
         {
@@ -64,6 +67,7 @@ namespace DeputyProject.Controllers
             return HandleResult(result);
         }
       
+        [Authorize(Roles = "Employee")]
         [HttpDelete(ApiRoutes.Achievements.DeleteAchievements)]
         public async Task<IActionResult> DeleteAchievement(int AchievementId)
         {

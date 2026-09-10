@@ -1,5 +1,6 @@
 using Application.Common;
 using Application.Contracts;
+using Application.Contracts.Repos;
 using Application.storage;
 using MediatR;
 
@@ -10,15 +11,18 @@ namespace Application.Core.Commands.DeleteCitizenRequest
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IFileStorageService _fileStorageService;
+        private readonly ICurrentUser _currentUser;
 
         private const string FolderName = "request-files";
 
         public DeleteCitizenRequestCommandHandler(
             IUnitOfWork unitOfWork,
-            IFileStorageService fileStorageService)
+            IFileStorageService fileStorageService,
+            ICurrentUser currentUser)
         {
             _unitOfWork = unitOfWork;
             _fileStorageService = fileStorageService;
+            _currentUser = currentUser;
         }
 
         public async Task<Result<string>> Handle(
@@ -36,19 +40,33 @@ namespace Application.Core.Commands.DeleteCitizenRequest
                     "Citizen request not found.");
             }
 
-            // Delete media from Cloudinary
-            if (!string.IsNullOrWhiteSpace(citizenRequest.BlobName))
+            var employee =
+                await _unitOfWork.Employee
+                    .GetByUserIdAsync(_currentUser.UserId);
+
+            if (employee is null)
             {
-                await _fileStorageService.DeleteFileAsync(
-                    citizenRequest.BlobName,
-                    FolderName);
+                return Result<string>.Failure(
+                    ResultStatus.NotFound,
+                    "Employee not found.");
+            }
+
+            var assignment =
+                await _unitOfWork.CitizenRequirementEmployees
+                    .GetAssignmentAsync(citizenRequest.Id, employee.Id);
+
+            if (assignment is null)
+            {
+                return Result<string>.Failure(
+                    ResultStatus.Unauthorized,
+                    "You are not assigned to this request.");
             }
 
             // Delete employees relations
-            foreach (var employee in citizenRequest.Employees)
+            foreach (var assignedEmployee in citizenRequest.Employees)
             {
                 _unitOfWork.CitizenRequirementEmployees
-                    .Delete(employee);
+                    .Delete(assignedEmployee);
             }
 
             // Delete comments
@@ -63,6 +81,16 @@ namespace Application.Core.Commands.DeleteCitizenRequest
                 .Delete(citizenRequest);
 
             await _unitOfWork.SaveChangesAsync();
+
+            // Best-effort cleanup of the associated media, after the row is
+            // already gone — an orphaned blob is recoverable; deleting media
+            // for a request whose row-delete then fails is not.
+            if (!string.IsNullOrWhiteSpace(citizenRequest.BlobName))
+            {
+                await _fileStorageService.DeleteFileAsync(
+                    citizenRequest.BlobName,
+                    FolderName);
+            }
 
             return Result<string>.Success(
                 "Citizen request deleted successfully.");
