@@ -1,4 +1,4 @@
-﻿using Application.Common;
+using Application.Common;
 using Application.Contracts;
 using Application.storage;
 using MediatR;
@@ -27,7 +27,7 @@ namespace Application.Core.Commands.Deputy.ActivityVisit.DeleteActivityVisit
             DeleteActivityVisitCommand request,
             CancellationToken cancellationToken)
         {
-            var activity = await _unitOfWork.ActitvitiesAndVisits
+            var activity = await _unitOfWork.ActivitiesAndVisits
                 .GetByIdAsync(request.ActivityVisitId);
 
             if (activity is null)
@@ -46,7 +46,7 @@ namespace Application.Core.Commands.Deputy.ActivityVisit.DeleteActivityVisit
             }
 
             // Delete from database
-            _unitOfWork.ActitvitiesAndVisits.Delete(activity);
+            _unitOfWork.ActivitiesAndVisits.Delete(activity);
 
             await _unitOfWork.SaveChangesAsync();
 

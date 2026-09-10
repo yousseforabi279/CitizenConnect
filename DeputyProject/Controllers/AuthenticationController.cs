@@ -1,11 +1,11 @@
-﻿using Application.Core.Commands.AddEmployee;
+using Application.Core.Commands.AddEmployee;
 using Application.Core.Commands.ChangePassword;
-using Application.Core.Commands.CreateCompliant;
+using Application.Core.Commands.CreateComplaint;
 using Application.Core.Commands.ForgetPassword.ForgetPass;
-using Application.Core.Commands.ForgetPassword.NewFolder;
-using Application.Core.Commands.ForgetPassword.Resetpassword;
+using Application.Core.Commands.ForgetPassword.VerifyResetCode;
+using Application.Core.Commands.ForgetPassword.ResetPassword;
 using Application.Core.Commands.Login;
-using Bank.Api.Controllers;
+using DeputyProject.Controllers;
 using DeputyProject.Common;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;

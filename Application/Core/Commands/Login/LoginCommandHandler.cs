@@ -1,7 +1,7 @@
-﻿using Application.Common;
+using Application.Common;
 using Application.Contracts;
 using Application.Contracts.Repos;
-using Application.Core.Commands.CreateCompliant.Validation;
+using Application.Core.Commands.CreateComplaint.Validation;
 using AutoMapper;
 using Domain;
 using MediatR;

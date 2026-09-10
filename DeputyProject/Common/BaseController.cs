@@ -1,9 +1,9 @@
-﻿using Application.Common;
+using Application.Common;
 using DeputyProject.Common;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Bank.Api.Controllers;
+namespace DeputyProject.Controllers;
 
 [ApiController]
 public abstract class BaseController : ControllerBase

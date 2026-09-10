@@ -1,4 +1,4 @@
-﻿using Application.Common;
+using Application.Common;
 using Application.Contracts;
 using Application.storage;
 using MediatR;
@@ -26,7 +26,7 @@ namespace Application.Core.Queries.CitizenRequests.GetRequestById
             CancellationToken cancellationToken)
         {
             var citizenRequest =
-                await _unitOfWork.CitizinRequierment
+                await _unitOfWork.CitizenRequirement
                     .GetByIdWithDetailsAsync(request.Id);
 
             if (citizenRequest is null)

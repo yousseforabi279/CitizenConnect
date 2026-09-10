@@ -1,6 +1,6 @@
-﻿using Application.Contracts.Repos;
+using Application.Contracts.Repos;
 using Domain;
-using Infrastructure.Dbcontext;
+using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -12,9 +12,9 @@ namespace Infrastructure.Implemenation
 {
     internal class PasswordResetCodeRepo:GenericRepository<PasswordResetCode>,IPasswordResetCode
     {
-        protected readonly Appcontext _context;
+        protected readonly ApplicationDbContext _context;
 
-        public PasswordResetCodeRepo(Appcontext context) : base(context)
+        public PasswordResetCodeRepo(ApplicationDbContext context) : base(context)
         {
             _context = context;
         }

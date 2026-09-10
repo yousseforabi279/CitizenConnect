@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
@@ -62,49 +62,49 @@ namespace Infrastructure.Migrations
 
             migrationBuilder.AddColumn<string>(
                 name: "BlobName",
-                table: "CitizinRequierments",
+                table: "CitizenRequirements",
                 type: "nvarchar(max)",
                 nullable: false,
                 defaultValue: "");
 
             migrationBuilder.AddColumn<string>(
                 name: "ContentType",
-                table: "CitizinRequierments",
+                table: "CitizenRequirements",
                 type: "nvarchar(max)",
                 nullable: false,
                 defaultValue: "");
 
             migrationBuilder.AddColumn<long>(
                 name: "FileSizeBytes",
-                table: "CitizinRequierments",
+                table: "CitizenRequirements",
                 type: "bigint",
                 nullable: false,
                 defaultValue: 0L);
 
             migrationBuilder.AddColumn<string>(
                 name: "MediaFileName",
-                table: "CitizinRequierments",
+                table: "CitizenRequirements",
                 type: "nvarchar(max)",
                 nullable: false,
                 defaultValue: "");
 
             migrationBuilder.AddColumn<int>(
                 name: "MediaType",
-                table: "CitizinRequierments",
+                table: "CitizenRequirements",
                 type: "int",
                 nullable: false,
                 defaultValue: 0);
 
             migrationBuilder.AddColumn<string>(
                 name: "MediaUrl",
-                table: "CitizinRequierments",
+                table: "CitizenRequirements",
                 type: "nvarchar(max)",
                 nullable: false,
                 defaultValue: "");
 
             migrationBuilder.AddColumn<DateTime>(
                 name: "UploadedAt",
-                table: "CitizinRequierments",
+                table: "CitizenRequirements",
                 type: "datetime2",
                 nullable: false,
                 defaultValue: new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified));
@@ -143,31 +143,31 @@ namespace Infrastructure.Migrations
 
             migrationBuilder.DropColumn(
                 name: "BlobName",
-                table: "CitizinRequierments");
+                table: "CitizenRequirements");
 
             migrationBuilder.DropColumn(
                 name: "ContentType",
-                table: "CitizinRequierments");
+                table: "CitizenRequirements");
 
             migrationBuilder.DropColumn(
                 name: "FileSizeBytes",
-                table: "CitizinRequierments");
+                table: "CitizenRequirements");
 
             migrationBuilder.DropColumn(
                 name: "MediaFileName",
-                table: "CitizinRequierments");
+                table: "CitizenRequirements");
 
             migrationBuilder.DropColumn(
                 name: "MediaType",
-                table: "CitizinRequierments");
+                table: "CitizenRequirements");
 
             migrationBuilder.DropColumn(
                 name: "MediaUrl",
-                table: "CitizinRequierments");
+                table: "CitizenRequirements");
 
             migrationBuilder.DropColumn(
                 name: "UploadedAt",
-                table: "CitizinRequierments");
+                table: "CitizenRequirements");
         }
     }
 }

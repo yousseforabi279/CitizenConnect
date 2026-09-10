@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -12,7 +12,7 @@ namespace Infrastructure.Migrations
         {
             migrationBuilder.AddColumn<int>(
                 name: "Priority",
-                table: "CitizinRequierments",
+                table: "CitizenRequirements",
                 type: "int",
                 nullable: false,
                 defaultValue: 0);
@@ -23,7 +23,7 @@ namespace Infrastructure.Migrations
         {
             migrationBuilder.DropColumn(
                 name: "Priority",
-                table: "CitizinRequierments");
+                table: "CitizenRequirements");
         }
     }
 }

@@ -1,7 +1,7 @@
-﻿using Application.Contracts.Repos;
+using Application.Contracts.Repos;
 using Domain;
 using Domain.Deputy;
-using Infrastructure.Dbcontext;
+using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -13,8 +13,8 @@ namespace Infrastructure.Implemenation
 {
     public class AchievementRepo : GenericRepository<Achievement>, IAchievement
     {
-        protected readonly Appcontext _context;
-        public AchievementRepo(Appcontext context) : base(context)
+        protected readonly ApplicationDbContext _context;
+        public AchievementRepo(ApplicationDbContext context) : base(context)
         {
             _context = context;
         }

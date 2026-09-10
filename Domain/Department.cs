@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,8 +14,8 @@ namespace Domain
 
         public ICollection<Employee> Employees {get;}
             = new List<Employee>();
-        public ICollection<CitizinRequierment> CitizinRequierments { get;}
-            = new List<CitizinRequierment>();
+        public ICollection<CitizenRequirement> CitizenRequirements { get;}
+            = new List<CitizenRequirement>();
 
 
 

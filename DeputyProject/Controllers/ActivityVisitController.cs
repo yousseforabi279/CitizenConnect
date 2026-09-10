@@ -1,13 +1,13 @@
-﻿using Application.Core.Commands.Deputy.achievements.CreateAchievement;
+using Application.Core.Commands.Deputy.achievements.CreateAchievement;
 using Application.Core.Commands.Deputy.ActivityVisit.CreateActivityVisit;
 using Application.Core.Commands.Deputy.ActivityVisit.DeleteActivityVisit;
 using Application.Core.Commands.Deputy.ActivityVisit.EditActivityVisit;
 using Application.Core.Queries.Deputy.ActivityVisit.GetAll;
 using Application.Core.Queries.Deputy.ActivityVisit.GetAllById;
-using Bank.Api.Controllers;
+using DeputyProject.Controllers;
 using DeputyProject.Common;
 using DeputyProject.Mappers;
-using DeputyProject.Requests.Activitesvisit;
+using DeputyProject.Requests.ActivityVisit;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;

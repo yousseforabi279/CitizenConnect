@@ -1,0 +1,63 @@
+using Domain;
+using Domain.Deputy;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Infrastructure.Data
+{
+    public class ApplicationDbContext:IdentityDbContext<User>
+    {
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        : base(options)
+        {
+        }   
+        public DbSet<Citizen> Citizens { get; set; }
+        public DbSet<CitizenRequirement> CitizenRequirements { get; set; }
+        public DbSet<CitizenRequirementContent> CitizenRequirementContents { get; set; }
+        public DbSet<Employee> Employees { get; set; }
+        public DbSet<Department> Departments { get; set; }
+        public DbSet<Organization> Organizations { get; set; }
+        public DbSet<CitizenRequirementEmployee> CitizenRequirementEmployees { get; set; }
+
+        public DbSet<Deputy> Deputies { get; set; }
+        public DbSet<RefreshToken> RefreshTokens { get; set; }
+
+
+        public DbSet<DeputyWords> DeputyWords { get; set; }
+
+        public DbSet<Achievement> Achievements { get; set; }
+
+        public DbSet<ActivitiesAndVisits> ActivitiesAndVisits { get; set; }
+
+        public DbSet<AreasOfWorkAndActivities> AreasOfWorkAndActivities { get; set; }
+
+        public DbSet<MotionsForInformation> MotionsForInformation { get; set; }
+        public DbSet<PasswordResetCode> passwordResetCodes { get; set; }
+
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<CitizenRequirement>()
+                .Property(x => x.Type)
+                .HasConversion<string>();
+            modelBuilder.Entity<Employee>()
+                .HasIndex(e => e.UserId)
+                .IsUnique();
+            //modelBuilder.Entity<Deputy>()
+            //   .HasIndex(e => e.UserId)
+            //   .IsUnique();
+            modelBuilder.Entity<RefreshToken>()
+                .HasOne(r => r.User)
+                .WithMany(u => u.RefreshTokens)
+                .HasForeignKey(r => r.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+        }
+
+    }
+}

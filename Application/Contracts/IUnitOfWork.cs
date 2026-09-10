@@ -1,4 +1,4 @@
-﻿using Application.Contracts.Repos;
+using Application.Contracts.Repos;
 using Domain;
 using System;
 using System.Collections.Generic;
@@ -10,25 +10,25 @@ namespace Application.Contracts
 {
     public interface IUnitOfWork
     {
-        ICitizinRequierment CitizinRequierment { get; }
-        IComplaintDepartment Department { get; }
-        ICitizin Citizin { get; }
+        ICitizenRequirement CitizenRequirement { get; }
+        IDepartment Department { get; }
+        ICitizen Citizen { get; }
         IEmployee Employee { get; }
         IOrganization Organization { get; }
         IJwtTokenService jwtTokenService { get; }
         IIdentityService IdentityService { get; }
         IRefreshToken RefreshToken { get; }
         IRoleService RoleService { get; }
-        ICitizinRequiermentEmployees CitizinRequiermentEmployees { get; }
+        ICitizenRequirementEmployees CitizenRequirementEmployees { get; }
         IEmployeeRequestRepository EmployeeRequestRepository { get; }
         IDeputy Deputy { get; }
         IAchievement Achievement { get; }
-        IActitvitiesAndVisits ActitvitiesAndVisits { get; }
-        IAreasOfWorkandActivities AreasOfWorkandActivities { get; }
+        IActivitiesAndVisits ActivitiesAndVisits { get; }
+        IAreasOfWorkAndActivities AreasOfWorkAndActivities { get; }
         IMotionsForInformation MotionsForInformation { get; }
-        IDeputyword Deputyword { get; }
+        IDeputyWord DeputyWord { get; }
         IPasswordResetCode PasswordResetCode { get; }
-        ICitizinRequiermentContent CitizinRequiermentContent { get; }
+        ICitizenRequirementContent CitizenRequirementContent { get; }
         IEmailService EmailService { get; }
         Task<int> SaveChangesAsync();
         Task BeginTransactionAsync(

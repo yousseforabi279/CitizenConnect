@@ -1,10 +1,10 @@
-﻿using Application.Common;
+using Application.Common;
 using Application.Core.Queries.Employee.GetEmployeeInfo;
 using Application.Core.Queries.Employee.GetEmployeeRequestStatistics;
 using Application.Core.Queries.GetAllEmployeeonLendingPage;
 using Application.Core.Queries.GetRequestsForEmplyees;
 using Application.Core.Queries.Me;
-using Bank.Api.Controllers;
+using DeputyProject.Controllers;
 using DeputyProject.Common;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
@@ -19,7 +19,7 @@ namespace DeputyProject.Controllers
     {
         public EmployeeController(IMediator _mediator) : base(_mediator) { }
         [Authorize(Roles ="Employee")]
-        [HttpGet(ApiRoutes.Employee.GetEmplyee)]
+        [HttpGet(ApiRoutes.Employee.GetEmployee)]
         public async Task<IActionResult> GetEmployeeInfo()
         {
             var result = await _mediator.Send(new GetEmployeeInfoQuery());

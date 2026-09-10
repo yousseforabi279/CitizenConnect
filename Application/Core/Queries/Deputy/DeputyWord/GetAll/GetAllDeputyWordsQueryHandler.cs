@@ -1,4 +1,4 @@
-﻿using Application.Common;
+using Application.Common;
 using Application.Contracts;
 using Application.Core.Commands.LoadingPage.DeputyWords;
 using Application.Core.Queries.Deputy.DeputyWord.GetAll;
@@ -28,7 +28,7 @@ public class GetAllDeputyWordsQueryHandler
         CancellationToken cancellationToken)
     {
         var words =
-            await _unitOfWork.Deputyword
+            await _unitOfWork.DeputyWord
                 .GetAllAsync();
 
         var dtos = words

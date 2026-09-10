@@ -1,8 +1,8 @@
-﻿using Application.Common.Behaviors;
+using Application.Common.Behaviors;
 using Application.Contracts;
 using Application.Contracts.Repos;
-using Application.Core.Commands.CreateCompliant;
-using Application.Core.Commands.CreateCompliant.Validation;
+using Application.Core.Commands.CreateComplaint;
+using Application.Core.Commands.CreateComplaint.Validation;
 using Application.Core.Commands.ForgetPassword.GenerateNumericCode;
 using FluentValidation;
 using MediatR;

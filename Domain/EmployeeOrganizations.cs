@@ -8,7 +8,7 @@ namespace Domain
 {
     public class EmployeeOrganizations
     {
-        public int id { get; set; }
+        public int Id { get; set; }
         public int EmployeeId { get; set; }
 
         public int OrganizationId { get; set; }

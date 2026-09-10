@@ -1,9 +1,9 @@
-﻿using Application.Core.Commands.Deputy.AreasOfWorkandActivities.CreateAreaOfWork;
-using Application.Core.Commands.Deputy.AreasOfWorkandActivities.DeleteAreaOfWork;
-using Application.Core.Commands.Deputy.AreasOfWorkandActivities.EditAreaofWork;
+using Application.Core.Commands.Deputy.AreasOfWorkAndActivities.CreateAreaOfWork;
+using Application.Core.Commands.Deputy.AreasOfWorkAndActivities.DeleteAreaOfWork;
+using Application.Core.Commands.Deputy.AreasOfWorkAndActivities.EditAreaofWork;
 using Application.Core.Queries.Deputy.AreaOfWork.GetAll;
 using Application.Core.Queries.Deputy.AreaOfWork.GetById;
-using Bank.Api.Controllers;
+using DeputyProject.Controllers;
 using DeputyProject.Common;
 using DeputyProject.Mappers;
 using DeputyProject.Requests.AreaOfWork;

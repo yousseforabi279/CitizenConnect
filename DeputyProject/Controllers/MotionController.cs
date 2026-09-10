@@ -1,8 +1,8 @@
-﻿using Application.Core.Commands.LoadingPage.MotionsForInformation.DeleteMotionsForInformation;
+using Application.Core.Commands.LoadingPage.MotionsForInformation.DeleteMotionsForInformation;
 using Application.Core.Commands.LoadingPage.MotionsForInformation.EditMotionsForInformation;
 using Application.Core.Queries.Deputy.MotionsForInformation.GetById;
-using Application.Core.Queries.Deputy.MotionsInforamtion.GetAll.Application.Core.Queries.Deputy.MotionsForInformation.GetAll;
-using Bank.Api.Controllers;
+using Application.Core.Queries.Deputy.MotionsForInformation.GetAll;
+using DeputyProject.Controllers;
 using DeputyProject.Common;
 using DeputyProject.Mappers;
 using DeputyProject.Requests.MotionsForInformation;

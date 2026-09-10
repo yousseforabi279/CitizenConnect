@@ -1,4 +1,4 @@
-﻿using Application.Common;
+using Application.Common;
 using Application.Contracts;
 using Application.Core.Commands.LoadingPage.ActivityVisit;
 using Application.storage;
@@ -29,7 +29,7 @@ namespace Application.Core.Queries.Deputy.ActivityVisit.GetAllById
             CancellationToken cancellationToken)
         {
             var activity =
-                await _unitOfWork.ActitvitiesAndVisits
+                await _unitOfWork.ActivitiesAndVisits
                     .GetByIdAsync(request.ActivityVisitId);
 
             if (activity is null)

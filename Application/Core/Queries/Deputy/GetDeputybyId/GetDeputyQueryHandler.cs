@@ -1,4 +1,4 @@
-﻿using Application.Common;
+using Application.Common;
 using Application.Contracts;
 using Application.storage;
 using MediatR;
@@ -39,7 +39,7 @@ namespace Application.Core.Queries.Deputy.GetDeputybyId
             var response = new DeputyResponse
             {
                 FullName = deputy.FullName,
-                BirthOfdate = deputy.BirthOfdate,
+                BirthDate = deputy.BirthDate,
                 PrimaryPhone = deputy.PrimaryPhone,
                 SecondaryPhone = deputy.SecondaryPhone,
                 Address = deputy.Address,
@@ -49,7 +49,7 @@ namespace Application.Core.Queries.Deputy.GetDeputybyId
                 AboutPart2 = deputy.AboutPart2,
                 OfficeLocation = deputy.OfficeLocation,
                 WhatsApp = deputy.WhatsApp,
-                FacebookLing = deputy.FacebookLing,
+                FacebookLink = deputy.FacebookLink,
                 LocationURL = deputy.LocationURL,
                 Circle = deputy.Circle,
                 Appointment = deputy.Appointment,

@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -15,8 +15,8 @@ namespace Infrastructure.Migrations
                 table: "Achievements");
 
             migrationBuilder.DropForeignKey(
-                name: "FK_ActitvitiesAndVisits_Deputies_DeputyId",
-                table: "ActitvitiesAndVisits");
+                name: "FK_ActivitiesAndVisits_Deputies_DeputyId",
+                table: "ActivitiesAndVisits");
 
             migrationBuilder.DropForeignKey(
                 name: "FK_AreasOfWorkAndActivities_Deputies_DeputyId",
@@ -43,8 +43,8 @@ namespace Infrastructure.Migrations
                 table: "AreasOfWorkAndActivities");
 
             migrationBuilder.DropIndex(
-                name: "IX_ActitvitiesAndVisits_DeputyId",
-                table: "ActitvitiesAndVisits");
+                name: "IX_ActivitiesAndVisits_DeputyId",
+                table: "ActivitiesAndVisits");
 
             migrationBuilder.DropIndex(
                 name: "IX_Achievements_DeputyId",
@@ -64,7 +64,7 @@ namespace Infrastructure.Migrations
 
             migrationBuilder.DropColumn(
                 name: "DeputyId",
-                table: "ActitvitiesAndVisits");
+                table: "ActivitiesAndVisits");
 
             migrationBuilder.DropColumn(
                 name: "DeputyId",
@@ -97,7 +97,7 @@ namespace Infrastructure.Migrations
 
             migrationBuilder.AddColumn<int>(
                 name: "DeputyId",
-                table: "ActitvitiesAndVisits",
+                table: "ActivitiesAndVisits",
                 type: "int",
                 nullable: false,
                 defaultValue: 0);
@@ -125,8 +125,8 @@ namespace Infrastructure.Migrations
                 column: "DeputyId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ActitvitiesAndVisits_DeputyId",
-                table: "ActitvitiesAndVisits",
+                name: "IX_ActivitiesAndVisits_DeputyId",
+                table: "ActivitiesAndVisits",
                 column: "DeputyId");
 
             migrationBuilder.CreateIndex(
@@ -143,8 +143,8 @@ namespace Infrastructure.Migrations
                 onDelete: ReferentialAction.Cascade);
 
             migrationBuilder.AddForeignKey(
-                name: "FK_ActitvitiesAndVisits_Deputies_DeputyId",
-                table: "ActitvitiesAndVisits",
+                name: "FK_ActivitiesAndVisits_Deputies_DeputyId",
+                table: "ActivitiesAndVisits",
                 column: "DeputyId",
                 principalTable: "Deputies",
                 principalColumn: "Id",

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -18,10 +18,10 @@ namespace Domain
         public int DepartmentId { get; set; }
         public Department Department { get; set; } = null!;
         public bool IsActive { get; set; }
-        public ICollection<CitizinRequiermentEmployee> Requests { get; set; }
-              = new List<CitizinRequiermentEmployee>();
+        public ICollection<CitizenRequirementEmployee> Requests { get; set; }
+              = new List<CitizenRequirementEmployee>();
         public ICollection<EmployeeOrganizations> EmployeeOrganizations { get; set; }
     = new List<EmployeeOrganizations>();
-        public string? about { get; set; }
+        public string? About { get; set; }
     }
 }

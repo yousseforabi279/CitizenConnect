@@ -1,5 +1,5 @@
-﻿using Application.Common;
-using Application.Core.Commands.LoadingPage.AreasOfWorkandActivities;
+using Application.Common;
+using Application.Core.Commands.LoadingPage.AreasOfWorkAndActivities;
 using MediatR;
 using System;
 using System.Collections.Generic;

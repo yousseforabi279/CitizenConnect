@@ -1,4 +1,4 @@
-﻿using Application.Core.Commands.Deputy.achievements.CreateAchievement;
+using Application.Core.Commands.Deputy.achievements.CreateAchievement;
 using Application.Core.Commands.Deputy.achievements.EditAchievement;
 using Application.Core.Commands.LoadingPage.DeputyWords.CreateDeputyWords;
 using Application.Core.Commands.LoadingPage.DeputyWords.DeleteDeputyWords;
@@ -7,10 +7,10 @@ using Application.Core.Queries.Deputy.Achievement.GetAchievementById;
 using Application.Core.Queries.Deputy.Achievement.GetAllAchievements;
 using Application.Core.Queries.Deputy.DeputyWord.GetAll;
 using Application.Core.Queries.Deputy.DeputyWord.GetById;
-using Bank.Api.Controllers;
+using DeputyProject.Controllers;
 using DeputyProject.Common;
 using DeputyProject.Mappers;
-using DeputyProject.Requests.Deputyword;
+using DeputyProject.Requests.DeputyWord;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -67,7 +67,7 @@ namespace DeputyProject.Controllers
         public async Task<IActionResult> DeleteDeputyWord(int DeputyWordId)
         {
            
-            var result = await _mediator.Send(new DeleteDeputyWordCommend(DeputyWordId));
+            var result = await _mediator.Send(new DeleteDeputyWordCommand(DeputyWordId));
             return HandleResult(result);
         }
     }

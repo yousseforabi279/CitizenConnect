@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
@@ -126,7 +126,7 @@ namespace Infrastructure.Migrations
                 defaultValue: new DateOnly(1, 1, 1));
 
             migrationBuilder.AddColumn<int>(
-                name: "CitizinRequiermentId",
+                name: "CitizenRequirementId",
                 table: "complaintCategories",
                 type: "int",
                 nullable: false,
@@ -180,9 +180,9 @@ namespace Infrastructure.Migrations
                 column: "NationalId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_complaintCategories_CitizinRequiermentId",
+                name: "IX_complaintCategories_CitizenRequirementId",
                 table: "complaintCategories",
-                column: "CitizinRequiermentId");
+                column: "CitizenRequirementId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_complaintCategories_EmployeeId",
@@ -203,9 +203,9 @@ namespace Infrastructure.Migrations
                 onDelete: ReferentialAction.NoAction);
 
             migrationBuilder.AddForeignKey(
-                name: "FK_complaintCategories_ComplaintAssignments_CitizinRequiermentId",
+                name: "FK_complaintCategories_ComplaintAssignments_CitizenRequirementId",
                 table: "complaintCategories",
-                column: "CitizinRequiermentId",
+                column: "CitizenRequirementId",
                 principalTable: "ComplaintAssignments",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.NoAction);
@@ -227,7 +227,7 @@ namespace Infrastructure.Migrations
                 table: "ComplaintAssignments");
 
             migrationBuilder.DropForeignKey(
-                name: "FK_complaintCategories_ComplaintAssignments_CitizinRequiermentId",
+                name: "FK_complaintCategories_ComplaintAssignments_CitizenRequirementId",
                 table: "complaintCategories");
 
             migrationBuilder.DropForeignKey(
@@ -239,7 +239,7 @@ namespace Infrastructure.Migrations
                 table: "Complaintes");
 
             migrationBuilder.DropIndex(
-                name: "IX_complaintCategories_CitizinRequiermentId",
+                name: "IX_complaintCategories_CitizenRequirementId",
                 table: "complaintCategories");
 
             migrationBuilder.DropIndex(
@@ -255,7 +255,7 @@ namespace Infrastructure.Migrations
                 table: "Complaintes");
 
             migrationBuilder.DropColumn(
-                name: "CitizinRequiermentId",
+                name: "CitizenRequirementId",
                 table: "complaintCategories");
 
             migrationBuilder.DropColumn(

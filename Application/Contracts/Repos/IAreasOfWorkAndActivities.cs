@@ -1,0 +1,16 @@
+using Domain.Deputy;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Application.Contracts.Repos
+{
+    public interface IAreasOfWorkAndActivities:IGenericRepository<AreasOfWorkAndActivities>
+    {
+        Task<List<AreasOfWorkAndActivities>> GetByDeputyIdAsync(
+    int deputyId,
+    CancellationToken cancellationToken);
+    }
+}

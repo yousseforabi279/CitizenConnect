@@ -1,4 +1,4 @@
-﻿using Application.Common;
+using Application.Common;
 using Domain.Enums;
 using MediatR;
 using System;
@@ -14,6 +14,6 @@ namespace Application.Core.Queries.GetRequestsForEmplyees
         int PageSize = 10,
         RequestType? Type = null,
         RequestStatus? Status = null,
-        ComplaintPriority? Priority = null
+        RequestPriority? Priority = null
     ) : IRequest<Result<PaginatedResult<EmployeeRequestDto>>>;
 }

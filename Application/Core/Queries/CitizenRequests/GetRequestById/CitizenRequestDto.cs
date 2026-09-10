@@ -1,4 +1,4 @@
-﻿using Domain.Deputy;
+using Domain.Deputy;
 using Domain.Enums;
 using System;
 using System.Collections.Generic;
@@ -39,7 +39,7 @@ namespace Application.Core.Queries.CitizenRequests.GetRequestById
 
         public RequestStatus Status { get; set; }
 
-        public ComplaintPriority Priority { get; set; }
+        public RequestPriority Priority { get; set; }
 
         public DateTime CreatedAt { get; set; }
     }

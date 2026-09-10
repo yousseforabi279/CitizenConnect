@@ -1,4 +1,4 @@
-﻿using Application.Common;
+using Application.Common;
 using Application.storage;
 using MediatR;
 using System;
@@ -13,7 +13,7 @@ namespace Application.Core.Commands.LoadingPage.PersonalInfo.EditPersonalInfo
     {
         public string FullName { get; set; } = null!;
 
-        public DateOnly BirthOfdate { get; set; }
+        public DateOnly BirthDate { get; set; }
 
         public string PrimaryPhone { get; set; } = null!;
 
@@ -32,7 +32,7 @@ namespace Application.Core.Commands.LoadingPage.PersonalInfo.EditPersonalInfo
 
         public string? WhatsApp { get; set; }
 
-        public string? FacebookLing { get; set; }
+        public string? FacebookLink { get; set; }
 
         public string? LocationURL { get; set; }
 

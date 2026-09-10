@@ -1,4 +1,4 @@
-﻿using FluentValidation;
+using FluentValidation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +19,7 @@ namespace Application.Core.Commands.LoadingPage.PersonalInfo.EditPersonalInfo
                 .MaximumLength(150)
                 .WithMessage("الاسم يجب ألا يتجاوز 150 حرف.");
 
-            RuleFor(x => x.BirthOfdate)
+            RuleFor(x => x.BirthDate)
                 .LessThan(DateOnly.FromDateTime(DateTime.Today))
                 .WithMessage("تاريخ الميلاد غير صحيح.");
 
@@ -44,10 +44,10 @@ namespace Application.Core.Commands.LoadingPage.PersonalInfo.EditPersonalInfo
                 .WithMessage("المسمى الوظيفي يجب ألا يتجاوز 150 حرف.")
                 .When(x => !string.IsNullOrWhiteSpace(x.Title));
 
-            RuleFor(x => x.FacebookLing)
+            RuleFor(x => x.FacebookLink)
                 .Must(BeValidUrl)
                 .WithMessage("رابط Facebook غير صحيح.")
-                .When(x => !string.IsNullOrWhiteSpace(x.FacebookLing));
+                .When(x => !string.IsNullOrWhiteSpace(x.FacebookLink));
 
             RuleFor(x => x.LocationURL)
                 .Must(BeValidUrl)

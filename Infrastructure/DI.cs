@@ -1,8 +1,8 @@
-﻿using Application.Contracts;
+using Application.Contracts;
 using Application.Contracts.Repos;
 using Application.storage;
 using Domain;
-using Infrastructure.Dbcontext;
+using Infrastructure.Data;
 using Infrastructure.Implemenation;
 using Infrastructure.Services;
 using Infrastructure.Settings;
@@ -30,7 +30,7 @@ namespace Infrastructure
                    ?? configuration.GetConnectionString("DefaultConnection");
             Console.WriteLine($"Connection String Exists: {!string.IsNullOrEmpty(connectionString)}");
 
-            services.AddDbContext<Infrastructure.Dbcontext.Appcontext>(options =>
+            services.AddDbContext<Infrastructure.Data.ApplicationDbContext>(options =>
             {
                 options.UseSqlServer(connectionString);
             });
@@ -55,33 +55,33 @@ namespace Infrastructure
             //           TimeSpan.FromMinutes(5);
             //   })
             //   .AddRoles<IdentityRole>()
-            //   .AddEntityFrameworkStores<Appcontext>()
+            //   .AddEntityFrameworkStores<ApplicationDbContext>()
             //   .AddDefaultTokenProviders();
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-            services.AddScoped<ICitizinRequierment, CompliantRepo>();
-            services.AddScoped<IComplaintDepartment, ComplaintCategoryRepo>();
-            services.AddScoped<ICitizin, CitizinRepo>();
+            services.AddScoped<ICitizenRequirement, CitizenRequirementRepo>();
+            services.AddScoped<IDepartment, DepartmentRepo>();
+            services.AddScoped<ICitizen, CitizenRepo>();
             services.AddScoped<IEmployee, EmployeeRepo>();
             services.AddScoped<IOrganization, OrganizationRepo>();
             services.AddScoped<IIdentityService, IdentityService>();
             services.AddScoped<IJwtTokenService, JwtTokenService>();
-            services.AddScoped<IRefreshToken, RefreshToekenRepo>();
+            services.AddScoped<IRefreshToken, RefreshTokenRepo>();
             services.AddScoped<IRoleService, RoleServiceRepo>();
-            services.AddScoped<ICitizinRequiermentEmployees, CitizinRequiermentEmployees>();
+            services.AddScoped<ICitizenRequirementEmployees, CitizenRequirementEmployees>();
             services.AddScoped<IEmployeeRequestRepository, EmployeeRequestRepository>();
             services.AddScoped<IDeputy, DeputyRepo>();
             services.AddScoped<IAchievement, AchievementRepo>();
-            services.AddScoped<IActitvitiesAndVisits, ActitvitiesAndVisitsRepo>();
-            services.AddScoped<IAreasOfWorkandActivities, AreasOfWorkandActivitiesRepo>();
-            services.AddScoped<IDeputyword, DeputywordRepo>();
+            services.AddScoped<IActivitiesAndVisits, ActivitiesAndVisitsRepo>();
+            services.AddScoped<IAreasOfWorkAndActivities, AreasOfWorkAndActivitiesRepo>();
+            services.AddScoped<IDeputyWord, DeputyWordRepo>();
             services.AddScoped<IMotionsForInformation, MotionsForInformationRepo>();
             services.AddScoped<IPasswordResetCode, PasswordResetCodeRepo>();
             services.Configure<EmailSettings>(configuration.GetSection("EmailSettings"));
             services.AddScoped<IEmailService, EmailService>();
-            services.AddScoped<IFileStorageService, CloudinaryStorageServicee>();
-            services.AddScoped<ICitizinRequiermentContent, CitizinRequiermentContentRepo>();
+            services.AddScoped<IFileStorageService, CloudinaryStorageService>();
+            services.AddScoped<ICitizenRequirementContent, CitizenRequirementContentRepo>();
 
 
 

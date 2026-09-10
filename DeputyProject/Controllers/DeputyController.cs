@@ -1,14 +1,14 @@
-﻿using Application.Core.Commands.CreateCompliant;
+using Application.Core.Commands.CreateComplaint;
 using Application.Core.Commands.Deputy.achievements.CreateAchievement;
 using Application.Core.Commands.LoadingPage.PersonalInfo.EditPersonalInfo;
 using Application.Core.Queries.Deputy.GetDeputybyId;
 using Azure.Core;
-using Bank.Api.Controllers;
+using DeputyProject.Controllers;
 using DeputyProject.Common;
 using DeputyProject.Mappers;
 using DeputyProject.Requests.DeputyInfo;
 using DeputyProject.SeedDataDto;
-using Infrastructure.Dbcontext;
+using Infrastructure.Data;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -20,8 +20,8 @@ namespace DeputyProject.Controllers
     [ApiController]
     public class DeputyController : BaseController
     {
-        protected readonly Appcontext _context;
-        public DeputyController(IMediator _mediator, Appcontext context) : base(_mediator) { _context = context; }
+        protected readonly ApplicationDbContext _context;
+        public DeputyController(IMediator _mediator, ApplicationDbContext context) : base(_mediator) { _context = context; }
  
 
         [HttpPut(ApiRoutes.Deputy.Edit)]
@@ -34,9 +34,9 @@ namespace DeputyProject.Controllers
                 Address = updatePersonalInfo.Address,
                 Appointment= updatePersonalInfo.Appointment,
                 Bio= updatePersonalInfo.Bio,
-                BirthOfdate= updatePersonalInfo.BirthOfdate,
+                BirthDate= updatePersonalInfo.BirthDate,
                 Circle= updatePersonalInfo.Circle,
-                FacebookLing= updatePersonalInfo.FacebookLing,
+                FacebookLink= updatePersonalInfo.FacebookLink,
                 FullName= updatePersonalInfo.FullName,
                 LocationURL= updatePersonalInfo.LocationURL,
                 OfficeLocation=updatePersonalInfo.OfficeLocation,

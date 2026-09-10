@@ -1,4 +1,4 @@
-﻿using Application.Common;
+using Application.Common;
 using Application.Contracts;
 using Application.Core.Commands.LoadingPage.DeputyWords;
 using Application.Core.Queries.Deputy.DeputyWord.GetById;
@@ -28,7 +28,7 @@ public class GetDeputyWordByIdQueryHandler
         CancellationToken cancellationToken)
     {
         var word =
-            await _unitOfWork.Deputyword
+            await _unitOfWork.DeputyWord
                 .GetByIdAsync(request.Id);
 
         if (word is null)

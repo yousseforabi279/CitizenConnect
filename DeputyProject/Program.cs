@@ -1,8 +1,8 @@
-﻿using Application;
+using Application;
 using Application.Contracts.Repos;
 using DeputyProject.Common;
 using Infrastructure;
-using Infrastructure.Dbcontext;
+using Infrastructure.Data;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
@@ -107,14 +107,14 @@ builder.Services
                       TimeSpan.FromMinutes(5);
               })
               .AddRoles<IdentityRole>()
-              .AddEntityFrameworkStores<Appcontext>()
+              .AddEntityFrameworkStores<ApplicationDbContext>()
               .AddDefaultTokenProviders();
 var app = builder.Build();
 
 
 using (var scope = app.Services.CreateScope())
 {
-    var context = scope.ServiceProvider.GetRequiredService<Appcontext>();
+    var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
     var logger = scope.ServiceProvider
         .GetRequiredService<ILogger<Program>>();
 

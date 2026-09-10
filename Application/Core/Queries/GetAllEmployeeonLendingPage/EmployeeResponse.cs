@@ -11,6 +11,6 @@ namespace Application.Core.Queries.GetAllEmployeeonLendingPage
         public string Name { get; set; } = null!; 
         public string? Phone { get; set; } 
         
-        public string? about { get; set; }
+        public string? About { get; set; }
     }
 }

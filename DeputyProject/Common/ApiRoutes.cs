@@ -1,4 +1,4 @@
-﻿namespace DeputyProject.Common
+namespace DeputyProject.Common
 {
     public class ApiRoutes
     {
@@ -23,16 +23,15 @@
         }
         public static class Deputy
         {
-            public const string Edit = "api/HeroInfo";
-            public const string GetDeputy = "api/HeroInfo";
-        
+            public const string Edit = "api/deputy/personal-info";
+            public const string GetDeputy = "api/deputy/personal-info";
         }
         public static class Achievements
         {
             public const string GetAllAchievements = "/api/achievements";
             public const string GetAchievementById = "/api/achievements/{achievementId:int}";
             public const string CreateAchievement = "/api/achievements";
-            public const string EditAchivement = "/api/achievements/{AchievementId:int}";
+            public const string EditAchievement = "/api/achievements/{AchievementId:int}";
             public const string DeleteAchievements = "/api/achievements/{AchievementId:int}";
         }
         public static class ActivitiesVisits
@@ -69,7 +68,7 @@
         }
         public static class Employee
         {
-            public const string GetEmplyee = "employee-info";
+            public const string GetEmployee = "employee-info";
             public const string GetRequestsForEmployees = "employee-requests";
             public const string statistics = "employee-requests/statistics";
 

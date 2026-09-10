@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
@@ -40,7 +40,7 @@ namespace Infrastructure.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     FullName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    BirthOfdate = table.Column<DateOnly>(type: "date", nullable: false),
+                    BirthDate = table.Column<DateOnly>(type: "date", nullable: false),
                     PrimaryPhone = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     SecondaryPhone = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Address = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -48,7 +48,7 @@ namespace Infrastructure.Migrations
                     Bio = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     About = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     WhatsApp = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    FacebookLing = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    FacebookLink = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     LocationURL = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Circle = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Appointment = table.Column<string>(type: "nvarchar(max)", nullable: true)
@@ -82,7 +82,7 @@ namespace Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ActitvitiesAndVisits",
+                name: "ActivitiesAndVisits",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -96,9 +96,9 @@ namespace Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ActitvitiesAndVisits", x => x.Id);
+                    table.PrimaryKey("PK_ActivitiesAndVisits", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ActitvitiesAndVisits_Deputies_DeputyId",
+                        name: "FK_ActivitiesAndVisits_Deputies_DeputyId",
                         column: x => x.DeputyId,
                         principalTable: "Deputies",
                         principalColumn: "Id",
@@ -176,8 +176,8 @@ namespace Infrastructure.Migrations
                 column: "DeputyId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ActitvitiesAndVisits_DeputyId",
-                table: "ActitvitiesAndVisits",
+                name: "IX_ActivitiesAndVisits_DeputyId",
+                table: "ActivitiesAndVisits",
                 column: "DeputyId");
 
             migrationBuilder.CreateIndex(
@@ -215,7 +215,7 @@ namespace Infrastructure.Migrations
                 name: "Achievements");
 
             migrationBuilder.DropTable(
-                name: "ActitvitiesAndVisits");
+                name: "ActivitiesAndVisits");
 
             migrationBuilder.DropTable(
                 name: "AreasOfWorkAndActivities");

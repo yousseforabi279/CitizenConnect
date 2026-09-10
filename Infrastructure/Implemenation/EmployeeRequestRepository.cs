@@ -1,7 +1,7 @@
-﻿using Application.Common;
+using Application.Common;
 using Application.Contracts.Repos;
 using Application.Core.Queries.GetRequestsForEmplyees;
-using Infrastructure.Dbcontext;
+using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -13,93 +13,93 @@ namespace Infrastructure.Implemenation
 {
     internal class EmployeeRequestRepository : IEmployeeRequestRepository
     {
-        private readonly Appcontext _context;
-        public EmployeeRequestRepository(Appcontext context)
+        private readonly ApplicationDbContext _context;
+        public EmployeeRequestRepository(ApplicationDbContext context)
         {
             _context = context;
         }
 
         public async Task<PaginatedResult<EmployeeRequestDto>> GetAssignedRequestsAsync(int employeeId, EmployeeRequestFilter filter, CancellationToken cancellationToken)
         {
-            var query = _context.CitizinRequiermentEmployees
+            var query = _context.CitizenRequirementEmployees
                         .AsNoTracking()
                         .Where(x => x.EmployeeId == employeeId);
             if (!string.IsNullOrWhiteSpace(filter.Name))
             {
                 query = query.Where(x =>
-                        x.CitizinRequierment.Citizen.FullName
+                        x.CitizenRequirement.Citizen.FullName
                         .Contains(filter.Name));
             }
             if (!string.IsNullOrWhiteSpace(filter.Phone))
             {
                 query = query.Where(x =>
-                    x.CitizinRequierment.Citizen.Phone
+                    x.CitizenRequirement.Citizen.Phone
                         .Contains(filter.Phone));
             }
             if (!string.IsNullOrWhiteSpace(filter.NationalId))
             {
                 query = query.Where(x =>
-                    x.CitizinRequierment.Citizen.NationalId
+                    x.CitizenRequirement.Citizen.NationalId
                         == filter.NationalId);
             }
             if (!string.IsNullOrWhiteSpace(filter.Title))
             {
                 query = query.Where(x =>
-                    x.CitizinRequierment.Title
+                    x.CitizenRequirement.Title
                         .Contains(filter.Title));
             }
             if (filter.Type.HasValue)
             {
                 query = query.Where(x =>
-                    x.CitizinRequierment.Type ==
+                    x.CitizenRequirement.Type ==
                     filter.Type.Value);
             }
             if (filter.Status.HasValue)
             {
                 query = query.Where(x =>
-                    x.CitizinRequierment.Status ==
+                    x.CitizenRequirement.Status ==
                     filter.Status.Value);
             }
             if (filter.Priority.HasValue)
             {
                 query = query.Where(x =>
-                     x.CitizinRequierment.Priority==filter.Priority.Value);
+                     x.CitizenRequirement.Priority==filter.Priority.Value);
             }
             var totalCount = await query.CountAsync();
             var items = await query
              .OrderByDescending(x =>
-                 x.CitizinRequierment.CreatedAt)
+                 x.CitizenRequirement.CreatedAt)
              .Skip(
                  (filter.PageNumber - 1)
                  * filter.PageSize)
              .Take(filter.PageSize)
              .Select(x => new EmployeeRequestDto
              {
-                 Id = x.CitizinRequierment.Id,
+                 Id = x.CitizenRequirement.Id,
 
-                 Type = x.CitizinRequierment.Type.ToString(),
+                 Type = x.CitizenRequirement.Type.ToString(),
 
-                 Title = x.CitizinRequierment.Title,
+                 Title = x.CitizenRequirement.Title,
 
-                 Content = x.CitizinRequierment.Description,
+                 Content = x.CitizenRequirement.Description,
 
                  CitizenName =
-                     x.CitizinRequierment.Citizen.FullName,
+                     x.CitizenRequirement.Citizen.FullName,
 
                  NationalId =
-                     x.CitizinRequierment.Citizen.NationalId,
+                     x.CitizenRequirement.Citizen.NationalId,
 
                  Phone =
-                     x.CitizinRequierment.Citizen.Phone,
+                     x.CitizenRequirement.Citizen.Phone,
 
                  Priority =
-                     x.CitizinRequierment.Priority.ToString(),
+                     x.CitizenRequirement.Priority.ToString(),
 
                  Status =
-                     x.CitizinRequierment.Status.ToString(),
+                     x.CitizenRequirement.Status.ToString(),
 
                  CreatedAt =
-                     x.CitizinRequierment.CreatedAt
+                     x.CitizenRequirement.CreatedAt
              })
              .ToListAsync(cancellationToken);
 

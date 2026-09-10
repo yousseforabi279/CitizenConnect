@@ -1,4 +1,4 @@
-﻿using Application.Common;
+using Application.Common;
 using Application.Contracts;
 using Application.Contracts.Repos;
 using Application.Core.Commands.UpdateRequestStatus;
@@ -26,8 +26,8 @@ namespace Application.Core.Commands.UpdateRequest
             CancellationToken cancellationToken)
         {
             var citizenRequest =
-                await _unitOfWork.CitizinRequierment
-                    .GetByIdAsync(request.CitizinRequiermentId);
+                await _unitOfWork.CitizenRequirement
+                    .GetByIdAsync(request.CitizenRequirementId);
 
             if (citizenRequest == null)
             {
@@ -48,7 +48,7 @@ namespace Application.Core.Commands.UpdateRequest
             }
 
             var assignment =
-     await _unitOfWork.CitizinRequiermentEmployees
+     await _unitOfWork.CitizenRequirementEmployees
          .GetAssignmentAsync(
              citizenRequest.Id,
              employee.Id);
@@ -73,10 +73,10 @@ namespace Application.Core.Commands.UpdateRequest
 
             if (!string.IsNullOrWhiteSpace(request.Comment))
             {
-                var comment = new CitizinRequiermentContent
+                var comment = new CitizenRequirementContent
                 {
-                    CitizinRequiermentId =
-                        request.CitizinRequiermentId,
+                    CitizenRequirementId =
+                        request.CitizenRequirementId,
 
                     EmployeeId = employee.Id,
 
@@ -85,7 +85,7 @@ namespace Application.Core.Commands.UpdateRequest
                     CreatedAt = DateTime.UtcNow
                 };
 
-                await _unitOfWork.CitizinRequiermentContent
+                await _unitOfWork.CitizenRequirementContent
                     .AddAsync(comment);
             }
 

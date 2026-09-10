@@ -1,9 +1,9 @@
-﻿using Application.Contracts.Repos;
+using Application.Contracts.Repos;
 using Application.Core.Queries.Employee.GetEmployeeInfo;
 using Application.Core.Queries.Employee.GetEmployeeRequestStatistics;
 using Domain;
 using Domain.Enums;
-using Infrastructure.Dbcontext;
+using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -16,9 +16,9 @@ namespace Infrastructure.Implemenation
 {
     internal class EmployeeRepo : GenericRepository<Employee>, IEmployee
     {
-        protected readonly Appcontext _context;
+        protected readonly ApplicationDbContext _context;
 
-        public EmployeeRepo(Appcontext context) : base(context)
+        public EmployeeRepo(ApplicationDbContext context) : base(context)
         {
             _context = context;
         }
@@ -51,17 +51,17 @@ namespace Infrastructure.Implemenation
                     .FirstOrDefaultAsync(x => x.UserId == userId);
         }
 
-        public async Task<EmplyeeInfo?> GetEmplyeeInfo(string userId)
+        public async Task<EmplyeeInfo?> GetEmployeeInfo(string userId)
         {
             return await _context.Employees.Where(ww => ww.UserId == userId)
                 .Select(ww => new EmplyeeInfo { Name = ww.User.FullName,Department = ww.Department.Name }).FirstOrDefaultAsync();
         }
         public async Task<EmployeeRequestStatisticsDto> GetStatisticsAsync(int employeeId, CancellationToken cancellationToken)
         {
-            var grouped = await _context.CitizinRequiermentEmployees
+            var grouped = await _context.CitizenRequirementEmployees
                     .AsNoTracking()
                     .Where(x => x.EmployeeId == employeeId)
-                    .GroupBy(x => x.CitizinRequierment.Status)
+                    .GroupBy(x => x.CitizenRequirement.Status)
                     .Select(g => new { Status = g.Key, Count = g.Count() })
                     .ToListAsync(cancellationToken);
 

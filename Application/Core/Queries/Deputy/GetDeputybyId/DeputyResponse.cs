@@ -1,4 +1,4 @@
-﻿using Domain.Deputy;
+using Domain.Deputy;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +12,7 @@ namespace Application.Core.Queries.Deputy.GetDeputybyId
 
         public string FullName { get; set; } = null!;
 
-        public DateOnly BirthOfdate { get; set; }
+        public DateOnly BirthDate { get; set; }
 
         public string PrimaryPhone { get; set; } = null!;
 
@@ -30,7 +30,7 @@ namespace Application.Core.Queries.Deputy.GetDeputybyId
 
         public string? WhatsApp { get; set; }
 
-        public string? FacebookLing { get; set; }
+        public string? FacebookLink { get; set; }
 
         public string? LocationURL { get; set; }
 

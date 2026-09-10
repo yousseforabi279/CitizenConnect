@@ -1,4 +1,4 @@
-﻿using Application.Common;
+using Application.Common;
 using Application.Contracts;
 using Application.storage;
 using Domain.Deputy;
@@ -73,7 +73,7 @@ namespace Application.Core.Commands.LoadingPage.PersonalInfo.EditPersonalInfo
 
             // Update deputy information
             deputy.FullName = request.FullName;
-            deputy.BirthOfdate = request.BirthOfdate;
+            deputy.BirthDate = request.BirthDate;
             deputy.PrimaryPhone = request.PrimaryPhone;
             deputy.SecondaryPhone = request.SecondaryPhone;
             deputy.Address = request.Address;
@@ -83,7 +83,7 @@ namespace Application.Core.Commands.LoadingPage.PersonalInfo.EditPersonalInfo
             deputy.AboutPart2 = request.AboutPart2;
             deputy.OfficeLocation = request.OfficeLocation;
             deputy.WhatsApp = request.WhatsApp;
-            deputy.FacebookLing = request.FacebookLing;
+            deputy.FacebookLink = request.FacebookLink;
             deputy.LocationURL = request.LocationURL;
             deputy.Circle = request.Circle;
             deputy.Appointment = request.Appointment;

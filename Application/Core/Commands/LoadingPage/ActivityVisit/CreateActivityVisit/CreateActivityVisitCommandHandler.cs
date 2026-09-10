@@ -1,4 +1,4 @@
-﻿using Application.Common;
+using Application.Common;
 using Application.Contracts;
 using Application.Contracts.Repos;
 using Application.Core.Commands.LoadingPage.ActivityVisit;
@@ -28,7 +28,7 @@ namespace Application.Core.Commands.Deputy.ActivityVisit.CreateActivityVisit
             CreateActivityVisitCommand request,
             CancellationToken cancellationToken)
         {
-            var activity = new ActitvitiesAndVisits
+            var activity = new ActivitiesAndVisits
             {
                 Title = request.Title,
                 Description = request.Description,
@@ -61,7 +61,7 @@ namespace Application.Core.Commands.Deputy.ActivityVisit.CreateActivityVisit
 
             }
 
-            await _unitOfWork.ActitvitiesAndVisits.AddAsync(activity);
+            await _unitOfWork.ActivitiesAndVisits.AddAsync(activity);
 
             await _unitOfWork.SaveChangesAsync();
 
@@ -73,7 +73,7 @@ namespace Application.Core.Commands.Deputy.ActivityVisit.CreateActivityVisit
         }
 
         private ActivityVisitDTO MapToDto(
-            ActitvitiesAndVisits activity)
+            ActivitiesAndVisits activity)
         {
             return new ActivityVisitDTO
             {

@@ -1,6 +1,6 @@
-﻿using Application.Common;
+using Application.Common;
 using Application.Contracts;
-using Application.Core.Commands.LoadingPage.AreasOfWorkandActivities;
+using Application.Core.Commands.LoadingPage.AreasOfWorkAndActivities;
 using Application.storage;
 using MediatR;
 
@@ -29,7 +29,7 @@ namespace Application.Core.Queries.Deputy.AreaOfWork.GetById
             CancellationToken cancellationToken)
         {
             var area =
-                await _unitOfWork.AreasOfWorkandActivities
+                await _unitOfWork.AreasOfWorkAndActivities
                     .GetByIdAsync(request.AreaId);
 
             if (area is null)

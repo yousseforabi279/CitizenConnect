@@ -1,4 +1,4 @@
-﻿using Domain.Enums;
+using Domain.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +13,7 @@ namespace Application.Core.Queries.GetRequestsForEmplyees
 
         public RequestStatus? Status { get; set; }
 
-        public ComplaintPriority? Priority { get; set; }
+        public RequestPriority? Priority { get; set; }
 
         public string? Name { get; set; }
 

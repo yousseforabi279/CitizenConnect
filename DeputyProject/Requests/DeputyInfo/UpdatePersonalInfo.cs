@@ -1,10 +1,10 @@
-﻿namespace DeputyProject.Requests.DeputyInfo
+namespace DeputyProject.Requests.DeputyInfo
 {
     public class UpdatePersonalInfo
     {
         public string FullName { get; set; } = null!;
 
-        public DateOnly BirthOfdate { get; set; }
+        public DateOnly BirthDate { get; set; }
         public string PrimaryPhone { get; set; } = null!;
         public string SecondaryPhone { get; set; } = null!;
 
@@ -15,7 +15,7 @@
         public string? AboutPart2 { get; set; }
         public string? OfficeLocation { get; set; }
         public string? WhatsApp { get; set; }
-        public string? FacebookLing { get; set; }
+        public string? FacebookLink { get; set; }
         public string? LocationURL { get; set; }
         public string? Circle { get; set; }
         public string? Appointment { get; set; }

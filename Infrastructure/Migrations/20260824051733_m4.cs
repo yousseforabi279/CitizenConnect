@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -56,25 +56,25 @@ namespace Infrastructure.Migrations
                 column: "NationalId");
 
             migrationBuilder.CreateTable(
-                name: "CitizinRequiermentEmployee",
+                name: "CitizenRequirementEmployee",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CitizinRequiermentId = table.Column<int>(type: "int", nullable: false),
+                    CitizenRequirementId = table.Column<int>(type: "int", nullable: false),
                     EmployeeId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CitizinRequiermentEmployee", x => x.id);
+                    table.PrimaryKey("PK_CitizenRequirementEmployee", x => x.id);
                     table.ForeignKey(
-                        name: "FK_CitizinRequiermentEmployee_ComplaintAssignments_CitizinRequiermentId",
-                        column: x => x.CitizinRequiermentId,
+                        name: "FK_CitizenRequirementEmployee_ComplaintAssignments_CitizenRequirementId",
+                        column: x => x.CitizenRequirementId,
                         principalTable: "ComplaintAssignments",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_CitizinRequiermentEmployee_Employees_EmployeeId",
+                        name: "FK_CitizenRequirementEmployee_Employees_EmployeeId",
                         column: x => x.EmployeeId,
                         principalTable: "Employees",
                         principalColumn: "Id",
@@ -121,13 +121,13 @@ namespace Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_CitizinRequiermentEmployee_CitizinRequiermentId",
-                table: "CitizinRequiermentEmployee",
-                column: "CitizinRequiermentId");
+                name: "IX_CitizenRequirementEmployee_CitizenRequirementId",
+                table: "CitizenRequirementEmployee",
+                column: "CitizenRequirementId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CitizinRequiermentEmployee_EmployeeId",
-                table: "CitizinRequiermentEmployee",
+                name: "IX_CitizenRequirementEmployee_EmployeeId",
+                table: "CitizenRequirementEmployee",
                 column: "EmployeeId");
 
             migrationBuilder.CreateIndex(
@@ -168,7 +168,7 @@ namespace Infrastructure.Migrations
                 table: "ComplaintAssignments");
 
             migrationBuilder.DropTable(
-                name: "CitizinRequiermentEmployee");
+                name: "CitizenRequirementEmployee");
 
             migrationBuilder.DropTable(
                 name: "EmployeeOrganizations");

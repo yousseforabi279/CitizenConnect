@@ -1,4 +1,4 @@
-﻿using Application.Common;
+using Application.Common;
 using Application.Contracts;
 using Application.Core.Commands.Deputy.ActivityVisit.EditActivityVisit;
 using Application.Core.Commands.LoadingPage.ActivityVisit;
@@ -31,7 +31,7 @@ namespace Application.Core.Commands.Deputy.ActivityVisit.EditActivityVisit
             CancellationToken cancellationToken)
         {
             var activity =
-                await _unitOfWork.ActitvitiesAndVisits
+                await _unitOfWork.ActivitiesAndVisits
                     .GetByIdAsync(request.Id);
 
             if (activity is null)

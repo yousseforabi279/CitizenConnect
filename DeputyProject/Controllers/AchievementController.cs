@@ -1,10 +1,10 @@
-﻿using Application.Common;
+using Application.Common;
 using Application.Core.Commands.Deputy.achievements.CreateAchievement;
 using Application.Core.Commands.Deputy.achievements.DeleteAchievement;
 using Application.Core.Commands.Deputy.achievements.EditAchievement;
 using Application.Core.Queries.Deputy.Achievement.GetAchievementById;
 using Application.Core.Queries.Deputy.Achievement.GetAllAchievements;
-using Bank.Api.Controllers;
+using DeputyProject.Controllers;
 using DeputyProject.Common;
 using DeputyProject.Mappers;
 using DeputyProject.Requests.Achievement;
@@ -50,7 +50,7 @@ namespace DeputyProject.Controllers
             var result = await _mediator.Send(command);
             return HandleResult(result);
         }
-        [HttpPut(ApiRoutes.Achievements.EditAchivement)]
+        [HttpPut(ApiRoutes.Achievements.EditAchievement)]
         public async Task<IActionResult> UpdateAchievement(int AchievementId, [FromForm] UpdateAchievementRequest request)
         {
             var command = new UpdateAchievementCommand

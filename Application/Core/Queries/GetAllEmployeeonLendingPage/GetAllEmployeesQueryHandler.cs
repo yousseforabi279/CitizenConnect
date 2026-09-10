@@ -1,35 +1,37 @@
 ﻿using Application.Common;
 using Application.Contracts;
-using Application.Core.Queries.GetAllEmployeeonLendingPage;
 using MediatR;
 
-public class GetAllEmployeesQueryHandler
-    : IRequestHandler<
-        GetAllEmployeesQuery,
-        Result<List<EmployeeResponse>>>
+namespace Application.Core.Queries.GetAllEmployeeonLendingPage
 {
-    private readonly IUnitOfWork _unitOfWork;
-
-    public GetAllEmployeesQueryHandler(IUnitOfWork unitOfWork)
+    public class GetAllEmployeesQueryHandler
+        : IRequestHandler<
+            GetAllEmployeesQuery,
+            Result<List<EmployeeResponse>>>
     {
-        _unitOfWork = unitOfWork;
-    }
+        private readonly IUnitOfWork _unitOfWork;
 
-    public async Task<Result<List<EmployeeResponse>>> Handle(
-        GetAllEmployeesQuery request,
-        CancellationToken cancellationToken)
-    {
-        var employees =
-            await _unitOfWork.Employee.GetAllwithUserAsync();
-
-        var result = employees.Select(employee => new EmployeeResponse
+        public GetAllEmployeesQueryHandler(IUnitOfWork unitOfWork)
         {
-            Id = employee.Id,
-            Name = employee.User.UserName!,
-            Phone = employee.User.PhoneNumber,
-            about = employee.about??""
-        }).ToList();
+            _unitOfWork = unitOfWork;
+        }
 
-        return Result<List<EmployeeResponse>>.Success(result);
+        public async Task<Result<List<EmployeeResponse>>> Handle(
+            GetAllEmployeesQuery request,
+            CancellationToken cancellationToken)
+        {
+            var employees =
+                await _unitOfWork.Employee.GetAllwithUserAsync();
+
+            var result = employees.Select(employee => new EmployeeResponse
+            {
+                Id = employee.Id,
+                Name = employee.User.UserName!,
+                Phone = employee.User.PhoneNumber,
+                About = employee.About ?? ""
+            }).ToList();
+
+            return Result<List<EmployeeResponse>>.Success(result);
+        }
     }
 }

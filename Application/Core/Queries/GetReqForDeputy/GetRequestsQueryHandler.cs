@@ -1,4 +1,4 @@
-﻿using Application.Common;
+using Application.Common;
 using Domain.Enums;
 using MediatR;
 using System;
@@ -15,7 +15,7 @@ namespace Application.Core.Queries.GetReqForDeputy
     //    public int PageSize { get; set; } = 10;
 
     //    public RequestStatus? Status { get; set; }
-    //    public ComplaintPriority? Priority { get; set; }
+    //    public RequestPriority? Priority { get; set; }
     //    public RequestType? Type { get; set; }
 
     //    public string? Search { get; set; }

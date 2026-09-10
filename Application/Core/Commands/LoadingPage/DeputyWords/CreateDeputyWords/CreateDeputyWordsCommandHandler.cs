@@ -1,4 +1,4 @@
-﻿using Application.Common;
+using Application.Common;
 using Application.Contracts;
 using Application.Core.Commands.Deputy.achievements.CreateAchievement;
 using Application.storage;
@@ -51,7 +51,7 @@ namespace Application.Core.Commands.LoadingPage.DeputyWords.CreateDeputyWords
                 word.UploadedAt = DateTime.UtcNow;
             }
 
-            await _unitOfWork.Deputyword.AddAsync(word);
+            await _unitOfWork.DeputyWord.AddAsync(word);
 
             await _unitOfWork.SaveChangesAsync();
 

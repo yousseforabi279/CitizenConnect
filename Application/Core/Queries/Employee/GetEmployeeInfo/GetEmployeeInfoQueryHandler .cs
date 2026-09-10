@@ -1,4 +1,4 @@
-﻿using Application.Common;
+using Application.Common;
 using Application.Contracts;
 using Application.Contracts.Repos;
 using Application.Core.Queries.Employee.GetEmployeeInfo;
@@ -37,7 +37,7 @@ namespace Application.Core.Queries.GetEmployeeInfo
                     "بيانات الموظف غير موجودة.");
             }
 
-            var res=await _unitOfWork.Employee.GetEmplyeeInfo(userId);
+            var res=await _unitOfWork.Employee.GetEmployeeInfo(userId);
             var response = new EmployeeInfoResponse
             {
                 Name = res.Name,

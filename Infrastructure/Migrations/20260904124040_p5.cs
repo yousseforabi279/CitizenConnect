@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
@@ -31,7 +31,7 @@ namespace Infrastructure.Migrations
 
             migrationBuilder.RenameColumn(
                 name: "Image_Video",
-                table: "ActitvitiesAndVisits",
+                table: "ActivitiesAndVisits",
                 newName: "MediaFileName");
 
             migrationBuilder.AddColumn<string>(
@@ -137,31 +137,31 @@ namespace Infrastructure.Migrations
 
             migrationBuilder.AddColumn<string>(
                 name: "BlobName",
-                table: "ActitvitiesAndVisits",
+                table: "ActivitiesAndVisits",
                 type: "nvarchar(max)",
                 nullable: true);
 
             migrationBuilder.AddColumn<string>(
                 name: "ContentType",
-                table: "ActitvitiesAndVisits",
+                table: "ActivitiesAndVisits",
                 type: "nvarchar(max)",
                 nullable: true);
 
             migrationBuilder.AddColumn<long>(
                 name: "FileSizeBytes",
-                table: "ActitvitiesAndVisits",
+                table: "ActivitiesAndVisits",
                 type: "bigint",
                 nullable: true);
 
             migrationBuilder.AddColumn<int>(
                 name: "MediaType",
-                table: "ActitvitiesAndVisits",
+                table: "ActivitiesAndVisits",
                 type: "int",
                 nullable: true);
 
             migrationBuilder.AddColumn<DateTime>(
                 name: "UploadedAt",
-                table: "ActitvitiesAndVisits",
+                table: "ActivitiesAndVisits",
                 type: "datetime2",
                 nullable: true);
         }
@@ -235,23 +235,23 @@ namespace Infrastructure.Migrations
 
             migrationBuilder.DropColumn(
                 name: "BlobName",
-                table: "ActitvitiesAndVisits");
+                table: "ActivitiesAndVisits");
 
             migrationBuilder.DropColumn(
                 name: "ContentType",
-                table: "ActitvitiesAndVisits");
+                table: "ActivitiesAndVisits");
 
             migrationBuilder.DropColumn(
                 name: "FileSizeBytes",
-                table: "ActitvitiesAndVisits");
+                table: "ActivitiesAndVisits");
 
             migrationBuilder.DropColumn(
                 name: "MediaType",
-                table: "ActitvitiesAndVisits");
+                table: "ActivitiesAndVisits");
 
             migrationBuilder.DropColumn(
                 name: "UploadedAt",
-                table: "ActitvitiesAndVisits");
+                table: "ActivitiesAndVisits");
 
             migrationBuilder.RenameColumn(
                 name: "MediaFileName",
@@ -265,7 +265,7 @@ namespace Infrastructure.Migrations
 
             migrationBuilder.RenameColumn(
                 name: "MediaFileName",
-                table: "ActitvitiesAndVisits",
+                table: "ActivitiesAndVisits",
                 newName: "Image_Video");
 
             migrationBuilder.AddColumn<string>(

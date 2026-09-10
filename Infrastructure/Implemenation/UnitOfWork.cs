@@ -1,6 +1,6 @@
-﻿using Application.Contracts;
+using Application.Contracts;
 using Application.Contracts.Repos;
-using Infrastructure.Dbcontext;
+using Infrastructure.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,57 +11,57 @@ namespace Infrastructure.Implemenation
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly Appcontext _context;
+        private readonly ApplicationDbContext _context;
 
-        public UnitOfWork(Appcontext context,
-            ICitizinRequierment CitizinRequierment,
-            IComplaintDepartment ComplaintDepartment,
-            ICitizin citizin, IEmployee employee,
+        public UnitOfWork(ApplicationDbContext context,
+            ICitizenRequirement citizenRequirement,
+            IDepartment department,
+            ICitizen citizen, IEmployee employee,
             IOrganization organization,
             IJwtTokenService jwtTokenService,
             IIdentityService identityService,
             IRefreshToken refreshToken,
             IRoleService roleService,
             IEmployeeRequestRepository employeeRequestRepository,
-            ICitizinRequiermentEmployees citizinRequiermentEmployees,
+            ICitizenRequirementEmployees citizenRequirementEmployees,
             IDeputy deputy,
             IAchievement achievement,
-            IActitvitiesAndVisits actitvitiesAndVisits,
-            IAreasOfWorkandActivities areasOfWorkandActivities,
-            IDeputyword deputyword,
+            IActivitiesAndVisits activitiesAndVisits,
+            IAreasOfWorkAndActivities areasOfWorkAndActivities,
+            IDeputyWord deputyWord,
             IMotionsForInformation motionsForInformation,
             IPasswordResetCode passwordResetCode,
             IEmailService emailService,
-            ICitizinRequiermentContent citizinRequiermentContent
+            ICitizenRequirementContent citizenRequirementContent
             )
         {
             _context = context;
-            this.CitizinRequierment = CitizinRequierment;
-            this.Department = ComplaintDepartment;
-            Citizin = citizin;
+            CitizenRequirement = citizenRequirement;
+            Department = department;
+            Citizen = citizen;
             Employee = employee;
             Organization = organization;
             this.jwtTokenService = jwtTokenService;
-            this.IdentityService = identityService;
-            this.RefreshToken = refreshToken;
-            this.RoleService = roleService;
-            this.EmployeeRequestRepository = employeeRequestRepository;
-            this.CitizinRequiermentEmployees = citizinRequiermentEmployees;
+            IdentityService = identityService;
+            RefreshToken = refreshToken;
+            RoleService = roleService;
+            EmployeeRequestRepository = employeeRequestRepository;
+            CitizenRequirementEmployees = citizenRequirementEmployees;
             Deputy = deputy;
-            Achievement=achievement;
-            ActitvitiesAndVisits = actitvitiesAndVisits;
-            AreasOfWorkandActivities=areasOfWorkandActivities;
-            this.Deputyword = deputyword;
-            this.MotionsForInformation = motionsForInformation;
-            this.PasswordResetCode = passwordResetCode;
+            Achievement = achievement;
+            ActivitiesAndVisits = activitiesAndVisits;
+            AreasOfWorkAndActivities = areasOfWorkAndActivities;
+            DeputyWord = deputyWord;
+            MotionsForInformation = motionsForInformation;
+            PasswordResetCode = passwordResetCode;
             EmailService = emailService;
-            this.CitizinRequiermentContent=citizinRequiermentContent;
+            CitizenRequirementContent = citizenRequirementContent;
         }
 
-        public ICitizinRequierment CitizinRequierment { get; }
-        public IComplaintDepartment Department { get; }
+        public ICitizenRequirement CitizenRequirement { get; }
+        public IDepartment Department { get; }
 
-        public ICitizin Citizin { get; }
+        public ICitizen Citizen { get; }
 
         public IEmployee Employee { get; }
 
@@ -75,7 +75,7 @@ namespace Infrastructure.Implemenation
 
         public IRoleService RoleService { get; }
 
-        public ICitizinRequiermentEmployees CitizinRequiermentEmployees { get; }
+        public ICitizenRequirementEmployees CitizenRequirementEmployees { get; }
 
         public IEmployeeRequestRepository EmployeeRequestRepository { get; }
 
@@ -83,11 +83,11 @@ namespace Infrastructure.Implemenation
 
         public IAchievement Achievement { get; }
 
-        public IActitvitiesAndVisits ActitvitiesAndVisits { get; }
+        public IActivitiesAndVisits ActivitiesAndVisits { get; }
 
-        public IAreasOfWorkandActivities AreasOfWorkandActivities { get; }
+        public IAreasOfWorkAndActivities AreasOfWorkAndActivities { get; }
 
-        public IDeputyword Deputyword {  get; }
+        public IDeputyWord DeputyWord {  get; }
 
         public IMotionsForInformation MotionsForInformation {get; }
 
@@ -95,7 +95,7 @@ namespace Infrastructure.Implemenation
 
         public IEmailService EmailService { get; }
 
-        public ICitizinRequiermentContent CitizinRequiermentContent {  get; }
+        public ICitizenRequirementContent CitizenRequirementContent {  get; }
 
         public async Task<int> SaveChangesAsync()
         {
@@ -112,8 +112,11 @@ namespace Infrastructure.Implemenation
         public async Task CommitTransactionAsync(
             CancellationToken cancellationToken = default)
         {
-            await _context.Database.CurrentTransaction!
-                .CommitAsync(cancellationToken);
+            if (_context.Database.CurrentTransaction != null)
+            {
+                await _context.Database.CurrentTransaction
+                    .CommitAsync(cancellationToken);
+            }
         }
 
         public async Task RollbackTransactionAsync(

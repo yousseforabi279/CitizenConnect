@@ -1,10 +1,10 @@
-﻿using Application.Common;
-using Application.Core.Commands.CreateCompliant;
+using Application.Common;
+using Application.Core.Commands.CreateComplaint;
 using Application.Core.Commands.DeleteCitizenRequest;
 using Application.Core.Commands.UpdateRequestStatus;
 using Application.Core.Queries.CitizenRequests.GetRequestById;
 using Azure.Core;
-using Bank.Api.Controllers;
+using DeputyProject.Controllers;
 using DeputyProject.Common;
 using DeputyProject.Mappers;
 using DeputyProject.Requests.CitizenRequests;
@@ -23,7 +23,7 @@ namespace DeputyProject.Controllers
         [HttpPost(ApiRoutes.Complaint.CreateComplaint)]
         public async Task<IActionResult> CreateComplaint([FromForm] CreateCitizenRequest Request)
         {
-            var command = new CreateCompliantCommand
+            var command = new CreateComplaintCommand
             {
                 BirthDate = Request.BirthDate,
                 DepartmentId = Request.DepartmentId,

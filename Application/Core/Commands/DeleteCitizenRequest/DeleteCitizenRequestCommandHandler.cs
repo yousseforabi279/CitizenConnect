@@ -1,4 +1,4 @@
-﻿using Application.Common;
+using Application.Common;
 using Application.Contracts;
 using Application.storage;
 using MediatR;
@@ -26,7 +26,7 @@ namespace Application.Core.Commands.DeleteCitizenRequest
             CancellationToken cancellationToken)
         {
             var citizenRequest =
-                await _unitOfWork.CitizinRequierment
+                await _unitOfWork.CitizenRequirement
                     .GetByIdWithDetailsAsync(request.Id);
 
             if (citizenRequest is null)
@@ -47,19 +47,19 @@ namespace Application.Core.Commands.DeleteCitizenRequest
             // Delete employees relations
             foreach (var employee in citizenRequest.Employees)
             {
-                _unitOfWork.CitizinRequiermentEmployees
+                _unitOfWork.CitizenRequirementEmployees
                     .Delete(employee);
             }
 
             // Delete comments
             foreach (var comment in citizenRequest.Comments)
             {
-                _unitOfWork.CitizinRequiermentContent
+                _unitOfWork.CitizenRequirementContent
                     .Delete(comment);
             }
 
             // Delete request
-            _unitOfWork.CitizinRequierment
+            _unitOfWork.CitizenRequirement
                 .Delete(citizenRequest);
 
             await _unitOfWork.SaveChangesAsync();

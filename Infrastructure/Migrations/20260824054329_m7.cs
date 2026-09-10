@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -11,12 +11,12 @@ namespace Infrastructure.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropForeignKey(
-                name: "FK_CitizinRequiermentEmployee_ComplaintAssignments_CitizinRequiermentId",
-                table: "CitizinRequiermentEmployee");
+                name: "FK_CitizenRequirementEmployee_ComplaintAssignments_CitizenRequirementId",
+                table: "CitizenRequirementEmployee");
 
             migrationBuilder.DropForeignKey(
-                name: "FK_CitizinRequiermentEmployee_Employees_EmployeeId",
-                table: "CitizinRequiermentEmployee");
+                name: "FK_CitizenRequirementEmployee_Employees_EmployeeId",
+                table: "CitizenRequirementEmployee");
 
             migrationBuilder.DropForeignKey(
                 name: "FK_ComplaintAssignments_Citizen_CitizenNationalId",
@@ -27,7 +27,7 @@ namespace Infrastructure.Migrations
                 table: "ComplaintAssignments");
 
             migrationBuilder.DropForeignKey(
-                name: "FK_complaintCategories_ComplaintAssignments_CitizinRequiermentId",
+                name: "FK_complaintCategories_ComplaintAssignments_CitizenRequirementId",
                 table: "complaintCategories");
 
             migrationBuilder.DropForeignKey(
@@ -51,8 +51,8 @@ namespace Infrastructure.Migrations
                 table: "ComplaintAssignments");
 
             migrationBuilder.DropPrimaryKey(
-                name: "PK_CitizinRequiermentEmployee",
-                table: "CitizinRequiermentEmployee");
+                name: "PK_CitizenRequirementEmployee",
+                table: "CitizenRequirementEmployee");
 
             migrationBuilder.DropPrimaryKey(
                 name: "PK_Citizen",
@@ -64,15 +64,15 @@ namespace Infrastructure.Migrations
 
             migrationBuilder.RenameTable(
                 name: "complaintCategories",
-                newName: "CitizinRequiermentContents");
+                newName: "CitizenRequirementContents");
 
             migrationBuilder.RenameTable(
                 name: "ComplaintAssignments",
-                newName: "CitizinRequierments");
+                newName: "CitizenRequirements");
 
             migrationBuilder.RenameTable(
-                name: "CitizinRequiermentEmployee",
-                newName: "CitizinRequiermentEmployees");
+                name: "CitizenRequirementEmployee",
+                newName: "CitizenRequirementEmployees");
 
             migrationBuilder.RenameTable(
                 name: "Citizen",
@@ -80,33 +80,33 @@ namespace Infrastructure.Migrations
 
             migrationBuilder.RenameIndex(
                 name: "IX_complaintCategories_EmployeeId",
-                table: "CitizinRequiermentContents",
-                newName: "IX_CitizinRequiermentContents_EmployeeId");
+                table: "CitizenRequirementContents",
+                newName: "IX_CitizenRequirementContents_EmployeeId");
 
             migrationBuilder.RenameIndex(
-                name: "IX_complaintCategories_CitizinRequiermentId",
-                table: "CitizinRequiermentContents",
-                newName: "IX_CitizinRequiermentContents_CitizinRequiermentId");
+                name: "IX_complaintCategories_CitizenRequirementId",
+                table: "CitizenRequirementContents",
+                newName: "IX_CitizenRequirementContents_CitizenRequirementId");
 
             migrationBuilder.RenameIndex(
                 name: "IX_ComplaintAssignments_DepartmentId",
-                table: "CitizinRequierments",
-                newName: "IX_CitizinRequierments_DepartmentId");
+                table: "CitizenRequirements",
+                newName: "IX_CitizenRequirements_DepartmentId");
 
             migrationBuilder.RenameIndex(
                 name: "IX_ComplaintAssignments_CitizenNationalId",
-                table: "CitizinRequierments",
-                newName: "IX_CitizinRequierments_CitizenNationalId");
+                table: "CitizenRequirements",
+                newName: "IX_CitizenRequirements_CitizenNationalId");
 
             migrationBuilder.RenameIndex(
-                name: "IX_CitizinRequiermentEmployee_EmployeeId",
-                table: "CitizinRequiermentEmployees",
-                newName: "IX_CitizinRequiermentEmployees_EmployeeId");
+                name: "IX_CitizenRequirementEmployee_EmployeeId",
+                table: "CitizenRequirementEmployees",
+                newName: "IX_CitizenRequirementEmployees_EmployeeId");
 
             migrationBuilder.RenameIndex(
-                name: "IX_CitizinRequiermentEmployee_CitizinRequiermentId",
-                table: "CitizinRequiermentEmployees",
-                newName: "IX_CitizinRequiermentEmployees_CitizinRequiermentId");
+                name: "IX_CitizenRequirementEmployee_CitizenRequirementId",
+                table: "CitizenRequirementEmployees",
+                newName: "IX_CitizenRequirementEmployees_CitizenRequirementId");
 
             migrationBuilder.AddPrimaryKey(
                 name: "PK_Organizations",
@@ -114,18 +114,18 @@ namespace Infrastructure.Migrations
                 column: "Id");
 
             migrationBuilder.AddPrimaryKey(
-                name: "PK_CitizinRequiermentContents",
-                table: "CitizinRequiermentContents",
+                name: "PK_CitizenRequirementContents",
+                table: "CitizenRequirementContents",
                 column: "Id");
 
             migrationBuilder.AddPrimaryKey(
-                name: "PK_CitizinRequierments",
-                table: "CitizinRequierments",
+                name: "PK_CitizenRequirements",
+                table: "CitizenRequirements",
                 column: "Id");
 
             migrationBuilder.AddPrimaryKey(
-                name: "PK_CitizinRequiermentEmployees",
-                table: "CitizinRequiermentEmployees",
+                name: "PK_CitizenRequirementEmployees",
+                table: "CitizenRequirementEmployees",
                 column: "id");
 
             migrationBuilder.AddPrimaryKey(
@@ -134,48 +134,48 @@ namespace Infrastructure.Migrations
                 column: "NationalId");
 
             migrationBuilder.AddForeignKey(
-                name: "FK_CitizinRequiermentContents_CitizinRequierments_CitizinRequiermentId",
-                table: "CitizinRequiermentContents",
-                column: "CitizinRequiermentId",
-                principalTable: "CitizinRequierments",
+                name: "FK_CitizenRequirementContents_CitizenRequirements_CitizenRequirementId",
+                table: "CitizenRequirementContents",
+                column: "CitizenRequirementId",
+                principalTable: "CitizenRequirements",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Cascade);
 
             migrationBuilder.AddForeignKey(
-                name: "FK_CitizinRequiermentContents_Employees_EmployeeId",
-                table: "CitizinRequiermentContents",
+                name: "FK_CitizenRequirementContents_Employees_EmployeeId",
+                table: "CitizenRequirementContents",
                 column: "EmployeeId",
                 principalTable: "Employees",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Cascade);
 
             migrationBuilder.AddForeignKey(
-                name: "FK_CitizinRequiermentEmployees_CitizinRequierments_CitizinRequiermentId",
-                table: "CitizinRequiermentEmployees",
-                column: "CitizinRequiermentId",
-                principalTable: "CitizinRequierments",
+                name: "FK_CitizenRequirementEmployees_CitizenRequirements_CitizenRequirementId",
+                table: "CitizenRequirementEmployees",
+                column: "CitizenRequirementId",
+                principalTable: "CitizenRequirements",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Cascade);
 
             migrationBuilder.AddForeignKey(
-                name: "FK_CitizinRequiermentEmployees_Employees_EmployeeId",
-                table: "CitizinRequiermentEmployees",
+                name: "FK_CitizenRequirementEmployees_Employees_EmployeeId",
+                table: "CitizenRequirementEmployees",
                 column: "EmployeeId",
                 principalTable: "Employees",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Cascade);
 
             migrationBuilder.AddForeignKey(
-                name: "FK_CitizinRequierments_Citizens_CitizenNationalId",
-                table: "CitizinRequierments",
+                name: "FK_CitizenRequirements_Citizens_CitizenNationalId",
+                table: "CitizenRequirements",
                 column: "CitizenNationalId",
                 principalTable: "Citizens",
                 principalColumn: "NationalId",
                 onDelete: ReferentialAction.Cascade);
 
             migrationBuilder.AddForeignKey(
-                name: "FK_CitizinRequierments_Departments_DepartmentId",
-                table: "CitizinRequierments",
+                name: "FK_CitizenRequirements_Departments_DepartmentId",
+                table: "CitizenRequirements",
                 column: "DepartmentId",
                 principalTable: "Departments",
                 principalColumn: "Id");
@@ -193,28 +193,28 @@ namespace Infrastructure.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropForeignKey(
-                name: "FK_CitizinRequiermentContents_CitizinRequierments_CitizinRequiermentId",
-                table: "CitizinRequiermentContents");
+                name: "FK_CitizenRequirementContents_CitizenRequirements_CitizenRequirementId",
+                table: "CitizenRequirementContents");
 
             migrationBuilder.DropForeignKey(
-                name: "FK_CitizinRequiermentContents_Employees_EmployeeId",
-                table: "CitizinRequiermentContents");
+                name: "FK_CitizenRequirementContents_Employees_EmployeeId",
+                table: "CitizenRequirementContents");
 
             migrationBuilder.DropForeignKey(
-                name: "FK_CitizinRequiermentEmployees_CitizinRequierments_CitizinRequiermentId",
-                table: "CitizinRequiermentEmployees");
+                name: "FK_CitizenRequirementEmployees_CitizenRequirements_CitizenRequirementId",
+                table: "CitizenRequirementEmployees");
 
             migrationBuilder.DropForeignKey(
-                name: "FK_CitizinRequiermentEmployees_Employees_EmployeeId",
-                table: "CitizinRequiermentEmployees");
+                name: "FK_CitizenRequirementEmployees_Employees_EmployeeId",
+                table: "CitizenRequirementEmployees");
 
             migrationBuilder.DropForeignKey(
-                name: "FK_CitizinRequierments_Citizens_CitizenNationalId",
-                table: "CitizinRequierments");
+                name: "FK_CitizenRequirements_Citizens_CitizenNationalId",
+                table: "CitizenRequirements");
 
             migrationBuilder.DropForeignKey(
-                name: "FK_CitizinRequierments_Departments_DepartmentId",
-                table: "CitizinRequierments");
+                name: "FK_CitizenRequirements_Departments_DepartmentId",
+                table: "CitizenRequirements");
 
             migrationBuilder.DropForeignKey(
                 name: "FK_EmployeeOrganizations_Organizations_OrganizationId",
@@ -225,16 +225,16 @@ namespace Infrastructure.Migrations
                 table: "Organizations");
 
             migrationBuilder.DropPrimaryKey(
-                name: "PK_CitizinRequierments",
-                table: "CitizinRequierments");
+                name: "PK_CitizenRequirements",
+                table: "CitizenRequirements");
 
             migrationBuilder.DropPrimaryKey(
-                name: "PK_CitizinRequiermentEmployees",
-                table: "CitizinRequiermentEmployees");
+                name: "PK_CitizenRequirementEmployees",
+                table: "CitizenRequirementEmployees");
 
             migrationBuilder.DropPrimaryKey(
-                name: "PK_CitizinRequiermentContents",
-                table: "CitizinRequiermentContents");
+                name: "PK_CitizenRequirementContents",
+                table: "CitizenRequirementContents");
 
             migrationBuilder.DropPrimaryKey(
                 name: "PK_Citizens",
@@ -245,15 +245,15 @@ namespace Infrastructure.Migrations
                 newName: "Organization");
 
             migrationBuilder.RenameTable(
-                name: "CitizinRequierments",
+                name: "CitizenRequirements",
                 newName: "ComplaintAssignments");
 
             migrationBuilder.RenameTable(
-                name: "CitizinRequiermentEmployees",
-                newName: "CitizinRequiermentEmployee");
+                name: "CitizenRequirementEmployees",
+                newName: "CitizenRequirementEmployee");
 
             migrationBuilder.RenameTable(
-                name: "CitizinRequiermentContents",
+                name: "CitizenRequirementContents",
                 newName: "complaintCategories");
 
             migrationBuilder.RenameTable(
@@ -261,34 +261,34 @@ namespace Infrastructure.Migrations
                 newName: "Citizen");
 
             migrationBuilder.RenameIndex(
-                name: "IX_CitizinRequierments_DepartmentId",
+                name: "IX_CitizenRequirements_DepartmentId",
                 table: "ComplaintAssignments",
                 newName: "IX_ComplaintAssignments_DepartmentId");
 
             migrationBuilder.RenameIndex(
-                name: "IX_CitizinRequierments_CitizenNationalId",
+                name: "IX_CitizenRequirements_CitizenNationalId",
                 table: "ComplaintAssignments",
                 newName: "IX_ComplaintAssignments_CitizenNationalId");
 
             migrationBuilder.RenameIndex(
-                name: "IX_CitizinRequiermentEmployees_EmployeeId",
-                table: "CitizinRequiermentEmployee",
-                newName: "IX_CitizinRequiermentEmployee_EmployeeId");
+                name: "IX_CitizenRequirementEmployees_EmployeeId",
+                table: "CitizenRequirementEmployee",
+                newName: "IX_CitizenRequirementEmployee_EmployeeId");
 
             migrationBuilder.RenameIndex(
-                name: "IX_CitizinRequiermentEmployees_CitizinRequiermentId",
-                table: "CitizinRequiermentEmployee",
-                newName: "IX_CitizinRequiermentEmployee_CitizinRequiermentId");
+                name: "IX_CitizenRequirementEmployees_CitizenRequirementId",
+                table: "CitizenRequirementEmployee",
+                newName: "IX_CitizenRequirementEmployee_CitizenRequirementId");
 
             migrationBuilder.RenameIndex(
-                name: "IX_CitizinRequiermentContents_EmployeeId",
+                name: "IX_CitizenRequirementContents_EmployeeId",
                 table: "complaintCategories",
                 newName: "IX_complaintCategories_EmployeeId");
 
             migrationBuilder.RenameIndex(
-                name: "IX_CitizinRequiermentContents_CitizinRequiermentId",
+                name: "IX_CitizenRequirementContents_CitizenRequirementId",
                 table: "complaintCategories",
-                newName: "IX_complaintCategories_CitizinRequiermentId");
+                newName: "IX_complaintCategories_CitizenRequirementId");
 
             migrationBuilder.AddPrimaryKey(
                 name: "PK_Organization",
@@ -301,8 +301,8 @@ namespace Infrastructure.Migrations
                 column: "Id");
 
             migrationBuilder.AddPrimaryKey(
-                name: "PK_CitizinRequiermentEmployee",
-                table: "CitizinRequiermentEmployee",
+                name: "PK_CitizenRequirementEmployee",
+                table: "CitizenRequirementEmployee",
                 column: "id");
 
             migrationBuilder.AddPrimaryKey(
@@ -316,16 +316,16 @@ namespace Infrastructure.Migrations
                 column: "NationalId");
 
             migrationBuilder.AddForeignKey(
-                name: "FK_CitizinRequiermentEmployee_ComplaintAssignments_CitizinRequiermentId",
-                table: "CitizinRequiermentEmployee",
-                column: "CitizinRequiermentId",
+                name: "FK_CitizenRequirementEmployee_ComplaintAssignments_CitizenRequirementId",
+                table: "CitizenRequirementEmployee",
+                column: "CitizenRequirementId",
                 principalTable: "ComplaintAssignments",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Cascade);
 
             migrationBuilder.AddForeignKey(
-                name: "FK_CitizinRequiermentEmployee_Employees_EmployeeId",
-                table: "CitizinRequiermentEmployee",
+                name: "FK_CitizenRequirementEmployee_Employees_EmployeeId",
+                table: "CitizenRequirementEmployee",
                 column: "EmployeeId",
                 principalTable: "Employees",
                 principalColumn: "Id",
@@ -347,9 +347,9 @@ namespace Infrastructure.Migrations
                 principalColumn: "Id");
 
             migrationBuilder.AddForeignKey(
-                name: "FK_complaintCategories_ComplaintAssignments_CitizinRequiermentId",
+                name: "FK_complaintCategories_ComplaintAssignments_CitizenRequirementId",
                 table: "complaintCategories",
-                column: "CitizinRequiermentId",
+                column: "CitizenRequirementId",
                 principalTable: "ComplaintAssignments",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Cascade);

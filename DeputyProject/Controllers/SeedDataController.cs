@@ -1,7 +1,7 @@
-﻿using Bank.Api.Controllers;
+using DeputyProject.Controllers;
 using DeputyProject.SeedDataDto;
 using Domain;
-using Infrastructure.Dbcontext;
+using Infrastructure.Data;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -14,8 +14,8 @@ namespace DeputyProject.Controllers
     [ApiController]
     public class SeedDataController : BaseController
     {
-        protected readonly Appcontext _context;
-        public SeedDataController(IMediator _mediator, Appcontext context) : base(_mediator) { _context = context; }
+        protected readonly ApplicationDbContext _context;
+        public SeedDataController(IMediator _mediator, ApplicationDbContext context) : base(_mediator) { _context = context; }
         [HttpPost]
         public async Task<IActionResult> AddDeputy([FromBody] CreateDeputyDto dto)
         {
@@ -25,7 +25,7 @@ namespace DeputyProject.Controllers
             var deputy = new Domain.Deputy.Deputy
             {
                 FullName = dto.FullName,
-                BirthOfdate = dto.BirthOfdate,
+                BirthDate = dto.BirthDate,
                 PrimaryPhone = dto.PrimaryPhone,
                 SecondaryPhone = dto.SecondaryPhone,
                 Address = dto.Address,
@@ -35,7 +35,7 @@ namespace DeputyProject.Controllers
                 AboutPart2 = dto.AboutPart2,
                 OfficeLocation = dto.OfficeLocation,
                 WhatsApp = dto.WhatsApp,
-                FacebookLing = dto.FacebookLing,
+                FacebookLink = dto.FacebookLink,
                 LocationURL = dto.LocationURL,
                 Circle = dto.Circle,
                 Appointment = dto.Appointment,
