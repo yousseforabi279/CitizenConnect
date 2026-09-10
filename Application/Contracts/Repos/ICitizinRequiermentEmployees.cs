@@ -9,5 +9,7 @@ namespace Application.Contracts.Repos
 {
     public interface ICitizinRequiermentEmployees : IGenericRepository<CitizinRequiermentEmployee>
     {
+        Task<CitizinRequiermentEmployee?> GetAssignmentAsync(int requirementId,
+    int employeeId);
     }
 }

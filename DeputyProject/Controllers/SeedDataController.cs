@@ -5,6 +5,7 @@ using Infrastructure.Dbcontext;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 
 namespace DeputyProject.Controllers
@@ -79,6 +80,51 @@ namespace DeputyProject.Controllers
             await _context.SaveChangesAsync();
 
             return CreatedAtAction(nameof(AddDepartment), new { id = dept.Id }, dept);
+        }
+        [HttpGet("GetOrganizations")]
+        public async Task<IActionResult> GetOrganizations()
+        {
+            var organizations = await _context.Organizations
+                .AsNoTracking()
+                .ToListAsync();
+
+            return Ok(organizations);
+        }
+
+        [HttpGet("GetOrganization/{id}")]
+        public async Task<IActionResult> GetOrganization(int id)
+        {
+            var organization = await _context.Organizations
+                .AsNoTracking()
+                .FirstOrDefaultAsync(o => o.Id == id);
+
+            if (organization is null)
+                return NotFound($"Organization with id {id} was not found.");
+
+            return Ok(organization);
+        }
+
+        [HttpGet("GetDepartments")]
+        public async Task<IActionResult> GetDepartments()
+        {
+            var departments = await _context.Departments
+                .AsNoTracking()
+                .ToListAsync();
+
+            return Ok(departments);
+        }
+
+        [HttpGet("GetDepartment/{id}")]
+        public async Task<IActionResult> GetDepartment(int id)
+        {
+            var department = await _context.Departments
+                .AsNoTracking()
+                .FirstOrDefaultAsync(d => d.Id == id);
+
+            if (department is null)
+                return NotFound($"Department with id {id} was not found.");
+
+            return Ok(department);
         }
     }
 }

@@ -48,8 +48,11 @@ namespace Application.Core.Commands.UpdateRequest
             }
 
             var assignment =
-                citizenRequest.Employees
-                    .FirstOrDefault(x => x.EmployeeId == employee.Id);
+     await _unitOfWork.CitizinRequiermentEmployees
+         .GetAssignmentAsync(
+             citizenRequest.Id,
+             employee.Id);
+
 
             if (assignment == null)
             {

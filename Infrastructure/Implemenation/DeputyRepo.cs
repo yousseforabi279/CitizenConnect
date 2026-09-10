@@ -22,7 +22,8 @@ namespace Infrastructure.Implemenation
 
         public async Task<Deputy?> GetDeputyInfo()
         {
-            return await _context.Deputies.SingleOrDefaultAsync();
+            return await _context.Deputies .OrderByDescending(d => d.Id) // or whatever makes sense
+        .FirstOrDefaultAsync();
         }
     }
 }

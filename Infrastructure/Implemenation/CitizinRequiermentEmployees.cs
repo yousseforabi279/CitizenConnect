@@ -1,6 +1,7 @@
 ﻿using Application.Contracts.Repos;
 using Domain;
 using Infrastructure.Dbcontext;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,15 @@ namespace Infrastructure.Implemenation
         public CitizinRequiermentEmployees(Appcontext context) : base(context)
         {
             _context = context;
+        }
+        public async Task<CitizinRequiermentEmployee?> GetAssignmentAsync(
+    int requirementId,
+    int employeeId)
+        {
+            return await _context.CitizinRequiermentEmployees
+                .FirstOrDefaultAsync(x =>
+                    x.CitizinRequiermentId == requirementId &&
+                    x.EmployeeId == employeeId);
         }
     }
 }
