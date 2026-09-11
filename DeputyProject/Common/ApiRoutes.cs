@@ -73,7 +73,8 @@
             public const string GetRequestsForEmployees = "employee-requests";
             public const string statistics = "employee-requests/statistics";
             public const string CreateEmplyee = "/CreateEmployee";
-            public const string UpdateEmployee = "/UpdateEmployee/{employeeId}";
+            public const string UpdateEmployeeDepartment = "employee/{employeeId}";
+            public const string UpdateMyProfile = "employee/me";
             public const string DeleteEmployee = "/DeleteEmployee/{id}";
 
 
