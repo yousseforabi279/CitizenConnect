@@ -25,6 +25,6 @@ namespace Application.Common
             => new(ResultStatus.Success, value, null, message);
 
         public static Result<T> Failure(ResultStatus status, string error)
-            => new(status, default, error, null);
+        => new(status, default, null, error);
     }
 }

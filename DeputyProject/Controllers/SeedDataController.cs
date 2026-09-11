@@ -1,8 +1,11 @@
-﻿using Bank.Api.Controllers;
+﻿using Application.Common;
+using Application.Contracts;
+using Bank.Api.Controllers;
 using DeputyProject.SeedDataDto;
 using Domain;
 using Infrastructure.Dbcontext;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -15,7 +18,9 @@ namespace DeputyProject.Controllers
     public class SeedDataController : BaseController
     {
         protected readonly Appcontext _context;
-        public SeedDataController(IMediator _mediator, Appcontext context) : base(_mediator) { _context = context; }
+        private readonly IUnitOfWork _unitOfWork;
+
+        public SeedDataController(IMediator _mediator, Appcontext context, IUnitOfWork unitOfWork) : base(_mediator) { _context = context; _unitOfWork = unitOfWork; }
         [HttpPost]
         public async Task<IActionResult> AddDeputy([FromBody] CreateDeputyDto dto)
         {
@@ -126,5 +131,78 @@ namespace DeputyProject.Controllers
 
             return Ok(department);
         }
+
+        [HttpPost("admin")]
+        //[Authorize(Roles = "Admin")]
+        public async Task<IActionResult> CreateAdmin([FromBody] CreateUserRequest request)
+        {
+            var result = await CreateUserWithRoleAsync(request, "Admin");
+            return result.IsSuccess ? Ok(result) : BadRequest(result);
+        }
+        [HttpPost("social")]
+        //[Authorize(Roles = "Admin")]
+        public async Task<IActionResult> CreateSocial([FromBody] CreateUserRequest request)
+        {
+            var result = await CreateUserWithRoleAsync(request, "Social");
+            return result.IsSuccess ? Ok(result) : BadRequest(result);
+        }
+        private async Task<Result<string>> CreateUserWithRoleAsync(CreateUserRequest request, string role)
+        {
+            await _unitOfWork.BeginTransactionAsync(CancellationToken.None);
+
+            try
+            {
+                var creation = await _unitOfWork.IdentityService.CreateUserAsync(
+                    request.Email,
+                    request.Password,
+                    request.FullName,
+                    request.PhoneNumber);
+
+                if (!creation.Success)
+                {
+                    await _unitOfWork.RollbackTransactionAsync(CancellationToken.None);
+                    return Result<string>.Failure(ResultStatus.BadRequest, creation.Error!);
+                }
+
+                var user = creation.User!;
+                if (!await _unitOfWork.RoleService.RoleExistsAsync(role))
+                {
+                    var roleCreation = await _unitOfWork.RoleService.CreateRoleAsync(role);
+                    if (!roleCreation.Item1)
+                    {
+                        await _unitOfWork.RollbackTransactionAsync(CancellationToken.None);
+                        return Result<string>.Failure(ResultStatus.Failure, roleCreation.Item2);
+                    }
+                }
+
+                // Role is expected to already exist from seed data — not created here.
+                var roleAdded = await _unitOfWork.IdentityService.AddToRoleAsync(user, role);
+                if (!roleAdded)
+                {
+                    await _unitOfWork.RollbackTransactionAsync(CancellationToken.None);
+                    return Result<string>.Failure(
+                        ResultStatus.BadRequest,
+                        $"تعذر إضافة الدور '{role}' للمستخدم.");
+                }
+
+                await _unitOfWork.SaveChangesAsync();
+                await _unitOfWork.CommitTransactionAsync(CancellationToken.None);
+
+                return Result<string>.Success(user.Id, $"تم إنشاء المستخدم بدور {role} بنجاح.");
+            }
+            catch
+            {
+                await _unitOfWork.RollbackTransactionAsync(CancellationToken.None);
+                return Result<string>.Failure(ResultStatus.Failure, "فشل إنشاء المستخدم.");
+            }
+        }
+    }
+
+    public class CreateUserRequest
+    {
+        public string FullName { get; set; } = default!;
+        public string Email { get; set; } = default!;
+        public string Password { get; set; } = default!;
+        public string PhoneNumber { get; set; } = default!;
     }
 }

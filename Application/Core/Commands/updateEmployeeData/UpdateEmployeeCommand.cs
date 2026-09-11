@@ -12,6 +12,8 @@ namespace Application.Core.Commands.updateEmployee
     public record UpdateEmployeeProfileCommand(
         string? About,
         string? Phone,
+                string? FullName,
+
         FileUploadRequest? Image
     ) : IRequest<Result<int>>;
 }

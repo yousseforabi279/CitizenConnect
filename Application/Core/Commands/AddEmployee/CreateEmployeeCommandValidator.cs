@@ -29,7 +29,7 @@ namespace Application.Core.Commands.AddEmployee
             RuleFor(x => x.PhoneNumber)
     .NotEmpty()
     .Matches(@"^01[0125][0-9]{8}$") // adjust to your country's format
-    .WithMessage("Invalid phone number.");
+    .WithMessage("هذا الرقم غير صحيح .");
         }
     }
 }

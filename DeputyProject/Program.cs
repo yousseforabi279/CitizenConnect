@@ -8,6 +8,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Text;
+using Microsoft.AspNetCore.Mvc;                 // 👈 added
+using System.Text.RegularExpressions;           // 👈 added
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -48,6 +51,28 @@ builder.Services.AddSwaggerGen(options =>
            Type = "string",
            Format = "binary"
        });
+});
+builder.Services.Configure<ApiBehaviorOptions>(options =>
+{
+    options.InvalidModelStateResponseFactory = context =>
+    {
+        var errors = context.ModelState
+            .Where(e => e.Value!.Errors.Count > 0)
+            .SelectMany(kvp => kvp.Value!.Errors
+                .Select(e => TranslateValidationMessage(e.ErrorMessage)))
+            .ToArray();
+
+        var response = new
+        {
+            isSuccess = false,
+            status = 400,
+            error = (string?)null,
+            value = 0,
+            message = string.Join("، ", errors)
+        };
+
+        return new BadRequestObjectResult(response);
+    };
 });
 builder.Services.AddAuthentication(options =>
 {
@@ -107,6 +132,7 @@ builder.Services
                       TimeSpan.FromMinutes(5);
               })
               .AddRoles<IdentityRole>()
+              .AddErrorDescriber<ArabicIdentityErrorDescriber>()
               .AddEntityFrameworkStores<Appcontext>()
               .AddDefaultTokenProviders();
 var app = builder.Build();
@@ -139,3 +165,32 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+static string TranslateValidationMessage(string message)
+{
+    var patterns = new (string Pattern, MatchEvaluator Evaluator)[]
+    {
+        (@"^The (.+) field is required\.$",
+            m => $"الحقل '{m.Groups[1].Value}' مطلوب."),
+
+        (@"^The (.+) field is not a valid e-mail address\.$",
+            m => $"'{m.Groups[1].Value}' ليس بريدًا إلكترونيًا صالحًا."),
+
+        (@"^The field (.+) must be a string with a minimum length of '(\d+)' and a maximum length of '(\d+)'\.$",
+            m => $"يجب أن يكون طول '{m.Groups[1].Value}' بين {m.Groups[2].Value} و {m.Groups[3].Value} حرفًا."),
+
+        (@"^The value '(.+)' is not valid for (.+)\.$",
+            m => $"القيمة '{m.Groups[1].Value}' غير صالحة لحقل '{m.Groups[2].Value}'."),
+
+        (@"^A non-empty request body is required\.$",
+            m => "يجب إرسال بيانات في الطلب."),
+    };
+
+    foreach (var (pattern, evaluator) in patterns)
+    {
+        if (Regex.IsMatch(message, pattern))
+            return Regex.Replace(message, pattern, evaluator);
+    }
+
+    return message;
+}   

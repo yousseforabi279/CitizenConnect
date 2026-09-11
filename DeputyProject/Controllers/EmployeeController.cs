@@ -24,7 +24,7 @@ namespace DeputyProject.Controllers
     public class EmployeeController : BaseController
     {
         public EmployeeController(IMediator _mediator) : base(_mediator) { }
-        [Authorize(Roles ="Employee")]
+        [Authorize]
         [HttpGet(ApiRoutes.Employee.GetEmplyee)]
         public async Task<IActionResult> GetEmployeeInfo()
         {
@@ -46,14 +46,6 @@ namespace DeputyProject.Controllers
             return HandleResult(result);
         }
 
-        [HttpGet("GeneralInfo")]
-        [Authorize]
-        public async Task<IActionResult> GetCurrentUser()
-        {
-            var result = await _mediator.Send(new GetCurrentUserQuery());
-            return HandleResult(result);
-
-        }
         [HttpGet("AllEmployee")]
         public async Task<IActionResult> GetAllEmployees()
         {
@@ -95,7 +87,7 @@ namespace DeputyProject.Controllers
             return HandleResult(result);
         }
         [HttpPut(ApiRoutes.Employee.UpdateEmployeeDepartment)]
-        [Authorize(Roles = "Deputy")]
+        //[Authorize(Roles = "Deputy")]
         public async Task<IActionResult> updateEmployeeDepartment(int employeeId, [FromForm] UpdateEmployeeDepartmentRequest request)
         {
             var command = new UpdateEmployeeDepartmentCommand(
@@ -126,12 +118,14 @@ namespace DeputyProject.Controllers
             var command = new UpdateEmployeeProfileCommand(
                 About: request.About,
                 Phone: request.Phone,
-                Image: imageRequest);
+                Image: imageRequest,
+                FullName:request.fullname
+              );
 
             var result = await _mediator.Send(command);
             return HandleResult(result);
         }
-        [HttpPut(ApiRoutes.Employee.DeleteEmployee)]
+        [HttpDelete(ApiRoutes.Employee.DeleteEmployee)]
         public async Task<IActionResult> DeleteEmployee(int EmployeeId)
         {
             var result = await _mediator.Send(new DeleteEmployeeCommand { EmployeeId= EmployeeId });

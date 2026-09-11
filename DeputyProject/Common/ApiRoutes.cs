@@ -71,11 +71,11 @@
         {
             public const string GetEmplyee = "employee-info";
             public const string GetRequestsForEmployees = "employee-requests";
-            public const string statistics = "employee-requests/statistics";
-            public const string CreateEmplyee = "/CreateEmployee";
-            public const string UpdateEmployeeDepartment = "employee/{employeeId}";
-            public const string UpdateMyProfile = "employee/me";
-            public const string DeleteEmployee = "/DeleteEmployee/{id}";
+            public const string statistics = "statistics";
+            public const string CreateEmplyee = "CreateEmployee";
+            public const string UpdateEmployeeDepartment = "DepartAndOrg/{employeeId}";
+            public const string UpdateMyProfile = "Profile";
+            public const string DeleteEmployee = "{id}";
 
 
 

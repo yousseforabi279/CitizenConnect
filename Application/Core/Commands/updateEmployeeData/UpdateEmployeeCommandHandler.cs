@@ -65,6 +65,10 @@ namespace Application.Core.Commands.UpdateEmployeeProfile
                 {
                     employee.User.PhoneNumber = request.Phone;
                 }
+                if (!string.IsNullOrWhiteSpace(request.FullName))
+                {
+                    employee.User.FullName = request.FullName;
+                }
 
                 if (request.Image is not null)
                 {
