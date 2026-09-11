@@ -1,12 +1,9 @@
 ﻿using Application.Common;
 using Application.Contracts;
 using Application.Contracts.Repos;
-using Domain.Enums;
+using Application.storage;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Application.Core.Queries.GetRequestsForEmplyees
@@ -15,13 +12,18 @@ namespace Application.Core.Queries.GetRequestsForEmplyees
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly ICurrentUser _currentUser;
+        private readonly IFileStorageService _fileStorageService;
+
+        private const string FolderName = "request-files";
 
         public GetEmployeeComplaintsQueryHandler(
             IUnitOfWork unitOfWork,
-            ICurrentUser currentUser)
+            ICurrentUser currentUser,
+            IFileStorageService fileStorageService)
         {
             _unitOfWork = unitOfWork;
             _currentUser = currentUser;
+            _fileStorageService = fileStorageService;
         }
 
         public async Task<Result<PaginatedResult<EmployeeRequestDto>>> Handle(GetEmployeeRequestsQuery request, CancellationToken cancellationToken)
@@ -32,25 +34,22 @@ namespace Application.Core.Queries.GetRequestsForEmplyees
                     ResultStatus.Unauthorized,
                     "User is not authenticated.");
             }
-            var userId = _currentUser.UserId;
 
+            var userId = _currentUser.UserId;
             if (userId == null)
             {
                 return Result<PaginatedResult<EmployeeRequestDto>>.Failure(
                     ResultStatus.Unauthorized,
                     "User id not found.");
             }
-            var employee =
-                   await _unitOfWork.Employee
-                       .GetByUserIdAsync(userId);
+
+            var employee = await _unitOfWork.Employee.GetByUserIdAsync(userId);
             if (employee == null)
             {
-                return Result<PaginatedResult<EmployeeRequestDto>>
-                    .Failure(
-                        ResultStatus.NotFound,
-                        "Employee not found.");
+                return Result<PaginatedResult<EmployeeRequestDto>>.Failure(
+                    ResultStatus.NotFound,
+                    "Employee not found.");
             }
-            var requestType = request.Type ?? RequestType.Complaint;
 
             var filter = new EmployeeRequestFilter
             {
@@ -60,16 +59,19 @@ namespace Application.Core.Queries.GetRequestsForEmplyees
                 PageNumber = request.PageNumber,
                 PageSize = request.PageSize
             };
-            var result =
-                await _unitOfWork.EmployeeRequestRepository
-                    .GetAssignedRequestsAsync(
-                        employee.Id,
-                        filter,
-                        cancellationToken);
 
-            return Result<PaginatedResult<EmployeeRequestDto>>
-                        .Success(result);
+            var result = await _unitOfWork.EmployeeRequestRepository
+                .GetAssignedRequestsAsync(employee.Id, filter, cancellationToken);
 
+            foreach (var item in result.Items)
+            {
+                if (item.Media is not null && !string.IsNullOrEmpty(item.Media.BlobName))
+                {
+                    item.Media.MediaUrl = _fileStorageService.GetFileUrl(item.Media.BlobName, FolderName);
+                }
+            }
+
+            return Result<PaginatedResult<EmployeeRequestDto>>.Success(result);
         }
     }
 }

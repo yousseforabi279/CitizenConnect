@@ -40,13 +40,14 @@ namespace Infrastructure.Implemenation
             return (await _userManager.GetRolesAsync(user)).ToList();
         }
 
-        public async Task<(bool Success, User? User, string? Error)> CreateUserAsync(string email, string password,string Fullname)
+        public async Task<(bool Success, User? User, string? Error)> CreateUserAsync(string email, string password,string Fullname,string phonenumber)
         {
             var user = new User
             {
                 UserName = email,
                 Email = email,
-                FullName = Fullname
+                FullName = Fullname,
+                PhoneNumber = phonenumber,
                
             };
 

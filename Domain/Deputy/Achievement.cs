@@ -26,6 +26,7 @@ namespace Domain.Deputy
     public enum MediaType
     {
         Image,
-        Video
+        Video,
+        Other
     }
 }

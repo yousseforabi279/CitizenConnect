@@ -10,5 +10,9 @@ namespace Application.Core.Queries.Employee.GetEmployeeInfo
     {
         public string Name { get; set; } = null!;
         public string Department { get; set; } = null!;
+        public string? ImageUrl { get; set; }
+        public List<string> Organizations { get; set; } = new();
+        public string? Email { get; set; }
+        public string? Phone { get; set; }
     }
 }

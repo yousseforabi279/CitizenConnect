@@ -65,43 +65,68 @@ namespace Infrastructure.Implemenation
                 query = query.Where(x =>
                      x.CitizinRequierment.Priority==filter.Priority.Value);
             }
-            var totalCount = await query.CountAsync();
+            var totalCount = await query.CountAsync(cancellationToken);
+
             var items = await query
-             .OrderByDescending(x =>
-                 x.CitizinRequierment.CreatedAt)
-             .Skip(
-                 (filter.PageNumber - 1)
-                 * filter.PageSize)
-             .Take(filter.PageSize)
-             .Select(x => new EmployeeRequestDto
-             {
-                 Id = x.CitizinRequierment.Id,
+                .OrderByDescending(x =>
+                    x.CitizinRequierment.CreatedAt)
+                .Skip(
+                    (filter.PageNumber - 1)
+                    * filter.PageSize)
+                .Take(filter.PageSize)
+                .Select(x => new EmployeeRequestDto
+                {
+                    Id = x.CitizinRequierment.Id,
 
-                 Type = x.CitizinRequierment.Type.ToString(),
+                    Citizen = new CitizenInfoDto
+                    {
+                        NationalId =
+                            x.CitizinRequierment.Citizen.NationalId,
 
-                 Title = x.CitizinRequierment.Title,
+                        FullName =
+                            x.CitizinRequierment.Citizen.FullName,
 
-                 Content = x.CitizinRequierment.Description,
+                        Phone =
+                            x.CitizinRequierment.Citizen.Phone
+                    },
 
-                 CitizenName =
-                     x.CitizinRequierment.Citizen.FullName,
+                    Request = new RequestInfoDto
+                    {
+                        Type = x.CitizinRequierment.Type,
 
-                 NationalId =
-                     x.CitizinRequierment.Citizen.NationalId,
+                        Title = x.CitizinRequierment.Title,
 
-                 Phone =
-                     x.CitizinRequierment.Citizen.Phone,
+                        Description = x.CitizinRequierment.Description,
 
-                 Priority =
-                     x.CitizinRequierment.Priority.ToString(),
+                        Status = x.CitizinRequierment.Status,
 
-                 Status =
-                     x.CitizinRequierment.Status.ToString(),
+                        Priority = x.CitizinRequierment.Priority,
 
-                 CreatedAt =
-                     x.CitizinRequierment.CreatedAt
-             })
-             .ToListAsync(cancellationToken);
+                        CreatedAt = x.CitizinRequierment.CreatedAt
+                    },
+
+                    Media = new MediaInfoDto
+                    {
+                        BlobName = x.CitizinRequierment.BlobName,
+
+                        FileName = x.CitizinRequierment.MediaFileName,
+
+                        ContentType = x.CitizinRequierment.ContentType
+                    },
+
+                    Comments = x.CitizinRequierment.Comments
+                        .OrderByDescending(c => c.CreatedAt)
+                        .Select(c => new CommentDto
+                        {
+                            Id = c.Id,
+                            Comment = c.Comment,
+                            CreatedAt = c.CreatedAt,
+                            EmployeeId = c.EmployeeId,
+                            EmployeeName = c.Employee.User.FullName ?? ""
+                        })
+                        .ToList()
+                })
+                .ToListAsync(cancellationToken);
 
             return new PaginatedResult<EmployeeRequestDto>
             {

@@ -23,5 +23,7 @@ namespace Domain
         public ICollection<EmployeeOrganizations> EmployeeOrganizations { get; set; }
     = new List<EmployeeOrganizations>();
         public string? about { get; set; }
+        // NEW — optional profile image
+        public EmployeeImage? Image { get; set; }
     }
 }

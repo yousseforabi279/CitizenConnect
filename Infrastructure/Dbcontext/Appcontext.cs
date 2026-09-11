@@ -43,20 +43,51 @@ namespace Infrastructure.Dbcontext
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
             modelBuilder.Entity<CitizinRequierment>()
                 .Property(x => x.Type)
                 .HasConversion<string>();
+
             modelBuilder.Entity<Employee>()
                 .HasIndex(e => e.UserId)
                 .IsUnique();
-            //modelBuilder.Entity<Deputy>()
-            //   .HasIndex(e => e.UserId)
-            //   .IsUnique();
+
             modelBuilder.Entity<RefreshToken>()
                 .HasOne(r => r.User)
                 .WithMany(u => u.RefreshTokens)
                 .HasForeignKey(r => r.UserId)
                 .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Employee>()
+                .HasQueryFilter(e => e.IsActive);
+
+            // EmployeeImage — already fixed
+            modelBuilder.Entity<EmployeeImage>()
+                .HasOne(ei => ei.Employee)
+                .WithOne(e => e.Image)
+                .HasForeignKey<EmployeeImage>(ei => ei.EmployeeId)
+                .IsRequired(false);
+
+            // EmployeeOrganizations
+            modelBuilder.Entity<EmployeeOrganizations>()
+                .HasOne(eo => eo.Employee)
+                .WithMany(e => e.EmployeeOrganizations)
+                .HasForeignKey(eo => eo.EmployeeId)
+                .IsRequired(false);
+
+            // CitizinRequiermentEmployee
+            modelBuilder.Entity<CitizinRequiermentEmployee>()
+                .HasOne(cre => cre.Employee)
+                .WithMany(e => e.Requests)
+                .HasForeignKey(cre => cre.EmployeeId)
+                .IsRequired(false);
+
+            // CitizinRequiermentContent
+            modelBuilder.Entity<CitizinRequiermentContent>()
+                .HasOne(crc => crc.Employee)
+                .WithMany()
+                .HasForeignKey(crc => crc.EmployeeId)
+                .IsRequired(false);
         }
 
     }

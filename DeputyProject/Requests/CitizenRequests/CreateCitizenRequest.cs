@@ -18,7 +18,7 @@ namespace DeputyProject.Requests.CitizenRequests
 
         public int DepartmentId { get; set; }
         public int OrganizationId { get; set; }
-        public IFormFile Image { get; set; }
+        public IFormFile? Image { get; set; }
 
     }
 }

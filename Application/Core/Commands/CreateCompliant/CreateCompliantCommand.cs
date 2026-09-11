@@ -29,7 +29,7 @@ namespace Application.Core.Commands.CreateCompliant
 
 
         // images and videos 
-        public FileUploadRequest Media { get; set; }
+        public FileUploadRequest? Media { get; set; }
 
     }
 }

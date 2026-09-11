@@ -511,6 +511,50 @@ namespace Infrastructure.Migrations
                     b.ToTable("Employees");
                 });
 
+            modelBuilder.Entity("Domain.EmployeeImage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("BlobName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ContentType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int");
+
+                    b.Property<long>("FileSizeBytes")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("MediaFileName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("MediaType")
+                        .HasColumnType("int");
+
+                    b.Property<string>("MediaUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("UploadedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmployeeId")
+                        .IsUnique();
+
+                    b.ToTable("EmployeeImage");
+                });
+
             modelBuilder.Entity("Domain.EmployeeOrganizations", b =>
                 {
                     b.Property<int>("id")
@@ -842,9 +886,7 @@ namespace Infrastructure.Migrations
 
                     b.HasOne("Domain.Employee", "Employee")
                         .WithMany()
-                        .HasForeignKey("EmployeeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("EmployeeId");
 
                     b.Navigation("CitizinRequierment");
 
@@ -861,9 +903,7 @@ namespace Infrastructure.Migrations
 
                     b.HasOne("Domain.Employee", "Employee")
                         .WithMany("Requests")
-                        .HasForeignKey("EmployeeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("EmployeeId");
 
                     b.Navigation("CitizinRequierment");
 
@@ -889,13 +929,20 @@ namespace Infrastructure.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("Domain.EmployeeImage", b =>
+                {
+                    b.HasOne("Domain.Employee", "Employee")
+                        .WithOne("Image")
+                        .HasForeignKey("Domain.EmployeeImage", "EmployeeId");
+
+                    b.Navigation("Employee");
+                });
+
             modelBuilder.Entity("Domain.EmployeeOrganizations", b =>
                 {
                     b.HasOne("Domain.Employee", "Employee")
                         .WithMany("EmployeeOrganizations")
-                        .HasForeignKey("EmployeeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("EmployeeId");
 
                     b.HasOne("Domain.Organization", "Organization")
                         .WithMany("EmployeeOrganizations")
@@ -992,6 +1039,8 @@ namespace Infrastructure.Migrations
             modelBuilder.Entity("Domain.Employee", b =>
                 {
                     b.Navigation("EmployeeOrganizations");
+
+                    b.Navigation("Image");
 
                     b.Navigation("Requests");
                 });

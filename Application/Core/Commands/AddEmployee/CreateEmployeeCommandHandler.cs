@@ -1,7 +1,9 @@
 ﻿using Application.Common;
 using Application.Contracts;
 using Application.Contracts.Repos;
+using Application.storage;
 using Domain;
+using Domain.Deputy;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens.Experimental;
@@ -16,10 +18,13 @@ namespace Application.Core.Commands.AddEmployee
     internal class CreateEmployeeCommandHandler : IRequestHandler<CreateEmployeeCommand, Result<int>>
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IFileStorageService _blobStorageService;
+        private const string FolderName = "Emp-files";
 
-        public CreateEmployeeCommandHandler(IUnitOfWork unitOfWork)
+        public CreateEmployeeCommandHandler(IUnitOfWork unitOfWork, IFileStorageService fileStorageService)
         {
             _unitOfWork = unitOfWork;
+            _blobStorageService = fileStorageService;
         }
         public async Task<Result<int>> Handle(CreateEmployeeCommand request, CancellationToken cancellationToken)
         {
@@ -30,7 +35,7 @@ namespace Application.Core.Commands.AddEmployee
                 var result = await _unitOfWork.IdentityService.CreateUserAsync(
                                 request.Email,
                                 request.Password,
-                                request.FullName);
+                                request.FullName,request.PhoneNumber);
                 if (!result.Success)
                 {
                     await _unitOfWork.RollbackTransactionAsync(cancellationToken);
@@ -39,7 +44,6 @@ namespace Application.Core.Commands.AddEmployee
                         result.Error!);
                 }
                 var user = result.User!;
-
                 if (!await _unitOfWork.RoleService.RoleExistsAsync(request.Role))
                 {
                     var res = await _unitOfWork.RoleService.CreateRoleAsync(request.Role);
@@ -66,11 +70,42 @@ namespace Application.Core.Commands.AddEmployee
                     UserId = user.Id,
                     DepartmentId = request.DepartmentId,
                     IsActive = true,
-                    
+                    about = request.About
+
                 };
+                employee.EmployeeOrganizations.Add(new EmployeeOrganizations
+                {
+                    OrganizationId = request.OrganizationId
+                });
                 await _unitOfWork.Employee.AddAsync(employee);
-                employee.EmployeeOrganizations.Add(new EmployeeOrganizations { EmployeeId = employee.Id, OrganizationId = request.organiztionId });
                 await _unitOfWork.SaveChangesAsync();
+
+                if (request.Image is not null)
+                {
+                    var upload = await _blobStorageService.UploadFileAsync(request.Image, "employees");
+
+                    employee.Image = new EmployeeImage
+                    {
+                        EmployeeId = employee.Id,
+                        BlobName = upload.BlobName,
+                        MediaFileName = request.Image.FileName,
+                        ContentType = upload.ContentType,
+                        FileSizeBytes = upload.SizeBytes,
+                        MediaType = upload.ContentType.StartsWith("image/", StringComparison.OrdinalIgnoreCase)
+                            ? MediaType.Image
+                            : MediaType.Other,
+                        UploadedAt = DateTime.UtcNow,
+                        MediaUrl = upload.BlobName != null
+                                ? _blobStorageService.GetFileUrl(
+                        upload.BlobName,
+                        FolderName)
+                    : null,
+                    };
+                    await _unitOfWork.SaveChangesAsync();
+
+                }
+
+
                 await _unitOfWork.CommitTransactionAsync(cancellationToken);
 
                 return Result<int>.Success(

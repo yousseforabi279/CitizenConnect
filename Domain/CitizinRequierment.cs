@@ -32,13 +32,13 @@ namespace Domain
 
 
         // Media metadata (replaces raw Video_image string)
-        public string BlobName { get; set; }
-        public string MediaFileName { get; set; }
-        public string ContentType { get; set; }
-        public long FileSizeBytes { get; set; }
-        public MediaType MediaType { get; set; }
-        public DateTime UploadedAt { get; set; }
-        public string MediaUrl { get; set; }        // full blob URL
+        public string? BlobName { get; set; }
+        public string? MediaFileName { get; set; }
+        public string? ContentType { get; set; }
+        public long? FileSizeBytes { get; set; }
+        public MediaType? MediaType { get; set; }
+        public DateTime? UploadedAt { get; set; }
+        public string? MediaUrl { get; set; }        // full blob URL
 
     }
 }

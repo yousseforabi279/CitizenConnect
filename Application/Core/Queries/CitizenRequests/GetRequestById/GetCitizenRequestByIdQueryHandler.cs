@@ -63,10 +63,10 @@ namespace Application.Core.Queries.CitizenRequests.GetRequestById
                     BlobName = citizenRequest.BlobName,
                     FileName = citizenRequest.MediaFileName,
                     ContentType = citizenRequest.ContentType,
-                    FileSizeBytes = citizenRequest.FileSizeBytes,
-                    MediaType = citizenRequest.MediaType,
-                    UploadedAt = citizenRequest.UploadedAt,
-                    MediaUrl = citizenRequest.MediaUrl
+                    //FileSizeBytes = citizenRequest.FileSizeBytes,
+                    //MediaType = citizenRequest.MediaType,
+                    //UploadedAt = citizenRequest.UploadedAt,
+                    //MediaUrl = citizenRequest.MediaUrl
                 },
                 CommentDto = citizenRequest.Comments
                     .OrderByDescending(x => x.CreatedAt)

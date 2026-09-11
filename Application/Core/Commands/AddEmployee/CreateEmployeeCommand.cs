@@ -1,4 +1,5 @@
 ﻿using Application.Common;
+using Application.storage;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,9 @@ namespace Application.Core.Commands.AddEmployee
      string Password,
      string Role,
      int DepartmentId,
-     int organiztionId
+     int OrganizationId,
+     string PhoneNumber,
+     string? About,
+     FileUploadRequest? Image
  ) : IRequest<Result<int>>;
 }

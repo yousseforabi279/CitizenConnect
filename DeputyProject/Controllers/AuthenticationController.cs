@@ -27,12 +27,7 @@ namespace DeputyProject.Controllers
             return HandleResult(result);
         }
 
-        [HttpPost(ApiRoutes.Authentication.Register)]
-        public async Task<IActionResult> Register(CreateEmployeeCommand command)
-        {
-            var result = await _mediator.Send(command);
-            return HandleResult(result);
-        }
+
         [Authorize]
         [HttpPost(ApiRoutes.Authentication.ChangePassword)]
         public async Task<IActionResult> ChangePassword(ChangePasswordCommand command)

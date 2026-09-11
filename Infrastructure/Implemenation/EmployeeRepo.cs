@@ -53,8 +53,18 @@ namespace Infrastructure.Implemenation
 
         public async Task<EmplyeeInfo?> GetEmplyeeInfo(string userId)
         {
-            return await _context.Employees.Where(ww => ww.UserId == userId)
-                .Select(ww => new EmplyeeInfo { Name = ww.User.FullName,Department = ww.Department.Name }).FirstOrDefaultAsync();
+            return await _context.Employees
+                       .Where(e => e.UserId == userId)
+                       .Select(e => new EmplyeeInfo
+                       {
+                           Name = e.User.FullName,               // adjust to your actual User property
+                           Department = e.Department.Name,
+                           ImageUrl = e.Image != null ? e.Image.MediaUrl : null,
+                           Organizations = e.EmployeeOrganizations
+                               .Select(eo => eo.Organization.Name)
+                               .ToList()
+                       })
+       .FirstOrDefaultAsync();
         }
         public async Task<EmployeeRequestStatisticsDto> GetStatisticsAsync(int employeeId, CancellationToken cancellationToken)
         {
@@ -72,6 +82,13 @@ namespace Infrastructure.Implemenation
                 InProgress = grouped.FirstOrDefault(g => g.Status == RequestStatus.InProgress)?.Count ?? 0,
                 Completed = grouped.FirstOrDefault(g => g.Status == RequestStatus.Resolved)?.Count ?? 0
             };
+        }
+        public async Task<Employee?> GetEmpwithitsdata(int employeeId)
+        {
+            return await _context.Employees.Include(ww => ww.Image)
+                        .Include(ww => ww.EmployeeOrganizations)
+                                .Include(ww => ww.Department)
+                                .FirstOrDefaultAsync(ww => ww.Id == employeeId);
         }
     }
 }

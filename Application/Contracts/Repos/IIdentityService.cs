@@ -21,7 +21,7 @@ namespace Application.Contracts.Repos
 
         Task<(bool Success, User? User, string? Error)>CreateUserAsync(
             string email,
-            string password, string Fullname);
+            string password, string Fullname,string phonenumber);
 
         Task<bool> AddToRoleAsync(
             User user,

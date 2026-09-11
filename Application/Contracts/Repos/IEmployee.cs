@@ -16,6 +16,7 @@ namespace Application.Contracts.Repos
         public Task<EmplyeeInfo?> GetEmplyeeInfo(string userId);
         Task<EmployeeRequestStatisticsDto> GetStatisticsAsync(int employeeId, CancellationToken cancellationToken);
         Task<IEnumerable<Employee>> GetAllwithUserAsync();
+        Task<Employee?> GetEmpwithitsdata(int employeeId);
 
     }
 }
