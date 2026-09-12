@@ -13,5 +13,6 @@ namespace Application.Core.Queries.GetAllEmployeeonLendingPage
         public string? Email { get; set; }
         public string? ImageUrl { get; set; }
         public string? about { get; set; }
+        public string? phone { get; set; }
     }
 }
