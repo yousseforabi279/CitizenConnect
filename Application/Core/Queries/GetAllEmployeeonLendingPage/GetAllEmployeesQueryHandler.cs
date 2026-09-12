@@ -34,6 +34,7 @@ public class GetAllEmployeesQueryHandler
                 ? _fileStorageService.GetFileUrl(employee.Image.BlobName, FolderName)
                 : null,
             about = employee.about ?? ""
+       ,phone=employee.User.PhoneNumber
         }).ToList();
 
         return Result<List<EmployeeResponse>>.Success(result);
