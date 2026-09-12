@@ -2,7 +2,6 @@
 using Application.Core.Commands.AddEmployee;
 using Application.Core.Commands.DeleteEmplyee;
 using Application.Core.Commands.updateEmployee;
-using Application.Core.Commands.updateOraganiztionndDepartment;
 using Application.Core.Queries.Employee.GetEmployeeInfo;
 using Application.Core.Queries.Employee.GetEmployeeRequestStatistics;
 using Application.Core.Queries.GetAllEmployeeonLendingPage;
@@ -86,20 +85,8 @@ namespace DeputyProject.Controllers
             var result = await _mediator.Send(command);
             return HandleResult(result);
         }
-        [HttpPut(ApiRoutes.Employee.UpdateEmployeeDepartment)]
-        //[Authorize(Roles = "Deputy")]
-        public async Task<IActionResult> updateEmployeeDepartment(int employeeId, [FromForm] UpdateEmployeeDepartmentRequest request)
-        {
-            var command = new UpdateEmployeeDepartmentCommand(
-                EmployeeId: employeeId,
-                DepartmentId: request.DepartmentId,
-                OrganizationIds: request.OrganizationIds);
-
-            var result = await _mediator.Send(command);
-            return HandleResult(result);
-        }
         [HttpPut(ApiRoutes.Employee.UpdateMyProfile)]
-        [Authorize]
+        [Authorize(Roles = "Admin,Employee")]
         public async Task<IActionResult> updateMyProfile([FromForm] UpdateEmployeeProfileRequest request)
         {
             FileUploadRequest? imageRequest = null;
@@ -116,11 +103,14 @@ namespace DeputyProject.Controllers
             }
 
             var command = new UpdateEmployeeProfileCommand(
-                About: request.About,
-                Phone: request.Phone,
-                Image: imageRequest,
-                FullName:request.fullname
-              );
+                 request.EmployeeId,
+                 request.fullname,
+                 request.About,
+                 request.Phone,
+                 request.DepartmentId,
+                 request.OrganizationIds,
+                 imageRequest
+             );
 
             var result = await _mediator.Send(command);
             return HandleResult(result);

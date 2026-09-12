@@ -7,6 +7,7 @@ using Domain;
 using Domain.Deputy;
 using MediatR;
 using System;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -31,31 +32,19 @@ namespace Application.Core.Commands.UpdateEmployeeProfile
 
         public async Task<Result<int>> Handle(UpdateEmployeeProfileCommand request, CancellationToken cancellationToken)
         {
-            var userId = _currentUser.UserId;
-            if (string.IsNullOrEmpty(userId))
-            {
-                return Result<int>.Failure(ResultStatus.Unauthorized, "غير مصرح لك بالوصول.");
-            }
-
             await _unitOfWork.BeginTransactionAsync(cancellationToken);
 
             try
             {
-                // resolve the current user's own employee record — never trust a client-supplied id here
-                var employeeLookup = await _unitOfWork.Employee.GetByUserIdAsync(userId);
-                if (employeeLookup is null)
-                {
-                    await _unitOfWork.RollbackTransactionAsync(cancellationToken);
-                    return Result<int>.Failure(ResultStatus.NotFound, "بيانات الموظف غير موجودة.");
-                }
 
-                var employee = await _unitOfWork.Employee.GetEmpwithitsdata(employeeLookup.Id);
+
+                var employee = await _unitOfWork.Employee.GetEmpwithitsdata(request.EmployeeId.Value);
                 if (employee is null)
                 {
                     await _unitOfWork.RollbackTransactionAsync(cancellationToken);
                     return Result<int>.Failure(ResultStatus.NotFound, "بيانات الموظف غير موجودة.");
                 }
-
+               
                 if (request.About != null)
                 {
                     employee.about = request.About;
@@ -65,9 +54,29 @@ namespace Application.Core.Commands.UpdateEmployeeProfile
                 {
                     employee.User.PhoneNumber = request.Phone;
                 }
+
                 if (!string.IsNullOrWhiteSpace(request.FullName))
                 {
                     employee.User.FullName = request.FullName;
+                }
+
+                if (request.DepartmentId is > 0)
+                {
+                    employee.DepartmentId = request.DepartmentId.Value;
+                }
+
+                if (request.OrganizationIds is not null && request.OrganizationIds.Count > 0)
+                {
+                    employee.EmployeeOrganizations.Clear();
+
+                    foreach (var orgId in request.OrganizationIds.Distinct())
+                    {
+                        employee.EmployeeOrganizations.Add(new Domain.EmployeeOrganizations
+                        {
+                            EmployeeId = employee.Id,
+                            OrganizationId = orgId
+                        });
+                    }
                 }
 
                 if (request.Image is not null)
@@ -102,12 +111,12 @@ namespace Application.Core.Commands.UpdateEmployeeProfile
                 await _unitOfWork.SaveChangesAsync();
                 await _unitOfWork.CommitTransactionAsync(cancellationToken);
 
-                return Result<int>.Success(employee.Id, "تم تحديث بيانات الملف الشخصي بنجاح.");
+                return Result<int>.Success(employee.Id, "تم تحديث بيانات الموظف بنجاح.");
             }
             catch
             {
                 await _unitOfWork.RollbackTransactionAsync(cancellationToken);
-                return Result<int>.Failure(ResultStatus.Failure, "فشل تحديث الملف الشخصي.");
+                return Result<int>.Failure(ResultStatus.Failure, "فشل تحديث بيانات الموظف.");
             }
         }
     }

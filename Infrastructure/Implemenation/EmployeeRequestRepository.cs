@@ -124,7 +124,7 @@ namespace Infrastructure.Implemenation
                             EmployeeId = c.EmployeeId,
                             EmployeeName = c.Employee.User.FullName ?? ""
                         })
-                        .ToList()
+                        .ToList(),
                 })
                 .ToListAsync(cancellationToken);
 

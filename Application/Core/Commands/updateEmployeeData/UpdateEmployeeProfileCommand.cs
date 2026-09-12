@@ -9,11 +9,13 @@ using System.Threading.Tasks;
 
 namespace Application.Core.Commands.updateEmployee
 {
-    public record UpdateEmployeeProfileCommand(
+  public record UpdateEmployeeProfileCommand(
+        int? EmployeeId,
+        string? FullName,
         string? About,
         string? Phone,
-                string? FullName,
-
+        int? DepartmentId,
+        List<int>? OrganizationIds,
         FileUploadRequest? Image
     ) : IRequest<Result<int>>;
 }
