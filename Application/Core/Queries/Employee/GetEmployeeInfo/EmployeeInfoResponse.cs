@@ -8,6 +8,7 @@ namespace Application.Core.Queries.Employee.GetEmployeeInfo
 {
     public class EmployeeInfoResponse
     {
+        public string userid { get; set; }
         public string Name { get; set; } = null!;
         public string? Department { get; set; }
         public string? ImageUrl { get; set; }

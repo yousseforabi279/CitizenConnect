@@ -20,7 +20,7 @@ namespace Application.Core.Commands.DeleteEmplyee
 
         public async Task<Result<int>> Handle(DeleteEmployeeCommand request, CancellationToken cancellationToken)
         {
-            var employee = await _unitOfWork.Employee.GetByIdAsync(request.EmployeeId);
+            var employee = await _unitOfWork.Employee.GetByUserIdAsync(request.EmployeeId);
 
             if (employee is null)
                 return Result<int>.Failure(ResultStatus.NotFound, "Employee not found.");

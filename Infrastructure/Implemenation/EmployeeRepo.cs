@@ -83,12 +83,12 @@ namespace Infrastructure.Implemenation
                 Completed = grouped.FirstOrDefault(g => g.Status == RequestStatus.Resolved)?.Count ?? 0
             };
         }
-        public async Task<Employee?> GetEmpwithitsdata(int employeeId)
+        public async Task<Employee?> GetEmpwithitsdata(string employeeId)
         {
             return await _context.Employees.Include(ww => ww.Image)
                         .Include(ww => ww.EmployeeOrganizations)
                                 .Include(ww => ww.Department)
-                                .FirstOrDefaultAsync(ww => ww.Id == employeeId);
+                                .FirstOrDefaultAsync(ww => ww.UserId == employeeId);
         }
     }
 }

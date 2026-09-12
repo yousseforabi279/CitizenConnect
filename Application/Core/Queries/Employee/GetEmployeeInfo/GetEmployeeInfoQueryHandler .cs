@@ -48,6 +48,7 @@ namespace Application.Core.Queries.GetEmployeeInfo
             {
                 var basicResponse = new EmployeeInfoResponse
                 {
+                    userid=userId,
                     Name = user.FullName ?? string.Empty,
                     Email = user.Email,
                     Phone = user.PhoneNumber,
@@ -71,6 +72,7 @@ namespace Application.Core.Queries.GetEmployeeInfo
             var res = await _unitOfWork.Employee.GetEmplyeeInfo(userId);
             var response = new EmployeeInfoResponse
             {
+                userid=userId,
                 Name = res.Name,
                 Department = res.Department,
                 ImageUrl = res.ImageUrl,

@@ -10,7 +10,7 @@ namespace Application.Core.Commands.DeleteEmplyee
 {
     public class DeleteEmployeeCommand : IRequest<Result<int>>
     {
-        public int EmployeeId { get; set; }
+        public string EmployeeId { get; set; }
     }
 
 }

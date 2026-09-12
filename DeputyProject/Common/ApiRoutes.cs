@@ -75,7 +75,7 @@
             public const string CreateEmplyee = "CreateEmployee";
             public const string UpdateEmployeeDepartment = "DepartAndOrg/{employeeId}";
             public const string UpdateMyProfile = "Profile";
-            public const string DeleteEmployee = "{id}";
+            public const string DeleteEmployee = "{EmployeeId}";
 
 
 

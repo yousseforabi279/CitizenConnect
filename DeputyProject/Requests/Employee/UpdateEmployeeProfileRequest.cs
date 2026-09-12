@@ -2,7 +2,7 @@
 {
     public class UpdateEmployeeProfileRequest
     {
-        public int? EmployeeId { get; set; }
+        public string? EmployeeId { get; set; }
         public string? fullname { get; set; }
         public string? About { get; set; }
         public string? Phone { get; set; }

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace Application.Core.Commands.updateEmployee
 {
   public record UpdateEmployeeProfileCommand(
-        int? EmployeeId,
+        string? EmployeeId,
         string? FullName,
         string? About,
         string? Phone,

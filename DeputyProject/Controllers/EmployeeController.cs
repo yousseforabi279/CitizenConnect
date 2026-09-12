@@ -116,7 +116,7 @@ namespace DeputyProject.Controllers
             return HandleResult(result);
         }
         [HttpDelete(ApiRoutes.Employee.DeleteEmployee)]
-        public async Task<IActionResult> DeleteEmployee(int EmployeeId)
+        public async Task<IActionResult> DeleteEmployee(string EmployeeId)
         {
             var result = await _mediator.Send(new DeleteEmployeeCommand { EmployeeId= EmployeeId });
             return HandleResult(result);

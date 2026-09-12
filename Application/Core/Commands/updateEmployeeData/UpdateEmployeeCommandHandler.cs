@@ -38,7 +38,7 @@ namespace Application.Core.Commands.UpdateEmployeeProfile
             {
 
 
-                var employee = await _unitOfWork.Employee.GetEmpwithitsdata(request.EmployeeId.Value);
+                var employee = await _unitOfWork.Employee.GetEmpwithitsdata(request.EmployeeId);
                 if (employee is null)
                 {
                     await _unitOfWork.RollbackTransactionAsync(cancellationToken);
