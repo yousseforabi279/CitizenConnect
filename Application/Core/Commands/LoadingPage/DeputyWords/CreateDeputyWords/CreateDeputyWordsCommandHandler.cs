@@ -63,7 +63,7 @@ namespace Application.Core.Commands.LoadingPage.DeputyWords.CreateDeputyWords
                 MediaUrl = !string.IsNullOrEmpty(word.BlobName)
                     ? _fileStorageService.GetFileUrl(
                         word.BlobName,
-                        FolderName)
+                        FolderName, word.ContentType)
                     : null,
 
                 ContentType = word.ContentType,

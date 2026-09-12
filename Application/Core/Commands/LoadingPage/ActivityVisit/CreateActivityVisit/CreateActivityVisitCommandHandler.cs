@@ -56,7 +56,7 @@ namespace Application.Core.Commands.Deputy.ActivityVisit.CreateActivityVisit
                 activity.MediaUrl =
                    _fileStorageService.GetFileUrl(
                        activity.BlobName,
-                       FolderName);
+                       FolderName, activity.ContentType);
 
 
             }
@@ -86,7 +86,7 @@ namespace Application.Core.Commands.Deputy.ActivityVisit.CreateActivityVisit
                 MediaUrl = !string.IsNullOrEmpty(activity.BlobName)
                     ? _fileStorageService.GetFileUrl(
                         activity.BlobName,
-                        FolderName)
+                        FolderName, activity.ContentType)
                     : null,
 
                 ContentType = activity.ContentType,

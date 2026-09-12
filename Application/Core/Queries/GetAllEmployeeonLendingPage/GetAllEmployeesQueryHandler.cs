@@ -1,6 +1,7 @@
 ﻿using Application.Common;
 using Application.Contracts;
 using Application.Core.Queries.GetAllEmployeeonLendingPage;
+using Application.storage;
 using MediatR;
 
 public class GetAllEmployeesQueryHandler
@@ -9,10 +10,12 @@ public class GetAllEmployeesQueryHandler
         Result<List<EmployeeResponse>>>
 {
     private readonly IUnitOfWork _unitOfWork;
-
-    public GetAllEmployeesQueryHandler(IUnitOfWork unitOfWork)
+    private readonly IFileStorageService _fileStorageService;
+    private const string FolderName = "employees";
+    public GetAllEmployeesQueryHandler(IUnitOfWork unitOfWork, IFileStorageService fileStorageService)
     {
-        _unitOfWork = unitOfWork;
+        _unitOfWork = unitOfWork; 
+        _fileStorageService = fileStorageService;
     }
 
     public async Task<Result<List<EmployeeResponse>>> Handle(
@@ -25,9 +28,12 @@ public class GetAllEmployeesQueryHandler
         var result = employees.Select(employee => new EmployeeResponse
         {
             Id = employee.Id,
-            Name = employee.User.UserName!,
-            Phone = employee.User.PhoneNumber,
-            about = employee.about??""
+            FullName = employee.User.FullName!,
+            Email = employee.User.Email,
+            ImageUrl = !string.IsNullOrEmpty(employee.Image?.BlobName)
+                ? _fileStorageService.GetFileUrl(employee.Image.BlobName, FolderName)
+                : null,
+            about = employee.about ?? ""
         }).ToList();
 
         return Result<List<EmployeeResponse>>.Success(result);

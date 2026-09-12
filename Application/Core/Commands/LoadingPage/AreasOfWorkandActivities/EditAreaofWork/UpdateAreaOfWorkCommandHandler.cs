@@ -68,7 +68,7 @@ namespace Application.Core.Commands.Deputy.AreasOfWorkandActivities.EditAreaofWo
                 area.MediaUrl =
                     _fileStorageService.GetFileUrl(
                         area.BlobName,
-                        FolderName);
+                        FolderName,area.ContentType);
             }
 
             area.Title = request.Title;
@@ -87,7 +87,7 @@ namespace Application.Core.Commands.Deputy.AreasOfWorkandActivities.EditAreaofWo
                 MediaUrl = !string.IsNullOrEmpty(area.BlobName)
                     ? _fileStorageService.GetFileUrl(
                         area.BlobName,
-                        FolderName)
+                        FolderName, area.ContentType)
                     : null,
 
                 ContentType = area.ContentType,

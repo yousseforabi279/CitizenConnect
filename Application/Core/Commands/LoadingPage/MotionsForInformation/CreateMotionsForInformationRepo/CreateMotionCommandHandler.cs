@@ -66,7 +66,7 @@ namespace Application.Core.Commands.LoadingPage.MotionsForInformation.CreateMoti
                 MediaUrl = !string.IsNullOrEmpty(motion.BlobName)
                     ? _fileStorageService.GetFileUrl(
                         motion.BlobName,
-                        FolderName)
+                        FolderName,motion.ContentType)
                     : null,
 
                 ContentType = motion.ContentType,

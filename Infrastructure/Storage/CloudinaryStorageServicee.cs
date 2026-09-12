@@ -173,12 +173,27 @@ public class CloudinaryStorageServicee : IFileStorageService
 
     public string GetFileUrl(
         string fileKey,
-        string folderName)
+        string folderName, string? contentType = null)
     {
         if (string.IsNullOrWhiteSpace(fileKey))
             return string.Empty;
 
+        var resourceType = ResourceType.Image; // default, matches old behavior
+
+        if (!string.IsNullOrWhiteSpace(contentType))
+        {
+            if (contentType.StartsWith("video/", StringComparison.OrdinalIgnoreCase))
+            {
+                resourceType = ResourceType.Video;
+            }
+            else if (!contentType.StartsWith("image/", StringComparison.OrdinalIgnoreCase))
+            {
+                resourceType = ResourceType.Raw;
+            }
+        }
+
         return _cloudinary.Api.Url
+            .ResourceType(resourceType.ToString().ToLowerInvariant())
             .Secure(true)
             .BuildUrl(fileKey);
     }

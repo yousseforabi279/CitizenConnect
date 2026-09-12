@@ -18,6 +18,6 @@ namespace Application.storage
 
         string GetFileUrl(
             string fileKey,
-            string folderName);
+            string folderName, string? contentType = null);
     }
 }

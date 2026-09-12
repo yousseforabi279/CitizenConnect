@@ -83,7 +83,7 @@ namespace Application.Core.Commands.LoadingPage.MotionsForInformation.EditMotion
                 MediaUrl = !string.IsNullOrEmpty(motion.BlobName)
                     ? _fileStorageService.GetFileUrl(
                         motion.BlobName,
-                        FolderName)
+                        FolderName, motion.ContentType)
                     : null,
 
                 ContentType = motion.ContentType,

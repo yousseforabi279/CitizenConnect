@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace Application.Core.Queries.GetAllEmployeeonLendingPage
 {
-    public class EmployeeResponse {
+    public class EmployeeResponse
+    {
         public int Id { get; set; }
-        public string Name { get; set; } = null!; 
-        public string? Phone { get; set; } 
-        
+        public string FullName { get; set; } = null!;
+        public string? Email { get; set; }
+        public string? ImageUrl { get; set; }
         public string? about { get; set; }
     }
 }

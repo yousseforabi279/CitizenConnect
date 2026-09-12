@@ -69,7 +69,7 @@ namespace Application.Core.Commands.Deputy.achievements.EditAchievement
                 achievement.MediaUrl =
                     _fileStorageService.GetFileUrl(
                         achievement.BlobName,
-                        FolderName);
+                        FolderName, achievement.ContentType);
             }
 
             achievement.Title = request.Title;
@@ -86,7 +86,7 @@ namespace Application.Core.Commands.Deputy.achievements.EditAchievement
                 MediaUrl = !string.IsNullOrEmpty(achievement.BlobName)
                     ? _fileStorageService.GetFileUrl(
                         achievement.BlobName,
-                        FolderName)
+                        FolderName, achievement.ContentType)
                     : null,
 
                 ContentType = achievement.ContentType,

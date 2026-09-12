@@ -38,7 +38,7 @@ namespace Infrastructure.Implemenation
 
             new Claim(
                 ClaimTypes.Name,
-                user.UserName ?? "")
+                user.FullName ?? "")
         };
 
             foreach (var role in roles)

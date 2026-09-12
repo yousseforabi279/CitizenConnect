@@ -57,7 +57,7 @@ namespace Application.Core.Commands.Deputy.achievements.CreateAchievement
                 achievement.MediaUrl =
                     _blobStorageService.GetFileUrl(
                         achievement.BlobName,
-                        FolderName);
+                        FolderName, achievement.ContentType);
             }
 
             await _unitOfWork.Achievement.AddAsync(achievement);
@@ -74,7 +74,7 @@ namespace Application.Core.Commands.Deputy.achievements.CreateAchievement
                 MediaUrl = achievement.BlobName != null
                     ? _blobStorageService.GetFileUrl(
                         achievement.BlobName,
-                        FolderName)
+                        FolderName,achievement.ContentType)
                     : null,
 
                 ContentType = achievement.ContentType,

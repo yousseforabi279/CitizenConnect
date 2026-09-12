@@ -47,7 +47,7 @@ namespace DeputyProject.Controllers
 
         [HttpGet("AllEmployee")]
         public async Task<IActionResult> GetAllEmployees()
-        {
+            {
             var result = await _mediator.Send(
                 new GetAllEmployeesQuery());
 

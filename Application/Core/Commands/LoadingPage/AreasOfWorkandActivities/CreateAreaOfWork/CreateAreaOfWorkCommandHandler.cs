@@ -54,7 +54,7 @@ namespace Application.Core.Commands.Deputy.AreasOfWorkandActivities.CreateAreaOf
                 area.MediaUrl =
                     _fileStorageService.GetFileUrl(
                         area.BlobName,
-                        FolderName);
+                        FolderName,area.ContentType);
             }
 
             await _unitOfWork.AreasOfWorkandActivities.AddAsync(area);
@@ -70,7 +70,7 @@ namespace Application.Core.Commands.Deputy.AreasOfWorkandActivities.CreateAreaOf
                 MediaUrl = !string.IsNullOrEmpty(area.BlobName)
                     ? _fileStorageService.GetFileUrl(
                         area.BlobName,
-                        FolderName)
+                        FolderName, area.ContentType)
                     : null,
 
                 ContentType = area.ContentType,
