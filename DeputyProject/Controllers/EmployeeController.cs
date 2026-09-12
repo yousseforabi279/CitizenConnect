@@ -38,7 +38,7 @@ namespace DeputyProject.Controllers
             var result = await _mediator.Send(query);
             return HandleResult(result);
         }
-        [Authorize]
+        [Authorize(Roles = "Employee")]
         [HttpGet(ApiRoutes.Employee.statistics)]
         public async Task<IActionResult> GetEmployeeRequestStatistics()
         {
