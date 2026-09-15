@@ -19,6 +19,7 @@ namespace Application.Core.Commands.UpdateEmployeeProfile
         private readonly IUnitOfWork _unitOfWork;
         private readonly ICurrentUser _currentUser;
         private readonly IFileStorageService _fileStorageService;
+        private const string FolderName = "employees";
 
         public UpdateEmployeeProfileCommandHandler(
             IUnitOfWork unitOfWork,
@@ -94,17 +95,15 @@ namespace Application.Core.Commands.UpdateEmployeeProfile
                     employee.Image.MediaFileName = request.Image.FileName;
                     employee.Image.ContentType = upload.ContentType;
                     employee.Image.FileSizeBytes = upload.SizeBytes;
-                    employee.Image.MediaType = upload.ContentType.StartsWith("image/", StringComparison.OrdinalIgnoreCase)
-                        ? MediaType.Image
-                        : MediaType.Other;
+                    employee.Image.MediaType = ResolveMediaType(upload.ContentType);
                     employee.Image.UploadedAt = DateTime.UtcNow;
                     employee.Image.MediaUrl = upload.BlobName != null
-                        ? _fileStorageService.GetFileUrl(upload.BlobName, "employees")
-                        : null;
+                      ? _fileStorageService.GetFileUrl(upload.BlobName, FolderName, upload.ContentType)
+                      : null;
 
                     if (!string.IsNullOrWhiteSpace(oldBlobName))
                     {
-                        await _fileStorageService.DeleteFileAsync(oldBlobName, "employees");
+                        await _fileStorageService.DeleteFileAsync(oldBlobName, FolderName);
                     }
                 }
 
@@ -118,6 +117,16 @@ namespace Application.Core.Commands.UpdateEmployeeProfile
                 await _unitOfWork.RollbackTransactionAsync(cancellationToken);
                 return Result<int>.Failure(ResultStatus.Failure, "فشل تحديث بيانات الموظف.");
             }
+        }
+        private static MediaType ResolveMediaType(string contentType)
+        {
+            if (contentType.StartsWith("image/", StringComparison.OrdinalIgnoreCase))
+                return MediaType.Image;
+
+            if (contentType.StartsWith("video/", StringComparison.OrdinalIgnoreCase))
+                return MediaType.Video;
+
+            return MediaType.Other;
         }
     }
 }

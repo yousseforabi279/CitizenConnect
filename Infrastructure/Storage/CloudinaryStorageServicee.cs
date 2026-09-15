@@ -150,27 +150,28 @@ public class CloudinaryStorageServicee : IFileStorageService
         };
     }
 
-    public async Task DeleteFileAsync(
-        string fileKey,
-        string folderName)
+    public async Task DeleteFileAsync(string fileKey, string folderName, string? contentType = null)
     {
         if (string.IsNullOrWhiteSpace(fileKey))
             return;
 
-        var deletionParams =
-            new DeletionParams(fileKey);
+        var resourceType = ResourceType.Image;
 
-        var result =
-            await _cloudinary.DestroyAsync(
-                deletionParams);
+        if (!string.IsNullOrWhiteSpace(contentType))
+        {
+            if (contentType.StartsWith("video/", StringComparison.OrdinalIgnoreCase))
+                resourceType = ResourceType.Video;
+            else if (!contentType.StartsWith("image/", StringComparison.OrdinalIgnoreCase))
+                resourceType = ResourceType.Raw;
+        }
+
+        var deletionParams = new DeletionParams(fileKey) { ResourceType = resourceType };
+
+        var result = await _cloudinary.DestroyAsync(deletionParams);
 
         if (result.Error != null)
-        {
-            throw new Exception(
-                $"Cloudinary delete failed: {result.Error.Message}");
-        }
+            throw new Exception($"Cloudinary delete failed: {result.Error.Message}");
     }
-
     public string GetFileUrl(
         string fileKey,
         string folderName, string? contentType = null)
@@ -194,6 +195,7 @@ public class CloudinaryStorageServicee : IFileStorageService
 
         return _cloudinary.Api.Url
             .ResourceType(resourceType.ToString().ToLowerInvariant())
+            .Type("upload")          // <-- was missing
             .Secure(true)
             .BuildUrl(fileKey);
     }

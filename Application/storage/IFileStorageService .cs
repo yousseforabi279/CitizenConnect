@@ -12,9 +12,7 @@ namespace Application.storage
        FileUploadRequest file,
        string folderName);
 
-        Task DeleteFileAsync(
-            string fileKey,
-            string folderName);
+        Task DeleteFileAsync(string fileKey, string folderName, string? contentType = null);
 
         string GetFileUrl(
             string fileKey,

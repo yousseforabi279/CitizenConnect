@@ -48,10 +48,11 @@ namespace Application.Core.Queries.Deputy.ActivityVisit.GetAllById
                 Date = activity.Date,
 
                 MediaUrl = string.IsNullOrWhiteSpace(activity.BlobName)
-                    ? null
-                    : _fileStorageService.GetFileUrl(
-                        activity.BlobName,
-                        FolderName),
+                            ? null
+                            : _fileStorageService.GetFileUrl(
+                                activity.BlobName,
+                                FolderName,
+                                activity.ContentType),
 
                 ContentType = activity.ContentType,
                 MediaType = activity.MediaType

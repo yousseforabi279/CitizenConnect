@@ -50,7 +50,7 @@ namespace Application.Core.Queries.Deputy.Achievement.GetAchievementById
                     ? null
                     : _fileStorageService.GetFileUrl(
                         achievement.BlobName,
-                        FolderName),
+                        FolderName,achievement.ContentType),
 
                 ContentType = achievement.ContentType,
                 MediaType = achievement.MediaType

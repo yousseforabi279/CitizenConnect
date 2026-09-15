@@ -19,7 +19,7 @@ namespace Application.Core.Commands.AddEmployee
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IFileStorageService _blobStorageService;
-        private const string FolderName = "Emp-files";
+        
 
         public CreateEmployeeCommandHandler(IUnitOfWork unitOfWork, IFileStorageService fileStorageService)
         {
@@ -91,14 +91,14 @@ namespace Application.Core.Commands.AddEmployee
                         MediaFileName = request.Image.FileName,
                         ContentType = upload.ContentType,
                         FileSizeBytes = upload.SizeBytes,
-                        MediaType = upload.ContentType.StartsWith("image/", StringComparison.OrdinalIgnoreCase)
-                            ? MediaType.Image
-                            : MediaType.Other,
+                        MediaType = upload.ContentType.StartsWith("image/", StringComparison.OrdinalIgnoreCase) ? MediaType.Image
+                                            : upload.ContentType.StartsWith("video/", StringComparison.OrdinalIgnoreCase) ? MediaType.Video
+                                            : MediaType.Other,
                         UploadedAt = DateTime.UtcNow,
                         MediaUrl = upload.BlobName != null
                                 ? _blobStorageService.GetFileUrl(
                         upload.BlobName,
-                        FolderName)
+                        "employees", upload.ContentType)
                     : null,
                     };
                     await _unitOfWork.SaveChangesAsync();

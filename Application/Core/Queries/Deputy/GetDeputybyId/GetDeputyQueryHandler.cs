@@ -58,7 +58,7 @@ namespace Application.Core.Queries.Deputy.GetDeputybyId
                     ? null
                     : _fileStorageService.GetFileUrl(
                         deputy.BlobName,
-                        FolderName),
+                        FolderName, deputy.ContentType),
 
                 ContentType = deputy.ContentType,
                 MediaType = deputy.MediaType

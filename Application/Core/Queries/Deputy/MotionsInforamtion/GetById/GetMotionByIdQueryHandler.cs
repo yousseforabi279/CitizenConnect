@@ -49,7 +49,7 @@ namespace Application.Core.Queries.Deputy.MotionsForInformation.GetById
                     ? null
                     : _fileStorageService.GetFileUrl(
                         motion.BlobName,
-                        FolderName),
+                        FolderName,motion.ContentType),
 
                 ContentType = motion.ContentType,
                 MediaType = motion.MediaType

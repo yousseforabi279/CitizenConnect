@@ -27,6 +27,7 @@ namespace Infrastructure.Implemenation
         {
             return await _context.Employees
                 .Include(x => x.User)
+                .Include(e => e.Image)
                 .ToListAsync();
         }
 

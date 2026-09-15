@@ -41,7 +41,7 @@ public class GetAllDeputyWordsQueryHandler
                     ? null
                     : _fileStorageService.GetFileUrl(
                         word.BlobName,
-                        FolderName),
+                        FolderName, word.ContentType),
 
                 ContentType = word.ContentType,
                 MediaType = word.MediaType

@@ -139,7 +139,7 @@ namespace Application.Core.Commands.CreateCompliant
                 requirement.MediaUrl =
                     _fileStorageService.GetFileUrl(
                         requirement.BlobName,
-                        FolderName);
+                        FolderName,requirement.ContentType);
             }
 
             await _unitOfWork.CitizinRequierment

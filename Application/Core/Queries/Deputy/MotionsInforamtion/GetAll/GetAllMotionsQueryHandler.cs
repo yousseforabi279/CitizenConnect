@@ -44,7 +44,7 @@ namespace Application.Core.Queries.Deputy.MotionsForInformation.GetAll
                         ? null
                         : _fileStorageService.GetFileUrl(
                             m.BlobName,
-                            FolderName),
+                            FolderName, m.ContentType),
 
                     ContentType = m.ContentType,
                     MediaType = m.MediaType

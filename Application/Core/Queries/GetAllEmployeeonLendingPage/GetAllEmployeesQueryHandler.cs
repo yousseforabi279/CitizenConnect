@@ -27,16 +27,15 @@ public class GetAllEmployeesQueryHandler
 
         var result = employees.Select(employee => new EmployeeResponse
         {
-            Id = employee.Id,
+            Id = employee.UserId,
             FullName = employee.User.FullName!,
             Email = employee.User.Email,
             ImageUrl = !string.IsNullOrEmpty(employee.Image?.BlobName)
-                ? _fileStorageService.GetFileUrl(employee.Image.BlobName, FolderName)
+                ? _fileStorageService.GetFileUrl(employee.Image!.BlobName, FolderName, employee.Image.ContentType)
                 : null,
-            about = employee.about ?? ""
-       ,phone=employee.User.PhoneNumber
+            about = employee.about ?? "",
+            phone = employee.User.PhoneNumber
         }).ToList();
-
         return Result<List<EmployeeResponse>>.Success(result);
     }
 }

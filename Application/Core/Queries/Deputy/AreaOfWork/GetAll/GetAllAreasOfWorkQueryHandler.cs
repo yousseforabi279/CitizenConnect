@@ -43,7 +43,7 @@ namespace Application.Core.Queries.Deputy.AreaOfWork.GetAll
                         ? null
                         : _fileStorageService.GetFileUrl(
                             area.BlobName,
-                            FolderName),
+                            FolderName, area.ContentType),
 
                     ContentType = area.ContentType,
                     MediaType = area.MediaType

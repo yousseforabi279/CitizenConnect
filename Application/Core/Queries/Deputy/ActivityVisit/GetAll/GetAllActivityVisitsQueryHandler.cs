@@ -45,7 +45,7 @@ namespace Application.Core.Queries.Deputy.ActivityVisit.GetAll
                         ? null
                         : _fileStorageService.GetFileUrl(
                             a.BlobName,
-                            FolderName),
+                            FolderName,a.ContentType),
 
                     ContentType = a.ContentType,
                     MediaType = a.MediaType
