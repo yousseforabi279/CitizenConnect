@@ -89,6 +89,7 @@ namespace Infrastructure.Implemenation
             return await _context.Employees.Include(ww => ww.Image)
                         .Include(ww => ww.EmployeeOrganizations)
                                 .Include(ww => ww.Department)
+                                .Include(ww=>ww.User)
                                 .FirstOrDefaultAsync(ww => ww.UserId == employeeId);
         }
     }

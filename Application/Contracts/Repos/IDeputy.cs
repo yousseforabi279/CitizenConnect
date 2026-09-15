@@ -1,4 +1,6 @@
-﻿using Domain;
+﻿using Application.Common;
+using Application.Core.Queries.GetRequestsForDeputy;
+using Domain;
 using Domain.Deputy;
 using System;
 using System.Collections.Generic;
@@ -11,5 +13,8 @@ namespace Application.Contracts.Repos
     public interface IDeputy : IGenericRepository<Deputy>
     {
         Task<Deputy?> GetDeputyInfo();
+        Task<PaginatedResult<DeputyRequestDto>> GetAllForDeputyAsync(
+    DeputyRequestFilter filter,
+    CancellationToken cancellationToken);
     }
 }

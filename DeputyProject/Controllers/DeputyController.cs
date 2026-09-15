@@ -2,6 +2,7 @@
 using Application.Core.Commands.Deputy.achievements.CreateAchievement;
 using Application.Core.Commands.LoadingPage.PersonalInfo.EditPersonalInfo;
 using Application.Core.Queries.Deputy.GetDeputybyId;
+using Application.Core.Queries.GetRequestsForDeputy;
 using Azure.Core;
 using Bank.Api.Controllers;
 using DeputyProject.Common;
@@ -56,7 +57,15 @@ namespace DeputyProject.Controllers
             var result = await _mediator.Send(new GetDeputyQuery());
             return HandleResult(result);
         }
-      
+
+
+        [HttpGet("requests")]
+        public async Task<IActionResult> GetDeputyRequests([FromQuery] GetDeputyRequestsQuery query,
+                                                                CancellationToken cancellationToken)
+        {
+            var result = await _mediator.Send(query, cancellationToken);
+            return HandleResult(result);
+        }
     }
 }
        
